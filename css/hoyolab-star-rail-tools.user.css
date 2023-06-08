@@ -1,0 +1,351 @@
+/* ==UserStyle==
+@name           HoYoLab Honkai: Star Rail Tools - Dark Theme
+@namespace      Dark-Themes
+@version        1.0.3
+@description    HoYoLab Honkai: Star Rail Tools (Check-in and Honkai: Star Rail Map) Dark Theme
+@author         Dark-Themes
+@supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
+@var checkbox custom-bg 'Custom Background Image' 0
+@var text     bg_image 'Background Url' '' url ''
+@var range    opacity  'Content Opacity' [1, 0.90, 1, 0.01]
+@var range    bg_brightness  'Background Brightness' [100, 1, 200.0, 1,'%']
+@var range    bg_saturate  'Background Saturation' [100, 1, 300.0, 1,'%']
+@var range    bg_contrast  'Background Contrast' [100, 100, 300.0, 1,'%']
+@var range    bg_blur  'Background Blur' [0, 0.0, 15, 1.0,'px']
+@preprocessor stylus
+==/UserStyle== */
+@-moz-document url-prefix("https://act.hoyolab.com/sr/app/interactive-map/"),
+url-prefix("https://act.hoyolab.com/bbs/event/signin/hkrpg/") {
+::-webkit-scrollbar {
+  background-color: #121212!important;
+  width: 8px
+}
+::-webkit-scrollbar-thumb {
+  background-color: #464646!important
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #595959!important
+}
+::-webkit-scrollbar-corner {
+  background-color: #121212!important
+}
+body,
+html {
+  background-color: #0a0a0a!important
+}
+#root {
+  background-color: #222!important
+}
+if(custom-bg) {
+.components-pc-assets-__home_---home-page---2m-8BR .components-pc-assets-__home_---scroller---ZF2lsm{
+  -webkit-backdrop-filter: blur(bg_blur) brightness(bg_brightness) contrast(bg_contrast) saturate(bg_saturate)!important;
+          backdrop-filter: blur(bg_blur) brightness(bg_brightness) contrast(bg_contrast) saturate(bg_saturate)!important;
+  background: 0 0!important
+}
+
+.components-home-assets-__home_---home-wrapper---1s2B39,
+.components-home-assets-__home_---index-bg---2nEmGw {
+  display: none
+}
+body {
+  background: url(bg_image)!important;
+  background-size: cover!important;
+  background-attachment: fixed!important
+}
+}
+::selection {
+      background:rgba(0, 0, 0, .2)
+}
+.components-pc-assets-__main-module_---day---3Q5I5A::selection,
+.components-pc-assets-__main-module_---desc---dTgOC-::selection,
+.components-pc-assets-__dialog_---loading-text---1vrglP::selection,
+.components-pc-assets-__recommend-list_---text__title---1xYgVh::selection,
+.components-pc-assets-__recommend-list_---text__des---1Aa8ug::selection,
+.components-pc-assets-__recommend-list_---user---3LqOy9 ::selection {
+  background:rgb(44, 44, 44)
+}
+.language-menu__panel ul::-webkit-scrollbar {
+  background: 0 0!important
+}
+.lang-select__popover {
+  height: 480px;
+  overflow-y: scroll!important
+}
+.mhy-hoyolab-header,
+.mhy-hoyolab-header__wrapper {
+  background-color: #0a0a0a!important
+}
+.me-share-popover--posbottom .me-share-popover__content {
+  background: #000!important;
+  -webkit-box-shadow: rgba(255, 255, 255, .2) 0px 0.02em 0.16em 0px!important;
+          box-shadow: rgba(255, 255, 255, .2) 0px 0.02em 0.16em 0px!important
+}
+.map-layer-control > .inner-wrapper {
+  background: #141414!important
+}
+.icon-clear,
+.mhy-hoyolab-account-block .mhy-hoyolab-select-menu__item:hover .mhy-hoyolab-account-block__active-icon,
+.mhy-hoyolab-account-block .mhy-hoyolab-select-menu__item:hover .mhy-hoyolab-account-block__arrow_icon_active,
+.mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__arrow,
+.mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__lang-icon,
+.mhy-hoyolab-select-menu__item--selected .mhy-hoyolab-select-menu__icon {
+  -webkit-filter: grayscale(1) brightness(1.5);
+  filter: grayscale(1) brightness(1.5)
+}
+.mhy-hoyolab-select-menu__item:hover {
+  background-color: #303030!important
+}
+.mhy-hoyolab-header .mhy-hoyolab-lang-selector,
+.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu,
+.mhy-hoyolab-lang-selector .mhy-hoyolab-select-menu {
+  background: #161616!important
+}
+.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item:hover,
+.mhy-hoyolab-select-menu {
+  background: #181818!important
+}
+.map-layer-control .layer-control__header-m .btn-reset, .map-layer-control .layer-control__header-m .btn-ok,
+.components-pc-assets-__recommend-list_---text__title---1xYgVh,
+.components-pc-assets-__recommend-list_---text__des---1Aa8ug,
+.layer-control__item>span,
+.components-pc-assets-__main-module_---main-module---3jY8-Z .components-pc-assets-__main-module_---header-sea---1D_UPV .components-pc-assets-__main-module_---day---3Q5I5A,
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__button-text,
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__content__current,
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__content__title,
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__content__title .map-layer-control .layer-control__group-title-name,
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__header__text,
+.map-layer-control .layer-control__group-title-name,
+.map-switch__item-name,
+.mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__current-lang,
+.mhy-hoyolab-select-menu__item--selected,
+.mhy-hoyolab-select-menu__item:hover,
+.role-selector-sea-dropdown-menu .dropdown-menu__input,
+.role-selector-sea-dropdown-menu .dropdown-menu__list__value {
+  color: #bcbcbc!important
+}
+.lang-select__title,
+.layer-control__item > span:hover,
+.layer-control__title,
+.map-layer-control .layer-control__footer .btn-ok {
+  color: #cbcbcb!important
+}
+.components-pc-assets-__dialog_---task-desc---BlA_H9,
+.components-pc-assets-__dialog_---empty-content---2jeCt7 .components-pc-assets-__dialog_---empty-desc---1QhB1I,
+.layer-control__item>span .span-count {
+  color: #999!important
+}
+.components-pc-assets-__dialog_---loading-text---1vrglP,
+.components-pc-assets-__recommend-list_---nickname---NHH07X,
+.layer-control__item > span:hover {
+  color: #888!important
+}
+.components-pc-assets-__dialog_---default-content---3nn2MI .components-pc-assets-__dialog_---resign-btn-disabled---2CIGcU>span,
+.holo-map-entrance .text {
+  color: #181818!important
+}
+.divider-with-dot--horizontal,
+.layer-control__icon,
+ 
+.layer-control__title-wrapper::after,
+ 
+.map-switch__wrapper::before {
+  -webkit-filter: invert(1) brightness(80%)!important;
+          filter: invert(1) brightness(80%)!important
+}
+.map-switch__wrapper::before {
+  background: #aaa!important
+}
+.layercontrol-divider {
+  background: #444!important
+}
+.map-switch__outline--active,
+.role-selector-sea-dropdown-menu .dropdown-menu__input {
+  border-color: #aaa!important
+}
+.layer-control__item.visible > span::before,
+.map-switch__star {
+  -webkit-filter: invert(.4);
+          filter: invert(.4)
+}
+.map-switch__wrapper:hover .map-switch__outline {
+  border-color: #999!important
+}
+.map-switch__wrapper:hover:first-child {
+  -webkit-filter: invert(.01);
+          filter: invert(.01)
+}
+.mhy-map , {
+    -webkit-filter:invert(1);
+            filter:invert(1);
+  background-color: #fff;
+  opacity: 85%; 
+}
+.map-layer-control .layer-control__header-m .btn__icon,
+.mhy-game-gis-icon__img,
+.mhy-map-edge-marker__img,
+.mhy-map-edge-marker__arrow,
+.mhy-map .leaflet-control-zoomslider-horizon,
+.leaflet-container a.leaflet-popup-close-button,
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  -webkit-filter:invert(1)!important;
+          filter:invert(1)!important
+}
+.components-pc-assets-__main-module_---resign-btn---39OqGX,
+.map-list--active,
+.layer-control__m-btn,
+.holo-map-entrance 
+.announcement__close,
+.announcement__wrapper {
+  -webkit-filter: invert(.9);
+          filter: invert(.9)
+}
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__content,
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__header,
+.role-selector-sea-dropdown-menu .dropdown-menu__list {
+  background-color: #121212!important
+}
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__button {
+  background-color: #262626!important
+}
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__content__current,
+.theme-community .role-selector-sea-dropdown-menu .dropdown-menu__list__item.selected,
+.theme-community .role-selector-sea-dropdown-menu .dropdown-menu__list__item:hover {
+  background-color: #222
+}
+.role-selector-sea-dropdown-menu .dropdown-menu__input,
+.role-selector-sea-dropdown-menu .dropdown-menu__list {
+  background: 0 0;
+  border-color: #555!important
+}
+.components-pc-assets-__main-module_---main-module---3jY8-Z,
+.components-pc-assets-__main-module_---main-module---3jY8-Z:after {
+  background-image: url("https://upload-static.hoyoverse.com/event/2023/04/21/892581989ed209c544497e76ca6026a0_6649182942554917413.png?x-oss-process=image%2Fresize%2Cw_750")
+}
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__content__current__nickename-level {
+  background: #3a8b6f
+}
+
+.components-pc-assets-__main-module_---resign-desc---2c4-Eb,
+.components-pc-assets-__dialog_---common-dialog---MuR1Sk .components-pc-assets-__dialog_---sub-title---1sb30r,
+.components-pc-assets-__dialog_---common-dialog---MuR1Sk .components-pc-assets-__dialog_---title---IfpJqm,
+.components-pc-assets-__dialog_---sign-content---1PRShr .components-pc-assets-__dialog_---next-award-sea---32Jekg .components-pc-assets-__dialog_---next-award-desc---3Acrxk,
+.components-pc-assets-__dialog_---sign-content---1PRShr .components-pc-assets-__dialog_---next-award-sea---32Jekg .components-pc-assets-__dialog_---next-award-info-list---1Gu-Oi span:nth-child(2),
+.components-pc-assets-__main-module_---main-module---3jY8-Z,
+.components-pc-assets-__recommend-list_---card---29hG0R .components-pc-assets-__recommend-list_---img---aiopRj .components-pc-assets-__recommend-list_---inner---2JrYlW,
+.components-pc-assets-__recommend-list_---sign-recommend----h1jVU .components-pc-assets-__recommend-list_---content---2xssBD .components-pc-assets-__recommend-list_---card-list---W1_Gaj,
+.m-modal-mask--bg {
+  -webkit-filter: invert(.96);
+          filter: invert(.96)
+}
+.extra-bonus__item p,
+.components-pc-assets-__main-module_---content---1ah-Ie,
+.components-pc-assets-__prize-list_---no---3smN44 {
+  -webkit-filter: invert(1);
+          filter: invert(1)
+}
+.components-pc-assets-__main-module_---main-module---3jY8-Z,
+.components-pc-assets-__prize-list_---prize-list---3s4FAb .components-pc-assets-__prize-list_---list---26M_YG .components-pc-assets-__prize-list_---item---F852VZ .components-pc-assets-__prize-list_---img---nO_Gnf,
+.components-pc-assets-__recommend-list_---sign-recommend----h1jVU .components-pc-assets-__recommend-list_---background---2iqqwQ {
+  -webkit-filter: invert(1) hue-rotate(180deg) opacity(opacity);
+          filter: invert(1) hue-rotate(180deg) opacity(opacity)
+}
+.components-pc-assets-__dialog_---task-item---2LCGne,
+.components-pc-assets-__dialog_---available-info---2Lgn3v,
+.components-pc-assets-__dialog_---common-dialog---MuR1Sk,
+.components-pc-assets-__dialog_---common-dialog---MuR1Sk .components-pc-assets-__dialog_---dialog-body---1SieDs,
+.components-pc-assets-__dialog_---common-dialog-sea---1XveKg .components-pc-assets-__dialog_---line---1G389b,
+.components-pc-assets-__dialog_---record---BMFW_c .components-pc-assets-__dialog_---prize-item---2WFF7O,
+.components-pc-assets-__dialog_---record---BMFW_c .components-pc-assets-__dialog_---prize-item---2WFF7O .components-pc-assets-__dialog_---img---10acnN,
+.extra-bonus__item,
+.extra-bonus__item img,
+.me-share-popover--posbottom .me-share-popover__content {
+  -webkit-filter: invert(1) hue-rotate(180deg)!important;
+          filter: invert(1) hue-rotate(180deg)!important
+}
+.mhy-map .leaflet-control-zoomslider,
+.components-pc-assets-__recommend-list_---card---29hG0R .components-pc-assets-__recommend-list_---text---3-cZCI,
+.map-layer-control .layer-control__copyright,
+.components-pc-assets-__dialog_---record-content---Gl9jft .components-pc-assets-__dialog_---desc---2j1chI,
+.components-pc-assets-__dialog_---rule-content---uP1Kgy .components-pc-assets-__dialog_---rule-text---8UZVPi,
+.components-pc-assets-__main-module_---main-module---3jY8-Z .components-pc-assets-__main-module_---header-sea---1D_UPV .components-pc-assets-__main-module_---day---3Q5I5A > span,
+.components-pc-assets-__prize-list_---item---F852VZ,
+.components-pc-assets-__prize-list_---prize-list-sea---3CblUM .components-pc-assets-__prize-list_---arrow---14hvWv span
+{
+  -webkit-filter: invert(1);
+          filter: invert(1)
+}
+.extra-bonus {
+  -webkit-filter: opacity(opacity);
+          filter: opacity(opacity)
+}
+.components-pc-assets-__dialog_---award-info---1Mrv1V,
+.components-pc-assets-__dialog_---supplementary-info---3yFOHy,
+.components-pc-assets-__dialog_---resign-btn---3f9BhK,
+.components-pc-assets-__dialog_---default-content---3nn2MI .components-pc-assets-__dialog_---card-info---tUiEJr,
+.components-pc-assets-__dialog_---default-content---3nn2MI .components-pc-assets-__dialog_---get-more-btn---37vMbf,
+.components-pc-assets-__dialog_---success-content---36a5ai .components-pc-assets-__dialog_---award-desc---3gTFwQ,
+
+.components-pc-assets-__dialog_---to-get-btn---2vpVU0,
+.components-pc-assets-__recommend-list_---sign-recommend----h1jVU .components-pc-assets-__recommend-list_---more---2LV2RM {
+  -webkit-filter: invert(1) hue-rotate(180deg) grayscale(.5);
+          filter: invert(1) hue-rotate(180deg) grayscale(.5)
+}
+.components-pc-assets-__dialog_---task-item---2LCGne .components-pc-assets-__dialog_---task-btn---h_XBQc,
+.components-pc-assets-__prize-list_---received---tOZ4Gy,
+.extra-bonus-sea__list .extra-bonus__active,
+ .components-pc-assets-__main-module_---main-module---3jY8-Z .components-pc-assets-__main-module_---header-sea---1D_UPV .components-pc-assets-__main-module_---day---3Q5I5A {
+  -webkit-filter: saturate(0.9);
+          filter: saturate(0.9)
+}
+.components-pc-assets-__main-module_---main-module---3jY8-Z {
+  background-size: 100% 128%;
+  background-repeat: no-repeat;
+  padding-top: 150px;
+  margin-bottom: 40px
+}
+.components-pc-assets-__main-module_---main-module---3jY8-Z:after {
+  background-size: 100% 500%;
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
+  content: ""!important;
+  position: fixed;
+  left: 0;
+  margin-top: -25px;
+  height: 200px;
+  width: 100%;
+  display: block
+}
+.bbs-qr,
+.components-pc-assets-__qr_---qr-box---lxB9wc {
+  display: none!important
+}
+.mhy-user .avatar__img {
+  background-color: #292d34!important;
+  border-color: #333!important
+}
+.components-pc-assets-__dialog_---record-content---Gl9jft .__rail-is-vertical > div > div,
+.components-pc-assets-__dialog_---rule-content---uP1Kgy.common-scroller > div > div.__rail-is-vertical > div > div {
+  background: rgba(106,88,61,.97)!important
+}
+.components-pc-assets-__prize-list_---prize-list---3s4FAb .components-pc-assets-__prize-list_---arrow---14hvWv,
+.components-pc-assets-__dialog_---common-dialog---MuR1Sk .components-pc-assets-__dialog_---title---IfpJqm,
+.map-switch__dir {
+  opacity: .8
+}
+.components-pc-assets-__dialog_---task-item---2LCGne .components-pc-assets-__dialog_---task-info---RxvPRW,
+.components-pc-assets-__main-module_---resign-btn---39OqGX,
+.extra-bonus__item p,
+.components-pc-assets-__prize-list_---no---3smN44 {
+  color: #111!important
+}
+.map-layer-control .layer-control__group:not(:last-child) .layer-control__list {
+  border-bottom-color:#444
+}
+.map-layer-control .layer-control__copyright {
+  background-color:#0000
+}
+.mhy-map .leaflet-control-zoomslider-horizon {
+  right:0.3rem
+}
+}
