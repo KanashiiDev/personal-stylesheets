@@ -1,9 +1,9 @@
 /* ==UserStyle==
-@name           HoYoLab Honkai: Star Rail Tools - Dark Theme
-@namespace      Dark-Themes
-@version        1.0.3
-@description    HoYoLab Honkai: Star Rail Tools (Check-in and Honkai: Star Rail Map) Dark Theme
-@author         Dark-Themes
+@name         HoYoLab Honkai: Star Rail Tools - Dark Theme
+@namespace    Dark-Themes
+@version      1.0.3
+@description  HoYoLab Honkai: Star Rail Tools (Check-in and Honkai: Star Rail Map) Dark Theme
+@author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
 @var checkbox custom-bg 'Custom Background Image' 0
 @var text     bg_image 'Background Url' '' url ''
@@ -258,7 +258,7 @@ body {
 .components-pc-assets-__dialog_---record---BMFW_c .components-pc-assets-__dialog_---prize-item---2WFF7O .components-pc-assets-__dialog_---img---10acnN,
 .extra-bonus__item,
 .extra-bonus__item img,
-.me-share-popover--posbottom .me-share-popover__content {
+.me-share-popover__arrow--after{
   -webkit-filter: invert(1) hue-rotate(180deg)!important;
           filter: invert(1) hue-rotate(180deg)!important
 }
