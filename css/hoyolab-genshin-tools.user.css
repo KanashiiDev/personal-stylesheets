@@ -1,0 +1,1013 @@
+/* ==UserStyle==
+@name           HoYoLab Genshin Impact Tools - Dark Theme
+@namespace      Dark-Themes
+@version        1.1.5
+@description    HoYoLab Genshin Impact Tools (Check-in, Battle Chronicle, Teyvat Interactive Map and Enchancement Progression Calculator) Dark Theme
+@author         Dark-Themes
+@supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
+@var checkbox custom-bg 'Custom Background Image' 0
+@var text     bg_image 'Background Url' '' url ''
+@var range    opacity  'Content Opacity' [1, 0.90, 1, 0.01]
+@var range    bg_brightness  'Background Brightness' [100, 1, 200.0, 1,'%']
+@var range    bg_saturate  'Background Saturation' [100, 1, 300.0, 1,'%']
+@var range    bg_contrast  'Background Contrast' [100, 100, 300.0, 1,'%']
+@var range    bg_blur  'Background Blur' [0, 0.0, 15, 1.0,'px']
+@preprocessor stylus
+==/UserStyle== */
+@-moz-document url-prefix("https://act.hoyolab.com/app/community-game-records-sea/"),
+url-prefix("https://act.hoyolab.com/ys/event/signin-sea-v3/"),
+url-prefix("https://act.hoyolab.com/ys/app/interactive-map/"),
+url-prefix("https://act.hoyolab.com/ys/event/calculator-sea/") {
+::-webkit-scrollbar, {
+  background-color: #121212!important;
+  width: 8px
+}
+::-webkit-scrollbar-thumb {
+  background-color: #464646!important
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #595959!important
+}
+::-webkit-scrollbar-corner {
+  background-color: #121212!important
+}
+.mhy-action-sheet__content ::-webkit-scrollbar {
+  background-color: #0000!important
+}
+.language-menu__panel ul::-webkit-scrollbar {
+  background: none!important
+}
+.components-home-assets-__home_---home-page---C1pMbL,
+.components-home-assets-__home_---home-page---C1pMbL img{
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+     -moz-user-drag: none;
+      -ms-user-drag: none;
+}
+.components-common-common-dialog-__index_---record-dialog---3VAcqq ::selection,
+.components-common-common-dialog-__index_---rule-dialog---yFgnHP ::selection{
+background:rgba(238, 165, 62, .16);
+}
+.mhy-hoyolab-header,
+.mhy-hoyolab-header__wrapper {
+  background-color: #0a0a0a!important
+}
+.furniture .furniture-cart__list,
+.calculate .lt-footer:after,
+.van-dialog,
+.calculate .drawer,
+.calculate .search,
+.calculate .search__top,
+.calculate__main,
+.calculate__right .item__avatar,
+.layout,
+.map-loading-mask,
+.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-lang-selector,
+.mhy-ys-set-layout,
+.pc-root-layout .header-layout,
+.pc-ys-layout-wrapper,
+.top,
+.web-nav-bar{
+  background-color: #121212!important
+}
+if(custom-bg) {
+body > div.components-home-assets-__home_---home-page---C1pMbL.home-page,
+body > div.app > .calculate,
+body > div.pc-root-layout > div.bg,
+body > div.components-home-assets-__home_---home-page---C1pMbL.home-page, body > div.app > .calculate {
+ -webkit-backdrop-filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
+         backdrop-filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
+ background: none!important
+}
+.components-home-assets-__home_---home-wrapper---1s2B39, .components-home-assets-__home_---index-bg---2nEmGw {
+  display:none
+}
+body{
+  background: url(bg_image)!important;
+  background-size: cover!important;
+  background-attachment:fixed!important
+}
+body,
+html {
+  height:auto
+}
+}
+.components-home-assets-__sign-content_---sign-only---FNchlF>div:before,
+.components-home-assets-__sign-recom_---recommend---2_onvu>div:nth-child(2):before{
+  content: '';
+  position:  absolute;
+  top: -0.30rem;
+  bottom: -0.30rem;
+  left: 0px;
+  right:  0px;
+    border-radius:7px;
+  -webkit-box-shadow: inset 0 0 0 0.10rem #1d233e!important;
+          box-shadow: inset 0 0 0 0.10rem #1d233e!important;
+  outline: inset 4px rgba(255, 255, 255, .15)!important;
+  -webkit-filter:blur(.4px) opacity(opacity) invert(1);
+          filter:blur(.4px) opacity(opacity) invert(1)
+}
+.components-home-assets-__sign-recom_---recommend-bottom---zXkGXp,
+.components-home-assets-__sign-content_---sign-bottom---1ducvs {
+  z-index: -1;
+  position:relative
+}
+.components-home-assets-__sign-recom_---recommend-title---3VmyP8,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---header-right---1T5roi {
+  z-index:122!important;
+  position:relative
+}
+.custom-correct-modal .el-textarea,
+.route-create__flex .el-form-item__label,
+.tcg-detail .role,
+.lantern div.top,
+.lantern .item .inner,
+.lantern .item:before,
+.tcg-types,
+.tcg-menus,
+.mushroom .book,
+.pc-ys-layout-wrapper,
+.calculate .search,
+.calculate .drawer,
+.calculate .search__top,
+.calculate__content,
+.furniture .furniture-cart__list,
+.calculate .lt-footer:after,{
+  background:none!important
+}
+.calculate__main,
+body > div.app > div > div.top,
+.web-nav-bar,
+.layout,
+.pc-root-layout .header-layout,
+.mhy-ys-set-layout,
+.mhy-summer-v2-story .layout-container{
+  background-color:rgba(18, 18, 18, opacity)!important
+}
+.mushroom .layout {
+  background:rgba(18, 18, 18, opacity)!important
+}
+.lantern,
+.components-home-assets-__sign-content_---sign-only---FNchlF,
+.components-home-assets-__sign-recom_---recommend---2_onvu {
+  -webkit-filter:opacity(opacity);
+          filter:opacity(opacity)
+}
+.components-home-assets-__sign-link_---sign-link---fd75kG {
+  -webkit-filter: invert(.99) contrast(.94)opacity(opacity);
+  filter: invert(.99) contrast(.94)opacity(opacity)
+}
+.filter-panel__body-left,
+.filter-route__body-left {
+  background-color: #141414!important
+}
+.geetest_wind.geetest_panel .geetest_panel_box,
+.geetest_holder.geetest_silver .geetest_widget,
+.game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__container,
+.mhy-hoyolab-header .mhy-hoyolab-lang-selector,
+.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu,
+.tablet-tips {
+  background-color: #161616!important
+}
+.chart-content,
+.filter-ascension__container,
+.area-list__container,
+.area-list__dropdown,
+.tcg-right-p,
+.calculate .lt-footer,
+.furniture-cart__item,
+.calculate .drawer__item-item,
+.calculate .search__top-input,
+.calculate .top-main .module__item,
+.cost-list__group,
+.exploration-card,
+.filter-panel__types-item--selected-special,
+.filter-panel__types-item--selected,
+.filter-panel .correct-modal,
+.filter-panel .custom-correct-modal,
+.filter-panel .custom-manage,
+.filter-panel__content,
+.filter-route__dropdown,
+.filter-route__dropdown-content,
+.filter-search,
+.game-role-selector-sea__button.disabled,
+.item--syw,
+.map-locations__dropdown-content,
+.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item:hover,
+.mhy-hoyolab-select-menu,
+.modal__content,
+.popper,
+.role,
+.route-list,
+.theme-genshin .role-selector-sea-dropdown-menu .dropdown-menu__input,
+.timer-list,
+.updatelog,
+.billboard,
+.updatelog__content,
+.user-guide .driver-popover-title,
+div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > div.me-share-popover__content {
+  background-color: #181818!important
+}
+.common-avatar__avatar {
+  background-color: #1f1f1f!important;
+  -webkit-transition: .1s ease-in;
+  -o-transition: .1s ease-in;
+  transition: .1s ease-in; 
+  border-color: #1f1f1f!important
+}
+.link-modal .el-dialog,
+.area-list__dropdown li,
+.confirm-dialog .el-dialog,
+.tablet-tips-box {
+  background-color: #202020!important
+}
+.filter-route__btn,
+.game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__content__current,
+.map-locations__btn,
+.mhy-map__action-btn {
+  background-color: rgba(32,32,32,.8)!important
+}
+.chart-item,
+.news-ticker,
+.filter-panel__search-area__inner,
+.filter-panel__labels-ascension,
+.furniture-cart__item .item-count-operator,
+.recommend-popup:after,
+.filter-item__img,
+.filter-panel .recommend-popup,
+.map-list__dropdown,
+.mhy-action-sheet__content,
+.role-selector-sea-dropdown-menu .dropdown-menu__list,
+.search__history-item,
+.leaflet-popup-content-wrapper,
+.strong-tip-closable {
+  background-color: #222!important
+}
+.link-modal__btn--cancel, 
+.link-modal__btn--confirm,
+.area-list__pc-btn,
+.import-modal__wrap .import-modal .import-input input,
+.calculate .select-input__selector,
+.calculator .select-input,
+.confirm-dialog__btn,
+.confirm-dialog__input input,
+.confirm-dialog__input-area textarea,
+.correct-modal .el-textarea__inner,
+.crystal-buff-info .crystal-buff-desc,
+.custom-correct-modal .el-textarea__inner,
+.correct-modal .marker-preview .upload-area,
+.custom-correct-modal .marker-preview .upload-area,
+.editor .el-input__inner,
+.filter-search .search-point .el-input .el-input__inner,
+.float-tooltip,
+.language-menu__panel,
+.mhy-toast2,
+.mhy-user--show-menu .menu,
+.more-action .menu,
+.pop-role-card .role-actions button,
+.route-color-picker ul,
+.route-create .el-input__inner,
+.route-create .el-textarea__inner,
+.route-create__section-header,
+.route-detail__section,
+.route-item,
+.route-list__search-area__inner,
+.route-create__content-wrapper,
+.route-create__link,
+.strong-tip-permanent,
+.timer-list__item--show-menu .menu,
+.tooltip {
+  background-color: #282828!important
+}
+.filter-panel__labels-ascension .filter-panel__labels-filter-item .filter-item__img,
+.filter-panel__labels-ascension__current-action,
+.area-list__dropdown li.active,
+.view-box .main .info .name .tag,
+.confirm-dialog--timer .el-dialog .el-slider__runway,
+.map-popup__contribute-tooltip,
+.mhy-hoyolab-select-menu__item:hover,
+.route-color-picker,
+.theme-genshin .role-selector-sea-dropdown-menu .dropdown-menu__list__item.selected,
+.theme-genshin .role-selector-sea-dropdown-menu .dropdown-menu__list__item:hover {
+  background-color: #303030!important
+}
+.furniture-cart__title .title-name:before,
+.common-avatar__avatar:hover,
+.calculate .top-main .module__item.active,
+.calculate__left .common-avatar__avatar.active,
+.role-medium.hover-wrapper.hover .role-medium-pos,
+.search__title:before {
+  background-color: #403623!important
+}
+.mhy-summer-v2-sailing .layout {
+  background-color: #63b2cf!important
+}
+.calculate {
+  -webkit-backdrop-filter: brightness(0.43) contrast(2) saturate(0.4) blur(5px);
+          backdrop-filter: brightness(0.43) contrast(2) saturate(0.4) blur(5px);
+}
+.updatelog,
+.billboard{
+  background-blend-mode: color-dodge
+}
+.geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_content,
+.geetest_holder.geetest_silver .geetest_head .geetest_tips .geetest_tip_content,
+.map-popup__desc,
+.area-list__dropdown li.active span,
+.map-locations__dropdown-content ul li ul li span,
+.abyss-block  .strategy,
+.timer-list__item-name,
+.calculate .top-main .module__item.active,
+.confirm-dialog .el-dialog__title,
+.filter-item--selected .filter-item__text {
+  color: #d7d7d7!important
+}
+.link-modal .el-dialog__title,
+.link-modal__btn--cancel, 
+.link-modal__btn--confirm,
+.route-create .el-textarea >textarea,
+.chart-content__tabs-title:nth-child(odd),
+.chart-item__username,
+.chart-item__value-num,
+.recommend-popup__title,
+.area-list__dropdown li span,
+.components-home-assets-__sign-link_---sign-link---fd75kG .components-home-assets-__sign-link_---tools---1SFyHd .components-home-assets-__sign-link_---tools-item-text-title---3sOAy0,
+.tcg-top-right,
+.mushroom .name,
+.game-role-selector-sea__content__title,
+.common-avatar__inner-name, 
+.common-avatar__rate,
+.import-modal__wrap .import-modal .import-input input,
+.furniture-cart__item .item-name,
+.calculate .lt-footer .count-summary-empty-tip,
+.furniture .furniture-cart__title,
+.common-avatar__rate,
+.sub-title,
+.web-nav-bar .title,
+.item .text,
+.value,
+.role-medium.middle .level,
+.calculate .drawer__item-item span,
+.calculate .drawer__item-item.active span,
+.calculate .modal__title,
+.calculate .person__talent-title,
+.calculate .search__title,
+.calculate .select-input__input,
+.calculate .select-input__selector,
+.calculate__left .common-avatar__avatar.active .common-avatar__rate,
+.calculate__right .cost__title-text,
+.calculate__right .item__calculator-name,
+.confirm-dialog .content--only,
+.confirm-dialog--timer .el-dialog .el-slider__marks-text,
+.confirm-dialog__tip--timer,
+.correct-modal .el-form-item .el-form-item__label span,
+.correct-modal .el-textarea__inner,
+.correct-modal__type,
+.cost-list .cost-list__group-title,
+.cost-list .level-range,
+.cost-list__name,
+.cost-list__num,
+.crystal-buff-info,
+.drawer__item-title,
+.fate-view-box .desc,
+.fate-view-box .header .text,
+.fate-view-box .main .name,
+.fate-view-box .main .prop .text,
+.float-tooltip__name,
+.game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__content__current,
+.game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__header__text,
+.item--syw .item__avatar-rate,
+.mhy-buff-popover .info .name,
+.mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__current-lang,
+.mhy-hoyolab-select-menu__item--selected,
+.mhy-hoyolab-select-menu__item:hover,
+.mhy-skill-popover .container .info .inner .name,
+.pop-info,
+.pop-info span,
+.potion-pop-title,
+.role span,
+.role-selector-sea-dropdown-menu .dropdown-menu__input,
+.role-selector-sea-dropdown-menu .dropdown-menu__list__value:hover,
+.route-create .el-form-item__label span:first-child,
+.route-detail__row--content pre,
+.strong-tip-closable__content,
+.tablet-tips-box-title,
+.tablet-tips-title,
+.top h2,
+.updatelog__content-text,
+.user-guide .driver-popover-title,
+.view-box .title {
+  color: #bcbcbc!important
+}
+.mushroom .item-time,
+.potion-pop-text,
+.import-modal__wrap .import-modal .import-tip,
+.modal__tip-txt,
+.furniture-cart__title .reset-btn,
+.furniture-cart__item .item-count-operator,
+.calculate .top-main .module__item,
+.calculate__left .search .common-avatar__name,
+.correct-modal .el-textarea .el-input__count,
+.custom-correct-modal .el-form-item__label,
+.custom-correct-modal .el-form-item__label span:first-child,
+.item--syw .item__avatar-empty--syw:after,
+.item__avatar-rate,
+.item__calculator-title,
+.route-create .label-tip,
+.search__history-item,
+.search__top-input,
+.tip-main {
+  color: #8d8d8d!important
+}
+.confirm-dialog__tip,
+.custom-correct-modal .label-tip,
+.role-selector-sea-dropdown-menu .dropdown-menu__list__value {
+  color: #797979!important
+}
+.theme-genshin .role-selector-sea-dropdown-menu .dropdown-menu__list__item.selected .dropdown-menu__list__value {
+  color: #dcbc60!important
+}
+.import-modal__wrap .import-modal .import-input input,
+.furniture-cart__item .item-count-operator,
+.furniture-cart__item .item-count-operator .reduce-btn,
+.furniture-cart__item .item-count-operator .add-btn,
+.calculate .lt-footer,
+.furniture .furniture-cart__list .furniture-cart__item,
+.components-common-common-dialog-__record_---record---1bvv5b .components-common-common-dialog-__record_---prize-item---V_FGz9,
+.correct-modal .el-form-item,
+.custom-correct-modal .el-form-item,
+.editor .el-input__inner,
+.filter-panel__header,
+.game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__header,
+.more-action .menu-item,
+.role-selector-sea-dropdown-menu .dropdown-menu__input,
+.role-selector-sea-dropdown-menu .dropdown-menu__list,
+.route-color-picker ul,
+.route-create__section,
+.timer-list__item:hover {
+  border-color: #3c3c3c!important
+}
+.filter-panel__labels-item,
+.calculate__left,
+.calculate__right,
+.top-main .module-wrap {
+  border-color: #282828!important
+}
+.area-list__dropdown li {
+  outline:1px solid #444!important
+}
+.filter-panel__types-item--special {
+  outline:1px solid #262626!important
+}
+.calculator .select-input,
+.mhy-hoyolab-account-block__avatar-icon,
+.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---icon-wrapper---4bTubv,
+.filter-item--selected .filter-item__img:after {
+  border-color: #555!important
+}
+.recommend-popup__item__img:hover:after,
+.filter-item__img:hover:after,
+.timer-list__item--active {
+  border-color: #7d7d7d!important
+}
+.timer-list__item .menu-item:nth-child(2),
+.mhy-user .menu-item:nth-child(2) {
+  border-bottom-color: #363636!important;
+  border-top-color: #363636!important
+}
+.map-popup__contribute-tooltip:before {
+  border-top-color: #303030
+}
+.item__calculator > .item__calculator-rate .select-input:after {
+  border-top-color: #777
+}
+.strong-tip-closable--arrow:after {
+  border-bottom-color: #202020!important
+}
+.popper[x-placement^="bottom"] .popper__arrow,
+div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > div.me-share-popover__arrow > div {
+  border-bottom-color: #181818!important
+}
+.popper[x-placement^="top"] .popper__arrow {
+  border-top-color: #181818!important
+}
+.timer-list__header,
+.custom-manage ul li,
+.map-list__dropdown::before,
+.timer-list__item .menu-arrow {
+  border-bottom-color: #282828!important
+}
+.language-menu__panel:after,
+.mhy-user .menu-arrow,
+.more-action .menu-arrow,
+.tooltip--left:before {
+  border-left-color: #282828!important
+}
+.item--syw {
+  border-color: #404040!important
+}
+.custom-correct-modal__header,
+div.syw__list > div.item.main-item.item--syw.syw__item--active:before {
+  border: none;
+  background: none
+}
+.tcg-container,
+.calculate .drawer__item-item,
+.calculate .search__top-input,
+.calculate .select-input__selector,
+.pop-role-card .role-actions button,
+.view-box,
+div.person.module-item > div.cost.default-font > div.cost__container > div > div,
+div.syw.module-item.noBottom > div.cost.default-font > div.cost__container > div > div,
+div.weapon.module-item > div.cost.default-font > div.cost__container > div > div,
+.summary-block.summary-block > div.summary-container > div {
+  border: 1px solid #584d35!important
+}
+.calculate .drawer__item-item.active,
+.calculate__right .calculator__max {
+  background-image: none;
+  background-color: #403623!important;
+  line-height: 2.1;
+  color: #c1c1c1!important;
+  border: 1px solid #484848
+}
+#pc-ys-layout {
+border-radius: 0 0 16px 16px
+}
+.mhy-ys-set .van-switch--on {
+  background-color: #4c4c4c!important
+}.billboard__content,
+.activity-block .activity-icon-item,
+.filter-item__img-select-mark,
+.item__calculator-tag,
+.timer-list__item-select-mark {
+  -webkit-filter: invert(100%) saturate(100%) hue-rotate(200deg) opacity(100%) grayscale(1) brightness(120%);
+          filter: invert(100%) saturate(100%) hue-rotate(200deg) opacity(100%) grayscale(1) brightness(120%);
+  color: #fff
+}
+div.van-tabs__content.van-tabs__content--animated > div > div > div > div > div > header > div.line {
+  -webkit-filter: invert(1) contrast(.97);
+          filter: invert(1) contrast(.97)
+}
+.geetest_wind.geetest_panel .geetest_panel_box .geetest_panel_loading .geetest_panel_loading_icon,
+.geetest_holder.geetest_silver .geetest_head .geetest_tips .geetest_tip_img,
+.top-main__change {
+  -webkit-filter: invert(91.8%);
+          filter: invert(91.8%)
+}
+.search__title .import_mb,
+.import_txt,
+[device=pc] .modal__btn-cancel,
+.confirm-dialog--timer .el-dialog .el-slider__button,
+.confirm-dialog--timer .el-dialog .el-slider__stop,
+.item__avatar-mask,
+.modal__content:before,
+.person__talent-more,
+.route-create__section-tip-icon {
+  -webkit-filter: invert(94.6%) grayscale(100%);
+              filter: invert(94.6%) grayscale(100%)
+}
+[device=pc] .modal__btn-confirm,
+.import-modal__wrap .import-modal .import-modal-btn,
+.calculate .lt-footer .summary-btn,
+.calculate .bottom__btn-cost,
+.calculate .cost-modal__share,
+.calculate .modal .modal__btn-confirm--nocancel {
+  color: #333;
+  -webkit-filter: invert(1) hue-rotate(178deg) contrast(1) saturate(.45);
+          filter: invert(1) hue-rotate(178deg) contrast(1) saturate(.45)
+}
+div.calculate__right > div.syw.module-item.noBottom > div.syw__list > div.item.main-item.item--syw.syw__item--active > div.item__avatar.item__avatar-empty.item__avatar-empty--syw img {
+  -webkit-filter: grayscale(1) invert(.85);
+          filter: grayscale(1) invert(.85)
+}
+.level-bg {
+  -webkit-filter:brightness(0.64) hue-rotate(105deg);
+          filter:brightness(0.64) hue-rotate(105deg)
+}
+.filter-panel__filter-btn,
+.correct-modal__btn-submit,
+.custom-correct-modal__btn-submit,
+.map-popup__switch--unmarked,
+.route-create__share,
+.route-list__footer-btn{
+  -webkit-filter: grayscale(1) invert(1) contrast(1.2);
+          filter: grayscale(1) invert(1) contrast(1.2)
+}
+.filter-panel__footer-btn{
+  -webkit-filter: grayscale(1) brightness(1.1) invert(1) contrast(1.15);
+          filter: grayscale(1) brightness(1.1) invert(1) contrast(1.15);    
+}
+.level-range__sep,
+div.calculate__right > div.syw.module-item.noBottom > div.syw__list > div > div.item__avatar.item__avatar-empty.item__avatar-empty--syw > img {
+  -webkit-filter: grayscale(1) invert(.9);
+          filter: grayscale(1) invert(.9)
+}
+.icon-clear,
+.mhy-hoyolab-account-block .mhy-hoyolab-select-menu__item:hover .mhy-hoyolab-account-block__active-icon,
+.mhy-hoyolab-account-block .mhy-hoyolab-select-menu__item:hover .mhy-hoyolab-account-block__arrow_icon_active,
+.mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__arrow,
+.mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__lang-icon,
+.mhy-hoyolab-select-menu__item--selected .mhy-hoyolab-select-menu__icon {
+  -webkit-filter: grayscale(1) brightness(1.5);
+          filter: grayscale(1) brightness(1.5)
+}
+.filter-item__img-count,
+.filter-route__types-item-count,
+.filter-panel__types-item-count{
+  -webkit-filter: grayscale(1) brightness(1.1);
+          filter: grayscale(1) brightness(1.1)
+}
+.route-create .label-add img,
+.filter-panel__fold,
+.correct-modal .label-add img,
+div.filter-panel__labels-content > div > div.filter-item__img img:last-child {
+  -webkit-filter: grayscale(1) brightness(.9);
+          filter: grayscale(1) brightness(.9)
+}
+.filter-panel__fold{
+  -webkit-filter: grayscale(1) brightness(.9) contrast(1.2);
+          filter: grayscale(1) brightness(.9) contrast(1.2)
+}
+.waypoint-switch__pic,
+ .underground-switch__pic,{
+  -webkit-filter: grayscale(1) brightness(.8) contrast(1.4);
+          filter: grayscale(1) brightness(.8) contrast(1.4)
+}
+.filter-panel > div > .custom-manage ul .manage-item img,
+.filter-panel__labels-title-action--text-bg,
+.mhy-map-edge-marker__arrow,
+.recommend-popup__area > div:last-child {
+  -webkit-filter: grayscale(1)!important;
+          filter: grayscale(1)!important
+}
+.map-popup__switch--marked,
+.map-list__dropdown li .map-icon {
+  -webkit-filter: grayscale(1) contrast(1.4)!important;
+          filter: grayscale(1) contrast(1.4)!important
+}
+.map-list__dropdown li:hover .map-icon {
+  -webkit-filter: grayscale(1) contrast(1)!important;
+          filter: grayscale(1) contrast(1)!important
+}
+div.van-tabs__content.van-tabs__content--animated .line .line__score,
+div.van-tabs__content.van-tabs__content--animated div.line .line__title {
+  color: #2d2d2d!important
+}
+.filter-ascension__filter-item:first-child,
+.filter-ascension__filter-item img,
+.filter-ascension__filter-item span {
+  -webkit-filter: contrast(1.2) grayscale(1)!important;
+          filter: contrast(1.2) grayscale(1)!important
+}
+.filter-panel__header-area-item--normal {
+  -webkit-filter: contrast(2) grayscale(1)!important;
+          filter: contrast(2) grayscale(1)!important
+}
+.filter-panel__header-area-item--active img,
+.filter-panel__header-area-items > div:first-child > img {
+  -webkit-filter: none!important;
+          filter: none!important
+}
+.tcg-menus .tab {
+  color:#5b5b5b!important
+}
+.tcg-menus .tab.active{
+  -webkit-filter: contrast(1.2) brightness(.8)!important;
+  filter: contrast(1.2) brightness(.8) !important;
+  color:#333!important
+}
+.game-record-summary .summary-page-component {
+  height: 425px
+}
+.fate-view-box,
+.view-box {
+  background-color: #161616f7!important;
+  border: 1px solid #d3bc8d5c!important
+}
+.fate-view-box .header,
+.view-box .header {
+  border-bottom: 1px solid #d3bc8d5c!important
+}
+.item .inner{
+  background-color: #0c0c0cf7!important;
+  border: 1px solid #d3bc8d5c!important
+}
+.fate-icon-item.active,
+.item.active {
+  border: 2px solid #8f7a3c!important;
+  background: #111!important;
+  -webkit-box-shadow: 0 1px 5px 2px #746331!important;
+  box-shadow: 0 1px 5px 2px #746331!important
+}
+.item.active.item .inner {
+  background-color: #111!important;
+    border-color:  #111!important
+}
+.components-home-assets-__sign-link_---sign-link---fd75kG .components-home-assets-__sign-link_---tools---1SFyHd .components-home-assets-__sign-link_---tools-item---hoSSqD:hover,
+.level-role-lv {
+  background: #1e2a37!important;
+  color: #c3c3c3!important
+}
+.person__talent-item {
+  background: none;
+  background-color: #191919;
+  margin-top: 5px
+}.filter-panel__header,
+.filter-panel__body,
+.filter-ascension,
+.cost-list .cost-list__child-title span {
+  background: none!important
+}
+.cost-list .cost-list__group-title {
+  background: -o-linear-gradient(90deg,hsla(25,0%,32%,.4),hsla(25,0%,20%,.2));
+  background: linear-gradient(1turn,hsla(25,0%,32%,.4),hsla(25,0%,20%,.2))
+}
+.modal.default-font.is-active,
+.syw-set-modal.modal {
+  background: #0000008f
+}
+.components-common-remind-__index_---remind-btn---1IIL1i,
+.components-common-task-__index_---task---1vShWW .components-common-task-__index_---item-btn---2PvqOD {
+  background: #b19462;
+  color: #2b2b2b
+}
+.top-main .module__item--partner:before,
+.top-main .module__item--syw:before,
+.top-main .module__item--weapon:before,
+.top-main .module__item--furniture:before{
+  -webkit-filter: brightness(.9) grayscale(1)!important;
+          filter: brightness(.9)grayscale(1)!important
+}
+.sub-title-ic,
+.components-home-assets-__home_---home-wrapper---1s2B39,
+.components-home-assets-__home_---index-bg---2nEmGw,
+.top-main .top__tip {
+  -webkit-filter: brightness(.6);
+          filter: brightness(.6)
+}
+.close-btn,
+.map-locations__dropdown{
+  z-index: 1
+}
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---mend-btn---FhiXMP img,
+.components-common-common-dialog-__index_---sign-dialog---3tldeh .components-common-common-dialog-__index_---sign-content---3PZVVu,
+.components-common-remind-__index_---remind-icon---2x2I0Y,
+.components-common-task-__index_---task-bottom---2q_-jv,
+.components-common-task-__index_---task-middle---1XCkfp,
+.components-common-task-__index_---task-top---1enNhe,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---btn-text---SMixQR,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---header-left---1o2pTm .sign-num,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---miss-info---3wa0AL .miss-num,
+.components-home-assets-__sign-content_---sign-bottom---1ducvs,
+.components-home-assets-__sign-content_---sign-list---1E-cUZ,
+.components-home-assets-__sign-content_---sign-middle---2tpVeJ,
+.components-home-assets-__sign-content_---sign-top---1Jg7iR,
+.components-home-assets-__sign-extra_---extra-bottom---2CVxUF,
+.components-home-assets-__sign-extra_---extra-content---2N9EBp,
+.components-home-assets-__sign-extra_---extra-main---1aAeiT,
+.components-home-assets-__sign-extra_---extra-top---3zVH64,
+.components-home-assets-__sign-recom_---recommend-bottom---zXkGXp,
+.components-home-assets-__sign-recom_---recommend-list---qhirLc,
+.components-home-assets-__sign-recom_---recommend-main---1ByBfd,
+.components-home-assets-__sign-recom_---recommend-top---3Sq1uL,
+.components-home-assets-__sign-link_---sign-link---fd75kG .components-home-assets-__sign-link_---banner---qx5CqX,
+.components-home-assets-__sign-link_---sign-link---fd75kG .components-home-assets-__sign-link_---tools---1SFyHd,
+.task-count{
+  -webkit-filter: invert(.99) contrast(.94);
+          filter: invert(.99) contrast(.94)
+}
+ .components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---item-received---3Sv213 {
+  -webkit-filter: hue-rotate(145deg) brightness(0.8) opacity(0.88);
+          filter: hue-rotate(145deg) brightness(0.8) opacity(0.88)
+}
+.tcg-detail .role > .empty,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---has-finished---9aCCxu{
+  -webkit-filter: hue-rotate(145deg) brightness(0.85) opacity(0.8) invert(1);
+          filter: hue-rotate(145deg) brightness(0.85) opacity(0.8) invert(1)
+}
+.modal-bottom,
+.modal-middle,
+.modal-top,
+.pc-dialog .dialog-bottom,
+.pc-dialog .dialog-top,
+.pc-dialog .m-dialog-body,
+.__bar-is-vertical,
+body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_---common-dialog---99ed7a.components-common-common-dialog-__index_---record-dialog---3VAcqq > div.m-dialog-wrapper > div.m-dialog-body.pc-dialog-body > div > div > div.components-common-common-dialog-__record_---record---1bvv5b > div > div,
+body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_---common-dialog---99ed7a.components-common-common-dialog-__index_---rule-dialog---yFgnHP > div.m-dialog-wrapper > div.m-dialog-body.pc-dialog-body > div > div > div.components-common-common-dialog-__index_---rule-main---2Dw3pX.common-scroller > div > div.__rail-is-vertical {
+  -webkit-filter: invert(.95) contrast(.95);
+          filter: invert(.95) contrast(.95)
+}
+.components-common-resign-modal-__index_---resign---2NVDlM .components-common-resign-modal-__index_---icon-wrapper---1ZPwJz img,
+.components-common-result-__index_---icon-wrapper---R24M6L img,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---item-icon---2G87c9,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---sign-item---k8WFIr {
+  -webkit-filter: invert(1);
+          filter: invert(1)
+}
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---actived-day---2GukeS,
+ .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---has-signed---2brETR:after{
+  -webkit-filter: hue-rotate(180deg)saturate(0.6);
+          filter: hue-rotate(180deg) saturate(0.6)
+}
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---item-cnt---1VG-Fk,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---item-day---1WBEev,
+.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---item-cnt---LNjP75 {
+  -webkit-filter: invert(.8);
+          filter: invert(.8)
+}
+.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---item-cnt---LNjP75,
+.components-home-assets-__sign-extra_---extra-time---2UTqgn,
+.components-home-assets-__sign-extra_---extra-title---2URltQ {
+  -webkit-filter: contrast(.5);
+          filter: contrast(.5)
+}
+.components-common-common-dialog-__index_---sign-dialog---3tldeh .components-common-common-dialog-__index_---award-wrapper---kzgudv,
+.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---item-order-actived---38Lifz {
+  background: #1d233e
+}
+.components-common-common-dialog-__record_---record---1bvv5b .components-common-common-dialog-__record_---prize-item---V_FGz9 .components-common-common-dialog-__record_---img---sFaFu-,
+.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---gen-icon-bg---2fqJnt,
+.components-home-assets-__sign-recom_---recommend-item---sdlA6A:hover {
+  background: #010411
+}
+.components-common-common-dialog-__record_---record---1bvv5b .components-common-common-dialog-__record_---prize-item---V_FGz9 .components-common-common-dialog-__record_---record-time---62zpN_,
+.components-common-common-dialog-__record_---record---1bvv5b .components-common-common-dialog-__record_---prize-item---V_FGz9 .components-common-common-dialog-__record_---record-title---1nUiep {
+  color: #939baf
+}
+.components-common-resign-modal-__index_---resign-title---1e1WSi,
+.components-common-common-dialog-__index_---modal-title---28emYR,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---header-left---1o2pTm .components-home-assets-__sign-content_---day---1rVnsL,
+.components-home-assets-__sign-extra_---extra-time---2UTqgn,
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---miss-info---3wa0AL,
+.components-home-assets-__sign-recom_---recommend-title---3VmyP8 {
+  color: #4f4f4f
+}
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---btn-text---SMixQR {
+  color: #f0f0f0
+}
+.components-common-task-__index_---task-finish---2y0qCh {
+  -webkit-filter:hue-rotate(-40deg) contrast(0.95) saturate(0.8);
+          filter:hue-rotate(-40deg) contrast(0.95) saturate(0.8)  
+}
+.components-common-task-__index_---task---1vShWW .components-common-task-__index_---item-btn---2PvqOD {
+  -webkit-filter:hue-rotate(165deg);
+          filter:hue-rotate(165deg)
+}
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---mend-btn---FhiXMP{
+  -webkit-filter:hue-rotate(175deg) brightness(1.1)  contrast(0.95) saturate(0.7);
+          filter:hue-rotate(175deg) brightness(1.1)  contrast(0.95) saturate(0.7)
+}
+.components-common-resign-modal-__index_---resign-btn---3oGNt6 {
+    color:#fff!important;
+  -webkit-filter:brightness(0.7) contrast(2) saturate(0.6) invert(1);
+          filter:brightness(0.7) contrast(2) saturate(0.6) invert(1)
+}
+.components-home-assets-__sign-recom_---recommend---2_onvu .components-home-assets-__sign-recom_---back-top---2Hz9ee,
+.left-count,
+.resign-count {
+  -webkit-filter:invert(1);
+          filter:invert(1)
+}
+.task-count {
+color:#b76338
+}
+.map-locations__dropdown-content ul li span:hover {
+    color: #d3bc8e!important;
+}
+.bbs-qr,
+.mihoyo-cookie-tips,
+.components-home-assets-__home_---qr-code---iYG7z9,
+.components-home-assets-__home_---qr-wrapper---ZronLA,
+.components-home-assets-__sign-content_---sign-content---2QU6Dr .components-home-assets-__sign-content_---qr---qr4TxO,
+.mhy-map__disclaimer-underground{
+  display: none!important
+}
+.language-menu__panel ul {
+  height: 285px;
+  overflow-y: scroll!important
+}
+.game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__content__current__nickename-level {
+  background: #3a8b6f
+}
+div.pc-swiper-block-layout__content > div.bg {
+  background: -o-linear-gradient(top,rgba(42,42,42,0),hwb(0 7% 93% / .98));
+  background: -webkit-gradient(linear,left top, left bottom,from(rgba(42,42,42,0)),to(hwb(0 7% 93% / .98)));
+  background: linear-gradient(180deg,rgba(42,42,42,0),hwb(0 7% 93% / .98))
+} 
+.filter-panel__footer {
+  background: -o-linear-gradient(top,rgba(50,57,71,0),#111 50%)!important;
+  background: -webkit-gradient(linear,left top, left bottom,from(rgba(50,57,71,0)),color-stop(50%, #111))!important;
+  background: linear-gradient(180deg,rgba(50,57,71,0),#111 50%)!important;
+  z-index:2!important
+}
+.mhy-buff-popover .energy{
+color: #9a9a9a!important
+}
+.mhy-buff-popover .desc{
+color: #888!important
+}
+.furniture .import-btn {
+  color: #939393!important;
+  -webkit-filter: invert(1) grayscale(1) brightness(1.5);
+  filter: invert(1) grayscale(1) brightness(1.5)
+}
+.furniture .import-btn.top {
+  background: #eee!important;
+  background-image: none
+}
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---mend-btn---FhiXMP,
+.import-modal__wrap .import-modal .import-modal-btn {
+  color: #000;
+  text-shadow: 0 0 #000
+}
+.area-list__dropdown li.active .map-icon, 
+body > span > div > div.pop-info > hr,
+.look-back--content .view-more-btn {
+  -webkit-filter: invert(.595) contrast(5.3) brightness(1.45)!important;
+          filter: invert(.595) contrast(5.3) brightness(1.45)!important;
+  color: #777!important
+}
+div.van-tabs__wrap > div > div.van-tabs__line {
+  -webkit-filter: brightness(0.47) contrast(1.2);
+          filter: brightness(0.47) contrast(1.2)
+}
+.mhy-summer-v2-story div.layout-container > div{
+  background-color:#0000!important;
+  opacity:0.95
+}
+.mushroom .book > .flex,
+.mushroom > .activity,
+.summer-v2,
+.abyss-block  .strategy:after,
+.expand .icon.is-expand,
+.abyss-block .abyss-guide span,
+.channeller-slab .item .equipments .equipment-item,
+.world-exploration-block.world-block > div.home-land-container,
+.world-exploration-block.world-block > div.world-exploration > div{
+  opacity:0.9!important
+}
+.switch-tabs .van-tab--active,
+.map-list__dropdown > li + li {
+  color: #ccc!important
+}
+#challenges > div.activity-block > div.container > div.van-tabs.van-tabs--line > div.van-tabs__content.van-tabs__content--animated div.border {
+  -webkit-backdrop-filter:brightness(0.5);
+          backdrop-filter:brightness(0.5)
+} 
+.abyss-block .look-back--content--rank .ranks-list .line span,
+.abyss-block  .look-back--info,
+.rogue-item .container .challenge,
+.rogue-item .container .difficulty,
+.channeller-slab .item.is-expand .channeller-slab-item-container .channeller-slab-sub-title,
+#challenges > div.activity-block > div.container > div.van-tabs.van-tabs--line > div.van-tabs__content.van-tabs__content--animated header > div.title,
+.channeller-slab .item .conditions .line .line-content .desc,
+.channeller-slab .item .conditions .line .line-content .score .value,
+.activity-block-info{
+  color : #e4e4e4!important
+}
+.expand .text,
+.activity-item .container .challenge .text,
+.container > div.info > div.info-item > div.text{
+  color : #fff!important
+}
+.mhy-map-container > div > .underground-switch,
+.mhy-map-container > div > div.waypoint-switch.mhy-map__waypoint {
+  scale:0.8;
+  margin-left:-15px
+}
+.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---content-left---1nA06R {
+  background:none;
+  color:#b7b7b7;
+  pointer-events:none
+}
+.components-home-assets-__sign-recom_---recommend-middle---3IrGLg.components-home-assets-__sign-recom_---show-extra---2V3rSI > div > div.__rail-is-vertical > div > div {
+  -webkit-filter:none;
+          filter:none
+}
+.updatelog__content-text a {
+  color:#d3bc8e
+}
+.mhy-map .leaflet-control-zoomslider {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  left:-20px
+}
+@media only screen and (max-height: 550px) {
+.mhy-map .leaflet-control-zoomslider {
+  display:none
+}
+}
+.updatelog__content-text {
+  height: 3rem;
+  margin-top: 10px
+}
+.filter-panel__footer-reset {
+  background-color:#bbb!important;
+  color:#222
+}
+}
