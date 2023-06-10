@@ -1,0 +1,405 @@
+/* ==UserStyle==
+@name         Hoyolab - Dark Theme
+@namespace    Dark-Themes
+@version      1.0.0
+@description  Hoyolab Dark Theme
+@author       Dark-Themes
+@supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
+@var range    fg_slider  'Foreground Color' [24, 1, 50, 1,'']
+@var checkbox custom-bg 'Custom Background Image' 0
+@var text     bg_image 'Background Url' '' url ''
+@var range    opacity  'Content Opacity' [1, 0.90, 1, 0.01]
+@var range    bg_brightness  'Background Brightness' [100, 1, 200.0, 1,'%']
+@var range    bg_saturate  'Background Saturation' [100, 1, 300.0, 1,'%']
+@var range    bg_contrast  'Background Contrast' [100, 100, 300.0, 1,'%']
+@var range    bg_blur  'Background Blur' [0, 0.0, 15, 1.0,'px']
+@var checkbox removefooter 'Hide Footer' 0
+@var checkbox fullgray 'Full Gray' 1
+@preprocessor stylus
+==/UserStyle== */
+@-moz-document url-prefix("https://www.hoyolab.com/") {
+    :root {
+        --fg: #000 + (fg_slider);
+        --bg: #0b0b0b;
+        --btnbg: #2c2c2c;
+        --btnhover: #444;
+        --font: #c1c1c1;
+        --fontselected: #ddd;
+        --fonthover: #eee;
+        --cardhover: #333;
+        --cardhoverlight: #222;
+        --focus: #666;
+    }
+    body {
+        --default-body-color: var(--bg);
+        --topic-theme-bg-color: var(--bg);
+        --primary-white-color: var(--fg);
+        --side-card-bg: var(--fg);
+        --topic-theme-card-color: var(--fg);
+        --default-gray-color: var(--btnbg);
+        --button-background-color: var(--btnbg);
+        --button-font-color: var(--font);
+        --header-icon-color: var(--font);
+        --search-input-icon-active-color: var(--font);
+        --button-background-color-hover: var(--btnhover);
+        --default-border-color: var(--btnhover);
+        --recommend-author-game-hover: var(--cardhover);
+        --default-hover-background-color: var(--cardhover);
+        --default-icon-hover-background-color: var(--cardhover);
+        -side-hover-bg: var(--cardhover);
+        --lighter-gray-color: var(--cardhoverlight);
+        --block-tag-bg-color: var(--cardhoverlight);
+        --creator-center-bg-color-1: var(--cardhoverlight);
+        --creator-center-bg-color-2: var(--cardhoverlight);
+        --creator-center-bg-color-3: var(--cardhoverlight);
+        --creator-center-bg-color-4: var(--cardhoverlight);
+        --activity-ended-bg: var(--cardhoverlight);
+        --lighter-background-color: var(--cardhoverlight);
+        --default-background-color: var(--cardhoverlight);
+        --default-lighter-border-color: var(--cardhoverlight);
+        --popup-bg-color: var(--cardhoverlight);
+        --vote-bg-color: var(--cardhoverlight);
+        --reddot-border-color: var(--cardhoverlight);
+        --default-background-color-disabled: var(--cardhoverlight);
+        --creator-center-card-bg-color: var(--cardhoverlight);
+        --global-notification-bg: var(--cardhoverlight);
+    }
+    ::-webkit-scrollbar {
+        background-color: #111;
+    }
+    body,
+    html {
+        background-color: var(--bg);
+    }
+    if(custom-bg) {
+        .hyl-group-b .root-page-container {
+            -webkit-backdrop-filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
+            backdrop-filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
+            background: none!important
+        }
+        body {
+            background: url(bg_image)!important;
+            background-size: cover!important;
+            background-attachment: fixed!important;
+        }
+        .bot-layer-bg {
+            display: none;
+        }
+        .hyl-group-b[data-route-name^=circles] .root-page-container {
+            margin: 0
+        }
+    }
+    .hyl-group-b .root-page-container {
+        opacity: (opacity)
+    }
+    .mhy-page-header-mask,
+    .hyl-group-b .mhy-home,
+    .hyl-group-b .mhy-home > div > div > div > div > div > div,
+    .recommend-user-card,
+    .mhy-recommend-user-list-skeleton .mhy-recommend-user-list-side .mhy-user-card:hover {
+        background: transparent
+    }
+    .channel-collection__center-card:hover .center-card--content__title,
+    .guide-recommend-post-common .recommend-post:hover .recommend-post-content .recommend-post-content__title,
+    .strategy-mini-card .strategy-mini-card-item:hover .strategy-mini-card-text,
+    .mhy-search-side-list__item:hover,
+    .hyl-group-b .mhy-search-history-section .mhy-side-section__header .mhy-icon:hover,
+    .account-center-topbar__container .account-center-btn-group .user-action-wrapper:hover .mhy-action__button i,
+    .mhy-tools-container .tools-header-main .custom-side-title-container:hover .text,
+    .header-account-menu-item__content:hover .mhy-icon,
+    .header-account-menu-item--active .header-account-menu-item__content .mhy-icon,
+    .header-account-menu-item__content:hover,
+    .header-account-menu-item--active .header-account-menu-item__content,
+    .mhy-tools-container .tools-header-main .custom-side-title-container:hover .mhy-icon,
+    .mhy-tools-container .tools-header-main .game-list .game-item.active {
+        color: var(--fontselected)
+    }
+    .mhy-switch,
+    .mhy-tools-container .swiper-nav,
+    .mhy-switch--active {
+        background-color: var(--cardhoverlight)
+    }
+    .mhy-guider-popover,
+    .mhy-guider-popover__arrow,
+    .mhy-tooltip-block,
+    .mhy-switch-tab__line,
+    .hyl-group-b .header__inner .header-tab-wrapper .header-tab__underline,
+    .mhy-tools-container .swiper-nav:hover {
+        background-color: var(--cardhover)
+    }
+    .strategy-channel-list-header__more__title,
+    .mhy-select.mhy-select-outlined:hover .icon-select_arrow,
+    .account-center-topbar__container .account-center-basic-rows .account-center-basic-item:hover .account-center-basic-num,
+    .mhy-tools-container .tools-header-main .custom-side-title-container > .text,
+    .hyl-new-post-card .hyl-post-draft i,
+    .hyl-new-post-card .hyl-post-draft,
+    .mhy-post-new.mhy-header-post-new .mhy-post-new__post:hover .mhy-icon,
+    .header-newpost-dialog__draft:hover,
+    .header-newpost-dialog__draft:hover .mhy-icon,
+
+    .mhy-side-section__more,
+    .mhy-tools-container .tools-header-main .tools-pagination .pager-number:hover,
+    .mhy-tools-container .tools-header-main .tools-pagination .pager-number.active {
+        color: var(--font)
+    }
+    .hyl-group-b .mhy-side-section__title {
+        color: var(--font)!important
+    }
+    .mhy-img-article__thumb.swiper-slide::after,
+    .mhy-tooltip-block__arrow {
+
+        border-color: transparent transparent var(--cardhover) transparent;
+    }
+    if(removefooter) {
+        .hyl-group-b .footer {
+            display: none
+        }
+    }
+    if(fullgray) {
+        .mhy-news-card:hover .mhy-news-card__title,
+        .login-box-side_bottom__btn,
+        .topbar-game-select .mhy-float-dialog .circles-games-select .mhy-switch-tab .mhy-switch-tab__list .circles-games-cell--active .game-name,
+        .ql-snow.ql-toolbar button:hover,
+        .ql-snow .ql-toolbar button:hover,
+        .ql-snow.ql-toolbar button:focus,
+        .ql-snow .ql-toolbar button:focus,
+        .ql-snow.ql-toolbar button.ql-active,
+        .ql-snow .ql-toolbar button.ql-active,
+        .ql-snow.ql-toolbar .ql-picker-label:hover,
+        .ql-snow .ql-toolbar .ql-picker-label:hover,
+        .ql-snow.ql-toolbar .ql-picker-label.ql-active,
+        .ql-snow .ql-toolbar .ql-picker-label.ql-active,
+        .ql-snow.ql-toolbar .ql-picker-item:hover,
+        .ql-snow .ql-toolbar .ql-picker-item:hover,
+        .ql-snow.ql-toolbar .ql-picker-item.ql-selected,
+        .ql-snow .ql-toolbar .ql-picker-item.ql-selected,
+        .editor-container #toolbar.ql-toolbar button.tool-button:hover .mhy-icon,
+        .mhy-new-richtext-article .cover-entry:hover,
+        .mhy-new-article-op .cover-entry:hover,
+        .mhy-new-richtext-article .cover-entry:hover i,
+        .mhy-new-article-op .cover-entry:hover i,
+        .ql-toolbar-header .editor-tool-popup.ql-toolbar-list .ql-toolbar-list__item:hover .mhy-icon,
+        .editor-container #toolbar.ql-toolbar button .mhy-icon.ql-toolbar-item__icon--active,
+        .editor-container .ql-toolbar-insert .ql-toolbar-list .editor-toolbar-insert-item:hover,
+        .editor-container .ql-toolbar-insert .ql-toolbar-list .editor-toolbar-insert-item:hover .item-name,
+        .editor-container .ql-toolbar-insert .ql-toolbar-list .editor-toolbar-insert-item:hover .item-icon,
+        .editor-container .ql-toolbar-insert .ql-toolbar-list .editor-toolbar-insert-item:hover .item-arrow,
+        .editor-container #toolbar.ql-toolbar button.ql-active .mhy-icon,
+        .header-item__button:hover .header-item__icon .mhy-icon,
+        .header-item--active .header-item__icon .mhy-icon,
+        .mhy-article-card__data-item .mhy-router-link:hover i,
+        .mhy-article-card__data-item .mhy-router-link:hover span,
+        .mhy-article-card__data-item .mhy-like:hover i,
+        .mhy-article-card__data-item .mhy-like:hover span,
+        .mhy-reason-dialog .guide-link,
+        .account-center-topbar__container .account-center-basic-rows .account-center-basic-item:hover .account-center-basic-num,
+        .account-center-topbar__container .account-center-btn-group .account-center-select-submenu .account-center-submenu-item:hover,
+        .account-center-topbar__container .account-center-btn-group .user-action-wrapper:hover .mhy-action__button i,
+        .article-menu-container .article-menu-main .article-menu-bar:hover .bar-right .mhy-icon,
+        .article-menu-container .article-menu-main .article-menu-list .article-menu-item:hover,
+        .article-menu-container .article-menu-main .article-menu-list .article-menu-item:hover .article-menu-item-line.article-menu-line-4,
+        .article-menu-container .article-menu-main .article-menu-list .article-menu-item.article-menu-item-active,
+        .article-menu-container .article-menu-main .article-menu-list .article-menu-item.article-menu-item-active .article-menu-item-line.article-menu-line-4,
+        .header__logo .mhy-icon,
+        .header-item__button:hover .header-item__icon .mhy-icon,
+        .header-item--active .header-item__icon .mhy-icon,
+        .to-link .notice-jump,
+        .header-notification-dialog__footer a,
+        .mhy-text-tab .mhy-tab__item--active a,
+        .notification-tab.mhy-tab.text .mhy-tab__list .mhy-tab__item--active .mhy-tab__text,
+        .notification-tab.mhy-tab.text .mhy-tab__list .mhy-tab__item:hover .mhy-tab__text,
+        .header-account-menu-item__content:hover,
+        .header-account-menu-item--active .header-account-menu-item__content,
+        .header-account-menu-item__content:hover .mhy-icon,
+        .header-account-menu-item--active .header-account-menu-item__content .mhy-icon,
+        .mhy-side-section__more,
+        .mhy-post-new.mhy-header-post-new .mhy-post-new__post:hover .mhy-icon,
+        .hyl-new-post-card .hyl-post-draft,
+        .hyl-new-post-card .hyl-post-draft i,
+        .header-newpost-dialog__draft:hover,
+        .header-newpost-dialog__draft:hover .mhy-icon,
+        .topbar-game-select .mhy-float-dialog .circles-games-select .mhy-switch-tab .mhy-switch-tab__list .circles-games-cell:hover .game-name,
+        .mhy-block-tab .active p,
+        .star-project-rank-card footer,
+        .star-ran-side__footer,
+        .footer__itemtext a:hover,
+        .hyl-group-b .footer__itemtext a:hover,
+        .mhy-topic-label,
+        .mhy-topic-label .mhy-topic-label-icon,
+        .mhy-article-card__data-item .mhy-like:hover span,
+        .mhy-article-card__link:hover .mhy-article-card__title > span:last-child,
+        .mhy-article-card__more,
+        .hyl-group-b .mhy-article-card__link:hover .mhy-article-card__title > span:last-child,
+        .hyl-group-b .mhy-article-card__more,
+        .mhy-tools-container .tools-header-main .game-list .game-item.active,
+        .mhy-tools-container .tools-header-main .game-list .game-item:hover,
+        .mhy-tools-container .tools-header-main .custom-side-title-container:hover .text,
+        .mhy-tools-container .tools-header-main .custom-side-title-container:hover .mhy-icon,
+        .mhy-tools-container .tools-header-main .tools-pagination .pager-number:hover,
+        .mhy-tools-container .tools-header-main .tools-pagination .pager-number.active,
+        .mhy-interest-selector__header .mhy-button,
+        .mhy-simple-editor .ql-editor ol li:not(.ql-direction-rtl)::before,
+        .mhy-simple-editor .ql-snow .ql-editor a,
+        .mhy-emoticon__type .mhy-emoticon__type--wrapper--selected .recent-icon,
+        .mhy-emoticon__wrapper .mhy-button,
+        body .reply-link,
+        .highlight,
+        .mhy-quill-mention,
+        .mhy-popover-group-b .mhy-guider-popover__button,
+        .agreement-dialog__container a,
+        .mhy-checkbox.mhy-checkbox-square.mhy-checkbox--checked .mhy-checkbox__icon .mhy-icon,
+        body > .mhy-account-flow-dialog .mhy-dialog__content .mhy-dialog__body .mhy-account-flow-init-user-info .agreement .agreement-content a,
+        .mhy-button.mhy-button-header:not(.mhy-button--disabled):hover .mhy-button__button,
+        .mhy-button-text .mhy-button__button,
+        .mhy-selectmenu__icon,
+        .mhy-selectmenu.mhy-selectmenu-multiple .mhy-selectmenu__item--selected .mhy-selectmenu__label,
+        .mhy-select.mhy-select-outlined:hover .mhy-select__placeholder,
+        .mhy-select.mhy-select-outlined:hover .mhy-select__val,
+        .mhy-select.mhy-select-outlined:hover .icon-select_arrow,
+        .mhy-select.mhy-select-multiple .mhy-select__container .mhy-select__val,
+        .mhy-select.mhy-select-multiple .mhy-select__container .icon-select_arrow,
+        .mhy-follow-button .mhy-icon,
+        .mhy-account-title__name:hover,
+        .mhy-loadmore__failed span:last-child,
+        .mhy-loadmore .mhy-img-icon,
+        .mhy-side-menu__item:hover,
+        .mhy-side-menu__item.mhy-side-menu__item--focus,
+        .mhy-side-menu__item:hover .mhy-side-menu__arrow,
+        .mhy-side-menu__item.mhy-side-menu__item--focus .mhy-side-menu__arrow,
+        .mhy-side-menu__item:hover .mhy-icon,
+        .mhy-side-menu__item.mhy-side-menu__item--active,
+        .mhy-page-header__right .mhy-action__button .mhy-icon:hover,
+        .mhy-search-bar .icon-search:hover,
+        .mhy-search-bar-placeholder__title .mhy-search-history-clear:hover,
+        .mhy-search-bar-placeholder__item:hover,
+        .mhy-autocomplete__item .highlight,
+        .mhy-action__button .mhy-icon:hover,
+        .mhy-action-menu .mhy-selectmenu__item:hover .mhy-icon,
+        .mhy-action-menu .mhy-selectmenu__item:hover .mhy-action-menu__label,
+        .mhy-emoji-square-banner__owner .add-btn,
+        .mhy-emoji-square__tag--selected,
+        .mhy-emoji-square__button--group .mhy-button-primary .mhy-button__button,
+        .hyl-email-dialog .hyl-email-dialog__form .hyl-email-dialog__code-btn.hyl-email-dialog_code-btn--active,
+        .hyl-email-dialog .hyl-email-dialog__tips .mhy-checkbox .tips-text span,
+        .editor-bottom-bar__btn--active,
+        .mhy-account-center-hidden .mhy-link,
+        .quill-article-menu .menu-items:hover .mhy-icon,
+        .mhy-vote-list__text .mhy-icon,
+        .mhy-vote-page-error__button,
+        .mhy-img-text-article .ql-editor ol li:not(.ql-direction-rtl)::before,
+        .mhy-img-text-article .ql-editor .mhy-ql-article .mhy-editor-card .mhy-editor-card-list .mhy-editor-card-item.status-normal:hover .card-content .card-right .card-title,
+        .mhy-reply-box__toolbar .mhy-icon:hover,
+        .mhy-reply-box__toolbar--active.mhy-icon,
+        .reply-card__content .mhy-account-title__name,
+        .reply-card__origin,
+        .reply-card .reply-card-operation-bottom > a,
+        .reply-card .reply-card-operation-bottom__right .reply-card-operation-bottom__item:hover span,
+        .reply-card .reply-card-operation-bottom__right .reply-card-operation-bottom__item:hover .mhy-icon,
+        .reply-card__replyname .mhy-account-title__name,
+        .reply-card__vote,
+        .reply-card__vote i,
+        .reply-card__replies .mhy-account-title__name,
+        .reply-card .reply-card-inner-reply .reply-card-inner-reply__replyname .mhy-account-title__name,
+        .mhy-datepicker .vdatetime-popup__actions__button,
+        .mhy-datepicker .vdatetime-popup__actions__button:hover,
+        .mhy-google-translate-block__action,
+        .hyl-group-b .mhy-article-page__body .mhy-article-page-reply-list__header .mhy-select__container:hover .selected-label,
+        .hyl-group-b .mhy-article-page__body .mhy-article-page-reply-list__header .mhy-select__container:hover .mhy-select__val,
+        .hyl-group-b .mhy-article-page__body .mhy-article-page-reply-list__header .mhy-select__container:hover .mhy-select__icon,
+        .hyl-group-b .mhy-article-page__body .mhy-article-page-reply-list__header .mhy-article-page-reply-list__reply-like:hover .like-text,
+        .mhy-article-page__error .hide-post-container .hide-post__mail,
+        .mhy-article-page-reply-list__showall .mhy-button,
+        .mhy-reply-filter__sort .mhy-selectmenu .mhy-selectmenu__list .mhy-selectmenu__item--selected .mhy-selectmenu__label,
+        .mhy-reply-filter__sort .mhy-selectmenu .mhy-selectmenu__list .mhy-selectmenu__item:hover .mhy-selectmenu__label,
+        .mhy-claim-info__value .mhy-select.mhy-select--active .mhy-select__icon {
+            color: var(--font)!important
+        }
+        .mhy-cirlces-content:hover .mhy-official-tab .mhy-tab__item--active span,
+        .hyl-group-b .mhy-timeline-topic-list__more,
+        .mhy-contribution-card-v2__info:hover .mhy-contribution-card-v2__title,
+        .mhy-selectmenu__item--selected,
+        .mhy-selectmenu__item:hover {
+            color: var(--fontselected)
+        }
+        /*Borders*/
+        .mhy-cirlces-content .mhy-official-tab .mhy-tab__item:hover,
+        .mhy-account-flow.bbs-theme.appearance-dark .mhy-account-flow-form-input .input-container.focus,
+        .mhy-account-flow.bbs-theme.appearance-dark button,
+        .mhy-search-bar:hover .mhy-search-bar__input,
+        .mhy-tools-container .tools-header-main .tools-pagination .pager-number:hover,
+        .mhy-tools-container .tools-header-main .tools-pagination .pager-number.active,
+        .mhy-radio.mhy-radio-button.mhy-radio-button--active,
+        .mhy-tools-container .tools-header-main .tools-pagination .pager-number:hover,
+        .mhy-tools-container .tools-header-main .tools-pagination .pager-number.active,
+        .mhy-checkbox.mhy-checkbox-square.mhy-checkbox--checked .mhy-checkbox__icon,
+        .mhy-select.mhy-select-outlined:hover,
+        .mhy-select.mhy-select-multiple,
+        .mhy-input__container--focus,
+        .mhy-creator-entry-container .mhy-creator-entry-content .mhy-creator-entry-game-list .creator-game-item.is-active,
+        .account-center-float__item--active,
+        .mhy-reply-box__textarea .reply-editor .ql-editor:hover,
+        .mhy-reply-box__textarea .reply-editor .ql-editor:focus,
+        .mhy-claim-info__value .mhy-select.mhy-select--active,
+        .mhy-claim-info__value .mhy-input__container--focus {
+            border-color: var(--focus)
+        }
+
+        /*Background*/
+        .mhy-cirlces-content .mhy-official-tab .mhy-tab__item--active,
+        .mhy-account-flow.bbs-theme.appearance-dark button,
+        .login-box-side_bottom__btn,
+        .login-box-side_bottom__btn:hover,
+        .login-box-side_bottom__btn:active,
+        .mhy-banner__prev:hover,
+        .mhy-banner__next:hover,
+        .hyl-button.normal__primary:active,
+        .mhy-radio.mhy-radio-button.mhy-radio-button--active,
+        .mhy-switch-tab--version__line,
+        .mhy-tab__line,
+        .topbar-game-select .mhy-float-dialog .circles-games-select .mhy-switch-tab .mhy-switch-tab__list .circles-games-cell .mhy-switch-tab__line,
+        .mhy-img-post__img-pagination-container:hover,
+        .mhy-tools-container .swiper-nav:hover,
+        .mhy-interest-selector__item--selected.mhy-interest-selector__item--game,
+        .mhy-simple-editor .ql-editor ul li::before,
+        .mhy-simple-editor .ql-editor ul li.ql-indent-2::before,
+        .mhy-simple-editor .ql-editor ul li.ql-indent-4::before,
+        .mhy-simple-editor .ql-editor ul li.ql-indent-6::before,
+        .mhy-simple-editor .ql-editor ul li.ql-indent-8::before,
+        .mhy-emoticon__wrapper .mhy-button:hover,
+        .nuxt-progress,
+        .mhy-checkbox.mhy-checkbox-circle.mhy-checkbox--checked .mhy-checkbox__icon,
+        body > .mhy-account-flow-dialog .mhy-dialog__content .mhy-dialog__body .mhy-account-flow-init-user-info .agreement .mhy-checkbox.mhy-checkbox--checked .mhy-checkbox__icon,
+        .mhy-button-primary .mhy-button__button,
+        .mhy-banner__bullet.mhy-banner__bullet--active::after,
+        .mhy-banner__bullet.mhy-banner__bullet--active::after,
+        .mhy-article-type__official,
+        .mhy-emoji-square__exchange--btn--selected,
+        .mhy-emoji-square__button--group .mhy-button-primary:hover .mhy-button__button,
+        .mhy-notification2,
+        .new-game-card__content-item__select,
+        .new-game-card__content-item:active,
+        .mhy-img-text-article .ql-editor ul li::before,
+        .mhy-img-text-article .ql-editor ul li.ql-indent-2::before,
+        .mhy-img-text-article .ql-editor ul li.ql-indent-4::before,
+        .mhy-img-text-article .ql-editor ul li.ql-indent-6::before,
+        .mhy-img-text-article .ql-editor ul li.ql-indent-8::before {
+            background-color: var(--cardhover)
+        }
+        .mhy-float-menu,
+        .mhy-radio .mhy-symbol-icon,
+        .mhy-radio .mhy-icon {
+            filter: grayscale(1)
+        }
+    }
+}
+@-moz-document url-prefix("https://www.hoyolab.com/accountCenter/") {
+    if(custom-bg) {
+        .bot-layer-bg {
+            display: block;
+        }
+        .hyl-group-b .root-page-container {
+            -webkit-backdrop-filter: none!important;
+            backdrop-filter: none!important
+        }
+    }
+}
