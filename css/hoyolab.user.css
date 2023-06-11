@@ -17,7 +17,8 @@
 @var checkbox removefooter 'Hide Footer' 0
 @preprocessor stylus
 ==/UserStyle== */
-@-moz-document url-prefix("https://www.hoyolab.com/") {
+@-moz-document url-prefix("https://www.hoyolab.com/"),
+url-prefix("https://creator.hoyolab.com/") {
     :root {
         --fg: #000 + (fg_slider);
         --bg: #0b0b0b + (fg_slider) - 25;
@@ -36,37 +37,41 @@
     body {
         --default-body-color: var(--bg);
         --topic-theme-bg-color: var(--bg);
-        --primary-white-color: var(--fg);
         --side-card-bg: var(--fg);
+        --card-bg-color: var(--fg);
+        --primary-white-color: var(--fg);
         --topic-theme-card-color: var(--fg);
-        --default-gray-color: var(--btnbg);
-        --button-background-color: var(--btnbg);
         --button-font-color: var(--font);
         --header-icon-color: var(--font);
         --search-input-icon-active-color: var(--font);
-        --button-background-color-hover: var(--btnhover);
+        --default-gray-color: var(--btnbg);
+        --button-background-color: var(--btnbg);
         --default-border-color: var(--btnhover);
+        --button-background-color-hover: var(--btnhover);
+        --side-hover-bg: var(--cardhover);
         --recommend-author-game-hover: var(--cardhover);
         --default-hover-background-color: var(--cardhover);
+        --default-active-background-color: var(--cardhover);
         --default-icon-hover-background-color: var(--cardhover);
-        -side-hover-bg: var(--cardhover);
+        --star-rank-bg: var(--cardhoverlight);
+        --vote-bg-color: var(--cardhoverlight);
+        --popup-bg-color: var(--cardhoverlight);
+        --popover-bg-color: var(--cardhoverlight);
+        --activity-ended-bg: var(--cardhoverlight);
         --lighter-gray-color: var(--cardhoverlight);
         --block-tag-bg-color: var(--cardhoverlight);
+        --reddot-border-color: var(--cardhoverlight);
+        --global-notification-bg: var(--cardhoverlight);
+        --daily-post-data-card-bg: var(--cardhoverlight);
+        --lighter-background-color: var(--cardhoverlight);
+        --default-background-color: var(--cardhoverlight);
         --creator-center-bg-color-1: var(--cardhoverlight);
         --creator-center-bg-color-2: var(--cardhoverlight);
         --creator-center-bg-color-3: var(--cardhoverlight);
         --creator-center-bg-color-4: var(--cardhoverlight);
-        --activity-ended-bg: var(--cardhoverlight);
-        --lighter-background-color: var(--cardhoverlight);
-        --default-background-color: var(--cardhoverlight);
         --default-lighter-border-color: var(--cardhoverlight);
-        --popup-bg-color: var(--cardhoverlight);
-        --vote-bg-color: var(--cardhoverlight);
-        --reddot-border-color: var(--cardhoverlight);
-        --default-background-color-disabled: var(--cardhoverlight);
         --creator-center-card-bg-color: var(--cardhoverlight);
-        --global-notification-bg: var(--cardhoverlight);
-        --popover-bg-color: var(--cardhoverlight);
+        --default-background-color-disabled: var(--cardhoverlight);
     }
     ::-webkit-scrollbar {
         background-color: #111;
@@ -105,6 +110,11 @@
     .mhy-tools-container .tools-header-main .custom-side-title-container:hover .mhy-icon {
         color: var(--fontselected)
     }
+    .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu,
+    .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper {
+        background-color: var(--fg)
+    }
+    .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item:hover .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-lang-selector,
     .mhy-guider-popover,
     .mhy-guider-popover__arrow,
     .mhy-tooltip-block,
@@ -157,6 +167,13 @@
         }
     }
     if(fullgray) {
+        body {
+            --primary-color: var(--font);
+        }
+        .mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__current-lang,
+        .mhy-hoyolab-select-menu__item:hover,
+        .mhy-hoyolab-select-menu__item--selected,
+        .app-pc .time-axis-article-list .time-axis-article-list__header .header-more,
         .mhy-level-info-log__today-exp,
         .mhy-level-info-log .mhy-level-info-list dd,
         .mhy-level-status__exptext,
@@ -330,6 +347,7 @@
         .mhy-selectmenu__item:hover {
             color: var(--fontselected)
         }
+        .app-pc .mhy-follow-button:hover,
         .mhy-level-mission-list .mhy-progress__bar,
         .mhy-level-status__progress.mhy-progress .mhy-progress__bar {
             background-color: var(--btnhover)
@@ -396,6 +414,9 @@
         .mhy-claim-info__value .mhy-input__container--focus {
             border-color: var(--focus)
         }
+        .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item,
+        .mhy-hoyolab-lang-selector,
+        .mhy-hoyolab-select-menu__item--selected .mhy-hoyolab-select-menu__icon,
         .mhy-float-menu,
         .mhy-radio .mhy-symbol-icon,
         .mhy-radio .mhy-icon {
