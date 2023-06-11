@@ -20,15 +20,18 @@
 @-moz-document url-prefix("https://www.hoyolab.com/") {
     :root {
         --fg: #000 + (fg_slider);
-        --bg: #0b0b0b;
-        --btnbg: #2c2c2c;
-        --btnhover: #444;
+        --bg: #0b0b0b + (fg_slider) - 25;
+        --btnbg: #000 + (fg_slider) + 25;
+        --btnhover: #000 + (fg_slider) + 40;
         --font: #c1c1c1;
         --fontselected: #ddd;
         --fonthover: #eee;
-        --cardhover: #333;
-        --cardhoverlight: #222;
-        --focus: #666;
+        --cardhover: #000 + (fg_slider) + 15;
+        --cardhoverlight: #000 + (fg_slider) + 12;
+        --focus: #000 + (fg_slider) + 60;
+        if(fg_slider < 10) {
+            --bg: #0b0b0b - (fg_slider)
+        }
     }
     body {
         --default-body-color: var(--bg);
@@ -229,7 +232,6 @@
         .footer__itemtext a:hover,
         .hyl-group-b .footer__itemtext a:hover,
         .mhy-topic-label,
-        .mhy-topic-label .mhy-topic-label-icon,
         .mhy-article-card__data-item .mhy-like:hover span,
         .mhy-article-card__link:hover .mhy-article-card__title > span:last-child,
         .mhy-article-card__more,
@@ -317,6 +319,9 @@
         .mhy-reply-filter__sort .mhy-selectmenu .mhy-selectmenu__list .mhy-selectmenu__item:hover .mhy-selectmenu__label,
         .mhy-claim-info__value .mhy-select.mhy-select--active .mhy-select__icon {
             color: var(--font)!important
+        }
+        .mhy-topic-label .mhy-topic-label-icon {
+            color: var(--font)
         }
         .mhy-cirlces-content:hover .mhy-official-tab .mhy-tab__item--active span,
         .hyl-group-b .mhy-timeline-topic-list__more,
