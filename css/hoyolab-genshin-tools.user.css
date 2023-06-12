@@ -1,9 +1,9 @@
 /* ==UserStyle==
-@name           HoYoLab Genshin Impact Tools - Dark Theme
-@namespace      Dark-Themes
-@version        1.1.5
-@description    HoYoLab Genshin Impact Tools (Check-in, Battle Chronicle, Teyvat Interactive Map and Enchancement Progression Calculator) Dark Theme
-@author         Dark-Themes
+@name         HoYoLab Genshin Impact Tools - Dark Theme
+@namespace    Dark-Themes
+@version      1.1.6
+@description  HoYoLab Genshin Impact Tools (Check-in, Battle Chronicle, Teyvat Interactive Map and Enchancement Progression Calculator) Dark Theme
+@author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
 @var checkbox custom-bg 'Custom Background Image' 0
 @var text     bg_image 'Background Url' '' url ''
@@ -23,10 +23,10 @@ url-prefix("https://act.hoyolab.com/ys/event/calculator-sea/") {
   width: 8px
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #464646!important
-}
-::-webkit-scrollbar-thumb:hover {
+  background-color: #464646!important;
+&:hover {
   background-color: #595959!important
+}
 }
 ::-webkit-scrollbar-corner {
   background-color: #121212!important
@@ -110,13 +110,37 @@ html {
   -webkit-filter:blur(.4px) opacity(opacity) invert(1);
           filter:blur(.4px) opacity(opacity) invert(1)
 }
+.components-home-assets-__sign-content-test_---sign---3dbEui.components-home-assets-__sign-content-test_---sign-only---3RY0ZN>div:before,
+.components-home-assets-__sign-recom-test_---recommend-list---3RFNPT:before{
+  content: '';
+  position:  absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:  0;
+    border-radius:7px;
+  -webkit-box-shadow: inset 0 0 0 0.10rem #1d233e!important;
+          box-shadow: inset 0 0 0 0.10rem #1d233e!important;
+  outline: inset 4px rgba(255, 255, 255, .15)!important;
+  -webkit-filter:blur(.4px) opacity(opacity) invert(1);
+          filter:blur(.4px) opacity(opacity) invert(1)
+}
+.components-home-assets-__sign-recom-test_---recommend-list---3RFNPT:before{
+ left:auto!important;
+ right:auto!important;
+ margin-left:-0.3rem;
+ width:10.2rem
+}    
 .components-home-assets-__sign-recom_---recommend-bottom---zXkGXp,
 .components-home-assets-__sign-content_---sign-bottom---1ducvs {
   z-index: -1;
   position:relative
 }
+.components-home-assets-__sign-recom-test_---recommend-more---_kUuWL,
 .components-home-assets-__sign-recom_---recommend-title---3VmyP8,
-.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---header-right---1T5roi {
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---header-right---1T5roi,
+.components-home-assets-__sign-content-test_---sign-list---3Nz_jn,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---more-wrapper---oT8dlD{
   z-index:122!important;
   position:relative
 }
@@ -402,6 +426,9 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
 .view-box .title {
   color: #bcbcbc!important
 }
+.components-home-assets-__sign-recom-test_---recommend---1CKbTa .components-home-assets-__sign-recom-test_---item-title---2XV-rG,
+.components-home-assets-__sign-recom-test_---recommend---1CKbTa .components-home-assets-__sign-recom-test_---item-desc---3xi3QQ,
+.components-home-assets-__sign-recom-test_---recommend---1CKbTa .components-home-assets-__sign-recom-test_---user-name---VV9YYf,
 .mushroom .item-time,
 .potion-pop-text,
 .import-modal__wrap .import-modal .import-tip,
@@ -753,15 +780,22 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
 .map-locations__dropdown{
   z-index: 1
 }
+.components-home-assets-__sign-content-test_---sign-only---3RY0ZN,
+.components-home-assets-__sign-guide_---guide---Y6VJpF,
+.components-home-assets-__sign-guide_---guide-content---21swt2,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---mend-btn---FhiXMP img,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---mend-btn---1v0VnX img,
 .components-common-common-dialog-__index_---sign-dialog---3tldeh .components-common-common-dialog-__index_---sign-content---3PZVVu,
 .components-common-remind-__index_---remind-icon---2x2I0Y,
 .components-common-task-__index_---task-bottom---2q_-jv,
 .components-common-task-__index_---task-middle---1XCkfp,
 .components-common-task-__index_---task-top---1enNhe,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---btn-text---SMixQR,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---btn-text---1cNBbB,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---header-left---1o2pTm .sign-num,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---header-left---FkSAZA .sign-num,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---miss-info---3wa0AL .miss-num,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---miss-info---3yTxDm .miss-num,
 .components-home-assets-__sign-content_---sign-bottom---1ducvs,
 .components-home-assets-__sign-content_---sign-list---1E-cUZ,
 .components-home-assets-__sign-content_---sign-middle---2tpVeJ,
@@ -774,6 +808,9 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
 .components-home-assets-__sign-recom_---recommend-list---qhirLc,
 .components-home-assets-__sign-recom_---recommend-main---1ByBfd,
 .components-home-assets-__sign-recom_---recommend-top---3Sq1uL,
+.components-home-assets-__sign-recom-test_---recommend---1CKbTa,
+.components-home-assets-__sign-recom-test_---recommend---1CKbTa .components-home-assets-__sign-recom-test_---item-content---xDSK3n,
+.components-home-assets-__sign-recom-test_---recommend---1CKbTa .components-home-assets-__sign-recom-test_---item-img---2TIwQi,
 .components-home-assets-__sign-link_---sign-link---fd75kG .components-home-assets-__sign-link_---banner---qx5CqX,
 .components-home-assets-__sign-link_---sign-link---fd75kG .components-home-assets-__sign-link_---tools---1SFyHd,
 .task-count{
@@ -784,10 +821,11 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
   -webkit-filter: hue-rotate(145deg) brightness(0.8) opacity(0.88);
           filter: hue-rotate(145deg) brightness(0.8) opacity(0.88)
 }
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---has-finished---3NEFnG,
 .tcg-detail .role > .empty,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---has-finished---9aCCxu{
-  -webkit-filter: hue-rotate(145deg) brightness(0.85) opacity(0.8) invert(1);
-          filter: hue-rotate(145deg) brightness(0.85) opacity(0.8) invert(1)
+  -webkit-filter: hue-rotate(145deg) brightness(0.75) opacity(0.8) invert(1);
+          filter: hue-rotate(145deg) brightness(0.75) opacity(0.8) invert(1)
 }
 .modal-bottom,
 .modal-middle,
@@ -804,16 +842,20 @@ body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_--
 .components-common-resign-modal-__index_---resign---2NVDlM .components-common-resign-modal-__index_---icon-wrapper---1ZPwJz img,
 .components-common-result-__index_---icon-wrapper---R24M6L img,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---item-icon---2G87c9,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---item-icon---3OmH_L,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---sign-item---k8WFIr {
   -webkit-filter: invert(1);
           filter: invert(1)
 }
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---actived-day---34r3rb,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---actived-day---2GukeS,
  .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---has-signed---2brETR:after{
   -webkit-filter: hue-rotate(180deg)saturate(0.6);
           filter: hue-rotate(180deg) saturate(0.6)
 }
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---item-cnt---1VG-Fk,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---item-cnt---2s89sH,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---item-day---1C_BmH,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---item-day---1WBEev,
 .components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---item-cnt---LNjP75 {
   -webkit-filter: invert(.8);
@@ -838,6 +880,9 @@ body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_--
 .components-common-common-dialog-__record_---record---1bvv5b .components-common-common-dialog-__record_---prize-item---V_FGz9 .components-common-common-dialog-__record_---record-title---1nUiep {
   color: #939baf
 }
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---header-left---FkSAZA .components-home-assets-__sign-content-test_---day---r8ZbT6,
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---miss-info---3yTxDm,
+.components-home-assets-__sign-recom-test_---recommend-title---2OS2Yg,
 .components-common-resign-modal-__index_---resign-title---1e1WSi,
 .components-common-common-dialog-__index_---modal-title---28emYR,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---header-left---1o2pTm .components-home-assets-__sign-content_---day---1rVnsL,
@@ -846,7 +891,8 @@ body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_--
 .components-home-assets-__sign-recom_---recommend-title---3VmyP8 {
   color: #4f4f4f
 }
-.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---btn-text---SMixQR {
+.components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---btn-text---SMixQR,
+ .components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---btn-text---1cNBbB{
   color: #f0f0f0
 }
 .components-common-task-__index_---task-finish---2y0qCh {
@@ -857,6 +903,7 @@ body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_--
   -webkit-filter:hue-rotate(165deg);
           filter:hue-rotate(165deg)
 }
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---mend-btn-disabled---1aekA3,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---mend-btn---FhiXMP{
   -webkit-filter:hue-rotate(175deg) brightness(1.1)  contrast(0.95) saturate(0.7);
           filter:hue-rotate(175deg) brightness(1.1)  contrast(0.95) saturate(0.7)
