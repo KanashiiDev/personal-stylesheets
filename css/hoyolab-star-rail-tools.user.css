@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         HoYoLab Honkai: Star Rail Tools - Dark Theme
 @namespace    Dark-Themes
-@version      1.0.3
+@version      1.0.4
 @description  HoYoLab Honkai: Star Rail Tools (Check-in and Honkai: Star Rail Map) Dark Theme
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -104,6 +104,7 @@ body {
 .mhy-hoyolab-select-menu {
   background: #181818!important
 }
+.components-pc-assets-__dialog_---qrcode---3AjWqY,
 .map-layer-control .layer-control__header-m .btn-reset, .map-layer-control .layer-control__header-m .btn-ok,
 .components-pc-assets-__recommend-list_---text__title---1xYgVh,
 .components-pc-assets-__recommend-list_---text__des---1Aa8ug,
@@ -246,8 +247,8 @@ body {
 .components-pc-assets-__main-module_---main-module---3jY8-Z,
 .components-pc-assets-__prize-list_---prize-list---3s4FAb .components-pc-assets-__prize-list_---list---26M_YG .components-pc-assets-__prize-list_---item---F852VZ .components-pc-assets-__prize-list_---img---nO_Gnf,
 .components-pc-assets-__recommend-list_---sign-recommend----h1jVU .components-pc-assets-__recommend-list_---background---2iqqwQ {
-  -webkit-filter: invert(1) hue-rotate(180deg) opacity(opacity);
-          filter: invert(1) hue-rotate(180deg) opacity(opacity)
+  -webkit-filter: invert(1) hue-rotate(180deg) opacity(opacity + .06);
+          filter: invert(1) hue-rotate(180deg) opacity(opacity + .06)
 }
 .components-pc-assets-__dialog_---task-item---2LCGne,
 .components-pc-assets-__dialog_---available-info---2Lgn3v,
@@ -274,6 +275,7 @@ body {
   -webkit-filter: invert(1);
           filter: invert(1)
 }
+.components-pc-assets-__home_---home-page---2m-8BR .components-pc-assets-__home_---scroller---ZF2lsm,
 .extra-bonus {
   -webkit-filter: opacity(opacity);
           filter: opacity(opacity)
@@ -298,10 +300,11 @@ body {
           filter: saturate(0.9)
 }
 .components-pc-assets-__main-module_---main-module---3jY8-Z {
-  background-size: 100% 128%;
+  background-size: 100% 140%;
   background-repeat: no-repeat;
-  padding-top: 150px;
-  margin-bottom: 40px
+  background-position:100% 20%;
+  padding-top: 100px;
+  margin-bottom: 70px
 }
 .components-pc-assets-__main-module_---main-module---3jY8-Z:after {
   background-size: 100% 500%;
@@ -310,11 +313,19 @@ body {
           transform: rotateZ(180deg);
   content: ""!important;
   position: fixed;
-  left: 0;
-  margin-top: -25px;
-  height: 200px;
+  left: 0; 
+  margin-top: -60px;
+  height: 220px;
+  z-index:-1;
   width: 100%;
   display: block
+}
+.components-pc-assets-__main-module_---title---2zwi1J {
+  position:relative
+}
+.components-pc-assets-__main-module_---title---2zwi1J,
+.components-pc-assets-__main-module_---operation---15xEiF {
+    top: 40px
 }
 .bbs-qr,
 .components-pc-assets-__qr_---qr-box---lxB9wc {
