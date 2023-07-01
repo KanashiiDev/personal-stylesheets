@@ -1,11 +1,12 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.1
+@version      1.0.2
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
-@var range    fg_slider  'Foreground Color' [1, 1, 50, 1,'']
+@var color   fg_color        'Foreground Color        ' rgba(21, 30, 46)
+@var range    fg_slider  'Foreground Color Brightness' [1, 1, 50, 1,'']
 @var range    border_radius  'Border Radius' [5, 0, 10, 1,'px']
 @var checkbox fullgray 'Dark Mode' 0
 @var checkbox custom-bg 'Custom Background Image' 0
@@ -14,20 +15,20 @@
 @var range    bg_saturate  'Background Saturation' [100, 1, 300.0, 1,'%']
 @var range    bg_contrast  'Background Contrast' [100, 100, 300.0, 1,'%']
 @var range    bg_blur  'Background Blur' [0, 0.0, 15, 1.0,'px']
-@var range    opacity  'Content Opacity' [1, 0.0, 1, 0.01]
+@var range    opacity  'Background Color Opacity' [1, 0.0, 1, 0.01]
 @var checkbox removefooter 'Hide Footer' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*") {
     :root {
-        --fg: rgb(21, 30, 46) +(fg_slider);
-        --fg2: rgb(30, 42, 59) + (fg_slider);
-        --fg4: rgb(42, 58, 80) + (fg_slider);
-        --fgo: rgba(32, 45, 67, .3) +(fg_slider);
-        --bg: rgb(11, 22, 34) + (fg_slider);
-        --bgo: rgba(11, 22, 34, opacity) + (fg_slider);
+        --fg: fg_color + (fg_slider);
+        --fg2: fg_color + 10 + (fg_slider);
+        --fg4: fg_color + 20 + (fg_slider);
+        --fgo: rgba((fg_color + 18).3) +(fg_slider);
+        --bg: fg_color - 10 + (fg_slider);
+        --bgo: rgba((fg_color - 10).0 + opacity) + (fg_slider);
         --color-text: rgb(160, 177, 197);
-        --color-text-normal: rgb(186, 208, 235);
+        --color-text-normal: rgb(197, 208, 221);
         --color-text-hover: rgb(202, 222, 247);
         ::-webkit-scrollbar {
             width: 8px;
@@ -238,6 +239,7 @@
         background: var(--color-background)!important
     }
 
+    .dark-mode .news-list .comment-list,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .footer,
     .dark-mode .page-common .incrementalSearchResultList > div > div,
@@ -285,8 +287,6 @@
     .dark-mode .news-list .news-unit .news-unit-right,
     .dark-mode .page-advertising section.ad_section:nth-of-type(even) div.ad_section,
     .dark-mode .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell,
-    .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
-    .dark-mode .characters-search-form-search .inputButton,
     .dark-mode .anime-detail-header-stats .stats-block,
     .dark-mode .sns-setting .table tr:nth-of-type(odd) td,
     .dark-mode .btn-sns-setting,
@@ -357,6 +357,8 @@
         background-color: var(--color-foreground)!important
     }
 
+    .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
+    .dark-mode .characters-search-form-search .inputButton,
     .dark-mode .people-search-form-search .inputButton,
     .dark-mode .seasonal-anime-list .seasonal-anime .information,
     .dark-mode div.sceditor-dropdown,
@@ -596,6 +598,7 @@
         padding: 5px!important
     }
 
+    .dark-mode .news-list .comment-list,
     .widget.latest_episode_video.left > div > div,
     .widget.popular_promotion_video.left > div > div,
     .widget.announcements.left > .widget-content,
@@ -642,6 +645,7 @@
         padding-top: 15px
     }
 
+    .dark-mode .news-list .comment-list,
     .dark-mode .page-common .goodresult,
     .dark-mode .page-common .successQuery,
     .widget.latest_episode_video.left > div > div,
@@ -919,6 +923,7 @@
         display: inline-block!important
     }
 
+    .dark-mode .news-list .comment-list,
     .widget.latest_episode_video.left > div > div,
     .widget.popular_promotion_video.left > div > div,
     .widget.announcements.left > .widget-content,
@@ -929,6 +934,7 @@
         margin-top: 5px
     }
 
+    .dark-mode .news-list .comment-list,
     .profile .user-comments .comment,
     .dark-mode .review-element,
     .spaceit.borderClass {
@@ -1003,7 +1009,7 @@
     }
 
     .dark-mode .news.featured .featured-search-side .featured-search-input-submit {
-        height: 39px
+        height: 39.6px
     }
 
     .dark-mode .quickadd-content .quickadd-form-search .inputButton,
@@ -1447,7 +1453,7 @@ regexp("https://myanimelist.net/forum/search\?.*") {
 @-moz-document url-prefix("https://myanimelist.net/panel") {
     .dark-mode body:not(.ownlist),
     .dark-mode .page-common #myanimelist {
-        top: -20px!important;
+        top: -16px!important;
     }
 
     .page-common #myanimelist #contentWrapper {
