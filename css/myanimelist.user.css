@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.2
+@version      1.0.3
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
-@var color   fg_color        'Foreground Color        ' rgba(21, 30, 46)
+@var color    fg_color        'Foreground Color        ' rgba(21, 30, 46)
 @var range    fg_slider  'Foreground Color Brightness' [1, 1, 50, 1,'']
 @var range    border_radius  'Border Radius' [5, 0, 10, 1,'px']
 @var checkbox fullgray 'Dark Mode' 0
@@ -22,9 +22,9 @@
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*") {
     :root {
         --fg: fg_color + (fg_slider);
-        --fg2: fg_color + 10 + (fg_slider);
+        --fg2: fg_color + 13 + (fg_slider);
         --fg4: fg_color + 20 + (fg_slider);
-        --fgo: rgba((fg_color + 18).3) +(fg_slider);
+        --fgo: rgba((fg_color + 15).3) +(fg_slider);
         --bg: fg_color - 10 + (fg_slider);
         --bgo: rgba((fg_color - 10).0 + opacity) + (fg_slider);
         --color-text: rgb(160, 177, 197);
@@ -123,6 +123,7 @@
         }
     }
 
+    select:focus,
     input:focus,
     textarea:focus {
         outline: 0
@@ -190,6 +191,7 @@
         display: none!important
     }
 
+    .widget.friend_list_updates .footer,
     .dark-mode .about-content.content-bg-grey,
     .dark-mode .page-advertising #ad_menu,
     .dark-mode body.news .news-container .tags,
@@ -239,6 +241,13 @@
         background: var(--color-background)!important
     }
 
+    .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option,
+    .dark-mode .page-forum .topic-reply-box,
+    .dark-mode .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body table th,
+    .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-quote,
+    .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-form,
+    .js-widget-friend-list-updates .work,
+    .widget.my_list_updates.left .info,
     .dark-mode .news-list .comment-list,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .footer,
@@ -445,6 +454,9 @@
         background-color: var(--color-foreground3)!important
     }
 
+    .dark-mode .sceditor-dropdown a:hover,
+    .color-picker div,
+    .dark-mode .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox]:checked + label,
     .dark-mode .season .btn-top,
     .dark-mode .mymessages .message.unread,
     .dark-mode .top-ranking-table .status .btn-addEdit-large.btn-anime-watch-status,
@@ -513,16 +525,25 @@
         border: 0
     }
 
+    textarea::placeholder,
     h1,
     h2,
     h3,
     h4,
     h5,
     .widget-header,
-    .widget-header a {
+    h2 > a {
         color: var(--color-text-normal)!important
     }
 
+    .dark-mode .club-search-form-search .inputButton,
+    .dark-mode .club-search-form-search .select,
+    .dark-mode .club-search-form-search .inputtext::placeholder,
+    .dark-mode .page-common a.button_add.button_add.completed,
+    .dark-mode .page-common a.button_add.button_edit.completed,
+    .dark-mode .page-common a.button_edit.button_add.completed,
+    .dark-mode .page-common a.button_edit.button_edit.completed,
+    .navi-btn.js-widget-friend-list-updates-comment.ga-click,
     .page-common #nav a,
     .page-common #nav li,
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon,
@@ -590,6 +611,7 @@
         color: var(--color-text-hover)!important
     }
 
+    .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option,
     .dark-mode .user-profile .user-status.border-top span,
     .dark-mode .page-common a.button_add.button_add,
     .dark-mode .page-common a.button_add.button_edit,
@@ -598,6 +620,9 @@
         padding: 5px!important
     }
 
+    .mal-modal.modal-friends-update-settings .mal-btn-toolbar,
+    .js-widget-friend-list-updates .work,
+    .widget.my_list_updates.left .info,
     .dark-mode .news-list .comment-list,
     .widget.latest_episode_video.left > div > div,
     .widget.popular_promotion_video.left > div > div,
@@ -637,7 +662,7 @@
     .widget.news .news-list.widget .news-unit,
     .widget.news .news-list.widget .news-unit-right,
     .widget.recommendations div div {
-        padding: 10px!important
+        padding: 5px!important
     }
 
     #contentWrapper > div:first-child > div > div.h1-title > div[itemprop=name],
@@ -645,6 +670,12 @@
         padding-top: 15px
     }
 
+    .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option,
+    .dark-mode .page-forum .topic-reply-box,
+    .js-widget-friend-list-updates .work,
+    .widget.my_list_updates.left .info,
+    .widget.anime_suggestions.left a,
+    .widget.manga_suggestions.left a,
     .dark-mode .news-list .comment-list,
     .dark-mode .page-common .goodresult,
     .dark-mode .page-common .successQuery,
@@ -740,6 +771,7 @@
         border-radius: var(--br)!important
     }
 
+    .widget.watched_topics.left > div.widget-content > table > tbody > tr > td.watch-state,
     .detail-characters-list > div > table,
     .js-anime-character-table tbody td:first-child,
     .mymessages .message.read > .mym:first-child,
@@ -748,11 +780,12 @@
         border-bottom-left-radius: var(--br)!important
     }
 
+    .widget.watched_topics.left > div.widget-content > table > tbody > tr > td.last-post,
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
     .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
     .js-anime-character-table tbody td:nth-child(3),
     .mymessages .message.read > .mym:nth-child(5),
-    .page-forum tbody tr td:nth-child(4) {
+    .page-forum tbody tr td:last-child {
         border-top-right-radius: var(--br);
         border-bottom-right-radius: var(--br)
     }
@@ -795,6 +828,14 @@
         border-bottom-right-radius: var(--br)!important
     }
 
+    .dark-mode .page-common .forum-topic-sort {
+        top: 8px;
+        position: relative
+    }
+
+    .dark-mode body.index .widget-container .widget.my_list_updates .item,
+    .dark-mode body.index .widget-container .widget.clubs .item,
+    .dark-mode body.index .widget-container .widget.reviews .item,
     .dark-mode .people-search-form-search .inputButton,
     .widget.announcements.left > .widget-content > .borderClass,
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon,
@@ -820,6 +861,8 @@
         border: 0!important
     }
 
+    .widget.watched_topics.left td,
+    .dark-mode body.index .widget-container .widget.friend_list_updates .footer,
     .dark-mode .statistics-info,
     .dark-mode .page-common .mb24,
     .dark-mode .icon-about-recommendations:after,
@@ -923,6 +966,7 @@
         display: inline-block!important
     }
 
+    .dark-mode .page-forum .topic-reply-box,
     .dark-mode .news-list .comment-list,
     .widget.latest_episode_video.left > div > div,
     .widget.popular_promotion_video.left > div > div,
@@ -955,12 +999,21 @@
         width: 91%
     }
 
+    .js-widget-friend-list-updates .work,
     #content > div.left-column > article > div > div,
     #widget-episode-video,
     .news-list .news-unit,
     .widget-slide-block,
     .widget-slide-block .widget-slide-outer {
         width: 100%!important
+    }
+
+    .forum.timeline > div > div.topic-reply-box.fixed > div.sceditor-container.sourceMode.ltr > textarea {
+        width: 97.5%!important
+    }
+
+    .user-friends.pt4.pb12 a {
+        width: 34px!important
     }
 
     .dark-mode .people-search-form-search .inputtext,
@@ -1039,6 +1092,10 @@
         justify-content: center;
         padding: 5px;
         border-radius: var(--border-radius)
+    }
+
+    .widget.watched_topics.left tbody tr {
+        grid-template-columns: 50px 520px 100px auto!important;
     }
 
     .page-common table.forum-topics tbody tr {
@@ -1447,6 +1504,22 @@ regexp("https://myanimelist.net/forum/search\?.*") {
 
     .forum-table-header {
         margin-bottom: 5px
+    }
+}
+
+@-moz-document url-prefix("https://myanimelist.net/forum/?action=") {
+
+    #forumTopics tbody tr {
+        grid-template-columns: 50px 550px 100px 87.5px 150px!important;
+    }
+
+    #forumTopics > tbody > tr.forum-table-header {
+        grid-template-columns: 130px 470px 80px 50px!important;
+    }
+
+    #forumTopics tbody tr td:last-child {
+        display: table-column;
+        overflow: ellipsis!important
     }
 }
 
