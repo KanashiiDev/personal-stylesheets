@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         HoYoLab Honkai: Star Rail Tools - Dark Theme
 @namespace    Dark-Themes
-@version      1.0.4
+@version      1.0.5
 @description  HoYoLab Honkai: Star Rail Tools (Check-in and Honkai: Star Rail Map) Dark Theme
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -15,17 +15,20 @@
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document url-prefix("https://act.hoyolab.com/sr/app/interactive-map/"),
-url-prefix("https://act.hoyolab.com/bbs/event/signin/hkrpg/") {
+url-prefix("https://act.hoyolab.com/bbs/event/signin/hkrpg/"), url-prefix("https://act.hoyolab.com/sr/event/calculator/") {
 ::-webkit-scrollbar {
   background-color: #121212!important;
   width: 8px
 }
+.scroll-bar--x .scroll-bar__thumb,
+.scroll-bar--y .scroll-bar__thumb,
 ::-webkit-scrollbar-thumb {
   background-color: #464646!important
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: #595959!important
 }
+.scroll-bar--y,.scroll-bar--x,
 ::-webkit-scrollbar-corner {
   background-color: #121212!important
 }
@@ -92,18 +95,48 @@ body {
   -webkit-filter: grayscale(1) brightness(1.5);
   filter: grayscale(1) brightness(1.5)
 }
-.mhy-hoyolab-select-menu__item:hover {
-  background-color: #303030!important
+.card-filter .options .option.active .icon-wrapper::before,
+.section-equipment .to-pick-equipment,
+.loading-container .loading-mask,
+.target-card .main:hover .card-empty{
+      background-color: #262626!important
 }
+.search-panel .input,
+.card-filter--rarity .options .option.active,
+.target-card .main .card-empty,
+.cost-material-wrapper,
+.cost-material,
+.section-item,
+.mhy-hoyolab-select-menu__item:hover {
+  background-color: #202020!important
+}
+.popup-picker,
+.page-body .container .body-wrapper::before,
+.page-body .container .body-wrapper::after,
+.pc-page .main-wrapper .body {
+  background: #121212!important
+}
+.trace-point--s .fg.picked,
+.trace-point--s .fg.readonly,
+.rounded-button,
+.i-common--recycle,
+.i-common--recycle:before,
+.page-header .control-bar .right .changelog .icon-info::before,
 .mhy-hoyolab-header .mhy-hoyolab-lang-selector,
 .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu,
 .mhy-hoyolab-lang-selector .mhy-hoyolab-select-menu {
   background: #161616!important
 }
+.input-value,
 .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item:hover,
 .mhy-hoyolab-select-menu {
   background: #181818!important
 }
+.trace-point--m .fg.picked{
+  background-image:none!important;
+  border:1px solid!important
+}
+[mi18n-lang=en-us] *, [mi18n-lang=id-id] *, [mi18n-lang=fr-fr] *, [mi18n-lang=vi-vn] *, [mi18n-lang=pt-pt] *, [mi18n-lang=es-es] *, [mi18n-lang=tr-tr] *, [mi18n-lang=it-it] *,
 .components-pc-assets-__dialog_---qrcode---3AjWqY,
 .map-layer-control .layer-control__header-m .btn-reset, .map-layer-control .layer-control__header-m .btn-ok,
 .components-pc-assets-__recommend-list_---text__title---1xYgVh,
@@ -148,7 +181,8 @@ body {
 .layer-control__icon,
  
 .layer-control__title-wrapper::after,
- 
+.base-dialog__main,
+.base-dialog__body,
 .map-switch__wrapper::before {
   -webkit-filter: invert(1) brightness(80%)!important;
           filter: invert(1) brightness(80%)!important
@@ -158,6 +192,22 @@ body {
 }
 .layercontrol-divider {
   background: #444!important
+}
+.cost-material {
+    border:0!important
+}
+.section-equipment .to-pick-equipment .bg,
+.target-card .main:hover .card-empty,
+.cost-materials .header .right .money::before,
+.cost-material-wrapper,
+.section-item,
+.target-card .main,
+.dotted-divider .bg .line,
+.dotted-divider .fg .deco::before,
+.dotted-divider .fg .deco::after,
+.page-body .container .header,
+ .page-body .divider::after {
+  border-color: #4c4c4c!important
 }
 .map-switch__outline--active,
 .role-selector-sea-dropdown-menu .dropdown-menu__input {
@@ -225,7 +275,12 @@ body {
 .game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__content__current__nickename-level {
   background: #3a8b6f
 }
-
+body > div > div > div > div.base-dialog__main > .base-dialog__footer{
+    background:#fff!important
+}
+body > div > div > div > div.base-dialog__main > div.base-dialog__footer > div > div {
+    background:#f6f6f6!important
+}
 .components-pc-assets-__main-module_---resign-desc---2c4-Eb,
 .components-pc-assets-__dialog_---common-dialog---MuR1Sk .components-pc-assets-__dialog_---sub-title---1sb30r,
 .components-pc-assets-__dialog_---common-dialog---MuR1Sk .components-pc-assets-__dialog_---title---IfpJqm,
@@ -335,6 +390,10 @@ body {
   background-color: #292d34!important;
   border-color: #333!important
 }
+.section-item .left.wide{
+      background-color:rgba(219, 194, 145, .13);
+}
+.section-header .right .btn-bg,
 .components-pc-assets-__dialog_---record-content---Gl9jft .__rail-is-vertical > div > div,
 .components-pc-assets-__dialog_---rule-content---uP1Kgy.common-scroller > div > div.__rail-is-vertical > div > div {
   background: rgba(106,88,61,.97)!important
@@ -358,5 +417,14 @@ body {
 }
 .mhy-map .leaflet-control-zoomslider-horizon {
   right:0.3rem
+}
+.i-common--recycle,
+.i-common--recycle:before,
+.page-header .control-bar .right .changelog .icon-info::before {
+  border:1px solid rgba(255,255,255,.4)
+}
+.i-common--recycle,
+.i-common--recycle:before {
+  border-radius:50px
 }
 }
