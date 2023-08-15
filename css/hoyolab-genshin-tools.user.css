@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         HoYoLab Genshin Impact Tools - Dark Theme
 @namespace    Dark-Themes
-@version      1.1.6
+@version      1.1.7
 @description  HoYoLab Genshin Impact Tools (Check-in, Battle Chronicle, Teyvat Interactive Map and Enchancement Progression Calculator) Dark Theme
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -110,6 +110,8 @@ html {
   -webkit-filter:blur(.4px) opacity(opacity) invert(1);
           filter:blur(.4px) opacity(opacity) invert(1)
 }
+.components-home-assets-__sign-extra-test_---extra---qpL7-5:before,
+.components-home-assets-__sign-content-test_---sign---3dbEui:before,
 .components-home-assets-__sign-content-test_---sign---3dbEui.components-home-assets-__sign-content-test_---sign-only---3RY0ZN>div:before,
 .components-home-assets-__sign-recom-test_---recommend-list---3RFNPT:before{
   content: '';
@@ -159,7 +161,9 @@ html {
 .calculate .search__top,
 .calculate__content,
 .furniture .furniture-cart__list,
-.calculate .lt-footer:after,{
+.calculate .lt-footer:after,
+#anchor_activity > div.relative > div.act-container > div > div.hsr-crt-act-btm > div > div > div.top,
+#anchor_activity > div.relative > div.adventure > div.container > div.top{
   background:none!important
 }
 .calculate__main,
@@ -188,6 +192,7 @@ body > div.app > div > div.top,
 .filter-route__body-left {
   background-color: #141414!important
 }
+body > div.activity-popup.van-popup.van-popup--center,
 .geetest_wind.geetest_panel .geetest_panel_box,
 .geetest_holder.geetest_silver .geetest_widget,
 .game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__container,
@@ -196,6 +201,10 @@ body > div.app > div > div.top,
 .tablet-tips {
   background-color: #161616!important
 }
+body[data-game-id="2"] .activity-header,
+.tcg-detail > div.battle > div.content > div.dialog.van-popup.van-popup--center > .container > .container-pc,
+.tcg-menus .c-title-selector-titles,
+.van-popup.van-popup--center.rounded-xl,
 .chart-content,
 .filter-ascension__container,
 .area-list__container,
@@ -220,7 +229,6 @@ body > div.app > div > div.top,
 .game-role-selector-sea__button.disabled,
 .item--syw,
 .map-locations__dropdown-content,
-.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item:hover,
 .mhy-hoyolab-select-menu,
 .modal__content,
 .popper,
@@ -242,12 +250,15 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
   transition: .1s ease-in; 
   border-color: #1f1f1f!important
 }
+.tcg-card-popup-btn,
+.el-form-item__content > .el-textarea,
 .link-modal .el-dialog,
 .area-list__dropdown li,
 .confirm-dialog .el-dialog,
 .tablet-tips-box {
   background-color: #202020!important
 }
+.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item:hover,
 .filter-route__btn,
 .game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__content__current,
 .map-locations__btn,
@@ -270,6 +281,7 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
 .strong-tip-closable {
   background-color: #222!important
 }
+.filter-search__history-word,
 .link-modal__btn--cancel, 
 .link-modal__btn--confirm,
 .area-list__pc-btn,
@@ -306,6 +318,9 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
 .tooltip {
   background-color: #282828!important
 }
+.route-detail__row--divider,
+.map-popup__entrance,
+.map-popup__content.map-popup__content--entrance > div > div,
 .filter-panel__labels-ascension .filter-panel__labels-filter-item .filter-item__img,
 .filter-panel__labels-ascension__current-action,
 .area-list__dropdown li.active,
@@ -457,6 +472,7 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
 .theme-genshin .role-selector-sea-dropdown-menu .dropdown-menu__list__item.selected .dropdown-menu__list__value {
   color: #dcbc60!important
 }
+.route-detail__section,
 .import-modal__wrap .import-modal .import-input input,
 .furniture-cart__item .item-count-operator,
 .furniture-cart__item .item-count-operator .reduce-btn,
@@ -469,6 +485,7 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
 .editor .el-input__inner,
 .filter-panel__header,
 .game-role-selector-sea-wrapper.theme-genshin .game-role-selector-sea__header,
+.game-role-selector-sea-wrapper.theme-community .game-role-selector-sea__header,
 .more-action .menu-item,
 .role-selector-sea-dropdown-menu .dropdown-menu__input,
 .role-selector-sea-dropdown-menu .dropdown-menu__list,
@@ -491,9 +508,11 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
 }
 .calculator .select-input,
 .mhy-hoyolab-account-block__avatar-icon,
-.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---icon-wrapper---4bTubv,
-.filter-item--selected .filter-item__img:after {
+.components-home-assets-__sign-extra_---extra---3IZaP_ .components-home-assets-__sign-extra_---icon-wrapper---4bTubv {
   border-color: #555!important
+}
+.filter-item--selected .filter-item__img:after {
+  border-color: #7d6a36!important
 }
 .recommend-popup__item__img:hover:after,
 .filter-item__img:hover:after,
@@ -659,6 +678,7 @@ div.filter-panel__labels-content > div > div.filter-item__img img:last-child {
   -webkit-filter: grayscale(1) brightness(.9) contrast(1.2);
           filter: grayscale(1) brightness(.9) contrast(1.2)
 }
+.underground-elevator,
 .waypoint-switch__pic,
  .underground-switch__pic,{
   -webkit-filter: grayscale(1) brightness(.8) contrast(1.4);
@@ -746,6 +766,7 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
 }.filter-panel__header,
 .filter-panel__body,
 .filter-ascension,
+#anchor_activity > div.relative > div.act-container > div > div.hsf-h-btm > div > div > div.top,
 .cost-list .cost-list__child-title span {
   background: none!important
 }
@@ -780,6 +801,9 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
 .map-locations__dropdown{
   z-index: 1
 }
+.components-home-assets-__sign-extra-test_---extra---qpL7-5,
+.components-home-assets-__sign-content-test_---sign---3dbEui,
+.components-home-assets-__sign-extra-test_---extra---qpL7-5 .components-home-assets-__sign-extra-test_---item-icon---2MZ9CQ,
 .components-home-assets-__sign-content-test_---sign-only---3RY0ZN,
 .components-home-assets-__sign-guide_---guide---Y6VJpF,
 .components-home-assets-__sign-guide_---guide-content---21swt2,
@@ -821,6 +845,7 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
   -webkit-filter: hue-rotate(145deg) brightness(0.8) opacity(0.88);
           filter: hue-rotate(145deg) brightness(0.8) opacity(0.88)
 }
+.components-home-assets-__sign-extra-test_---item-received---2xAXf2,
 .components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---has-finished---3NEFnG,
 .tcg-detail .role > .empty,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---has-finished---9aCCxu{
@@ -899,10 +924,15 @@ body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_--
   -webkit-filter:hue-rotate(-40deg) contrast(0.95) saturate(0.8);
           filter:hue-rotate(-40deg) contrast(0.95) saturate(0.8)  
 }
+.components-home-assets-__sign-extra-test_---extra---qpL7-5 .components-home-assets-__sign-extra-test_---item-order-actived---2IjM7-{
+  -webkit-filter:hue-rotate(125deg) brightness(0.8) contrast(1.5) saturate(0.8)invert(1);
+          filter:hue-rotate(125deg) brightness(0.8) contrast(1.5) saturate(0.8)invert(1)  
+}
 .components-common-task-__index_---task---1vShWW .components-common-task-__index_---item-btn---2PvqOD {
   -webkit-filter:hue-rotate(165deg);
           filter:hue-rotate(165deg)
 }
+.components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---mend-btn---1v0VnX,
 .components-home-assets-__sign-content-test_---sign---3dbEui .components-home-assets-__sign-content-test_---mend-btn-disabled---1aekA3,
 .components-home-assets-__sign-content_---sign---3eZVER .components-home-assets-__sign-content_---mend-btn---FhiXMP{
   -webkit-filter:hue-rotate(175deg) brightness(1.1)  contrast(0.95) saturate(0.7);
@@ -919,12 +949,21 @@ body > div.m-modal.m-dialog.pc-dialog.components-common-common-dialog-__index_--
   -webkit-filter:invert(1);
           filter:invert(1)
 }
+#anchor_activity > div.relative > div.activity-header.mb-2.flex.items-center > div > i,
+#anchor_activity > div.relative > div.activity-header.mb-2.flex.items-center > div > img,
+body > div.activity-popup.van-popup.van-popup--center > div > div.popup-body > div > div.mt-3 > div.activity > div > i,
+body > div.activity-popup.van-popup.van-popup--center > div > div.popup-body > div> div.mt-3 > div.activity > div > img{
+        filter: invert(1) contrast(1.2) brightness(.6) grayscale(1);
+        -webkit-filter: invert(1) contrast(1.2) brightness(.6) grayscale(1)
+}
 .task-count {
 color:#b76338
 }
 .map-locations__dropdown-content ul li span:hover {
     color: #d3bc8e!important;
 }
+.components-home-assets-__sign-extra-test_---extra-bottom---xGBThR,
+.components-home-assets-__sign-content-test_---sign-top---3wxjJH,
 .bbs-qr,
 .mihoyo-cookie-tips,
 .components-home-assets-__home_---qr-code---iYG7z9,
@@ -1050,8 +1089,22 @@ div.van-tabs__wrap > div > div.van-tabs__line {
 }
 }
 .updatelog__content-text {
-  height: 3rem;
-  margin-top: 10px
+  height: 3rem!important;
+  margin-top: 7px
+}
+.components-home-assets-__sign-extra-test_---extra---qpL7-5{
+    margin-bottom:13px
+}
+.components-home-assets-__sign-content-test_---sign---3dbEui{
+    margin-bottom:6px
+}
+.components-home-assets-__sign-content-test_---sign-middle---10WpY3{
+    border-radius: 7px;
+    padding-top: 20px;
+}
+.components-home-assets-__sign-extra-test_---extra-main---srY6wN{
+padding-bottom: 0.35rem;
+border-radius: 7px;
 }
 .filter-panel__footer-reset {
   background-color:#bbb!important;
