@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.40
+@version      1.0.41
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -116,6 +116,7 @@
     if(shadow) {
         img,
         #horiznav_nav ul li a,
+        .dark-mode .anime-detail-header-stats .stats-block:before,
         .dark-mode .widget.mxj .widget-content .content,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-column.fl-l.divider > table, #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-right.fl-r > table,
         .theme-songs.js-theme-songs,
@@ -292,12 +293,16 @@
     #nav > li a {
         cursor: pointer!important
     }
+    div:has( > a[rel*="noopener"]) {
+    display: none !important
+    }
     #broadcast-block,
     #nav > li:nth-child(5),
     #nav > li:nth-child(6),
     .bottom-bar,
     #gdpr-modal-bottom,
     .ad-sas.mauto.ac,
+    .dark-mode .about-content-box.single img,
     .dark-mode .page-common #headerSmall .banner-header-anime-straming,
     .detail-characters-list .left-column.divider:after,
     .c-aboutme-accordion-btn-icon:after,
@@ -369,6 +374,8 @@
     }
     #dialog,
     select option,
+    .dark-mode .restacks-modal .modal_contents,
+    .dark-mode body.news .menu-category .btn-edit-tags,
     .dark-mode .anime-search-filter .category-type,
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link:hover,
     .dark-mode .manga-store .manga-store-tab-menu .tab,
@@ -533,6 +540,10 @@
     #add_anime_tags,
     #myinfo_score,
     #myinfo_status,
+    .dark-mode .anime-detail-header-stats .stats-block:before,
+    .dark-mode .restacks-modal .modal_contents .list .item .username .tag,
+    .dark-mode .profile .stacks-list .column-item .score,
+    .dark-mode .profile .stacks-list .column-item .foot .btn-report .report-block,
     .dark-mode .manga-store .manga-store-tab-menu .tab.on,
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
     .dark-mode .user-profile .user-button .btn-profile-submit,
@@ -1054,10 +1065,11 @@
         top: 8px;
         position: relative
     }
-    #content:has(>.left-column) .left-column,
     #delete,
     #read,
     #unread,
+    .left-column,
+    .dark-mode .mymessages .total_messages,
     .dark-mode body.news .content-left,
     body.news .tag-side-block .header,
     .dark-mode body.news .news-content-block .news-related-database tr td,
@@ -1095,6 +1107,8 @@
     }
     *,
     #myinfo_status,
+    .dark-mode .anime-detail-header-stats .stats-block:before,
+    .dark-mode .page-common #header-menu > .border:before,
     .dark-mode .mymessages .message > .mym,
     .dark-mode .mymessages .message:first-of-type > .mym,
     #content .shared-table td.borderClass,
@@ -1177,7 +1191,14 @@
         width: 97.5%!important
     }
     .user-friends.pt4.pb12 a {
-        width: 34px!important
+        width: 34px!important;
+        height: 50px!important;
+        margin-top: 5px
+    }
+    .dark-mode .user-profile .user-badges .user-badge {
+        width: 45px;
+        height: 45px;
+        margin-top: 5px
     }
     .dark-mode .anime-search-form-block .anime-search-form-search .inputtext,
     .dark-mode .characters-search-form-search .inputtext,
@@ -1276,7 +1297,7 @@
         width: 10px
     }
     .js-anime-character-va > tbody {
-        height: 65px;
+        height: 100px;
         transition: 1s;
         display: grid;
         overflow: hidden!important;
@@ -1317,20 +1338,20 @@
         position: absolute;
         z-index: 2;
         font-size: 0.7rem;
-        margin-top: -5px;
+        margin-top: -6px;
         line-height: 6px;
-        text-indent: -3px
+        text-indent: -5px;
     }
     .dark-mode .ranking-digest .ranking-unit:nth-child(10) .rank {
-        text-indent: -7px
+        text-indent: -8.5px
     }
     .dark-mode .ranking-digest .ranking-unit .rank:before {
         background: var(--color-foreground2);
         content: "";
         height: 25px;
-        left: -12px;
+        left: -14px;
         position: absolute;
-        top: -10px;
+        top: -9px;
         z-index: -1;
         width: 25px;
         border-radius: 50%
@@ -1507,6 +1528,19 @@ url-prefix("https://myanimelist.net/manga") {
     .detail-characters-list .left-column.fl-l.divider,
     .detail-characters-list .fl-r {
         width: 49.5%!important
+    }
+    .rightside.js-scrollfix-bottom-rel .table-recently-updated {
+        width: 100%!important;
+        background: var(--color-foreground);
+                border-radius:var(--border-radius);
+        padding: 10px
+    }
+        .rightside.js-scrollfix-bottom-rel .table-recently-updated tr > td {
+        width: 1060px;
+        background: var(--color-foreground);
+    }
+    .rightside.js-scrollfix-bottom-rel .table-recently-updated tr:nth-child(2) td{
+         background: var(--color-foreground3)!important; 
     }
 }
 @-moz-document url-prefix("https://myanimelist.net/recommendations.php") {
