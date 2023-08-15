@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Hoyolab - Dark Theme
 @namespace    Dark-Themes
-@version      1.0.0
+@version      1.0.1
 @description  Hoyolab Dark Theme
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -17,8 +17,7 @@
 @var checkbox removefooter 'Hide Footer' 0
 @preprocessor stylus
 ==/UserStyle== */
-@-moz-document url-prefix("https://www.hoyolab.com/"),
-url-prefix("https://creator.hoyolab.com/") {
+@-moz-document url-prefix("https://www.hoyolab.com/"), url-prefix("https://creator.hoyolab.com/") {
     :root {
         --fg: #000 + (fg_slider);
         --bg: #0b0b0b + (fg_slider) - 25;
@@ -72,6 +71,8 @@ url-prefix("https://creator.hoyolab.com/") {
         --default-lighter-border-color: var(--cardhoverlight);
         --creator-center-card-bg-color: var(--cardhoverlight);
         --default-background-color-disabled: var(--cardhoverlight);
+        --search-gradient-mask: linear-gradient(270deg, var(--primary-white-color) 2.99%, var(--primary-white-color) 29.08%, rgba(44, 44, 44, 0) 100%);
+        --search-result-special-color: linear-gradient(180deg, var(--cardhover) 0%, rgba(54, 63, 126, 0) 100%);
     }
     ::-webkit-scrollbar {
         background-color: #111;
@@ -170,6 +171,11 @@ url-prefix("https://creator.hoyolab.com/") {
         body {
             --primary-color: var(--font);
         }
+        .mhy-game-sign .mhy-game-sign-info .resign-info:hover .resign-info-title-wrapper .resign-info-title,
+        .mhy-game-sign .mhy-game-sign-info .resign-info:hover .resign-info-title-wrapper .resign-info-missing,
+        .mhy-game-sign .mhy-game-sign-info .resign-info:hover .resign-info-title-wrapper .calendar,
+        .mhy-game-sign .mhy-game-sign-info .resign-info:hover .iconfont,
+        .hyl-recommend-search__pagination .icon:hover .mhy-icon,
         .mhy-hoyolab-lang-selector.actived .mhy-hoyolab-lang-selector__current-lang,
         .mhy-hoyolab-select-menu__item:hover,
         .mhy-hoyolab-select-menu__item--selected,
@@ -340,18 +346,23 @@ url-prefix("https://creator.hoyolab.com/") {
         .mhy-topic-label .mhy-topic-label-icon {
             color: var(--font)
         }
+        .is-active > .hyl-recommend-word__txt,
+        .hyl-recommend-word:hover > .hyl-recommend-word__txt,
+        .mhy-selectmenu__item.mhy-selectmenu__item--selected .mhy-selectmenu__label,
         .mhy-cirlces-content:hover .mhy-official-tab .mhy-tab__item--active span,
         .hyl-group-b .mhy-timeline-topic-list__more,
         .mhy-contribution-card-v2__info:hover .mhy-contribution-card-v2__title,
         .mhy-selectmenu__item--selected,
         .mhy-selectmenu__item:hover {
-            color: var(--fontselected)
+            color: var(--fontselected)!important
         }
+        .hyl-group-b .mhy-recommend-user-page .mhy-recommmend-switch-tab li .active::after,
         .app-pc .mhy-follow-button:hover,
         .mhy-level-mission-list .mhy-progress__bar,
         .mhy-level-status__progress.mhy-progress .mhy-progress__bar {
             background-color: var(--btnhover)
         }
+        .explore-module.dark .explore-content .explore-list .explore-item:hover,
         .mhy-level-mission-list .mhy-progress__track,
         .mhy-cirlces-content .mhy-official-tab .mhy-tab__item--active,
         .mhy-account-flow.bbs-theme.appearance-dark button,
@@ -393,10 +404,13 @@ url-prefix("https://creator.hoyolab.com/") {
         .mhy-img-text-article .ql-editor ul li.ql-indent-8::before {
             background-color: var(--cardhover)
         }
+        .hyl-recommend-search__pagination .icon:hover,
+        .hyl-recommend-word:hover,
         .mhy-cirlces-content .mhy-official-tab .mhy-tab__item:hover,
         .mhy-account-flow.bbs-theme.appearance-dark .mhy-account-flow-form-input .input-container.focus,
         .mhy-account-flow.bbs-theme.appearance-dark button,
         .mhy-search-bar:hover .mhy-search-bar__input,
+        .mhy-search-bar--focused .mhy-search-bar__input,
         .mhy-tools-container .tools-header-main .tools-pagination .pager-number:hover,
         .mhy-tools-container .tools-header-main .tools-pagination .pager-number.active,
         .mhy-radio.mhy-radio-button.mhy-radio-button--active,
@@ -414,13 +428,19 @@ url-prefix("https://creator.hoyolab.com/") {
         .mhy-claim-info__value .mhy-input__container--focus {
             border-color: var(--focus)
         }
-        .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item,
+        .explore-module.dark .explore-content .explore-list .explore-item .header .header-bg,
+        .mhy-game-sign .sign-award-list .prev-button:hover,
+        .mhy-game-sign .sign-award-list .next-button:hover .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-select-menu__item,
         .mhy-hoyolab-lang-selector,
         .mhy-hoyolab-select-menu__item--selected .mhy-hoyolab-select-menu__icon,
         .mhy-float-menu,
         .mhy-radio .mhy-symbol-icon,
         .mhy-radio .mhy-icon {
             filter: grayscale(1)
+        }
+        .hyl-group-b .header-notification .header-notification-dialog {
+            -webkit-box-shadow: 0px 12px 24px rgba(78, 78, 78, .2);
+            box-shadow: 0px 12px 24px rgba(78, 78, 78, 0.2)
         }
     }
 }
