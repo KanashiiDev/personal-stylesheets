@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         HoYoLab Genshin Impact Tools - Dark Theme
 @namespace    Dark-Themes
-@version      1.1.7
+@version      1.1.71
 @description  HoYoLab Genshin Impact Tools (Check-in, Battle Chronicle, Teyvat Interactive Map and Enchancement Progression Calculator) Dark Theme
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -63,15 +63,17 @@ background:rgba(238, 165, 62, .16);
 .calculate .search__top,
 .calculate__main,
 .calculate__right .item__avatar,
-.layout,
 .map-loading-mask,
 .mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-lang-selector,
-.mhy-ys-set-layout,
 .pc-root-layout .header-layout,
-.pc-ys-layout-wrapper,
-.top,
-.web-nav-bar{
+.top{
   background-color: #121212!important
+}
+.web-nav-bar,
+.layout,
+.mhy-ys-set-layout,
+.pc-ys-layout-wrapper{
+  background-color: rgba(18, 18, 18,opacity - .4)!important
 }
 if(custom-bg) {
 body > div.components-home-assets-__home_---home-page---C1pMbL.home-page,
@@ -155,7 +157,6 @@ html {
 .tcg-types,
 .tcg-menus,
 .mushroom .book,
-.pc-ys-layout-wrapper,
 .calculate .search,
 .calculate .drawer,
 .calculate .search__top,
@@ -168,10 +169,7 @@ html {
 }
 .calculate__main,
 body > div.app > div > div.top,
-.web-nav-bar,
-.layout,
 .pc-root-layout .header-layout,
-.mhy-ys-set-layout,
 .mhy-summer-v2-story .layout-container{
   background-color:rgba(18, 18, 18, opacity)!important
 }
@@ -201,7 +199,6 @@ body > div.activity-popup.van-popup.van-popup--center,
 .tablet-tips {
   background-color: #161616!important
 }
-body[data-game-id="2"] .activity-header,
 .tcg-detail > div.battle > div.content > div.dialog.van-popup.van-popup--center > .container > .container-pc,
 .tcg-menus .c-title-selector-titles,
 .van-popup.van-popup--center.rounded-xl,
@@ -1109,5 +1106,9 @@ border-radius: 7px;
 .filter-panel__footer-reset {
   background-color:#bbb!important;
   color:#222
+}
+.mhy-ys-set-layout{
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
 }
 }
