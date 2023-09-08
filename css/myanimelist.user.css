@@ -1,45 +1,50 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.41
-@description  Myanimelist - Clean
+@version      1.0.48
+@description  Myanimelist - Clean (Please use Dark Appearance)
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
-@var color    fg_color        'Foreground Color        ' rgba(21, 30, 46)
-@var range    fg_slider  'Foreground Color Brightness' [1, 1, 50, 1,'']
-@var color    txt_color        'Header Text Color        ' rgba(182, 182, 182)
-@var color    link_color        'Link Color        ' rgba(171,196, 237)
-@var checkbox shadow 'Shadow' 1
-@var color    shadow_color        'Shadow Color        ' rgb(0,0, 0,.3)
-@var range    shadow_s 'Shadow Strength' [3, 0, 10, 1,'px']
-@var color    shadow_t_color        'Text Shadow Color        ' rgb(0,0, 0,.3)
-@var range    shadow_t_s 'Text Shadow Strength' [3, 0, 10, 1,'px']
-@var range    border_radius  'Rounded Corners' [5, 0, 10, 1,'px']
-@var checkbox fullgray 'Dark Mode' 0
-@var checkbox custom-bg 'Custom Background Image' 0
-@var text     bg_image 'Background Image Url' '' url ''
-@var range    bg_brightness  'Background Image Brightness' [100, 1, 200.0, 1,'%']
-@var range    bg_saturate  'Background Image Saturation' [100, 1, 300.0, 1,'%']
-@var range    bg_contrast  'Background Image Contrast' [100, 100, 300.0, 1,'%']
-@var range    bg_blur  'Background Image Blur' [0, 0, 50, 1,'px']
-@var range    opacity  'Background Color Opacity' [1, 0.0, 1, 0.01]
-@var range    blur_slider 'Background Color Blur' [0, 0, 50, 1,'px']
-@var checkbox removefooter 'Hide Footer' 0
+@var color    fg_color        'Foreground Color' rgba(21, 30, 46)
+@var range    fg_slider       'Foreground Color Brightness' [1, 1, 50, 1,'']
+@var color    t_color         'Text Color' rgba(200, 200, 200)
+@var color    txt_color       'Header Text Color' rgba(182, 182, 182)
+@var color    link_color      'Link Color' rgba(171,196, 237)
+@var checkbox shadow          'Shadow' 1
+@var color    shadow_color    'Shadow Color' rgb(0,0, 0,.3)
+@var range    shadow_s        'Shadow Strength' [3, 0, 10, 1,'px']
+@var color    shadow_t_color  'Text Shadow Color' rgb(0,0, 0,.3)
+@var range    shadow_t_s      'Text Shadow Strength' [3, 0, 10, 1,'px']
+@var range    border_radius   'Rounded Corners' [5, 0, 10, 1,'px']
+@var checkbox fullgray        'Dark Mode' 0
+@var checkbox custom-bg       'Custom Background Image' 0
+@var text     bg_image        'Background Image Url' '' url ''
+@var range    bg_brightness   'Background Image Brightness' [100, 1, 200.0, 1,'%']
+@var range    bg_saturate     'Background Image Saturation' [100, 1, 300.0, 1,'%']
+@var range    bg_contrast     'Background Image Contrast' [100, 100, 300.0, 1,'%']
+@var range    bg_blur         'Background Image Blur' [0, 0, 50, 1,'px']
+@var range    opacity         'Background Color Opacity' [1, 0.0, 1, 0.01]
+@var range    blur_slider     'Background Color Blur' [0, 0, 50, 1,'px']
+@var checkbox removefooter    'Hide Footer' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*") {
     :root {
         --fg: fg_color + (fg_slider);
-        --fg2: fg_color + 13 + (fg_slider);
+        --fg2: fg_color + 10 + (fg_slider);
         --fg4: fg_color + 20 + (fg_slider);
         --fgo: rgba((fg_color + 15).3) +(fg_slider);
         --bg: fg_color - 10 + (fg_slider);
         --bgo: rgba((fg_color - 10).0 + opacity) + (fg_slider);
         --color-text: (txt_color);
         --color-text-normal: (txt_color);
+        --color-main-text-normal: (t_color);
+        --color-main-text-light: (t_color - 35);
+        --color-main-text-op: (t_color + 200);
         --color-link: (link_color);
+        --color-link2: (link_color - 50);
         --color-text-hover: (txt_color + 25);
-        --color-link-hover: (link_color + 25);
+        --color-link-hover: (link_color +35);
         --shadow-color: shadow_color;
         --shadow-strength: shadow_s;
         --t-shadow-color: shadow_t_color;
@@ -50,6 +55,7 @@
             --fg2: rgba(fg_color + 13 + (fg_slider) (opacity));
             --fg4: rgba(fg_color + 20 + (fg_slider) (opacity))
         }
+
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -74,7 +80,7 @@
             --fg: #000 + (fg_slider);
             --fg2: #000 + (fg_slider) + 13;
             --fg4: #000 + (fg_slider) + 20;
-            --fgo: rgba(0, 0, 0, .3) + 15 + (fg_slider);
+            --fgo: rgba(0, 0, 0, .3) + 20 + (fg_slider);
             --bgo: rgba(11, 11, 11, opacity) + (fg_slider) - 25;
             --color-text: (txt_color);
             --color-text-normal: (txt_color);
@@ -84,6 +90,7 @@
                 --fg2: rgba((#000 + (fg_slider) + 13) (opacity));
                 --fg4: rgba((#000 + (fg_slider) + 20) (opacity));
             }
+
             ::-webkit-scrollbar-thumb {
                 background: #0b0b0b + 20 + (fg_slider);
             }
@@ -110,19 +117,46 @@
         --br: var(--border-radius)!important;
         background-color: var(--color-background)!important;
     }
-    .dark-mode .page-common a, .dark-mode .page-common a:visited {
-        color: var(--color-link)!important
+
+    a,
+    li,
+    button,
+    #topSearchResultList > div > div,
+    .dark-mode .page-common .incrementalSearchResultList .list .image,
+    .dark-mode .page-common .incrementalSearchResultList .list .info,
+    #topSearchResultList,
+    .page-common .incrementalSearchResultList {
+        transition: 0.3s all ease-in-out;
     }
+
+    #topSearchResultList > div > div.list {
+        height: 20px;
+        margin-top: 5px
+    }
+
+    #topSearchResultList > div > div.list:hover {
+        height: 90px
+    }
+
+    .incrementalSearchResultList .list.separator {
+        height: 10px!important;
+        cursor: auto!important
+    }
+
     if(shadow) {
         img,
+        .dark-mode .page-common .inputtext,
+        #dialog .inputButton.submit,
         #horiznav_nav ul li a,
         .dark-mode .anime-detail-header-stats .stats-block:before,
         .dark-mode .widget.mxj .widget-content .content,
-        #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-column.fl-l.divider > table, #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-right.fl-r > table,
+        #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-column.fl-l.divider > table,
+        #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-right.fl-r > table,
         .theme-songs.js-theme-songs,
         .dark-mode .anime-slide-block .anime-slide .btn-anime,
         .dark-mode .detail-stack-block .column-item,
-        .forum_boardrow1, .forum_boardrow2,
+        .forum_boardrow1,
+        .forum_boardrow2,
         .anime_detail_related_anime,
         [itemprop=description],
         .dark-mode .anime-detail-header-video .video-promotion,
@@ -146,11 +180,14 @@
         .widget.announcements.left > .widget-content,
         .widget.seasonal.left > div > div,
         .dark-mode #widget-seasonal-video .widget-slide .btn-anime,
-        .dark-mode .widget.featured .news-list.widget .news-unit a.image-link, .dark-mode .widget.news .news-list.widget .news-unit a.image-link,
+        .dark-mode .widget.featured .news-list.widget .news-unit a.image-link,
+        .dark-mode .widget.news .news-list.widget .news-unit a.image-link,
         .dark-mode .auto-recommendations .item,
         .profile-about-user.js-truncate-inner > table > tbody > tr > td > div > .quotetext,
         .quotetext,
-        .dark-mode .profile .user-statistics .user-statistics-stats .stats, .dark-mode .profile .user-statistics .user-statistics-stats .updates, .dark-mode .fav-slide-block,
+        .dark-mode .profile .user-statistics .user-statistics-stats .stats,
+        .dark-mode .profile .user-statistics .user-statistics-stats .updates,
+        .dark-mode .fav-slide-block,
         .dark-mode body:not(.ownlist) textarea,
         .dark-mode .page-common #headerSmall:before,
         .dark-mode .page-common .header-notification-dropdown,
@@ -164,9 +201,15 @@
         .dark-mode .review-element,
         .dark-mode .stacks .recent-list .column-item,
         .dark-mode .seasonal-anime-list .seasonal-anime,
-        .dark-mode .user-function .icon-user-function.icon-comment, .dark-mode .user-function .icon-user-function.icon-message, .dark-mode .user-function .icon-user-function.icon-request, .dark-mode .user-function .icon-user-function.icon-remove, .dark-mode .user-function .icon-user-function.icon-gift,
+        .dark-mode .user-function .icon-user-function.icon-comment,
+        .dark-mode .user-function .icon-user-function.icon-message,
+        .dark-mode .user-function .icon-user-function.icon-request,
+        .dark-mode .user-function .icon-user-function.icon-remove,
+        .dark-mode .user-function .icon-user-function.icon-gift,
         .dark-mode .user-profile .user-status.border-top,
-        .user-badges.di-b.clearfix, .user-friends.pt4.pb12, .user-profile-sns,
+        .user-badges.di-b.clearfix,
+        .user-friends.pt4.pb12,
+        .user-profile-sns,
         .dark-mode .user-profile .user-button .btn-profile-submit,
         body.index .right-column .ranking-digest .ranking-unit,
         .dark-mode .ranking-digest .ranking-unit .rank:before,
@@ -174,10 +217,8 @@
         .dark-mode #dialog {
             box-shadow: 0 0 var(--shadow-strength) var(--shadow-color)!important;
         }
-        * {
-            text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
-        }
     }
+
     if(blur_slider > 1) {
         .dark-mode .page-common #headerSmall:before {
             content: "";
@@ -187,6 +228,7 @@
             display: block;
             position: absolute
         }
+
         .dark-mode .page-common .footer-ranking,
         .dark-mode .page-common #headerSmall:before,
         .dark-mode .page-common .header-notification-dropdown,
@@ -209,14 +251,17 @@
             margin-top: 65px!important;
             position: relative
         }
+
         .dark-mode .profile .user-statistics {
             width: 99%
         }
+
         .dark-mode .profile .user-comments .comment,
         .dark-mode .page-common .content-container .container-right h2,
         .dark-mode .fav-slide-block {
             width: 96%
         }
+
         #myanimelist:before {
             content: "";
             width: 200%;
@@ -227,12 +272,14 @@
             -webkit-backdrop-filter: brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
             backdrop-filter: brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
         }
+
         if( bg_blur > 0) {
             #myanimelist:before {
                 -webkit-backdrop-filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
                 backdrop-filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
             }
         }
+
         .dark-mode body:not(.ownlist),
         body {
             background: url(bg_image)!important;
@@ -240,6 +287,7 @@
             background-attachment: fixed!important;
             background-color: var(--color-background)!important;
         }
+
         .page-common #myanimelist #contentWrapper {
             background-color: var(--color-backgroundo)!important;
             top: 55px!important;
@@ -250,29 +298,35 @@
             box-shadow: 0 0 4px var(--shadow-color)!important;
         }
     }
+
     select:focus,
     input:focus,
     textarea:focus {
         outline: 0
     }
+
     if(removefooter) {
         #footer-block,
         .footer-ranking {
             display: none !important;
         }
     }
+
     .page-common #menu,
     .page-common #myanimelist {
         margin: 0 auto
     }
+
     .page-common #menu_left {
         min-width: max-content
     }
+
     .page-common #headerSmall {
         background-image: none!important;
         min-width: 950px;
         background-color: var(--fg)!important
     }
+
     #headerSmall,
     .page-common #menu {
         position: fixed!important;
@@ -280,6 +334,7 @@
         width: 100%;
         left: 0
     }
+
     .page-common #menu {
         display: flex!important;
         left: 200px;
@@ -287,15 +342,21 @@
         width: unset!important;
         padding-right: 10px
     }
+
     .dark-mode .page-common a:hover {
         text-decoration: none
     }
+
     #nav > li a {
         cursor: pointer!important
     }
-    div:has( > a[rel*="noopener"]) {
-    display: none !important
+
+    div:has( > a[rel*="noopener"]):not(.content.clearfix) {
+        display: none !important
     }
+
+    #tbl-next-up.in-viewport.tbl-next-up-position-right,
+    .trc_related_container,
     #broadcast-block,
     #nav > li:nth-child(5),
     #nav > li:nth-child(6),
@@ -318,6 +379,14 @@
     .dark-mode .page-common .footer-ranking {
         display: none!important
     }
+
+    #nav > li,
+    #nav > li > a,
+    .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime,
+    .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime .head,
+    .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime .info,
+    .dark-mode .stacks .stacks-detail .tag,
+    .page-common .setting-row.show-hidden,
     .dark-mode .staff_wrap .staff,
     .dark-mode .profile .statistics-updates .data .graph,
     .dark-mode .page-common .header-profile .header-profile-dropdown.color-pc-constant .fl-r.link-count,
@@ -345,9 +414,15 @@
     p {
         background: 0 0!important
     }
+
+    .dark-mode .stacks .stacks-detail h2.title,
+    #content > table > tbody > tr > td.borderClass > div > h2,
+    .page-common h2 {
+        background: 0 0
+    }
+
     #content,
     #content > table > tbody > tr > td.borderClass,
-    #content > table > tbody > tr > td.borderClass > div > h2,
     #horiznav_nav,
     #profileRows > a,
     .anime_detail_related_anime td,
@@ -357,8 +432,7 @@
     .page-common .h1,
     .page-common .header-profile.link-bg,
     .page-common .pb8,
-    .page-common h2,
-    .personal-profile-edit .spaceit_pad,
+    .dark-mode .stacks .stacks-detail .tag .personal-profile-edit .spaceit_pad,
     .ranking-digest .ranking-header,
     .user-status-block .form-user-episode input[type=text],
     .widget-container .widget.reviews .item,
@@ -368,12 +442,46 @@
         border: 0!important;
         background: 0 0!important
     }
+
+    :root,
     body:not(.ownlist),
     .di-ib.form-user-episode.ml8.disabled {
         background: var(--color-background)!important
     }
+
     #dialog,
     select option,
+    .dark-mode div.sceditor-outer div.mal-tab-item.preview,
+    .dark-mode .contents-video-embed .episode-information,
+    .dark-mode .contents-video-embed .btn-video-anime-slide.hori[data-dir=prev],
+    .dark-mode .contents-video-embed .btn-video-anime-slide.hori.prev,
+    .dark-mode .contents-video-embed .btn-video-anime-slide.hori[data-dir=next],
+    .dark-mode .contents-video-embed .btn-video-anime-slide.hori.next,
+    .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
+    .dark-mode .page-forum .forum.thread .message-container,
+    .stacks .column-3 .column-item,
+    .dark-mode .stacks .column-1,
+    .breadcrumb .di-ib,
+    .dark-mode .episode_list .episode-list-header td,
+    .dark-mode .episode_list .episode-list-data:nth-of-type(even) td,
+    .reviews-horiznav-nav-sort-block .review-sort-order-block.show,
+    .reviews-horiznav-nav-sort-block .review-filter-block.show,
+    .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime,
+    .dark-mode .page-common .incrementalSearchResultList .list.list-bottom-message.loading,
+    .dark-mode .page-common .incrementalSearchResultList .list.list-bottom-message.noresult,
+    .dark-mode .write_a_review .radio input[type=radio]:not(:checked) + label:before,
+    .dark-mode #editdiv,
+    .dark-mode .write_a_review .btn.btn-default,
+    .dark-mode .write_a_review .tips,
+    .dark-mode .write_a_review .notice-box,
+    .dark-mode .write_a_review .scores .score,
+    .addtolist-block.js-anime-addtolist-block,
+    .addtolist-block.js-manga-addtolist-block,
+    .dark-mode .page-common .sprite-icon-social.icon-social.icon-facebook,
+    .dark-mode .page-common .sprite-icon-social.icon-social.icon-twitter,
+    .dark-mode .page-common .sprite-icon-social.icon-social.icon-google,
+    .dark-mode .page-common .sprite-icon-social.icon-social.icon-reddit,
+    .dark-mode .page-common .sprite-icon-social.icon-social.icon-tumblr,
     .dark-mode .restacks-modal .modal_contents,
     .dark-mode body.news .menu-category .btn-edit-tags,
     .dark-mode .anime-search-filter .category-type,
@@ -381,7 +489,6 @@
     .dark-mode .manga-store .manga-store-tab-menu .tab,
     .dark-mode body.news .news-content-block.news-tags .news-tags-table.news tr:nth-of-type(odd),
     .dark-mode body.news .news-content-block.news-tags .menu-category-tags .btn-category,
-    .dark-mode body.news .news-container .tags .tag,
     .dark-mode .search_all .link-content-jump .link:hover,
     .dark-mode .search_all .content-result .list,
     .dark-mode .history_content_wrapper .history-updates .item,
@@ -456,9 +563,9 @@
     .dark-mode .user-profile .user-function .icon-user-function,
     .dark-mode .user-profile .user-status li,
     .dark-mode .watch .video-menu-category .btn-category,
-    .dark-mode body:not(.ownlist) select,
     .dark-mode body:not(.ownlist) textarea,
     .external_links,
+    .pb16.broadcasts,
     .forum_boardrow1,
     .forum_boardrow2,
     .has-multi-episodes-info,
@@ -481,7 +588,6 @@
     .page-common .forum-topic-sort,
     .page-common .header-notification-dropdown .arrow_box,
     .page-common .header-notification-item.new,
-    .page-common .setting-row.show-hidden,
     .page-common table.forum-topics tbody tr td,
     .page-forum .forum-topic-message .message-wrapper .content,
     .people-informantion-more.js-people-informantion-more,
@@ -494,7 +600,6 @@
     .quotetext,
     .reaction-box.mb8.js-hidden,
     .right-column .widget.my_statistics.right,
-    .setting-row,
     .show-hidden,
     .spaceit_pad,
     .stacks .search-side .quick-search a,
@@ -523,6 +628,7 @@
     div.page-forum table tbody tr td {
         background-color: var(--color-foreground)!important
     }
+
     #add_anime_comments,
     #add_anime_finish_date_day,
     #add_anime_finish_date_month,
@@ -540,6 +646,22 @@
     #add_anime_tags,
     #myinfo_score,
     #myinfo_status,
+    .page-common #horiznav_nav ul li > a.horiznav_active,
+    .breadcrumb .di-ib:last-child,
+    .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime.play .link,
+    .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime:hover .link,
+    .dark-mode body.news .news-container .tags .tag,
+    .dark-mode .page-forum .forum.thread .replies .replyguide-container,
+    .dark-mode .episode_list .episode-list-data:nth-of-type(odd) td,
+    .dark-mode body:not(.ownlist) select,
+    .dark-mode .stacks .stacks-detail .any_status .score,
+    .dark-mode .tile-anime-list .seasonal-anime,
+    .dark-mode .mal-tabs a.item.active,
+    .dark-mode #editdiv .inputtext,
+    .dark-mode .page-forum .forum .message .replied,
+    .dark-mode .write_a_review .radio.box.on,
+    .dark-mode .write_a_review .scores .score.selected,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu,
     .dark-mode .anime-detail-header-stats .stats-block:before,
     .dark-mode .restacks-modal .modal_contents .list .item .username .tag,
     .dark-mode .profile .stacks-list .column-item .score,
@@ -548,7 +670,8 @@
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
     .dark-mode .user-profile .user-button .btn-profile-submit,
     .dark-mode .stacks .btn-new-stack.on,
-    .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover, .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li,
+    .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover,
+    .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li,
     .dark-mode .view-style2 a,
     .dark-mode #dialog .inputButton.submit,
     .dark-mode .characters-search-form-search .inputButton,
@@ -619,6 +742,9 @@
     .widget.popular_promotion_video.left .external-link {
         background-color: var(--color-foreground2)!important
     }
+
+    .dark-mode .page-forum .topic-switch-layout .mal-btn.primary.outline,
+    .setting-row.locate-right,
     .dark-mode .page-common .incrementalSearchResultList .list.list-bottom.focus,
     .dark-mode .user-profile .user-compatability-graph .bar-outer,
     .dark-mode .history_content_wrapper .history-updates .work-graph,
@@ -627,17 +753,28 @@
     .page-common .header-notification-item:hover {
         background-color: var(--color-foreground3)!important
     }
+
+    .dark-mode body.news .news-container .tags .tag:hover,
+    .dark-mode body.news .tag-side-block .tag-cloud .tag:hover,
+    .dark-mode .mal-btn-toolbar button.mal-btn.primary:first-child,
+    .dark-mode .page-forum .topic-switch-layout .mal-btn.primary,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:focus,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:hover,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:focus,
     .dark-mode .search_all .result-header,
     .dark-mode .search_all .link-content-jump .link.on,
     .dark-mode .search_all .btn-search-more,
     .dark-mode .page-common div.updatesBar,
     .dark-mode #fancybox-overlay,
-    .dark-mode .user-profile .user-button .btn-profile-submit:hover, .dark-mode .user-profile .user-button .btn-profile-submit:active,
+    .dark-mode .user-profile .user-button .btn-profile-submit:hover,
+    .dark-mode .user-profile .user-button .btn-profile-submit:active,
     .dark-mode .page-common a.button_edit.button_edit.completed,
     .Lightbox_AddEdit.button_edit.ga-click,
     .dark-mode #fancybox-outer,
     .dark-mode .view-style2 a.on,
-    .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover, .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li.on,
+    .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover,
+    .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li.on,
     .color-picker div,
     .dark-mode .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox]:checked + label,
     .dark-mode .membership .about-membership .btn-subscription,
@@ -656,6 +793,8 @@
     .page-forum .forum-topic-message .message-header {
         background-color: var(--color-foreground4)!important
     }
+
+    .dark-mode .stacks .search-list .column-item,
     .dark-mode .characters-favorites-ranking-table td,
     .dark-mode .manga-store-error-404_description,
     .dark-mode .page-common .badresult,
@@ -674,6 +813,7 @@
         background-color: var(--color-foreground)!important;
         border: 0!important
     }
+
     .dark-mode .btn-choose-your-own,
     .dark-mode .characters-favorites-ranking-table .table-header td,
     .dark-mode .icon-top-ranking-page .next,
@@ -702,16 +842,14 @@
     .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a:hover,
     .page-common .header-notification-dropdown-inner h3,
     .setting-row.locate-left,
-    .setting-row.locate-right,
     .stacks .btn-report .report-block,
     .stacks .stack-balloon .balloon,
-    .stacks .stacks-detail .any_status .btn_login a,
-    .stacks .stacks-detail .tag {
+    .stacks .stacks-detail .any_status .btn_login a {
         background-color: var(--color-foreground2)!important;
         border: 0
     }
+
     .dark-mode .stacks .btn-show-spoilers i.fas,
-    .breadcrumb,
     .widget-header,
     .dark-mode .user-profile .user-compatability-graph .bar-outer .bar-inner,
     footer .ac::before,
@@ -725,10 +863,128 @@
     input::placeholder {
         color: var(--color-text-normal)!important
     }
+
+    textarea,
+    select,
+    button:not(.featured-search-input-submit.notActive),
+    input p,
+    div.text,
+    u,
+    .dark-mode .page-common .dark_text,
+    .dark-mode .page-common .dark_text:hover,
+    .dark-mode .page-common .dark_text:visited,
+    .dark-mode .page-forum .forum-topic-message .message-header,
+    .dark-mode body.news .news-side-block .header,
+    .dark-mode body.news .featured-side-block .header,
+    body.news .tag-side-block .header,
+    .dark-mode .news-list .comment-list .information .pv,
+    .dark-mode .news-list .news-unit .information .pv,
+    .dark-mode .anime-slide-block .anime-slide .btn-anime .link .title,
+    .dark-mode .profile .statistics-updates .data .text.completed,
+    .dark-mode .page-common .content-container .container-right h5,
+    .dark-mode body.news .news-container *:not(a),
+    span:not(.enabled):not(.disabled):not(.mr4):not(span),
+    i:not(.fa-solid):not(.far):not(.fas):not(.fa-regular):not(.fa-brands),
+    .score-label.score-na,
+    .dark-mode .user-profile .user-status li .user-status-data.online,
+    .dark-mode .page-common .inputButton,
+    .dark-mode .club-list .table-data td .informantion,
+    .dark-mode .club-list .btn-club-join,
+    .dark-mode .page-episode-add .label.required,
+    .dark-mode .page-episode-add .label,
+    .dark-mode .episode_list .episode-list-header td,
+    .dark-mode body:not(.ownlist),
+    .spaceit_pad,
+    .di-ib.form-user-episode,
+    .dark-mode .user-status-block .form-user-score,
+    #myinfo_status:not(:hover),
+    .dark-mode .notification_settings .notification-setting-content .settings-notification .setting td.button.all input[type=checkbox] + label:before,
+    .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.anime .name,
+    .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.manga .name,
+    .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.news .name,
+    .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.featured .name,
+    .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.forum .name,
+    .bgbdrContainer.preview-message-text,
+    .dark-mode .page-forum .forum-topic-message .message-wrapper .content table.body td,
+    .dark-mode .page-forum .forum .message .replied.show .replied-container .replied-body,
+    .dark-mode body.index .widget-container .widget.my_statistics table td:nth-child(2),
+    .dark-mode .seasonal-anime-list .seasonal-anime .information .information-item.scormem .scormem-container .scormem-item,
+    .dark-mode .mymessages .message.read .mym_subject > a.subject-link .text,
+    .dark-mode .mymessages .total_messages,
+    .dark-mode #dialog td,
+    .dark-mode .page-common .fn-grey6,
+    .dark-mode .page-common h2,
+    .dark-mode .page-common .h1,
+    .dark-mode body.index .widget-container .widget .widget-header,
+    .dark-mode .page-common .normal_header {
+        color: var(--color-main-text-normal)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
+    }
+
+    .dark-mode .page-forum .forum-topic-message .userstatus.offline,
+    .dark-mode .page-forum .forum-topic-message .userinfo.joined,
+    .dark-mode .page-forum .forum-topic-message .userinfo.posts,
+    .dark-mode .page-forum .forum-topic-message .message-wrapper .content .modified,
+    .dark-mode .page-forum .forum.thread .message .message-container .content .user .item.update,
+    .dark-mode .page-forum .forum.thread .message .message-container .content .user .item.modified,
+    .dark-mode .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read .header-notification-item-header .time,
+    .dark-mode .news-list .comment-list .information .info,
+    .dark-mode body.news .news-side-block .news-list .news .information,
+    .dark-mode .widget.featured .news-list.widget .news-unit .information .info,
+    .dark-mode .widget.news .news-list.widget .news-unit .information .info,
+    .dark-mode .ranking-digest .ranking-unit .info,
+    .dark-mode .ranking-digest .ranking-unit .members,
+    .dark-mode .history_content_wrapper .history-updates .work-status,
+    .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content,
+    .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-quote,
+    .dark-mode .anime-detail-header-stats .stats-block .score:after,
+    .dark-mode .stacks .detail .foot .stat,
+    .dark-mode .page-common .fn-grey4,
+    .page-episode-add .label.required:after,
+    .dark-mode .page-episode-add .episode-form-note,
+    .dark-mode .page-common .fn-grey2,
+    .dark-mode #dialog .inputButton.submit:not(:hover),
+    .episode-aired.nowrap,
+    .episode-number.nowrap,
+    .dark-mode .review-element .thumbbody .body .update_at,
+    .dark-mode .notification_settings .notification-setting-content .settings-notification .setting td.button input[type=checkbox] + label:before,
+    .dark-mode .page-common .h1 .title-inherit,
+    .mal-sync-pre-remove,
+    .dark-mode body.index .widget-container .widget.my_statistics table td:nth-child(1),
+    .fa-circle-question:after,
+    .widget.recommendations.left > div.widget-content > div > table > tbody > tr > td > div.spaceit_pad,
+    .dark-mode .page-common .spaceit,
+    .dark-mode .page-common #footer-block .footer-social-media:before,
+    .dark-mode .page-common #footer-block .footer-app:before,
+    .dark-mode .page-common #footer-block #copyright,
+    .dark-mode .page-common .incrementalSearchResultList .list .on .info .media-type,
+    .dark-mode .page-common .incrementalSearchResultList .list .on .info .extra-info,
+    .dark-mode .mymessages .message.read .mym_date,
+    #content > div:nth-child(2) > div:nth-child(2),
+    .setting-row,
+    small,
+    .dark-mode .page-common .lightLink,
+    .dark-mode .page-common .lightLink:link,
+    .dark-mode .page-common .lightLink:visited,
+    .dark-mode .page-common .lightLink:active {
+        color: var(--color-main-text-light)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
+    }
+
+    .dark-mode .auto-recommendations .item .title,
+    .dark-mode .widget-slide-block .widget-slide .btn-anime .link .title.color-pc-constant {
+        color: var(--color-main-text-op)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
+    }
+
+    .fa-lock-keyhole:before,
+    .user-profile .user-function i.fas,
+    .header-menu-unit.header-list.js-header-menu-unit.on > div > ul > li > a,
+    .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > a,
+    .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > form > a,
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
     .search_all .result-header,
     .dark-mode .stacks .search-side form button,
-    .dark-mode #dialog .inputButton.submit,
     .dark-mode .btn-sns-setting,
     .dark-mode .club-search-form-search .inputButton,
     .dark-mode .club-search-form-search .inputtext::placeholder,
@@ -770,8 +1026,10 @@
     .page-common #nav a,
     .page-common #nav li,
     .quickAdd-result-header {
-        color: var(--color-text)!important
+        color: var(--color-text)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
+
     select option:checked,
     .dark-mode .characters-search-form-search .inputButton,
     .dark-mode .navi-seasonal .horiznav_nav ul li a.horiznav_active,
@@ -786,33 +1044,68 @@
     .dark-mode button.mal-btn.secondary.outline.noborder.pressed,
     .dark-mode button.mal-btn.secondary.outline.noborder:active,
     .dark-mode button.mal-btn.secondary.outline.noborder:hover,
-    .page-common #horiznav_nav ul li > a.horiznav_active,
     .page-common #horiznav_nav ul li > a:hover,
     .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a:hover,
     .page-common .header-notification-dropdown-inner h3 .mark-all.disabled {
         background-color: var(--color-foreground2)!important;
-        color: var(--color-text)!important
+        color: var(--color-text)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
+
+    .text-ribbon.ga-click.ga-impression > div > a,
+    .js-profile-user-comment.inputButton.btn-form-submit.fs12.pt4.pb4.pl8.pr8,
+    .dark-mode .page-forum .forum-topic-message .message-wrapper .icon-team-title,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:focus,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:hover,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:focus,
+    .dark-mode .mal-dropdown-outer .mal-dropdown-menu,
     .dark-mode .view-style2 a.on,
     .dark-mode .page-common .hoverinfo,
     .dark-mode .page-common .hovertitle,
     .stacks .search-side .quick-search a,
     .stacks .stacks-detail .any_status .btn_login a {
-        color: var(--color-text-hover)!important
+        color: var(--color-text-hover)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .dark-mode .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read .header-notification-item-header .category,
+    .dark-mode .page-common .incrementalSearchResultList .list .on .info .name,
+    .dark-mode .page-common .incrementalSearchResultList .list .off .info.character .name,
+    .dark-mode .page-common .incrementalSearchResultList .list .off .info.person .name,
+    .dark-mode .page-common .incrementalSearchResultList .list .off .info.club .name,
+    .dark-mode .page-common .incrementalSearchResultList .list .off .info.user .name,
+    .h3_character_name,
+    .dark-mode .page-common a,
+    .dark-mode .page-common a:visited {
+        color: var(--color-link)!important
+    }
+
+    .dark-mode .page-forum .forum_postusername a {
+        color: var( --color-link2)!important
+    }
+
+    .breadcrumb .di-ib:last-child a > span:last-child,
+    .page-common #horiznav_nav ul li > a.horiznav_active,
+    .dark-mode #dialog .inputButton.submit:hover,
+    .dark-mode .icon-about-recommendations,
+    .breadcrumb,
+    .header-menu-unit.header-list.js-header-menu-unit.on > div > ul > li > a:hover,
+    .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > a:hover,
+    .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > form > a:hover,
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon:hover,
     .dark-mode .page-common .header-list-button .icon:hover,
     .dark-mode .page-common .header-message-button:hover .icon,
     .dark-mode .page-common .header-notification-button:hover .icon,
     .dark-mode .stacks .btn-show-spoilers.on i.fas,
-    .dark-mode .page-common #nav.color-pc-constant li.hover a,
     .dark-mode .page-common a:hover,
     .header-list .header-list-dropdown ul li a:hover,
     .header-profile-dropdown.color-pc-constant ul li a:hover,
     .page-common #nav.color-pc-constant li a:hover {
         color: var(--color-link-hover)!important
     }
+
+    .breadcrumb .di-ib,
     .shared-table,
     .shared-table td,
     .dark-mode .page-common a.button_add.button_add,
@@ -823,6 +1116,12 @@
     .dark-mode .user-profile .user-status.border-top span {
         padding: 5px!important
     }
+
+    .dark-mode .page-forum .forum.thread .message-container,
+    .dark-mode .stacks .column-1,
+    .dark-mode .stacks .search-list .column-item,
+    .addtolist-block.js-anime-addtolist-block,
+    .addtolist-block.js-manga-addtolist-block,
     .dark-mode .search_all .content-result .list,
     .dark-mode .history_content_wrapper .history-updates .item,
     .anime_detail_related_anime,
@@ -839,7 +1138,7 @@
     .dark-mode body:not(.ownlist) select,
     .dark-mode body:not(.ownlist) textarea,
     .external_links,
-    .js-anime-character-table,
+    .pb16.broadcasts,
     .js-widget-friend-list-updates .work,
     .mal-modal.modal-friends-update-settings .mal-btn-toolbar,
     .mymessages .message.read,
@@ -872,10 +1171,12 @@
     [itemprop=description] {
         padding: 10px!important
     }
+
     #contentWrapper > div:first-child > div > div.h1-title > div[itemprop=name],
     #contentWrapper > div:first-child > h1 {
         padding-top: 15px
     }
+
     #content > table > tbody > tr > td.borderClass > div > div:first-child img,
     #delete,
     #dialog,
@@ -883,6 +1184,17 @@
     #unread,
     #fancybox-outer,
     #fancybox-inner,
+    .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
+    ,
+    .dark-mode .page-forum .forum.thread .message-container,
+    .dark-mode .stacks .search-list .column-item,
+    .dark-mode .stacks .column-1,
+    .stacks .column-3 .column-item,
+    .dark-mode .auto-recommendations .item,
+    .breadcrumb .di-ib,
+    .addtolist-block.js-anime-addtolist-block,
+    .dark-mode .tile-anime-list .seasonal-anime,
+    .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime,
     .dark-mode .page-common .hoverinfo,
     .dark-mode .search_all .content-result .list,
     .search_all .result-header,
@@ -995,6 +1307,7 @@
     [itemprop=description] {
         border-radius: var(--br)!important
     }
+
     .detail-characters-list > div > table,
     .js-anime-character-table tbody td:first-child,
     .mymessages .message.read > .mym:first-child,
@@ -1003,6 +1316,7 @@
         border-top-left-radius: var(--br)!important;
         border-bottom-left-radius: var(--br)!important
     }
+
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
     .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
     .dark-mode .stacks .search-side form button,
@@ -1013,6 +1327,7 @@
         border-top-right-radius: var(--br);
         border-bottom-right-radius: var(--br)
     }
+
     .dark-mode .forum .forum-board-list > div:first-child,
     .dark-mode .user-profile .user-status li:first-of-type,
     .forum-mods-list.pb16 > div:first-child,
@@ -1022,6 +1337,7 @@
         border-top-right-radius: var(--br);
         border-top-left-radius: var(--br)
     }
+
     .dark-mode .forum .forum-board-list > div:first-child,
     .dark-mode .top-ranking-table .table-header td.rank,
     .js-people-manga.js-anime-watch-status-people-manga-inmylist td:first-child,
@@ -1036,6 +1352,7 @@
     .js-table-people-character .js-people-character:first-child td:last-child {
         border-top-right-radius: var(--br)
     }
+
     .auto-recommendations .item .title,
     .dark-mode .anime-detail-header-video .video-episode .video-unit .info-container,
     .dark-mode .anime-detail-header-video .video-episode .video-unit .title,
@@ -1048,23 +1365,28 @@
         border-bottom-right-radius: var(--br)!important;
         border-bottom-left-radius: var(--br)!important
     }
+
     .dark-mode .top-ranking-table tr:last-of-type,
     .forum-table-header,
     .page-forum .forum-topic-message .message-wrapper .profile,
     .stacks .stacks-detail .info-block {
         border-bottom-left-radius: var(--br)
     }
+
     .page-forum .forum-topic-message .message-wrapper .content,
     .stacks .stacks-detail .info-block .forum-table-header {
         border-bottom-right-radius: var(--br)!important
     }
+
     #content .shared-table td.borderClass {
         border: 1px solid !important
     }
+
     .dark-mode .page-common .forum-topic-sort {
         top: 8px;
         position: relative
     }
+
     #delete,
     #read,
     #unread,
@@ -1072,8 +1394,10 @@
     .dark-mode .mymessages .total_messages,
     .dark-mode body.news .content-left,
     body.news .tag-side-block .header,
+    .dark-mode .page-forum .forum.thread .message-container .content,
     .dark-mode body.news .news-content-block .news-related-database tr td,
-    .dark-mode body.news .news-side-block .header, .dark-mode body.news .featured-side-block .header,
+    .dark-mode body.news .news-side-block .header,
+    .dark-mode body.news .featured-side-block .header,
     .dark-mode .search_all .content-result .list,
     .dark-mode .history_content_wrapper .history-updates .item:not(:last-child) .body,
     .history_content_wrapper .normal_header,
@@ -1105,48 +1429,60 @@
     .widget.recommendations div div {
         border: 0!important
     }
+
     *,
     #myinfo_status,
+    .dark-mode .episode_list .episode-list-header td,
+    .dark-mode .episode_list td,
+    .dark-mode .page-common .goodresult,
     .dark-mode .anime-detail-header-stats .stats-block:before,
     .dark-mode .page-common #header-menu > .border:before,
     .dark-mode .mymessages .message > .mym,
     .dark-mode .mymessages .message:first-of-type > .mym,
     #content .shared-table td.borderClass,
     .dark-mode .seasonal-anime-list .seasonal-anime,
-    .dark-mode .user-function .icon-user-function.icon-comment, .dark-mode .user-function .icon-user-function.icon-message, .dark-mode .user-function .icon-user-function.icon-request, .dark-mode .user-function .icon-user-function.icon-remove, .dark-mode .user-function .icon-user-function.icon-gift {
+    .dark-mode .user-function .icon-user-function.icon-comment,
+    .dark-mode .user-function .icon-user-function.icon-message,
+    .dark-mode .user-function .icon-user-function.icon-request,
+    .dark-mode .user-function .icon-user-function.icon-remove,
+    .dark-mode .user-function .icon-user-function.icon-gift {
         border-color: #a0b1c514!important
     }
+
     .dark-mode .profile .stacks-list .column-item .foot .stack-balloon .balloon:after,
     .dark-mode .profile .stacks-list .column-item .foot .stack-balloon .balloon:before,
     .stacks .stack-balloon .balloon:after,
     .stacks .stack-balloon .balloon:before {
         border-right-color: var(--color-foreground2)!important
     }
+
     .dark-mode #dialog {
         border-color: transparent!important;
         margin-bottom: 20px
     }
+
     .page-common #header-menu {
         padding-left: 5px;
         padding-right: 5px
     }
-    .js-anime-character-va > tbody tr {
-        padding-bottom: 10px
-    }
+
     .dark-mode .profile .user-statistics .user-statistics-stats {
         display: flex;
         width: 100%
     }
+
     .dark-mode .detail-stack-block .column-item,
     .dark-mode .profile .user-statistics .user-statistics-stats .stats,
     .dark-mode .profile .user-statistics .user-statistics-stats .updates {
         margin-right: 5px
     }
+
     .page-common #horiznav_nav ul li {
-        margin-left: 5px!important;
+        margin-right: 1px!important;
         margin-top: 5px!important;
         display: inline-block!important
     }
+
     .dark-mode .mymessages .message.unread,
     .dark-mode .news-list .comment-list,
     .dark-mode .page-forum .topic-reply-box,
@@ -1158,26 +1494,32 @@
     .widget.seasonal.left > div > div {
         margin-top: 5px
     }
+
     footer {
         margin-top: 30px
     }
+
     .dark-mode .news-list .comment-list,
     .dark-mode .review-element,
     .profile .user-comments .comment,
     .spaceit.borderClass {
         margin-bottom: 10px!important
     }
+
     .dark-mode .page-advertising section.ad_section:nth-of-type(2n) div.ad_section {
         margin-bottom: 50px
     }
+
     .forum-topics td.replies,
     .forum-topics tr td.watch-state,
     .page-forum .forum_boardrow2 {
         width: auto!important
     }
+
     .spaceit_pad.po-r.js-statistics-info.di-ib {
         width: 91%
     }
+
     #content > div.left-column > article > div > div,
     #widget-episode-video,
     .js-widget-friend-list-updates .work,
@@ -1186,20 +1528,24 @@
     .widget-slide-block .widget-slide-outer {
         width: 100%!important
     }
+
     .dark-mode .search_all .content-result .list,
     .forum.timeline > div > div.topic-reply-box.fixed > div.sceditor-container.sourceMode.ltr > textarea {
         width: 97.5%!important
     }
+
     .user-friends.pt4.pb12 a {
         width: 34px!important;
         height: 50px!important;
         margin-top: 5px
     }
+
     .dark-mode .user-profile .user-badges .user-badge {
         width: 45px;
         height: 45px;
         margin-top: 5px
     }
+
     .dark-mode .anime-search-form-block .anime-search-form-search .inputtext,
     .dark-mode .characters-search-form-search .inputtext,
     .dark-mode .people-search-form-search .inputtext,
@@ -1209,23 +1555,27 @@
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important
     }
+
     .dark-mode .club-search-form-search .inputtext,
     .dark-mode .news.featured .featured-search-side .featured-search-input-text {
         width: 255px;
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important
     }
+
     .dark-mode .club-search-form-search .select,
     .dark-mode .forum .forum-search-side .forum-search-select,
     .dark-mode .stacks .search-side form input {
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important
     }
+
     .dark-mode .club-search-form-search .inputtext,
     .dark-mode .forum .forum-search-side .forum-search-input-text {
         border-top-left-radius: 0!important;
         border-bottom-left-radius: 0!important
     }
+
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
     .dark-mode .club-search-form-search .form-select-outer,
     .dark-mode .club-search-form-search .inputButton,
@@ -1233,34 +1583,41 @@
     .dark-mode .people-search-form-search .inputButton {
         height: 69px
     }
+
     .dark-mode .stacks .search-area .inputButton {
         height: 59.5px
     }
+
     .dark-mode .stacks .search-area .inputtext,
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
     .dark-mode .forum .forum-search-side .forum-search-select {
         height: 38px
     }
+
     .dark-mode .forum .forum-search-side .forum-search-input-text {
         width: 165px;
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important;
         height: 17px
     }
+
     .dark-mode .stacks .search-side form button,
     .dark-mode .news.featured .featured-search-side .featured-search-input-submit {
         height: 39px
     }
+
     .dark-mode .characters-search-form-search .inputButton,
     .dark-mode .quickadd-content .quickadd-form-search .inputButton {
         height: 68px
     }
+
     .widget.recommendations div td {
         width: 48%;
         display: inline-block;
         margin: 5px;
         background: var(--color-foreground3)
     }
+
     #delete,
     #read,
     #unread,
@@ -1269,6 +1626,7 @@
         padding-top: 5px;
         display: inline-block
     }
+
     #forumTopics tbody tr,
     div.page-forum table tbody tr {
         display: grid;
@@ -1277,46 +1635,42 @@
         padding: 5px;
         border-radius: var(--border-radius)
     }
+
     .widget.watched_topics.left tbody tr {
         grid-template-columns: 50px 520px 100px auto!important
     }
+
     .page-common table.forum-topics tbody tr {
         display: grid;
         grid-template-columns: 50px 750px 100px auto!important;
         padding-top: 8px
     }
+
     .forum-table-header {
         grid-template-columns: 200px 450px auto!important
     }
+
     .forum-table-header .normal_header:nth-child(2) {
         left: 355px;
         position: relative!important
     }
+
     .widget-slide.js-widget-slide li a h3 img {
         height: 10px;
         width: 10px
     }
-    .js-anime-character-va > tbody {
-        height: 100px;
-        transition: 1s;
-        display: grid;
-        overflow: hidden!important;
-        flex-direction: column;
-        align-items: stretch;
-        justify-items: end
-    }
-    .js-anime-character-va > tbody:hover {
-        height: 100%
-    }
+
     #contentWrapper .content-container,
     .detail-characters-list > div > table {
         margin-bottom: 15px
     }
+
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div > div.left-column.fl-l.divider > table,
     .detail-characters-list > div > table {
         background-color: var(--color-foreground)!important;
         overflow: hidden
     }
+
     .link-mal-logo {
         background-image: url(/images/mal-logo-xsmall-white@2x.png?v=1634263200);
         background-size: 179px 32px;
@@ -1324,16 +1678,19 @@
         left: 10px;
         position: relative
     }
+
     .header-menu-login {
         right: 10px;
         position: relative
     }
+
     .ranking-digest {
         background-color: var(--color-foreground)!important;
         border-radius: var(--br)!important;
         padding: 10px;
         border: 0!important
     }
+
     .dark-mode .ranking-digest .ranking-unit .rank {
         position: absolute;
         z-index: 2;
@@ -1342,9 +1699,11 @@
         line-height: 6px;
         text-indent: -5px;
     }
+
     .dark-mode .ranking-digest .ranking-unit:nth-child(10) .rank {
         text-indent: -8.5px
     }
+
     .dark-mode .ranking-digest .ranking-unit .rank:before {
         background: var(--color-foreground2);
         content: "";
@@ -1356,12 +1715,15 @@
         width: 25px;
         border-radius: 50%
     }
+
     .ranking-digest .ranking-unit .image {
         box-shadow: none!important
     }
+
     body.index .left-column {
         padding-right: 10px
     }
+
     body.index .right-column .ranking-digest .ranking-unit {
         padding: 10px;
         margin: 10px;
@@ -1369,19 +1731,24 @@
         border-radius: var(--border-radius);
         background-color: var(--color-foreground3)
     }
+
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon.notActive {
         border: 0!important;
         cursor: pointer;
     }
+
     .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list.list-bottom a {
         color: #dedede!important
     }
+
     #topSearchResultList > div > div {
-        padding: 20px
+        padding: 20px;
     }
+
     #searchBar:focus-within::before {
         height: 100%
     }
+
     #top-search-bar #searchBar:focus-within #topSearchText {
         display: block!important;
         width: 60%!important;
@@ -1394,6 +1761,7 @@
         border-radius: var(--br)!important;
         z-index: 100
     }
+
     #searchBar::before {
         content: "";
         display: inline-block;
@@ -1407,6 +1775,7 @@
         overflow-y: hidden;
         height: 0
     }
+
     #topSearchResultList,
     .page-common .incrementalSearchResultList {
         top: 100px!important;
@@ -1416,6 +1785,7 @@
         max-height: 70%!important;
         overflow-y: scroll
     }
+
     .widget-content .ga-click.ga-impression .content,
     .widget-content .ga-click.ga-impression .content img {
         width: 210px!important;
@@ -1423,43 +1793,53 @@
         background-size: contain!important;
         border-radius: var(--br)!important
     }
+
     .content.anime-mxj {
         height: 200px
     }
+
     .dark-mode .page-advertising #ad_menu.fixed,
     .page-common #myanimelist #contentWrapper {
         top: 50px
     }
+
     .page-common #searchBar.searchBar {
         padding-left: 20px
     }
+
     .text-ribbon.ga-click.ga-impression {
         padding-top: 5px;
         top: 50px;
         position: relative
     }
+
     .dark-mode .page-common .hoverinfo,
     .dark-mode .page-common .hoverinfo:after {
         background-image: none!important;
         filter: invert(0);
         height: auto
     }
+
     .page-common .recommendations_h3 {
         display: block!important
     }
+
     .page-common .footer-ranking {
         position: relative;
         z-index: 2
     }
+
     .widget.anime_discussions.left .widget-content {
         padding-right: 0!important
     }
+
     .dark-mode .page-common .incrementalSearchResultList {
         top: 30px!important;
         left: 0!important;
         width: 200px!important;
         max-height: 300px!important
     }
+
     .dark-mode .page-common table.forum-topics tr td.replies,
     .dark-mode .page-forum .forum_boardrow2,
     .page-common table.forum-topics tr td.watch-state {
@@ -1467,39 +1847,90 @@
         align-items: center;
         justify-content: space-around
     }
+
     .dark-mode .js-truncate-outer .btn-truncate,
     .dark-mode .c-aboutme-accordion-btn {
         background-image: url(/images/icon-pulldown2.png?v=1634263200), linear-gradient(180deg, rgba(18, 18, 18, 0) 0, rgba(18, 18, 18, .5) 20%, var(--color-background) 50%);
         background-repeat: no-repeat, repeat-x;
         background-position: 50% 100%
     }
+
     .dark-mode .js-truncate-outer .btn-truncate.open,
     .dark-mode .c-aboutme-accordion-btn.is-open {
         background-position: 50% -50%
     }
+
     .dark-mode .anime-detail-header-video .video-promotion {
         border: 2px solid #a0b1c514
     }
+
     .dark-mode .fav-slide-block .fav-slide .btn-fav .link .title {
         overflow: hidden
     }
+
     .user-profile .user-status.pb8 {
         margin-bottom: 10px!important;
         padding-bottom: 0!important
     }
+
     body.news .news-container .information a {
         text-decoration: none!important
     }
+
+    .seasonal-anime.js-seasonal-anime {
+        display: inline-block
+    }
+
+    .breadcrumb {
+        margin-bottom: 4px!important
+    }
+
+    .breadcrumb .di-ib:not(:first-child):before {
+        font: var(--fa-font-solid);
+        color: var(--color-link);
+        content: ' \f0da';
+        position: absolute;
+        margin-left: -25px;
+        width: 15px;
+        text-indent: 4px;
+        font-size: 16px;
+        background: var(--color-background)!important;
+    }
+
+    .dark-mode .stacks .column-3 .column-item {
+        margin: 5px;
+        padding: 10px;
+        display: inline-block;
+        width: 300px;
+        height: 300px
+    }
+
+    .stacks .breadcrumbs_area .di-ib:nth-child(3),
+    .dark-mode .stacks .breadcrumbs_area .di-ib:nth-child(3) {
+        margin-bottom: -9px;
+        width:auto
+    }
+
+    .dark-mode .navi-seasonal.fixed:after {
+        background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(18, 18, 18, 0)), color-stop(20%, rgba(18, 18, 18, .1)), color-stop(50%, var(--color-background)));
+        background-image: linear-gradient(0deg, rgba(18, 18, 18, 0) 0, rgba(18, 18, 18, .1) 20%, var(--color-background) 50%);
+    }
 }
+
 @-moz-document url-prefix("https://myanimelist.net/anime"),
 url-prefix("https://myanimelist.net/manga") {
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel table {
-        width: 0;
         display: inherit
     }
+
     #content > table > tbody > tr > td.borderClass > div > div.spaceit_pad.po-r.js-statistics-info.di-i {
         display: block!important
     }
+
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel p[itemprop="description"] {
+        width: -webkit-fill-available;
+    }
+
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-column.fl-l.divider > table,
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-right.fl-r > table,
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.di-t > div:first-child > div.theme-songs.js-theme-songs.opnening > table,
@@ -1508,48 +1939,144 @@ url-prefix("https://myanimelist.net/manga") {
         display: table;
         width: 100%
     }
+
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table,
     .js-anime-character-table {
         width: 100%!important;
-        display: table!important
+        display: table!important;
+        margin-bottom: 10px;
     }
+
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table div.picSurround img,
+    .js-anime-character-table img,
+    .js-manga-character-table img {
+        object-fit: cover;
+        align-self: center;
+    }
+
+    .picSurround img.lazyloaded.kal,
+    .js-anime-character-va-lang .picSurround img:not(.noKal) {
+        height: 96px!important;
+        width: 64px!important;
+    }
+
+    .js-anime-character-table div {
+        padding-top: 5px
+    }
+
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr > td:nth-child(2) {
+        padding-top: 10px
+    }
+
+    .page-forum .border_solid,
+    .pb24 h2,
+    .leftside #content > table > tbody > tr > td.borderClass > div > h2,
+    .page-common h2,
+    .dark-mode .review-element .thumbbody,
     .dark-mode .page-common .borderClass {
-        border: 0
+        border: 0!important
     }
+
+    .dark-mode div.anime-info-review__header.mal-navbar {
+        margin-bottom: 5px;
+        padding-bottom: 15px;
+    }
+
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr > td:nth-child(2) > div.spaceit_pad,
+    .js-anime-character-va-lang .bgColor1,
+    .js-anime-character-va-lang .bgColor2,
+    .manga-character-container .spaceit_pad,
+    .anime-character-container .spaceit_pad,
     div.detail-characters-list.clearfix .spaceit_pad {
         background: none!important
     }
+
     .detail-characters-list > div > table {
         margin-bottom: 0px;
         margin-top: 10px;
         padding: 3px;
         border-radius: var(--border-radius)
     }
+
     .detail-characters-list .left-column.fl-l.divider,
     .detail-characters-list .fl-r {
         width: 49.5%!important
     }
+
+    .score-stats,
+    .manga-character-container table,
     .rightside.js-scrollfix-bottom-rel .table-recently-updated {
         width: 100%!important;
         background: var(--color-foreground);
-                border-radius:var(--border-radius);
+        border-radius: var(--border-radius);
         padding: 10px
     }
-        .rightside.js-scrollfix-bottom-rel .table-recently-updated tr > td {
+
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(29),
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(36).clearfix,
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(38).clearfix {
+
+        background: var(--color-foreground);
+        border-radius: var(--border-radius);
+        padding: 5px
+    }
+
+    .rightside.js-scrollfix-bottom-rel .table-recently-updated tr > td {
         width: 1060px;
         background: var(--color-foreground);
     }
-    .rightside.js-scrollfix-bottom-rel .table-recently-updated tr:nth-child(2) td{
-         background: var(--color-foreground3)!important; 
+
+    .rightside.js-scrollfix-bottom-rel .table-recently-updated tr:nth-child(2) td {
+        background: var(--color-foreground3)!important;
+    }
+
+    div.detail-characters-list.clearfix .spaceit_pad,
+    .anime-character-container.js-anime-character-container .spaceit_pad,
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr > td:nth-child(2) > div {
+        padding: 0!important;
+        padding-top: 5px!important
+    }
+
+    .js-sort,
+    .js-language,
+    .page-common .mal_links {
+        background: var(--color-foreground)!important;
+        margin: 0!important;
+        padding: 10px!important
+    }
+
+    .manga-character-container table {
+        margin-bottom: 10px
+    }
+
+    .js-anime-character-va > tbody {
+        height: 105px;
+        display: grid;
+        overflow: hidden!important;
+        flex-direction: column;
+        align-items: stretch;
+        justify-items: end
+    }
+
+    .js-anime-character-va > tbody:hover {
+        height: 100%
+    }
+
+    .review-element .thumbbody {
+        margin-bottom: 0
     }
 }
-@-moz-document url-prefix("https://myanimelist.net/recommendations.php") {
+
+@-moz-document url-prefix("https://myanimelist.net/recommendations") {
     #content > div > div {
         background: var(--color-foreground3);
         border-radius: var(--br)!important;
         border: 0;
         padding: 10px
     }
+
+    #content > div.borderDark.pt8.pb8.pl4.pr4.mb8 > table > tbody > tr > td:nth-child(1),
+    #content > div.borderDark.pt8.pb8.pl4.pr4.mb8 > table > tbody > tr > td:nth-child(2),
     #content > div > div > table > tbody > tr > td {
         background-color: var(--color-foreground)!important;
         border-radius: var(--br)!important;
@@ -1559,6 +2086,7 @@ url-prefix("https://myanimelist.net/manga") {
         padding: 2px
     }
 }
+
 @-moz-document url-prefix("https://myanimelist.net/myfriends.php"),
 url-prefix("https://myanimelist.net/clubs.php") {
     table > tbody > tr > td {
@@ -1566,18 +2094,21 @@ url-prefix("https://myanimelist.net/clubs.php") {
         padding: 10px!important
     }
 }
+
 @-moz-document url-prefix("https://myanimelist.net/clubs.php?cid") {
     #forumTopics tbody tr,
     div.page-forum table tbody tr {
         grid-template-columns: 50px 430px 100px auto
     }
 }
-@-moz-document url-prefix("https://myanimelist.net/blog.php") {
+
+@-moz-document url-prefix("https://myanimelist.net/blog") {
     #forumTopics tbody tr,
     div.page-forum table tbody tr {
         grid-template-columns: 50px 430px 100px auto
     }
 }
+
 @-moz-document regexp("https://myanimelist.net/profile/.*/recommendations") {
     #content > div > div.container-right > div > div > div {
         background: var(--color-foreground3);
@@ -1585,6 +2116,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         border: 0;
         padding: 10px
     }
+
     #content > div > div.container-right > div > div:nth-child(2) > div > table > tbody > tr > td {
         background-color: var(--color-foreground)!important;
         border-radius: var(--br)!important;
@@ -1594,6 +2126,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         padding: 2px
     }
 }
+
 @-moz-document url-prefix("https://myanimelist.net/character/") {
     #content > table > tbody > tr > td.borderClass > table > tbody > tr > td:nth-child(2) > div {
         background: 0 0!important;
@@ -1603,21 +2136,26 @@ url-prefix("https://myanimelist.net/clubs.php") {
         gap: 5px;
         padding-left: 0!important
     }
+
     #content > table > tbody > tr > td.borderClass {
         padding-bottom: 35px!important
     }
+
     .dark-mode .detail-page-featured-article .news-list .news-unit,
     .dark-mode .page-common #profileRows a:first-of-type,
     .dark-mode .page-common .borderClass {
         border-color: #a0b1c514!important
     }
+
     #content > table > tbody > tr > td > table > tbody > tr {
         margin-bottom: 10px;
         display: block
     }
+
     .dark-mode .page-common .normal_header {
         border: 0
     }
+
     #content > table > tbody > tr > td > table > tbody > tr > td,
     #content > table > tbody > tr > td.borderClass > table > tbody > tr > td,
     .dark-mode .detail-page-featured-article .news-list .news-unit {
@@ -1625,6 +2163,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         background: var(--color-foreground);
         border: 0
     }
+
     #content > table > tbody > tr > td > table > tbody > tr > td:first-child,
     #content > table > tbody > tr > td.borderClass > table > tbody > tr > td:first-child,
     .dark-mode .detail-page-featured-article .news-list .news-unit {
@@ -1632,6 +2171,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         border-bottom-left-radius: var(--border-radius);
         padding-right: 0
     }
+
     #content > table > tbody > tr > td > table > tbody > tr > td:nth-child(2),
     #content > table > tbody > tr > td.borderClass > table > tbody > tr > td:nth-child(2),
     .dark-mode .detail-page-featured-article .news-list .news-unit {
@@ -1640,6 +2180,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         width: 100%
     }
 }
+
 @-moz-document regexp("https://myanimelist.net/forum/\\?board=.*"),
 regexp("https://myanimelist.net/forum/search\?.*") {
     #forumTopics tbody tr,
@@ -1650,32 +2191,235 @@ regexp("https://myanimelist.net/forum/search\?.*") {
         padding: 5px;
         border-bottom-right-radius: var(--border-radius)
     }
+
     .dark-mode .page-common .bgColor1 {
         background: 0!important
     }
+
     .forum-table-header {
         margin-bottom: 5px
     }
 }
+
 @-moz-document url-prefix("https://myanimelist.net/forum/?action=") {
     #forumTopics tbody tr {
         grid-template-columns: 50px 550px 100px 87.5px 150px!important
     }
+
     #forumTopics > tbody > tr.forum-table-header {
         grid-template-columns: 130px 470px 80px 50px!important
     }
+
     #forumTopics tbody tr td:last-child {
         display: table-column;
         overflow: ellipsis!important
     }
 }
+
 @-moz-document url-prefix("https://myanimelist.net/panel") {
     .dark-mode .page-common #myanimelist,
     .dark-mode body:not(.ownlist) {
         top: -16px!important
     }
+
     .page-common #myanimelist #contentWrapper {
         top: 60px;
         margin-bottom: 15px
+    }
+
+    .wrapper.paradox-live-badge.js-color-pc-constant.color-pc-constant {
+        top: 16px!important;
+        position: relative
+    }
+
+    #news-text {
+        background: var(--color-foreground2)!important;
+    }
+
+    h3 {
+        color: var(--color-main-text)!important
+    }
+}
+
+@-moz-document url-prefix("https://myanimelist.net/editprofile"),
+url-prefix("https://myanimelist.net/notification/setting"),
+url-prefix("https://myanimelist.net/ownlist/style") {
+    if(!custom-bg) {
+        #content {
+            margin-top: 5px;
+            background: var(--color-foreground3)!important;
+            border-radius: var(--border-radius);
+        }
+
+        .dark-mode .page-common #horiznav_nav ul li a {
+            background: var(--color-foreground2)!important;
+        }
+
+        .dark-mode .sceditor-container textarea {
+            width: calc(100% - 35px)!important;
+        }
+    }
+}
+
+@-moz-document url-prefix("https://myanimelist.net/users.php") {
+    .dark-mode .page-common .borderClass {
+        background: var(--color-foreground)!important;
+        border-radius: var(--border-radius);
+        display: inline-block;
+        width: 110px;
+        height: 120px;
+        margin: 10px;
+        border: none
+    }
+
+    .dark-mode .page-common .borderClass div.picSurround img {
+        height: 64px
+    }
+
+    .spaceit_pad.lightLink {
+        background: none!important
+    }
+
+    .js-advancedsearch > .al > .spaceit_pad.al {
+        border-radius: var(--border-radius);
+        margin-top: 10px
+    }
+
+    .dark-mode .page-common .normal_header {
+        border: none
+    }
+}
+
+@-moz-document regexp("https://myanimelist.net/(anime|manga).*\\d/.*/news") {
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > div.clearfix {
+        background: var(--color-foreground)!important;
+        border-radius: var(--border-radius);
+        padding: 5px;
+    }
+}
+
+@-moz-document url-prefix("https://myanimelist.net/featured") {
+    .dark-mode body.news .content-left .mr8,
+    .js-scrollfix-bottom {
+        background: var(--color-foreground)!important;
+        border-radius: var(--border-radius);
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .dark-mode .featured-pickup {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .dark-mode .featured-pickup .featured-pickup-unit {
+        background: var(--color-foreground)!important;
+        border-radius: var(--border-radius);
+        padding: 10px;
+        width: 330px!important;
+        margin-bottom: 5px;
+    }
+
+    .dark-mode .featured-pickup .featured-pickup-unit .title,
+    .dark-mode .featured-pickup .featured-pickup-unit .text {
+        width: auto;
+    }
+
+    .dark-mode .featured-pickup .featured-pickup-unit .image {
+        width: 300px!important
+    }
+
+    #content > div.content-left > div > div:nth-child(2) > div > div.news-info-block.clearfix > div.sns-unit.fl-r.mr8,
+    .dark-mode body.news .news-container .information {
+        background: var(--color-foreground2)!important;
+        padding: 10px;
+        border-radius: var(--border-radius);
+    }
+
+    .js-scrollfix-bottom {
+        position: relative!important;
+        margin-top: 60px;
+    }
+
+    .dark-mode .featured-content-block-outer,
+    .dark-mode body.news .content-left h2.pt16 {
+        margin-top: 0!important;
+        padding-top: 0!important;
+        border: 0
+    }
+
+    #content > div.content-left > div > div:nth-child(4) > h2,
+    .dark-mode body.news .news-breadcrumbs,
+    .dark-mode body.news .content-left .mr8 .borderClass {
+        border: 0
+    }
+
+    #contentWrapper {
+        padding-top: 10px
+    }
+}
+
+@-moz-document url-prefix("https://myanimelist.net/news") {
+    .dark-mode body.news .content-left .mr8:not(h2),
+    .columnist-side-block.mb16,
+    .dark-mode body.news .tag-side-block .tag-cloud {
+        background: var(--color-foreground)!important;
+        border-radius: var(--border-radius);
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .dark-mode .news-list .comment-list,
+    .dark-mode body.news .menu-category,
+    .dark-mode body.news .content-left .mr8,
+    .columnist-side-block.mb16 .header,
+    .dark-mode body.news .news-side-block .news-list .news,
+    #content > div.content-left > div > div:nth-child(4) > h2,
+    .dark-mode body.news .news-breadcrumbs,
+    .dark-mode body.news .content-left .mr8 .borderClass {
+        border: 0!important
+    }
+
+    .js-scrollfix-bottom {
+        position: relative!important;
+        margin-top: 60px;
+    }
+
+    .dark-mode body.news .menu-category .btn-edit-tags,
+    .dark-mode body.news .menu-category .btn-category.selected,
+    .dark-mode body.news .menu-category .btn-category,
+    #content > div.content-left > div > div:nth-child(2) > div > div.news-info-block.clearfix > div.sns-unit.fl-r.mr8,
+    .dark-mode body.news .news-container .information {
+        background: var(--color-foreground2)!important;
+        padding: 10px;
+        border-radius: var(--border-radius);
+    }
+
+    .dark-mode body.news .menu-category .btn-edit-tags,
+    .dark-mode body.news .menu-category .btn-category {
+        background: var(--color-foreground)!important;
+    }
+
+    .dark-mode body.news .menu-category .btn-edit-tags {
+        position: relative;
+        top: 10px!important
+    }
+
+    #content > div.content-left > div > div > table.mb24.news-related-database,
+    .dark-mode body.news .content-left h2.pt16 {
+        margin-top: 0!important;
+        margin-bottom: 0!important;
+        padding-top: 0!important;
+        border: 0
+    }
+
+    #contentWrapper {
+        padding-top: 10px
+    }
+}
+
+@-moz-document url-prefix("https://myanimelist.net/forum/?animeid") {
+    #forumTopics tbody tr {
+        grid-template-columns: 50px 740px 100px auto;
     }
 }
