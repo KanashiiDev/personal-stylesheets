@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.48
+@version      1.0.49
 @description  Myanimelist - Clean (Please use Dark Appearance)
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -26,6 +26,7 @@
 @var range    opacity         'Background Color Opacity' [1, 0.0, 1, 0.01]
 @var range    blur_slider     'Background Color Blur' [0, 0, 50, 1,'px']
 @var checkbox removefooter    'Hide Footer' 0
+@var checkbox removebc    'Hide Breadcrumb Navigation' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*") {
@@ -312,6 +313,12 @@
         }
     }
 
+    if(removebc) {
+        .breadcrumb {
+            display: none
+        }
+    }
+
     .page-common #menu,
     .page-common #myanimelist {
         margin: 0 auto
@@ -355,6 +362,7 @@
         display: none !important
     }
 
+    .top_signup.ga-impression,
     #tbl-next-up.in-viewport.tbl-next-up-position-right,
     .trc_related_container,
     #broadcast-block,
@@ -449,6 +457,10 @@
         background: var(--color-background)!important
     }
 
+    .dark-mode .anime-filter .search-filter-sort-order-block,
+    .dark-mode .anime-filter .search-filter-mylist-block,
+    .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
+    #myanimelist > div.wrapper.color-pc-constant > div.text-ribbon.ga-click.ga-impression > div.ac.fs12.pt8.pr8.pb8.pl8,
     #dialog,
     select option,
     .dark-mode div.sceditor-outer div.mal-tab-item.preview,
@@ -646,8 +658,13 @@
     #add_anime_tags,
     #myinfo_score,
     #myinfo_status,
+    #blogForm > table > tbody > tr:nth-child(2) > td > textarea,
+    #myCharForm textarea,
+    #dialog > tbody > tr > td > form > div.spaceit textarea,
+    #blogForm #animeRelations div > a,
     .page-common #horiznav_nav ul li > a.horiznav_active,
     .breadcrumb .di-ib:last-child,
+    .dark-mode .page-common .incrementalSearchResultList .list.list-bottom,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime.play .link,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime:hover .link,
     .dark-mode body.news .news-container .tags .tag,
@@ -1105,6 +1122,8 @@
         color: var(--color-link-hover)!important
     }
 
+    #blogForm #animeRelations div,
+    #blogForm #animeRelations div > a,
     .breadcrumb .di-ib,
     .shared-table,
     .shared-table td,
@@ -1172,11 +1191,13 @@
         padding: 10px!important
     }
 
-    #contentWrapper > div:first-child > div > div.h1-title > div[itemprop=name],
+    #contentWrapper > div:nth-child(1) > :not(h1),
     #contentWrapper > div:first-child > h1 {
         padding-top: 15px
     }
 
+    .anime-search-form-block.po-r > #advancedSearchResultList,
+    .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
     #content > table > tbody > tr > td.borderClass > div > div:first-child img,
     #delete,
     #dialog,
@@ -1185,7 +1206,7 @@
     #fancybox-outer,
     #fancybox-inner,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
-    ,
+    #blogForm #animeRelations div > a,
     .dark-mode .page-forum .forum.thread .message-container,
     .dark-mode .stacks .search-list .column-item,
     .dark-mode .stacks .column-1,
@@ -1391,6 +1412,8 @@
     #read,
     #unread,
     .left-column,
+    .dark-mode .page-episode-add table.episode-edit,
+    .dark-mode .forum .forum-side-block .forum-side-list .forum-post,
     .dark-mode .mymessages .total_messages,
     .dark-mode body.news .content-left,
     body.news .tag-side-block .header,
@@ -1499,6 +1522,7 @@
         margin-top: 30px
     }
 
+    .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
     .dark-mode .news-list .comment-list,
     .dark-mode .review-element,
     .profile .user-comments .comment,
@@ -1532,6 +1556,10 @@
     .dark-mode .search_all .content-result .list,
     .forum.timeline > div > div.topic-reply-box.fixed > div.sceditor-container.sourceMode.ltr > textarea {
         width: 97.5%!important
+    }
+
+    .message-wrapper > div.content > div.topic-reply-box.in-timeline > div.sceditor-outer > div.mal-tab-item.active.edit > div > textarea {
+        width: 96%!important
     }
 
     .user-friends.pt4.pb12 a {
@@ -1584,6 +1612,11 @@
         height: 69px
     }
 
+    .anime-search-form-block.po-r > #advancedSearchResultList {
+        width: inherit !important;
+        margin-top: 50px
+    }
+
     .dark-mode .stacks .search-area .inputButton {
         height: 59.5px
     }
@@ -1598,7 +1631,7 @@
         width: 165px;
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important;
-        height: 17px
+        height: 16.5px
     }
 
     .dark-mode .stacks .search-side form button,
@@ -1612,10 +1645,18 @@
     }
 
     .widget.recommendations div td {
-        width: 48%;
+        width: 48.5%;
         display: inline-block;
         margin: 5px;
         background: var(--color-foreground3)
+    }
+
+    .widget.recommendations.left .recommendations_h3 {
+        margin-right: 5px;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis
     }
 
     #delete,
@@ -1778,11 +1819,12 @@
 
     #topSearchResultList,
     .page-common .incrementalSearchResultList {
-        top: 100px!important;
-        left: calc(50% - 30%)!important;
-        width: 60.25%!important;
+        top: 125px!important;
+        left: calc(50.5% - 30%)!important;
+        width: 60%!important;
         position: fixed;
         max-height: 70%!important;
+        border-radius: var(--br)!important;
         overflow-y: scroll
     }
 
@@ -1908,12 +1950,30 @@
     .stacks .breadcrumbs_area .di-ib:nth-child(3),
     .dark-mode .stacks .breadcrumbs_area .di-ib:nth-child(3) {
         margin-bottom: -9px;
-        width:auto
+        width: auto
     }
 
     .dark-mode .navi-seasonal.fixed:after {
         background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(18, 18, 18, 0)), color-stop(20%, rgba(18, 18, 18, .1)), color-stop(50%, var(--color-background)));
         background-image: linear-gradient(0deg, rgba(18, 18, 18, 0) 0, rgba(18, 18, 18, .1) 20%, var(--color-background) 50%);
+    }
+
+    .dark-mode .user-status-block .form-user-episode input[type=text] {
+        padding: 8px!important;
+        box-shadow: none!important
+    }
+
+    .dark-mode .user-status-block .form-user-episode input[type=text]:focus {
+        background: var(--color-foreground4)!important
+    }
+
+    .dark-mode .user-status-block .btn-user-status-add-list {
+        padding: 11px 25px;
+        width: 40px
+    }
+
+    .dark-mode .user-status-block .btn-user-status-add-list:after {
+        top: 17px
     }
 }
 
@@ -1968,6 +2028,9 @@ url-prefix("https://myanimelist.net/manga") {
         padding-top: 10px
     }
 
+    .normal_header.pt24.mb0,
+    .dark-mode .anime-manga-search .normal_header,
+    .dark-mode .anime-manga-search .genre-link .genre-list,
     .page-forum .border_solid,
     .pb24 h2,
     .leftside #content > table > tbody > tr > td.borderClass > div > h2,
@@ -1977,6 +2040,7 @@ url-prefix("https://myanimelist.net/manga") {
         border: 0!important
     }
 
+    .dark-mode .anime-manga-search .normal_header,
     .dark-mode div.anime-info-review__header.mal-navbar {
         margin-bottom: 5px;
         padding-bottom: 15px;
@@ -2012,10 +2076,7 @@ url-prefix("https://myanimelist.net/manga") {
         padding: 10px
     }
 
-    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(29),
-    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(36).clearfix,
-    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(38).clearfix {
-
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(n + 20):nth-child(-n + 40).clearfix {
         background: var(--color-foreground);
         border-radius: var(--border-radius);
         padding: 5px
@@ -2065,25 +2126,58 @@ url-prefix("https://myanimelist.net/manga") {
     .review-element .thumbbody {
         margin-bottom: 0
     }
+
+    .dark-mode .page-common .h1.edit-info {
+        padding: 10px!important;
+        background: var(--color-foreground)!important;
+        border-radius: var(--border-radius);
+        width: 95.7%;
+        margin: auto
+    }
+
+    #contentWrapper > div:nth-child(1) {
+        padding-top: 15px
+    }
+
+    #content > table {
+        padding-top: 10px
+    }
 }
 
 @-moz-document url-prefix("https://myanimelist.net/recommendations") {
+
     #content > div > div {
-        background: var(--color-foreground3);
+        background: var(--color-foreground3)!important;
         border-radius: var(--br)!important;
         border: 0;
         padding: 10px
     }
 
+    #content > div > div table > tbody > tr > td[valign="top"] .picSurround {
+        margin-top: 7px;
+        padding-left: 5px;
+    }
+
+    #content > div > div table > tbody > tr > td > div.spaceit_pad {
+        background: none!important
+    }
+
     #content > div.borderDark.pt8.pb8.pl4.pr4.mb8 > table > tbody > tr > td:nth-child(1),
     #content > div.borderDark.pt8.pb8.pl4.pr4.mb8 > table > tbody > tr > td:nth-child(2),
     #content > div > div > table > tbody > tr > td {
-        background-color: var(--color-foreground)!important;
+        background-color: var(--color-foreground3)!important;
         border-radius: var(--br)!important;
-        width: 48%;
+        width: 48.5%;
         display: inline-block;
         margin: 5px;
         padding: 2px
+    }
+
+    #content > div > div > table > tbody > tr > td > a {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 }
 
@@ -2220,6 +2314,12 @@ regexp("https://myanimelist.net/forum/search\?.*") {
     .dark-mode .page-common #myanimelist,
     .dark-mode body:not(.ownlist) {
         top: -16px!important
+    }
+
+    #myCharForm {
+        background: var(--color-foreground)!important;
+        border-radius: var(--br)!important;
+        padding: 10px
     }
 
     .page-common #myanimelist #contentWrapper {
@@ -2415,6 +2515,13 @@ url-prefix("https://myanimelist.net/ownlist/style") {
 
     #contentWrapper {
         padding-top: 10px
+    }
+
+    .page-common .img-a-r {
+        padding-left: 0!important;
+        padding-top: 0!important;
+        margin-left: 8px;
+        margin-top: 4px
     }
 }
 
