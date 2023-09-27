@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.52
+@version      1.0.53
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -450,6 +450,8 @@
         display: none!important
     }
 
+    #profile-stats-anime-genre-table table .list-table-header .header-title,
+    #profile-stats-manga-genre-table table .list-table-header .header-title,
     body.news .news-container .tags,
     .featured-pickup .featured-pickup-unit .information .tags .tag.tag-color-feature-spoiler:hover,
     .stacks .stacks-detail h2.title,
@@ -530,6 +532,10 @@
         background: var(--color-background);
     }
 
+    #profile-stats-anime-genre-table table tr,
+    #profile-stats-manga-genre-table table tr,
+    .profile.statistics .chart-container-rf .right .filter,
+    .review-votes-modal .modal_contents,
     tr.js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all,
     .anime-filter2 .navi-seasonal .sort-order-block,
     a.mal-btn.secondary.outline,
@@ -846,6 +852,13 @@
     #myCharForm textarea,
     #dialog > tbody > tr > td > form > div.spaceit textarea,
     #blogForm #animeRelations div > a,
+    #profile-stats-anime-genre-table table tfoot td,
+    #profile-stats-manga-genre-table table tfoot td,
+    #profile-stats-anime-genre-table table .list-table-header .header-title,
+    #profile-stats-manga-genre-table table .list-table-header .header-title,
+    #profile-stats-anime-genre-table .filter,
+    #profile-stats-manga-genre-table .filter,
+    .mal-alert,
     .seasonal-anime-list .pin-cta .btn,
     .page-common #horiznav_nav ul li > a.horiznav_active,
     .breadcrumb .di-ib:last-child,
@@ -1032,6 +1045,12 @@
         background-color: var(--color-foreground2)!important
     }
 
+    #profile-stats-anime-genre-table table .list-item .data.ratio > div .mal-progress,
+    #profile-stats-manga-genre-table table .list-item .data.ratio > div .mal-progress,
+    #statistics-anime-score-diff-desc .container .view_all > a,
+    #statistics-anime-score-diff-asc .container .view_all > a,
+    #statistics-manga-score-diff-desc .container .view_all > a,
+    #statistics-manga-score-diff-asc .container .view_all > a,
     .season .seasonal-sort-order-block.sort .loader-sort,
     .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-form .textarea,
     #dialog form > a.inputButton,
@@ -1057,6 +1076,9 @@
         background-color: var(--color-foreground3)!important
     }
 
+    .profile.statistics .filter button.mal-btn.outline.primary.active,
+    .write_a_review .btn.btn-primary,
+    .review-votes-modal .modal_contents .modal_btn_close,
     .js-categories-seasonal .ga-impression.text-banner-tag a,
     .sceditor-button.sceditor-button:hover,
     .dark-mode body.news .news-container .tags .tag:hover,
@@ -1245,10 +1267,27 @@
     input p,
     div.text,
     u,
+    .profile.statistics .footnote,
+    .quickadd-content .quickAdd-anime-result-unit .quickAdd-result-info,
+    .quickadd-content .quickAdd-manga-result-unit .quickAdd-result-info,
+    .quickadd-content .quickAdd-anime-result-unit .borderClass,
+    .quickadd-content .quickAdd-manga-result-unit .borderClass #profile-stats-anime-genre-table table .list-item .data,
+    #profile-stats-manga-genre-table table .list-item .data,
+    #profile-stats-anime-genre-table table tfoot td > span,
+    #profile-stats-manga-genre-table table tfoot td > span,
+    #profile-stats-anime-genre-table .filter p,
+    #profile-stats-manga-genre-table .filter p,
+    .profile.statistics .chart-container-rf .left .chart-footer.values3 .label,
+    .mal-alert,
+    .write_a_review.js-write_a_review .score.selected,
+    .write_a_review .scores .score-message,
     .featured-pickup .featured-pickup-unit .text,
+    li.btn-filter.js-reviews-btn-filter.fa-stack.selected,
+    .reviews-horiznav-nav-sort-block .review-sort-order-block .sort-order-list .btn-sort-order.selected,
+    .reviews-horiznav-nav-sort-block .review-filter-block .sort-order-list .btn-sort-order.selected,
     .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li.js-btn-anime-type.on,
     .anime-filter2 .navi-seasonal .sort-order-block .sort-order-list .btn-sort-order,
-
+    .reviews-horiznav-nav-sort-block .btn-crossedbox,
     .people-character .btn-show-sort.on,
     .people-character .people-character-sort-order-block .sort-order-list .btn-sort-order.selected,
     .anime-filter2 .navi-seasonal .btn-show-sort.on,
@@ -1369,6 +1408,37 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .profile.statistics .chart-container-rf .right p,
+    p#profile-stats-anime-score-dist-info-score,
+    #statistics-anime-score-diff-desc .container .score .mal_score,
+    #statistics-anime-score-diff-desc .container .score_link .mal_score,
+    #statistics-anime-score-diff-asc .container .score .mal_score,
+    #statistics-anime-score-diff-asc .container .score_link .mal_score,
+    #statistics-manga-score-diff-desc .container .score .mal_score,
+    #statistics-manga-score-diff-desc .container .score_link .mal_score,
+    #statistics-manga-score-diff-asc .container .score .mal_score,
+    #statistics-manga-score-diff-asc .container .score_link .mal_score,
+    #statistics-anime-score-diff-desc .container .score.score_link,
+    #statistics-anime-score-diff-desc .container .score_link.score_link,
+    #statistics-anime-score-diff-asc .container .score.score_link,
+    #statistics-anime-score-diff-asc .container .score_link.score_link,
+    #statistics-manga-score-diff-desc .container .score.score_link,
+    #statistics-manga-score-diff-desc .container .score_link.score_link,
+    #statistics-manga-score-diff-asc .container .score.score_link,
+    #statistics-manga-score-diff-asc .container .score_link.score_link,
+    .profile.statistics .chart-container-rf .left .chart-footer.values3 .value,
+    .profile.statistics .chart-container-rf .right .filter,
+    .write_a_review .notice,
+    .reviews-horiznav-nav-sort-block .review-sort-order-block .sort-order-list .btn-sort-order,
+    .reviews-horiznav-nav-sort-block .review-filter-block .sort-order-list .btn-sort-order,
+    .reviews-horiznav-nav-sort-block .filtered-results-box,
+    li.btn-filter.js-reviews-btn-filter.fa-stack,
+    .reviews-horiznav-nav-sort-block .btn-show-sort,
+    .reviews-horiznav-nav-sort-block .btn-show-filter,
+    .reviews-horiznav-nav-sort-block .btn-checkbox,
+    .review-element .thumbbody .body .tags .tag.preliminary span,
+    .review-element .thumbbody .body .bottom-navi .icon-reaction .num,
+    .review-votes-modal .modal_contents .reaction_title,
     .people-character .btn-show-sort,
     .anime-filter2 .navi-seasonal .btn-show-sort,
     .people-character .people-character-sort-order-block .sort-order-list .btn-sort-order.circle:not(.selected),
@@ -1497,6 +1567,10 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .profile.statistics .chart-container-rf .left .amcharts-AxisLabel {
+        fill: var(--color-main-text-light)!important
+    }
+
     .dark-mode .auto-recommendations .item .title,
     .auto-recommendations .item .title,
     .dark-mode .widget-slide-block .widget-slide .btn-anime .link .title.color-pc-constant,
@@ -1505,6 +1579,8 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .review-votes-modal .modal_contents .head h3,
+    .review-votes-modal .modal_contents .modal_btn_close .fas.fa-times-circle,
     .page-common .header-notification-dropdown-inner h3 .mark-all.disabled,
     .sceditor-button.sceditor-button div:before,
     .ownlist_anime_update #advanced-button .toggle-button,
@@ -1833,6 +1909,7 @@
     #fancybox-outer,
     #fancybox-inner,
     #dialog form > a.inputButton,
+    .review-votes-modal .modal_contents,
     .seasonal-anime-list .anime-header,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
     .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
@@ -2228,6 +2305,11 @@
     .user-profile .user-friends .icon-friend,
     .page-common .header-profile-button {
         box-shadow: 0 0 0 1px var(--color-foreground4)!important
+    }
+
+    .write_a_review .radio input[type=radio]:checked + label:before {
+        -webkit-box-shadow: inset 0 0 0 3px var(--color-foreground4);
+        box-shadow: inset 0 0 0 3px var(--color-foreground4);
     }
 
     .dark-mode .profile .stacks-list .column-item .foot .stack-balloon .balloon:after,
@@ -2821,8 +2903,13 @@
         color: #829bd3
     }
 
+    .review-element .thumbbody .body .tags .tag,
     .review-element .thumbbody .body .tags .tag.mixed-feelings {
         color: #a3a3a3
+    }
+
+    .review-element .thumbbody .body .tags .tag.preliminary {
+        color: #5ab763
     }
 
     .featured-pickup .featured-pickup-unit .information .tags .tag.tag-color-feature-spoiler,
@@ -2830,6 +2917,19 @@
     .news-list .news-unit .information .tags .tag.tag-color-feature-spoiler,
     .review-element .thumbbody .body .tags .tag.not-recommended {
         color: #cd6063
+    }
+
+    .anime-info-review__header.mal-navbar .review-ratio__bar .recommended__bar,
+    {
+        background-color: #829bd3!important
+    }
+
+    .anime-info-review__header.mal-navbar .review-ratio__bar .mixed_feeling__bar {
+        background-color: #a3a3a3!important
+    }
+
+    .anime-info-review__header.mal-navbar .review-ratio__bar .not_recommended__bar {
+        background-color: #cd6063!important
     }
 
     .profile .statistics-updates .data .graph .graph-inner.watching,
