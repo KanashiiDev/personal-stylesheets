@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.50
+@version      1.0.51
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -337,8 +337,7 @@
         }
 
         .dark-mode body:not(.ownlist),
-        body:not(.ownlist),
-        body.page-common.index {
+        body:not(.ownlist) {
             background: url(bg_image)!important;
             background-size: cover!important;
             background-attachment: fixed!important;
@@ -470,6 +469,8 @@
     .dark-mode .page-common .header-profile .header-profile-dropdown.color-pc-constant .fl-r.link-count,
     .dark-mode .page-common .header-list .header-list-dropdown.color-pc-constant,
     .page-common .header-profile .header-profile-dropdown.color-pc-constant,
+    .page-common .header-profile .header-profile-dropdown,
+    .page-common .header-profile .header-profile-dropdown a.fl-r.link-count,
     .dark-mode .about-content.content-bg-grey,
     .dark-mode .membership .membership-manager .status-table.bg-color,
     .dark-mode .membership .membership-payment .text-payment-notice,
@@ -524,7 +525,7 @@
     :root,
     body:not(.ownlist),
     .di-ib.form-user-episode.ml8.disabled {
-        background: var(--color-background)!important
+        background: var(--color-background);
     }
 
     a.mal-btn.secondary.outline,
@@ -841,6 +842,7 @@
     #myCharForm textarea,
     #dialog > tbody > tr > td > form > div.spaceit textarea,
     #blogForm #animeRelations div > a,
+    .seasonal-anime-list .pin-cta .btn,
     .page-common #horiznav_nav ul li > a.horiznav_active,
     .breadcrumb .di-ib:last-child,
     .dark-mode .page-common .incrementalSearchResultList .list.list-bottom,
@@ -1027,10 +1029,13 @@
     }
 
     .season .seasonal-sort-order-block.sort .loader-sort,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-form .textarea,
     #dialog form > a.inputButton,
     #dialog .inputtext,
     #dialog textarea,
     .review-element .thumbbody .body .reaction-box .btn-reaction,
+    a.mal-btn.primary.outline,
+    button.mal-btn.primary.outline,
     .dark-mode .page-forum .topic-switch-layout .mal-btn.primary.outline,
     .page-forum .topic-switch-layout .mal-btn.primary.outline,
     .setting-row.locate-right,
@@ -1351,6 +1356,9 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .mal-alert.danger,
+    .review-element .thumbbody .body .notice,
+    .btn-detail-recommendations-view-all .text,
     .anime-character .btn-show-sort,
     .manga-character .btn-show-sort,
     .anime-character .anime-character-sort-order-block .sort-order-list .btn-sort-order,
@@ -1469,6 +1477,7 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .page-common .header-notification-dropdown-inner h3 .mark-all.disabled,
     .sceditor-button.sceditor-button div:before,
     .ownlist_anime_update #advanced-button .toggle-button,
     .fa-lock-keyhole:before,
@@ -1589,8 +1598,7 @@
     .dark-mode button.mal-btn.secondary.outline.noborder:hover,
     button.mal-btn.secondary.outline.noborder:hover,
     .page-common #horiznav_nav ul li > a:hover,
-    .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a:hover,
-    .page-common .header-notification-dropdown-inner h3 .mark-all.disabled {
+    .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a:hover {
         background-color: var(--color-foreground2)!important;
         color: var(--color-text)!important;
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
@@ -1654,6 +1662,7 @@
         color: var( --color-link2)!important
     }
 
+    .history_content_wrapper .history-updates .navi-btn:hover,
     .stacks .btn-report.on .fa-ellipsis-h,
     .ownlist_style .new-theme-list .new-theme-unit.selected .title,
     .page-common a:hover,
@@ -1783,6 +1792,7 @@
         padding-top: 15px
     }
 
+    .btn-detail-recommendations-view-all.fl-r,
     .anime-search-form-block.po-r > #advancedSearchResultList,
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
     .anime-manga-search .genre-link .genre-list .genre-name-link,
@@ -1794,6 +1804,7 @@
     #fancybox-outer,
     #fancybox-inner,
     #dialog form > a.inputButton,
+    .seasonal-anime-list .anime-header,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
     .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
     #blogForm #animeRelations div > a,
@@ -2185,6 +2196,7 @@
         border-color: #a0b1c514!important
     }
 
+    .user-profile .user-friends .icon-friend,
     .page-common .header-profile-button {
         box-shadow: 0 0 0 1px var(--color-foreground4)!important
     }
@@ -2282,6 +2294,7 @@
         width: 97.5%!important
     }
 
+    #content div.sceditor-outer > div.mal-tab-item.active.edit > div > textarea,
     #dialog div.sceditor-outer > div.mal-tab-item.active.edit > div > textarea,
     .message-wrapper > div.content > div.topic-reply-box.in-timeline > div.sceditor-outer > div.mal-tab-item.active.edit > div > textarea {
         width: 96%!important
@@ -2665,6 +2678,7 @@
         justify-content: space-around
     }
 
+    .c-aboutme-accordion-btn,
     .video-block.episode-video .outside-region .outside-region-block,
     .dark-mode .js-truncate-outer .btn-truncate,
     .js-truncate-outer .btn-truncate,
@@ -2674,6 +2688,7 @@
         background-position: 50% 100%
     }
 
+    .c-aboutme-accordion-btn.is-open,
     .dark-mode .js-truncate-outer .btn-truncate.open,
     .js-truncate-outer .btn-truncate.open,
     .dark-mode .c-aboutme-accordion-btn.is-open,
@@ -2765,8 +2780,8 @@
         top: 17px
     }
 
+    .oped-popup-preview-play,
     .oped-preview-button {
-
         -webkit-filter: invert(100%) hue-rotate(180deg);
         filter: invert(100%) hue-rotate(180deg);
     }
@@ -2783,6 +2798,12 @@
         color: #cd6063
     }
 
+    .profile .statistics-updates .data .graph .graph-inner.watching,
+    .profile .statistics-updates .data .graph .graph-inner.re-watching,
+    .profile .statistics-updates .data .graph .graph-inner.reading,
+    .profile .statistics-updates .data .graph .graph-inner.re-reading,
+    .history_content_wrapper .history-updates .wrok-graph-inner.watching,
+    .history_content_wrapper .history-updates .wrok-graph-inner.reading,
     .profile .user-statistics .stats-graph .graph.watching,
     .profile .user-statistics .stats-graph .graph.reading,
     .profile .user-statistics .stats-status .circle.watching:after,
@@ -2790,27 +2811,39 @@
         background-color: #338543
     }
 
+    .history_content_wrapper .history-updates .wrok-graph-inner.completed,
     .profile .user-statistics .stats-graph .graph.completed,
     .profile .user-statistics .stats-status .circle.completed:after,
     .profile .statistics-updates .data .graph .graph-inner.completed {
         background-color: #2d4276;
     }
 
+    .profile .statistics-updates .data .graph .graph-inner.on_hold,
     .profile .user-statistics .stats-graph .graph.on_hold,
     .profile .user-statistics .stats-status .circle.on_hold:after {
         background-color: #c9a31f;
     }
 
+    .profile .statistics-updates .data .graph .graph-inner.dropped,
     .profile .user-statistics .stats-status .circle.dropped:after,
     .profile .user-statistics .stats-graph .graph.dropped {
         background-color: #832f30;
     }
 
+    .profile .statistics-updates .data .graph .graph-inner.plan_to_watch,
+    .profile .statistics-updates .data .graph .graph-inner.plan_to_read,
     .profile .user-statistics .stats-status .circle.plan_to_watch:after,
     .profile .user-statistics .stats-status .circle.plan_to_read:after,
     .profile .user-statistics .stats-graph .graph.plan_to_watch,
     .profile .user-statistics .stats-graph .graph.plan_to_read {
         background-color: #747474;
+    }
+
+    .seasonal-anime-list .seasonal-anime .image,
+    .seasonal-anime-list .seasonal-anime img {
+        height: 235px;
+        object-fit: scale-down;
+        border-radius: 0!important
     }
 }
 
