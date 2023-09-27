@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.49
-@description  Myanimelist - Clean (Please use Dark Appearance)
+@version      1.0.50
+@description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
 @var color    fg_color        'Foreground Color' rgba(21, 30, 46)
@@ -26,7 +26,7 @@
 @var range    opacity         'Background Color Opacity' [1, 0.0, 1, 0.01]
 @var range    blur_slider     'Background Color Blur' [0, 0, 50, 1,'px']
 @var checkbox removefooter    'Hide Footer' 0
-@var checkbox removebc    'Hide Breadcrumb Navigation' 0
+@var checkbox removebc        'Hide Breadcrumb Navigation' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*") {
@@ -108,7 +108,9 @@
         --cardhover: #000 + (fg_slider) + 15;
     }
 
-    body {
+
+    body,
+    :root {
         --color-background: var(--bg)!important;
         --color-backgroundo: var(--bgo)!important;
         --color-foreground: var(--fg)!important;
@@ -124,7 +126,9 @@
     button,
     #topSearchResultList > div > div,
     .dark-mode .page-common .incrementalSearchResultList .list .image,
+    .page-common .incrementalSearchResultList .list .image,
     .dark-mode .page-common .incrementalSearchResultList .list .info,
+    .page-common .incrementalSearchResultList .list .info,
     #topSearchResultList,
     .page-common .incrementalSearchResultList {
         transition: 0.3s all ease-in-out;
@@ -147,28 +151,40 @@
     if(shadow) {
         img,
         .dark-mode .page-common .inputtext,
+        .page-common .inputtext,
         #dialog .inputButton.submit,
         #horiznav_nav ul li a,
         .dark-mode .anime-detail-header-stats .stats-block:before,
+        .anime-detail-header-stats .stats-block:before,
         .dark-mode .widget.mxj .widget-content .content,
+        .widget.mxj .widget-content .content,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-column.fl-l.divider > table,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.detail-characters-list.clearfix > div.left-right.fl-r > table,
         .theme-songs.js-theme-songs,
         .dark-mode .anime-slide-block .anime-slide .btn-anime,
+        .anime-slide-block .anime-slide .btn-anime,
         .dark-mode .detail-stack-block .column-item,
+        .detail-stack-block .column-item,
         .forum_boardrow1,
         .forum_boardrow2,
         .anime_detail_related_anime,
         [itemprop=description],
         .dark-mode .anime-detail-header-video .video-promotion,
+        .anime-detail-header-video .video-promotion,
         .dark-mode .anime-detail-header-stats .user-status-block,
+        .anime-detail-header-stats .user-status-block,
         .dark-mode .anime-detail-header-stats .stats-block,
+        .anime-detail-header-stats .stats-block,
         .dark-mode .mal-navbar,
+        .mal-navbar,
         .dark-mode .page-forum .forum-topic-message,
+        .page-forum .forum-topic-message,
         .page-common table.forum-topics tbody tr td,
         .dark-mode .page-common #headerSmall,
+        .page-common #headerSmall,
         .right-column .widget.my_statistics.right,
         .dark-mode .ranking-digest,
+        .ranking-digest,
         body.index .widget-container .widget.reviews .item .info,
         .widget.anime_discussions.left .widget-content,
         .widget.manga_discussions.left .widget-content,
@@ -181,47 +197,75 @@
         .widget.announcements.left > .widget-content,
         .widget.seasonal.left > div > div,
         .dark-mode #widget-seasonal-video .widget-slide .btn-anime,
+        #widget-seasonal-video .widget-slide .btn-anime,
         .dark-mode .widget.featured .news-list.widget .news-unit a.image-link,
+        .widget.featured .news-list.widget .news-unit a.image-link,
         .dark-mode .widget.news .news-list.widget .news-unit a.image-link,
+        .widget.news .news-list.widget .news-unit a.image-link,
         .dark-mode .auto-recommendations .item,
+        .auto-recommendations .item,
         .profile-about-user.js-truncate-inner > table > tbody > tr > td > div > .quotetext,
         .quotetext,
         .dark-mode .profile .user-statistics .user-statistics-stats .stats,
+        .profile .user-statistics .user-statistics-stats .stats,
         .dark-mode .profile .user-statistics .user-statistics-stats .updates,
+        .profile .user-statistics .user-statistics-stats .updates,
         .dark-mode .fav-slide-block,
+        .fav-slide-block,
         .dark-mode body:not(.ownlist) textarea,
+        body:not(.ownlist) textarea,
         .dark-mode .page-common #headerSmall:before,
+        .page-common #headerSmall:before,
         .dark-mode .page-common .header-notification-dropdown,
+        .page-common .header-notification-dropdown,
         .dark-mode .page-common .header-list .header-list-dropdown ul,
+        .page-common .header-list .header-list-dropdown ul,
         .dark-mode .page-common .header-profile .header-profile-dropdown,
+        .page-common .header-profile .header-profile-dropdown,
         .header-menu-dropdown.header-profile-dropdown.arrow_box.js-color-pc-constant.color-pc-constant,
         .page-common #nav ul,
         #forumTopics > tbody > tr.forum-table-header,
         .dark-mode .page-common .userimg,
+        .page-common .userimg,
         .dark-mode .spoiler .button,
+        .spoiler .button,
         .dark-mode .review-element,
+        .review-element,
         .dark-mode .stacks .recent-list .column-item,
+        .stacks .recent-list .column-item,
         .dark-mode .seasonal-anime-list .seasonal-anime,
+        .seasonal-anime-list .seasonal-anime,
         .dark-mode .user-function .icon-user-function.icon-comment,
+        .user-function .icon-user-function.icon-comment,
         .dark-mode .user-function .icon-user-function.icon-message,
+        .user-function .icon-user-function.icon-message,
         .dark-mode .user-function .icon-user-function.icon-request,
+        .user-function .icon-user-function.icon-request,
         .dark-mode .user-function .icon-user-function.icon-remove,
+        .user-function .icon-user-function.icon-remove,
         .dark-mode .user-function .icon-user-function.icon-gift,
+        .user-function .icon-user-function.icon-gift,
         .dark-mode .user-profile .user-status.border-top,
+        .user-profile .user-status.border-top,
         .user-badges.di-b.clearfix,
         .user-friends.pt4.pb12,
         .user-profile-sns,
         .dark-mode .user-profile .user-button .btn-profile-submit,
+        .user-profile .user-button .btn-profile-submit,
         body.index .right-column .ranking-digest .ranking-unit,
         .dark-mode .ranking-digest .ranking-unit .rank:before,
+        .ranking-digest .ranking-unit .rank:before,
         .dark-mode .profile .user-comments .comment,
-        .dark-mode #dialog {
+        .profile .user-comments .comment,
+        .dark-mode #dialog,
+        #dialog {
             box-shadow: 0 0 var(--shadow-strength) var(--shadow-color)!important;
         }
     }
 
     if(blur_slider > 1) {
-        .dark-mode .page-common #headerSmall:before {
+        .dark-mode .page-common #headerSmall:before,
+        .page-common #headerSmall:before {
             content: "";
             width: 100%;
             height: 100%;
@@ -231,15 +275,22 @@
         }
 
         .dark-mode .page-common .footer-ranking,
+        .page-common .footer-ranking,
         .dark-mode .page-common #headerSmall:before,
+        .page-common #headerSmall:before,
         .dark-mode .page-common .header-notification-dropdown,
+        .page-common .header-notification-dropdown,
         .dark-mode .page-common .header-list .header-list-dropdown ul,
+        .page-common .header-list .header-list-dropdown ul,
         .dark-mode .page-common .header-profile .header-profile-dropdown,
+        .page-common .header-profile .header-profile-dropdown,
         .header-menu-dropdown.header-profile-dropdown.arrow_box.js-color-pc-constant.color-pc-constant,
         .page-common #nav ul,
         .dark-mode .page-common .hoverinfo,
+        .page-common .hoverinfo,
         footer,
         .dark-mode .ranking-digest .ranking-unit .rank:before,
+        .ranking-digest .ranking-unit .rank:before,
         .page-common #myanimelist #contentWrapper {
             -webkit-backdrop-filter: blur(blur_slider)!important;
             backdrop-filter: blur(blur_slider)!important
@@ -253,13 +304,17 @@
             position: relative
         }
 
-        .dark-mode .profile .user-statistics {
+        .dark-mode .profile .user-statistics,
+        .profile .user-statistics {
             width: 99%
         }
 
         .dark-mode .profile .user-comments .comment,
+        .profile .user-comments .comment,
         .dark-mode .page-common .content-container .container-right h2,
-        .dark-mode .fav-slide-block {
+        .page-common .content-container .container-right h2,
+        .dark-mode .fav-slide-block,
+        .fav-slide-block {
             width: 96%
         }
 
@@ -282,7 +337,8 @@
         }
 
         .dark-mode body:not(.ownlist),
-        body {
+        body:not(.ownlist),
+        body.page-common.index {
             background: url(bg_image)!important;
             background-size: cover!important;
             background-attachment: fixed!important;
@@ -350,7 +406,8 @@
         padding-right: 10px
     }
 
-    .dark-mode .page-common a:hover {
+    .dark-mode .page-common a:hover,
+    .page-common a:hover {
         text-decoration: none
     }
 
@@ -362,6 +419,7 @@
         display: none !important
     }
 
+    .seasonal-anime-list .seasonal-anime .properties .property,
     .top_signup.ga-impression,
     #tbl-next-up.in-viewport.tbl-next-up-position-right,
     .trc_related_container,
@@ -372,11 +430,15 @@
     #gdpr-modal-bottom,
     .ad-sas.mauto.ac,
     .dark-mode .about-content-box.single img,
+    .about-content-box.single img,
     .dark-mode .page-common #headerSmall .banner-header-anime-straming,
+    .page-common #headerSmall .banner-header-anime-straming,
     .detail-characters-list .left-column.divider:after,
     .c-aboutme-accordion-btn-icon:after,
     .dark-mode .page-advertising #ad_menu.fixed:after,
+    .page-advertising #ad_menu.fixed:after,
     .dark-mode .page-common #searchBar.searchBar #topSearchText,
+    .page-common #searchBar.searchBar #topSearchText,
     .grecaptcha-badge,
     .page-common #header-menu .header-menu-login .btn-mal-service,
     .page-common #searchBar.searchBar .form-select-outer,
@@ -384,10 +446,18 @@
     .rc-anchor-invisible-text,
     .rc-anchor-light,
     .rc-anchor-normal-footer,
-    .dark-mode .page-common .footer-ranking {
+    .dark-mode .page-common .footer-ranking,
+    .page-common .footer-ranking {
         display: none!important
     }
 
+    .stacks .stacks-detail h2.title,
+    .stacks .stacks-detail .tag,
+    .membership .membership-manager .status-table.bg-color,
+    .profile .user-statistics .stats-graph,
+    .profile .statistics-updates .data .graph,
+    .mal-btn-toolbar a.mal-btn.secondary.outline,
+    .mal-btn-toolbar button.mal-btn.secondary.outline,
     #nav > li,
     #nav > li > a,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime,
@@ -457,125 +527,234 @@
         background: var(--color-background)!important
     }
 
+    a.mal-btn.secondary.outline,
+    button.mal-btn.secondary.outline,
     .dark-mode .anime-filter .search-filter-sort-order-block,
+    .anime-filter .search-filter-sort-order-block,
     .dark-mode .anime-filter .search-filter-mylist-block,
+    .anime-filter .search-filter-mylist-block,
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
+    .anime-manga-search .genre-link .genre-list .genre-name-link,
     #myanimelist > div.wrapper.color-pc-constant > div.text-ribbon.ga-click.ga-impression > div.ac.fs12.pt8.pr8.pb8.pl8,
     #dialog,
     select option,
     .dark-mode div.sceditor-outer div.mal-tab-item.preview,
+    div.sceditor-outer div.mal-tab-item.preview,
     .dark-mode .contents-video-embed .episode-information,
+    .contents-video-embed .episode-information,
     .dark-mode .contents-video-embed .btn-video-anime-slide.hori[data-dir=prev],
+    .contents-video-embed .btn-video-anime-slide.hori[data-dir=prev],
     .dark-mode .contents-video-embed .btn-video-anime-slide.hori.prev,
+    .contents-video-embed .btn-video-anime-slide.hori.prev,
     .dark-mode .contents-video-embed .btn-video-anime-slide.hori[data-dir=next],
+    .contents-video-embed .btn-video-anime-slide.hori[data-dir=next],
     .dark-mode .contents-video-embed .btn-video-anime-slide.hori.next,
+    .contents-video-embed .btn-video-anime-slide.hori.next,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
+    .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
     .dark-mode .page-forum .forum.thread .message-container,
+    .page-forum .forum.thread .message-container,
     .stacks .column-3 .column-item,
     .dark-mode .stacks .column-1,
+    .stacks .column-1,
     .breadcrumb .di-ib,
     .dark-mode .episode_list .episode-list-header td,
+    .episode_list .episode-list-header td,
     .dark-mode .episode_list .episode-list-data:nth-of-type(even) td,
+    .episode_list .episode-list-data:nth-of-type(even) td,
     .reviews-horiznav-nav-sort-block .review-sort-order-block.show,
     .reviews-horiznav-nav-sort-block .review-filter-block.show,
     .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime,
+    .stacks .stacks-detail .list-anime-list .seasonal-anime,
     .dark-mode .page-common .incrementalSearchResultList .list.list-bottom-message.loading,
+    .page-common .incrementalSearchResultList .list.list-bottom-message.loading,
     .dark-mode .page-common .incrementalSearchResultList .list.list-bottom-message.noresult,
+    .page-common .incrementalSearchResultList .list.list-bottom-message.noresult,
     .dark-mode .write_a_review .radio input[type=radio]:not(:checked) + label:before,
+    .write_a_review .radio input[type=radio]:not(:checked) + label:before,
     .dark-mode #editdiv,
+    #editdiv,
     .dark-mode .write_a_review .btn.btn-default,
+    .write_a_review .btn.btn-default,
     .dark-mode .write_a_review .tips,
+    .write_a_review .tips,
     .dark-mode .write_a_review .notice-box,
+    .write_a_review .notice-box,
     .dark-mode .write_a_review .scores .score,
+    .write_a_review .scores .score,
     .addtolist-block.js-anime-addtolist-block,
     .addtolist-block.js-manga-addtolist-block,
     .dark-mode .page-common .sprite-icon-social.icon-social.icon-facebook,
+    .page-common .sprite-icon-social.icon-social.icon-facebook,
     .dark-mode .page-common .sprite-icon-social.icon-social.icon-twitter,
+    .page-common .sprite-icon-social.icon-social.icon-twitter,
     .dark-mode .page-common .sprite-icon-social.icon-social.icon-google,
+    .page-common .sprite-icon-social.icon-social.icon-google,
     .dark-mode .page-common .sprite-icon-social.icon-social.icon-reddit,
+    .page-common .sprite-icon-social.icon-social.icon-reddit,
     .dark-mode .page-common .sprite-icon-social.icon-social.icon-tumblr,
+    .page-common .sprite-icon-social.icon-social.icon-tumblr,
     .dark-mode .restacks-modal .modal_contents,
+    .restacks-modal .modal_contents,
     .dark-mode body.news .menu-category .btn-edit-tags,
+    body.news .menu-category .btn-edit-tags,
     .dark-mode .anime-search-filter .category-type,
+    .anime-search-filter .category-type,
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link:hover,
+    .anime-manga-search .genre-link .genre-list .genre-name-link:hover,
     .dark-mode .manga-store .manga-store-tab-menu .tab,
+    .manga-store .manga-store-tab-menu .tab,
     .dark-mode body.news .news-content-block.news-tags .news-tags-table.news tr:nth-of-type(odd),
+    body.news .news-content-block.news-tags .news-tags-table.news tr:nth-of-type(odd),
     .dark-mode body.news .news-content-block.news-tags .menu-category-tags .btn-category,
+    body.news .news-content-block.news-tags .menu-category-tags .btn-category,
     .dark-mode .search_all .link-content-jump .link:hover,
+    .search_all .link-content-jump .link:hover,
     .dark-mode .search_all .content-result .list,
+    .search_all .content-result .list,
     .dark-mode .history_content_wrapper .history-updates .item,
+    .history_content_wrapper .history-updates .item,
     .shared-table tbody > tr,
     .anime-detail-header-stats .user-status-block,
     .anime_detail_related_anime,
     .dark-mode .anime-detail-header-stats .stats-block,
+    .anime-detail-header-stats .stats-block,
     .dark-mode .btn-detail-recommendations-view-all,
+    .btn-detail-recommendations-view-all,
     .dark-mode .btn-rect-grey1,
+    .btn-rect-grey1,
     .dark-mode .btn-sns-setting,
+    .btn-sns-setting,
     .dark-mode .detail-stack-block .column-item,
+    .detail-stack-block .column-item,
     .dark-mode .faq-container .faq-lists .question.on,
+    .faq-container .faq-lists .question.on,
     .dark-mode .faq-container .faq-lists .question:hover,
+    .faq-container .faq-lists .question:hover,
     .dark-mode .fav-slide-block,
+    .fav-slide-block,
     .dark-mode .forum .forum-board,
+    .forum .forum-board,
     .dark-mode .forum .forum-mods-container,
+    .forum .forum-mods-container,
     .dark-mode .forum .forum-side-block .forum-side-list .forum-post .information-block,
+    .forum .forum-side-block .forum-side-list .forum-post .information-block,
     .dark-mode .head-config,
+    .head-config,
     .dark-mode .head-config .btn-new-stack-wrapper .new-stack-block,
+    .head-config .btn-new-stack-wrapper .new-stack-block,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content,
+    .mal-modal .mal-modal-dialog .mal-modal-content,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .footer,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .footer,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-form,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-form,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-quote,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-quote,
     .dark-mode .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body table th,
+    .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body table th,
     .dark-mode .membership .about-membership .about-no-ads,
+    .membership .about-membership .about-no-ads,
     .dark-mode .membership .about-membership .plan,
+    .membership .about-membership .plan,
     .dark-mode .membership .about-membership .plan-description,
+    .membership .about-membership .plan-description,
     .dark-mode .membership .about-membership .plan-header,
+    .membership .about-membership .plan-header,
     .dark-mode .membership .membership-manager .membership-nav .btn-nav,
+    .membership .membership-manager .membership-nav .btn-nav,
     .dark-mode .navi-seasonal,
+    .navi-seasonal,
     .dark-mode .news-list .comment-list,
+    .news-list .comment-list,
     .dark-mode .news-list .news-unit .news-unit-right,
+    .news-list .news-unit .news-unit-right,
     .dark-mode .ownlist_style .new-theme-list .new-theme-unit,
+    .ownlist_style .new-theme-list .new-theme-unit,
     .dark-mode .ownlist_style .style-setting .setting-switch input[type=radio] + label,
+    .ownlist_style .style-setting .setting-switch input[type=radio] + label,
     .dark-mode .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell,
+    .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell,
     .dark-mode .page-advertising section.ad_section:nth-of-type(2n) div.ad_section,
+    .page-advertising section.ad_section:nth-of-type(2n) div.ad_section,
     .dark-mode .page-common #footer-block,
+    .page-common #footer-block,
     .dark-mode .page-common #nav ul,
+    .page-common ul#nav ul li a,
     .dark-mode .page-common .bgbdrContainer,
+    .page-common .bgbdrContainer,
     .dark-mode .page-common .goodresult,
+    .page-common .goodresult,
     .dark-mode .page-common .incrementalSearchResultList,
+    .page-common .incrementalSearchResultList,
     .dark-mode .page-common .incrementalSearchResultList > div > div,
+    .page-common .incrementalSearchResultList > div > div,
     .dark-mode .page-common .pagination .link,
+    .page-common .pagination .link,
     .dark-mode .page-common .successQuery,
+    .page-common .successQuery,
     .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option,
+    .page-forum .topic-poll .topic-poll-result .topic-poll-option,
     .dark-mode .page-forum .topic-reply-box,
+    .page-forum .topic-reply-box,
     .dark-mode .people-manga,
+    .people-manga,
     .dark-mode .people-character .people-character-sort-order-block,
+    .people-character .people-character-sort-order-block,
     .dark-mode .people-manga .people-manga-sort-order-block,
+    .people-manga .people-manga-sort-order-block,
     .dark-mode .people-character,
+    .people-character,
     .dark-mode .people-staff,
+    .people-staff,
     .dark-mode .people-staff .people-staff-sort-order-block,
+    .people-staff .people-staff-sort-order-block,
     .dark-mode .profile .boxlist-container .boxlist,
+    .profile .boxlist-container .boxlist,
     .dark-mode .profile .navi .sort-order-block,
+    .profile .navi .sort-order-block,
     .dark-mode .profile .user-comments .comment,
+    .profile .user-comments .comment,
     .dark-mode .profile .user-statistics .user-statistics-stats .stats,
+    .profile .user-statistics .user-statistics-stats .stats,
     .dark-mode .profile .user-statistics .user-statistics-stats .updates,
+    .profile .user-statistics .user-statistics-stats .updates,
     .dark-mode .review-element,
+    .review-element,
     .dark-mode .seasonal-anime-list .seasonal-anime,
+    .seasonal-anime-list .seasonal-anime,
     .dark-mode .sns-setting .table tr:nth-of-type(odd) td,
+    .sns-setting .table tr:nth-of-type(odd) td,
     .dark-mode .stacks .new-stack-block,
+    .stacks .new-stack-block,
     .dark-mode .stacks .new-stack-block .new-stack-item:hover,
+    .stacks .new-stack-block .new-stack-item:hover,
     .dark-mode .stacks .recent-list .column-item,
+    .stacks .recent-list .column-item,
     .dark-mode .stacks .sticky-toolbar,
+    .stacks .sticky-toolbar,
     .dark-mode .stacks .tab-area ul li,
+    .stacks .tab-area ul li,
     .dark-mode .stacks .tag.box,
+    .stacks .tag.box,
     .dark-mode .stacks .two-btn .btn,
+    .stacks .two-btn .btn,
     .dark-mode .text-banner-tag,
+    .text-banner-tag,
     .dark-mode .tile-anime-list .seasonal-anime .image,
+    .tile-anime-list .seasonal-anime .image,
     .dark-mode .top-ranking-table tr.ranking-list td,
+    .top-ranking-table tr.ranking-list td,
     .dark-mode .user-profile .user-function .icon-user-function,
+    .user-profile .user-function .icon-user-function,
     .dark-mode .user-profile .user-status li,
+    .user-profile .user-status li,
     .dark-mode .watch .video-menu-category .btn-category,
+    .watch .video-menu-category .btn-category,
     .dark-mode body:not(.ownlist) textarea,
+    body:not(.ownlist) textarea,
     .external_links,
     .pb16.broadcasts,
     .forum_boardrow1,
@@ -665,92 +844,179 @@
     .page-common #horiznav_nav ul li > a.horiznav_active,
     .breadcrumb .di-ib:last-child,
     .dark-mode .page-common .incrementalSearchResultList .list.list-bottom,
+    .page-common .incrementalSearchResultList .list.list-bottom,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime.play .link,
+    .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime.play .link,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime:hover .link,
+    .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime:hover .link,
     .dark-mode body.news .news-container .tags .tag,
+    body.news .news-container .tags .tag,
     .dark-mode .page-forum .forum.thread .replies .replyguide-container,
+    .page-forum .forum.thread .replies .replyguide-container,
     .dark-mode .episode_list .episode-list-data:nth-of-type(odd) td,
+    .episode_list .episode-list-data:nth-of-type(odd) td,
     .dark-mode body:not(.ownlist) select,
+    body:not(.ownlist) select,
     .dark-mode .stacks .stacks-detail .any_status .score,
+    .stacks .stacks-detail .any_status .score,
     .dark-mode .tile-anime-list .seasonal-anime,
+    .tile-anime-list .seasonal-anime,
     .dark-mode .mal-tabs a.item.active,
+    .mal-tabs a.item.active,
     .dark-mode #editdiv .inputtext,
+    #editdiv .inputtext,
     .dark-mode .page-forum .forum .message .replied,
+    .page-forum .forum .message .replied,
     .dark-mode .write_a_review .radio.box.on,
+    .write_a_review .radio.box.on,
     .dark-mode .write_a_review .scores .score.selected,
+    .write_a_review .scores .score.selected,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu,
+    .mal-dropdown-outer .mal-dropdown-menu,
     .dark-mode .anime-detail-header-stats .stats-block:before,
+    .anime-detail-header-stats .stats-block:before,
     .dark-mode .restacks-modal .modal_contents .list .item .username .tag,
+    .restacks-modal .modal_contents .list .item .username .tag,
     .dark-mode .profile .stacks-list .column-item .score,
+    .profile .stacks-list .column-item .score,
     .dark-mode .profile .stacks-list .column-item .foot .btn-report .report-block,
+    .profile .stacks-list .column-item .foot .btn-report .report-block,
     .dark-mode .manga-store .manga-store-tab-menu .tab.on,
+    .manga-store .manga-store-tab-menu .tab.on,
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
+    .anime-search-form-block .anime-search-form-search .inputButton,
     .dark-mode .user-profile .user-button .btn-profile-submit,
+    .user-profile .user-button .btn-profile-submit,
     .dark-mode .stacks .btn-new-stack.on,
+    .stacks .btn-new-stack.on,
     .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover,
+    .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover,
     .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li,
+    .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li,
     .dark-mode .view-style2 a,
+    .view-style2 a,
     .dark-mode #dialog .inputButton.submit,
+    #dialog .inputButton.submit,
     .dark-mode .characters-search-form-search .inputButton,
+    .characters-search-form-search .inputButton,
     .dark-mode .club-search-form-search .inputButton,
+    .club-search-form-search .inputButton,
     .dark-mode .club-search-form-search .select,
+    .club-search-form-search .select,
     .dark-mode .forum .forum-header,
+    .forum .forum-header,
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
+    .forum .forum-search-side .forum-search-input-submit,
     .dark-mode .forum .forum-search-side .forum-search-select,
+    .forum .forum-search-side .forum-search-select,
     .dark-mode .icon-about-recommendations:after,
+    .icon-about-recommendations:after,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .dark-mode .seasonal-anime-list .seasonal-anime .information,
+    .seasonal-anime-list .seasonal-anime .information,
     .dark-mode .msg-frame,
+    .msg-frame,
     .dark-mode .navi-seasonal .horiznav-nav-seasonal .btn-seasonal .btn-type,
+    .navi-seasonal .horiznav-nav-seasonal .btn-seasonal .btn-type,
     .dark-mode .navi-seasonal .horiznav_nav ul li a,
+    .navi-seasonal .horiznav_nav ul li a,
     .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
+    .news.featured .featured-search-side .featured-search-input-submit,
     .dark-mode .notification_settings .notification-setting-content .settings-notification .setting td.button input[type=checkbox]:checked + label,
+    .notification_settings .notification-setting-content .settings-notification .setting td.button input[type=checkbox]:checked + label,
     .dark-mode .notification_settings .notification-setting-content .settings-notification .setting td.button.all input[type=checkbox]:checked + label,
+    .notification_settings .notification-setting-content .settings-notification .setting td.button.all input[type=checkbox]:checked + label,
     .dark-mode .notification_settings .notification-setting-content .settings-notification .setting.header td,
+    .notification_settings .notification-setting-content .settings-notification .setting.header td,
     .dark-mode .ownlist_anime_update #advanced-button .toggle-button,
+    .ownlist_anime_update #advanced-button .toggle-button,
     .dark-mode .ownlist_manga_update #advanced-button .toggle-button,
+    .ownlist_manga_update #advanced-button .toggle-button,
     .dark-mode .page-advertising #ad_menu.fixed,
+    .page-advertising #ad_menu.fixed,
     .dark-mode .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell.on,
+    .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell.on,
     .dark-mode .page-common #profileRows a:hover,
+    .page-common #profileRows a:hover,
     .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list.list-bottom,
+    .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list.list-bottom,
     .dark-mode .page-common .btn-form-submit,
+    .page-common .btn-form-submit,
     .dark-mode .page-common .btn-form-submit.small,
+    .page-common .btn-form-submit.small,
     .dark-mode .page-common .codetext,
+    .page-common .codetext,
     .dark-mode .page-common .header-notification-item.new,
+    .page-common .header-notification-item.new,
     .dark-mode .page-common .hoverinfo,
+    .page-common .hoverinfo,
     .dark-mode .page-common .incrementalSearchResultList .list.focus:hover,
+    .page-common .incrementalSearchResultList .list.focus:hover,
     .dark-mode .page-common .profileRows a:hover,
+    .page-common .profileRows a:hover,
     .dark-mode .page-common .quotetext,
+    .page-common .quotetext,
     .dark-mode .page-forum .btn-forum,
+    .page-forum .btn-forum,
     .dark-mode .people-search-form-search .inputButton,
+    .people-search-form-search .inputButton,
     .dark-mode .quickadd-content .quickAdd-anime-result-unit .btn-status-add,
+    .quickadd-content .quickAdd-anime-result-unit .btn-status-add,
     .dark-mode .quickadd-content .quickAdd-manga-result-unit .btn-status-add,
+    .quickadd-content .quickAdd-manga-result-unit .btn-status-add,
     .dark-mode .quickadd-content .quickadd-form-search .inputButton,
+    .quickadd-content .quickadd-form-search .inputButton,
     .dark-mode .review-element .thumbbody .body .bottom-navi .menu .menu-block,
+    .review-element .thumbbody .body .bottom-navi .menu .menu-block,
     .dark-mode .review-element .thumbbody .body .tags .tag,
+    .review-element .thumbbody .body .tags .tag,
     .dark-mode .sceditor-container,
+    .sceditor-container,
     .dark-mode .season .seasonal-sort-order-block,
+    .season .seasonal-sort-order-block,
     .dark-mode .seasonal-anime-list .anime-header,
+    .seasonal-anime-list .anime-header,
     .dark-mode .seasonal-anime-list .seasonal-anime .image,
+    .seasonal-anime-list .seasonal-anime .image,
     .dark-mode .seasonal-anime-list .seasonal-anime .information,
+    .seasonal-anime-list .seasonal-anime .information,
     .dark-mode .stacks .btn.btn-check,
+    .stacks .btn.btn-check,
     .dark-mode .stacks .btn.btn-top,
+    .stacks .btn.btn-top,
     .dark-mode .stacks .navi .sort-order-block,
+    .stacks .navi .sort-order-block,
     .dark-mode .stacks .radio.box.on,
+    .stacks .radio.box.on,
     .dark-mode .stacks .search-area .inputButton,
+    .stacks .search-area .inputButton,
     .dark-mode .stacks .search-side form button,
+    .stacks .search-side form button,
     .dark-mode .stacks .tab-area ul li.on,
+    .stacks .tab-area ul li.on,
     .dark-mode .stacks .tab-area ul li:hover,
+    .stacks .tab-area ul li:hover,
     .dark-mode .statistics-info,
+    .statistics-info,
     .dark-mode .top-ranking-table .status .btn-addEdit-large.btn-anime-watch-status.notinmylist,
+    .top-ranking-table .status .btn-addEdit-large.btn-anime-watch-status.notinmylist,
     .dark-mode .user-profile .user-function .icon-user-function.icon-message.disabled,
+    .user-profile .user-function .icon-user-function.icon-message.disabled,
     .dark-mode .user-profile .user-function .icon-user-function.icon-request.disabled,
+    .user-profile .user-function .icon-user-function.icon-request.disabled,
     .dark-mode .user-status-block .form-user-episode,
+    .user-status-block .form-user-episode,
     .dark-mode .watch .video-menu-category .btn-category.on,
+    .watch .video-menu-category .btn-category.on,
     .dark-mode body.news .news-container .tags .tag.tag-color1,
+    body.news .news-container .tags .tag.tag-color1,
     .dark-mode body.news .tag-side-block .tag-cloud .tag,
+    body.news .tag-side-block .tag-cloud .tag,
     .dark-mode body:not(.ownlist) input,
+    body:not(.ownlist) input,
     .dark-mode div.sceditor-dropdown,
+    div.sceditor-dropdown,
     .dark-mode div.sceditor-toolbar,
+    div.sceditor-toolbar,
     .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a,
     .page-forum .forum-topic-message .message-wrapper .profile,
     .quickadd-content .quickAdd-result-header,
@@ -760,68 +1026,126 @@
         background-color: var(--color-foreground2)!important
     }
 
+    .season .seasonal-sort-order-block.sort .loader-sort,
+    #dialog form > a.inputButton,
+    #dialog .inputtext,
+    #dialog textarea,
+    .review-element .thumbbody .body .reaction-box .btn-reaction,
     .dark-mode .page-forum .topic-switch-layout .mal-btn.primary.outline,
+    .page-forum .topic-switch-layout .mal-btn.primary.outline,
     .setting-row.locate-right,
     .dark-mode .page-common .incrementalSearchResultList .list.list-bottom.focus,
+    .page-common .incrementalSearchResultList .list.list-bottom.focus,
     .dark-mode .user-profile .user-compatability-graph .bar-outer,
+    .user-profile .user-compatability-graph .bar-outer,
     .dark-mode .history_content_wrapper .history-updates .work-graph,
+    .history_content_wrapper .history-updates .work-graph,
     .dark-mode .profile .navi .tabs .btn-tab,
+    .profile .navi .tabs .btn-tab,
     .dark-mode .seasonal-anime-list .seasonal-anime .genres,
+    .seasonal-anime-list .seasonal-anime .genres,
     .page-common .header-notification-item:hover {
         background-color: var(--color-foreground3)!important
     }
 
+    .js-categories-seasonal .ga-impression.text-banner-tag a,
+    .sceditor-button.sceditor-button:hover,
     .dark-mode body.news .news-container .tags .tag:hover,
+    body.news .news-container .tags .tag:hover,
     .dark-mode body.news .tag-side-block .tag-cloud .tag:hover,
+    body.news .tag-side-block .tag-cloud .tag:hover,
     .dark-mode .mal-btn-toolbar button.mal-btn.primary:first-child,
+    .mal-btn-toolbar button.mal-btn.primary:first-child,
     .dark-mode .page-forum .topic-switch-layout .mal-btn.primary,
+    .page-forum .topic-switch-layout .mal-btn.primary,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
+    .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:focus,
+    .mal-dropdown-outer .mal-dropdown-menu a.item:focus,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:hover,
+    .mal-dropdown-outer .mal-dropdown-menu button.item:hover,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:focus,
+    .mal-dropdown-outer .mal-dropdown-menu button.item:focus,
     .dark-mode .search_all .result-header,
+    .search_all .result-header,
     .dark-mode .search_all .link-content-jump .link.on,
+    .search_all .link-content-jump .link.on,
     .dark-mode .search_all .btn-search-more,
+    .search_all .btn-search-more,
     .dark-mode .page-common div.updatesBar,
+    .page-common div.updatesBar,
     .dark-mode #fancybox-overlay,
+    #fancybox-overlay,
     .dark-mode .user-profile .user-button .btn-profile-submit:hover,
+    .user-profile .user-button .btn-profile-submit:hover,
     .dark-mode .user-profile .user-button .btn-profile-submit:active,
+    .user-profile .user-button .btn-profile-submit:active,
     .dark-mode .page-common a.button_edit.button_edit.completed,
+    .page-common a.button_edit.button_edit.completed,
     .Lightbox_AddEdit.button_edit.ga-click,
     .dark-mode #fancybox-outer,
+    #fancybox-outer,
     .dark-mode .view-style2 a.on,
+    .view-style2 a.on,
     .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover,
+    .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li:hover,
     .dark-mode .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li.on,
+    .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li.on,
     .color-picker div,
     .dark-mode .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox]:checked + label,
+    .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox]:checked + label,
     .dark-mode .membership .about-membership .btn-subscription,
+    .membership .about-membership .btn-subscription,
     .dark-mode .membership .about-membership .plan .button,
+    .membership .about-membership .plan .button,
     .dark-mode .membership .about-membership .plan .plan-gift .button.gift,
+    .membership .about-membership .plan .plan-gift .button.gift,
     .dark-mode .mymessages .message.unread,
+    .mymessages .message.unread,
     .dark-mode .ownlist_style .style-setting .setting-switch input[type=radio]:checked + label,
+    .ownlist_style .style-setting .setting-switch input[type=radio]:checked + label,
     .dark-mode .page-common .pagination .link.current,
+    .page-common .pagination .link.current,
     .dark-mode .page-common .pagination .link:hover,
+    .page-common .pagination .link:hover,
     .dark-mode .sceditor-dropdown a:hover,
+    .sceditor-dropdown a:hover,
     .dark-mode .season .btn-top,
+    .season .btn-top,
     .dark-mode .seasonal-anime-list .seasonal-anime .genres .genre,
+    .seasonal-anime-list .seasonal-anime .genres .genre,
     .dark-mode .seasonal-anime-list .seasonal-anime .information .information-item.buttons .button.addtolist,
+    .seasonal-anime-list .seasonal-anime .information .information-item.buttons .button.addtolist,
     .dark-mode .seasonal-anime-list .seasonal-anime .information .information-item.buttons .button.notifyme,
+    .seasonal-anime-list .seasonal-anime .information .information-item.buttons .button.notifyme,
     .dark-mode .top-ranking-table .status .btn-addEdit-large.btn-anime-watch-status,
+    .top-ranking-table .status .btn-addEdit-large.btn-anime-watch-status,
     .page-forum .forum-topic-message .message-header {
         background-color: var(--color-foreground4)!important
     }
 
     .dark-mode .stacks .search-list .column-item,
+    .stacks .search-list .column-item,
     .dark-mode .characters-favorites-ranking-table td,
+    .characters-favorites-ranking-table td,
     .dark-mode .manga-store-error-404_description,
+    .manga-store-error-404_description,
     .dark-mode .page-common .badresult,
+    .page-common .badresult,
     .dark-mode .page-forum .forum-table-header,
+    .page-forum .forum-table-header,
     .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button,
+    .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button,
     .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button.voted,
+    .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button.voted,
     .dark-mode .people-favorites-ranking-table td,
+    .people-favorites-ranking-table td,
     .dark-mode .ranking-company .company-favorites-ranking-table td,
+    .ranking-company .company-favorites-ranking-table td,
     .dark-mode .statistics-info:after,
+    .statistics-info:after,
     .dark-mode .statistics-info:before,
+    .statistics-info:before,
     .mymessages .pmessage-checkbox-block,
     .page-common .footer-ranking,
     .profile .stacks-list .column-item,
@@ -832,26 +1156,47 @@
     }
 
     .dark-mode .btn-choose-your-own,
+    .btn-choose-your-own,
     .dark-mode .characters-favorites-ranking-table .table-header td,
+    .characters-favorites-ranking-table .table-header td,
     .dark-mode .icon-top-ranking-page .next,
+    .icon-top-ranking-page .next,
     .dark-mode .icon-top-ranking-page .prev,
+    .icon-top-ranking-page .prev,
     .dark-mode .mymessages .private-message-content .message.selected > .mym,
+    .mymessages .private-message-content .message.selected > .mym,
     .dark-mode .mymessages .private-message-content .message.selected:first-of-type > .mym,
+    .mymessages .private-message-content .message.selected:first-of-type > .mym,
     .dark-mode .news-list .comment-list .information .tags .tag,
+    .news-list .comment-list .information .tags .tag,
     .dark-mode .news-list .news-unit .information .tags .tag,
+    .news-list .news-unit .information .tags .tag,
     .dark-mode .page-common .draggable_list li:hover,
+    .page-common .draggable_list li:hover,
     .dark-mode .page-common .pagination .link-blue-box,
+    .page-common .pagination .link-blue-box,
     .dark-mode .page-common a.button_add.button_add,
+    .page-common a.button_add.button_add,
     .dark-mode .page-common a.button_add.button_edit,
+    .page-common a.button_add.button_edit,
     .dark-mode .page-common a.button_edit.button_add,
+    .page-common a.button_edit.button_add,
     .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button.voted:hover,
+    .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button.voted:hover,
     .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button:hover,
+    .page-forum .topic-poll .topic-poll-result .topic-poll-option .vote .topic-poll-button:hover,
     .dark-mode .people-favorites-ranking-table .table-header td,
+    .people-favorites-ranking-table .table-header td,
     .dark-mode .profile .stacks-list .column-item .foot .stack-balloon .balloon,
+    .profile .stacks-list .column-item .foot .stack-balloon .balloon,
     .dark-mode .ranking-company .company-favorites-ranking-table .table-header td,
+    .ranking-company .company-favorites-ranking-table .table-header td,
     .dark-mode .seasonal-anime-list .seasonal-anime .prodsrc,
+    .seasonal-anime-list .seasonal-anime .prodsrc,
     .dark-mode .top-ranking-table .table-header td,
+    .top-ranking-table .table-header td,
     .dark-mode .user-status-block .form-user-status,
+    .user-status-block .form-user-status,
     .left-info-block-notify-on-air-button,
     .mymessages .pmessage-checkbox-block .mym-checkbox-pulldown-button.on,
     .mymessages .pmessage-checked-action .pmessage-checked-action-button,
@@ -866,9 +1211,12 @@
         border: 0
     }
 
+    .stacks .tab-area ul li,
     .dark-mode .stacks .btn-show-spoilers i.fas,
+    .stacks .btn-show-spoilers i.fas,
     .widget-header,
     .dark-mode .user-profile .user-compatability-graph .bar-outer .bar-inner,
+    .user-profile .user-compatability-graph .bar-outer .bar-inner,
     footer .ac::before,
     h1,
     h2,
@@ -884,159 +1232,325 @@
     textarea,
     select,
     button:not(.featured-search-input-submit.notActive),
+    input,
     input p,
     div.text,
     u,
+    .season .seasonal-sort-order-block .sort-order-list .btn-sort-order,
+    .seasonal-anime-list .seasonal-anime .prodsrc .info .item,
+    .season .seasonal-sort-order-block .sort-order-list span,
+    .navi-seasonal .horiznav-nav-seasonal .btn-seasonal .btn-type.on,
+    .js-categories-seasonal .ga-impression.text-banner-tag,
+    .js-categories-seasonal .ga-impression.text-banner-tag a,
+    div.sceditor-dropdown label,
+    .stacks .stacks-detail .any_status strong,
+    .info.mb20,
+    .top-ranking-table .score .text.on,
+    .faq-container .faq-lists .question,
+    .membership .about-membership .plan .plan-monthly .plan-name,
+    .membership .about-membership .plan .plan-annually .plan-name,
+    .membership .about-membership .plan .plan-gift .plan-name,
+    .membership .about-membership .about-extras .about-extras-content .header,
+    .membership .about-membership .about-no-ads .text .header,
+    .membership .membership-manager .status-table .title,
+    .ownlist_style .style-setting .setting-switch input[type=radio] + label,
+    .notification_settings .notification-setting-content .settings-notification .setting td.label .title,
+    .review-element .thumbbody .body .reaction-box .btn-reaction,
+    .review-element .thumbbody .body .rating,
+    .review-element .thumbbody .body .reaction-box .btn-showall,
+    #topSearchResultList > div > div.list,
+    .anime-detail-header-stats .stats-block .score,
+    .anime-detail-header-stats .stats-block .numbers,
     .dark-mode .page-common .dark_text,
+    .page-common .dark_text,
     .dark-mode .page-common .dark_text:hover,
+    .page-common .dark_text:hover,
     .dark-mode .page-common .dark_text:visited,
+    .page-common .dark_text:visited,
     .dark-mode .page-forum .forum-topic-message .message-header,
+    .page-forum .forum-topic-message .message-header,
     .dark-mode body.news .news-side-block .header,
+    body.news .news-side-block .header,
     .dark-mode body.news .featured-side-block .header,
+    body.news .featured-side-block .header,
     body.news .tag-side-block .header,
     .dark-mode .news-list .comment-list .information .pv,
+    .news-list .comment-list .information .pv,
     .dark-mode .news-list .news-unit .information .pv,
+    .news-list .news-unit .information .pv,
     .dark-mode .anime-slide-block .anime-slide .btn-anime .link .title,
+    .anime-slide-block .anime-slide .btn-anime .link .title,
     .dark-mode .profile .statistics-updates .data .text.completed,
+    .profile .statistics-updates .data .text.completed,
     .dark-mode .page-common .content-container .container-right h5,
+    .page-common .content-container .container-right h5,
     .dark-mode body.news .news-container *:not(a),
+    body.news .news-container *:not(a),
     span:not(.enabled):not(.disabled):not(.mr4):not(span),
     i:not(.fa-solid):not(.far):not(.fas):not(.fa-regular):not(.fa-brands),
     .score-label.score-na,
     .dark-mode .user-profile .user-status li .user-status-data.online,
+    .user-profile .user-status li .user-status-data.online,
     .dark-mode .page-common .inputButton,
+    .page-common .inputButton,
     .dark-mode .club-list .table-data td .informantion,
+    .club-list .table-data td .informantion,
     .dark-mode .club-list .btn-club-join,
+    .club-list .btn-club-join,
     .dark-mode .page-episode-add .label.required,
+    .page-episode-add .label.required,
     .dark-mode .page-episode-add .label,
+    .page-episode-add .label,
     .dark-mode .episode_list .episode-list-header td,
+    .episode_list .episode-list-header td,
     .dark-mode body:not(.ownlist),
+    body:not(.ownlist),
     .spaceit_pad,
     .di-ib.form-user-episode,
     .dark-mode .user-status-block .form-user-score,
+    .user-status-block .form-user-score,
     #myinfo_status:not(:hover),
     .dark-mode .notification_settings .notification-setting-content .settings-notification .setting td.button.all input[type=checkbox] + label:before,
+    .notification_settings .notification-setting-content .settings-notification .setting td.button.all input[type=checkbox] + label:before,
     .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.anime .name,
+    .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.anime .name,
     .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.manga .name,
+    .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.manga .name,
     .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.news .name,
+    .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.news .name,
     .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.featured .name,
+    .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.featured .name,
     .dark-mode .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.forum .name,
+    .page-common #top-search-bar.color-pc-constant .incrementalSearchResultList .list .off .info.forum .name,
     .bgbdrContainer.preview-message-text,
     .dark-mode .page-forum .forum-topic-message .message-wrapper .content table.body td,
+    .page-forum .forum-topic-message .message-wrapper .content table.body td,
     .dark-mode .page-forum .forum .message .replied.show .replied-container .replied-body,
+    .page-forum .forum .message .replied.show .replied-container .replied-body,
     .dark-mode body.index .widget-container .widget.my_statistics table td:nth-child(2),
+    body.index .widget-container .widget.my_statistics table td:nth-child(2),
     .dark-mode .seasonal-anime-list .seasonal-anime .information .information-item.scormem .scormem-container .scormem-item,
+    .seasonal-anime-list .seasonal-anime .information .information-item.scormem .scormem-container .scormem-item,
     .dark-mode .mymessages .message.read .mym_subject > a.subject-link .text,
+    .mymessages .message.read .mym_subject > a.subject-link .text,
     .dark-mode .mymessages .total_messages,
+    .mymessages .total_messages,
     .dark-mode #dialog td,
+    #dialog td,
     .dark-mode .page-common .fn-grey6,
+    .page-common .fn-grey6,
     .dark-mode .page-common h2,
+    .page-common h2,
     .dark-mode .page-common .h1,
+    .page-common .h1,
     .dark-mode body.index .widget-container .widget .widget-header,
-    .dark-mode .page-common .normal_header {
+    body.index .widget-container .widget .widget-header,
+    .dark-mode .page-common .normal_header,
+    .page-common .normal_header {
         color: var(--color-main-text-normal)!important;
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .anime-character .btn-show-sort,
+    .manga-character .btn-show-sort,
+    .anime-character .anime-character-sort-order-block .sort-order-list .btn-sort-order,
+    .anime-character .manga-character-sort-order-block .sort-order-list .btn-sort-order,
+    .manga-character .anime-character-sort-order-block .sort-order-list .btn-sort-order,
+    .manga-character .manga-character-sort-order-block .sort-order-list .btn-sort-order,
+    .episode-title.fs12,
+    .episode_list .episode-list-data .episode-poll .average,
+    .season .btn-show-sort,
+    .season .btn-show-kids,
+    .season .btn-show-r18,
+    .season .btn-show-broadcast,
+    .navi-seasonal .horiznav-nav-seasonal .btn-seasonal .btn-type,
+    .membership .about-membership .about-no-ads .text .description,
+    .membership .membership-manager .status-table .data,
+    .faq-container .faq-lists .answer,
+    .notification_settings .notification-setting-content .settings-notification .setting td.label .text,
     .dark-mode .page-forum .forum-topic-message .userstatus.offline,
+    .page-forum .forum-topic-message .userstatus.offline,
     .dark-mode .page-forum .forum-topic-message .userinfo.joined,
+    .page-forum .forum-topic-message .userinfo.joined,
     .dark-mode .page-forum .forum-topic-message .userinfo.posts,
+    .page-forum .forum-topic-message .userinfo.posts,
     .dark-mode .page-forum .forum-topic-message .message-wrapper .content .modified,
+    .page-forum .forum-topic-message .message-wrapper .content .modified,
     .dark-mode .page-forum .forum.thread .message .message-container .content .user .item.update,
+    .page-forum .forum.thread .message .message-container .content .user .item.update,
     .dark-mode .page-forum .forum.thread .message .message-container .content .user .item.modified,
+    .page-forum .forum.thread .message .message-container .content .user .item.modified,
     .dark-mode .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read .header-notification-item-header .time,
+    .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read .header-notification-item-header .time,
     .dark-mode .news-list .comment-list .information .info,
+    .news-list .comment-list .information .info,
     .dark-mode body.news .news-side-block .news-list .news .information,
+    body.news .news-side-block .news-list .news .information,
     .dark-mode .widget.featured .news-list.widget .news-unit .information .info,
+    .widget.featured .news-list.widget .news-unit .information .info,
     .dark-mode .widget.news .news-list.widget .news-unit .information .info,
+    .widget.news .news-list.widget .news-unit .information .info,
     .dark-mode .ranking-digest .ranking-unit .info,
+    .ranking-digest .ranking-unit .info,
     .dark-mode .ranking-digest .ranking-unit .members,
+    .ranking-digest .ranking-unit .members,
     .dark-mode .history_content_wrapper .history-updates .work-status,
+    .history_content_wrapper .history-updates .work-status,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content,
+    .mal-modal .mal-modal-dialog .mal-modal-content,
     .dark-mode .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-quote,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-profile-comment-quote,
     .dark-mode .anime-detail-header-stats .stats-block .score:after,
+    .anime-detail-header-stats .stats-block .score:after,
     .dark-mode .stacks .detail .foot .stat,
+    .stacks .detail .foot .stat,
     .dark-mode .page-common .fn-grey4,
+    .page-common .fn-grey4,
     .page-episode-add .label.required:after,
     .dark-mode .page-episode-add .episode-form-note,
+    .page-episode-add .episode-form-note,
     .dark-mode .page-common .fn-grey2,
+    .page-common .fn-grey2,
     .dark-mode #dialog .inputButton.submit:not(:hover),
+    #dialog .inputButton.submit:not(:hover),
     .episode-aired.nowrap,
     .episode-number.nowrap,
     .dark-mode .review-element .thumbbody .body .update_at,
+    .review-element .thumbbody .body .update_at,
     .dark-mode .notification_settings .notification-setting-content .settings-notification .setting td.button input[type=checkbox] + label:before,
+    .notification_settings .notification-setting-content .settings-notification .setting td.button input[type=checkbox] + label:before,
     .dark-mode .page-common .h1 .title-inherit,
+    .page-common .h1 .title-inherit,
     .mal-sync-pre-remove,
     .dark-mode body.index .widget-container .widget.my_statistics table td:nth-child(1),
+    body.index .widget-container .widget.my_statistics table td:nth-child(1),
     .fa-circle-question:after,
+    .season .seasonal-sort-order-block .sort-order-list .btn-sort-order .fa-circle.fa-solid,
     .widget.recommendations.left > div.widget-content > div > table > tbody > tr > td > div.spaceit_pad,
     .dark-mode .page-common .spaceit,
+    .page-common .spaceit,
     .dark-mode .page-common #footer-block .footer-social-media:before,
+    .page-common #footer-block .footer-social-media:before,
     .dark-mode .page-common #footer-block .footer-app:before,
+    .page-common #footer-block .footer-app:before,
     .dark-mode .page-common #footer-block #copyright,
+    .page-common #footer-block #copyright,
+    .page-common .incrementalSearchResultList .list .off .info.anime .media-type,
+    .page-common .incrementalSearchResultList .list .off .info.manga .media-type,
+    .page-common .incrementalSearchResultList .list .off .info.news .media-type,
+    .page-common .incrementalSearchResultList .list .off .info.featured .media-type,
+    .page-common .incrementalSearchResultList .list .off .info.forum .media-type,
     .dark-mode .page-common .incrementalSearchResultList .list .on .info .media-type,
+    .page-common .incrementalSearchResultList .list .on .info .media-type,
     .dark-mode .page-common .incrementalSearchResultList .list .on .info .extra-info,
+    .page-common .incrementalSearchResultList .list .on .info .extra-info,
     .dark-mode .mymessages .message.read .mym_date,
+    .mymessages .message.read .mym_date,
     #content > div:nth-child(2) > div:nth-child(2),
     .setting-row,
     small,
     .dark-mode .page-common .lightLink,
+    .page-common .lightLink,
     .dark-mode .page-common .lightLink:link,
+    .page-common .lightLink:link,
     .dark-mode .page-common .lightLink:visited,
-    .dark-mode .page-common .lightLink:active {
+    .page-common .lightLink:visited,
+    .dark-mode .page-common .lightLink:active,
+    .page-common .lightLink:active {
         color: var(--color-main-text-light)!important;
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
     .dark-mode .auto-recommendations .item .title,
-    .dark-mode .widget-slide-block .widget-slide .btn-anime .link .title.color-pc-constant {
+    .auto-recommendations .item .title,
+    .dark-mode .widget-slide-block .widget-slide .btn-anime .link .title.color-pc-constant,
+    .widget-slide-block .widget-slide .btn-anime .link .title.color-pc-constant {
         color: var(--color-main-text-op)!important;
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .sceditor-button.sceditor-button div:before,
+    .ownlist_anime_update #advanced-button .toggle-button,
     .fa-lock-keyhole:before,
     .user-profile .user-function i.fas,
     .header-menu-unit.header-list.js-header-menu-unit.on > div > ul > li > a,
     .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > a,
     .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > form > a,
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
+    .anime-search-form-block .anime-search-form-search .inputButton,
     .search_all .result-header,
     .dark-mode .stacks .search-side form button,
+    .stacks .search-side form button,
     .dark-mode .btn-sns-setting,
+    .btn-sns-setting,
     .dark-mode .club-search-form-search .inputButton,
+    .club-search-form-search .inputButton,
     .dark-mode .club-search-form-search .inputtext::placeholder,
+    .club-search-form-search .inputtext::placeholder,
     .dark-mode .club-search-form-search .select,
+    .club-search-form-search .select,
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
+    .forum .forum-search-side .forum-search-input-submit,
     .dark-mode .membership .membership-manager .membership-nav .btn-nav.on,
+    .membership .membership-manager .membership-nav .btn-nav.on,
     .dark-mode .membership .membership-manager .membership-nav .btn-nav:hover,
+    .membership .membership-manager .membership-nav .btn-nav:hover,
     .dark-mode .ownlist_style .style-setting .setting-switch input[type=radio]:checked + label,
+    .ownlist_style .style-setting .setting-switch input[type=radio]:checked + label,
     .dark-mode .page-common #profileRows a:hover,
+    .page-common #profileRows a:hover,
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon,
+    .page-common #top-search-bar.color-pc-constant #topSearchButon,
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon.notActive,
+    .page-common #top-search-bar.color-pc-constant #topSearchButon.notActive,
     .dark-mode .page-common .font-color-gery2,
+    .page-common .font-color-gery2,
     .dark-mode .page-common .header-list-button .icon,
+    .page-common .header-list-button .icon,
     .dark-mode .page-common .header-message-button .icon,
+    .page-common .header-message-button .icon,
     .dark-mode .page-common .header-notification-button .icon,
+    .page-common .header-notification-button .icon,
     .dark-mode .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read,
+    .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read,
     .dark-mode .page-common .header-profile-link,
+    .page-common .header-profile-link,
     .dark-mode .page-common .pagination .link.current,
+    .page-common .pagination .link.current,
     .dark-mode .page-common .pagination .link:hover,
+    .page-common .pagination .link:hover,
     .dark-mode .page-common .profileRows a:hover,
+    .page-common .profileRows a:hover,
     .dark-mode .page-common .signup-btn-form-submit:disabled,
+    .page-common .signup-btn-form-submit:disabled,
     .dark-mode .page-common .signup-btn-form-submit[disabled],
+    .page-common .signup-btn-form-submit[disabled],
     .dark-mode .page-common a.button_add.button_add.completed,
+    .page-common a.button_add.button_add.completed,
     .dark-mode .page-common a.button_add.button_edit.completed,
+    .page-common a.button_add.button_edit.completed,
     .dark-mode .page-common a.button_edit.button_add.completed,
+    .page-common a.button_edit.button_add.completed,
     .dark-mode .page-common a.button_edit.button_edit.completed,
+    .page-common a.button_edit.button_edit.completed,
     .dark-mode .people-search-form-search .inputButton,
+    .people-search-form-search .inputButton,
     .dark-mode .quickadd-content .icon-about-recommendations,
+    .quickadd-content .icon-about-recommendations,
     .dark-mode .quickadd-content .quickAdd-anime-result-unit .btn-status-add,
+    .quickadd-content .quickAdd-anime-result-unit .btn-status-add,
     .dark-mode .quickadd-content .quickAdd-manga-result-unit .btn-status-add,
+    .quickadd-content .quickAdd-manga-result-unit .btn-status-add,
     .dark-mode .ranking-digest .ranking-unit .rank,
+    .ranking-digest .ranking-unit .rank,
     .dark-mode .stacks .tab-area ul li.on,
+    .stacks .tab-area ul li.on,
     .dark-mode .stacks .tab-area ul li:hover,
+    .stacks .tab-area ul li:hover,
     .dark-mode .top-ranking-table .title .information,
+    .top-ranking-table .title .information,
     .dark-mode .top-ranking-table .your-score .text,
+    .top-ranking-table .your-score .text,
     .fa-angle-down:before,
     .fa-angle-up:before,
     .navi-btn.js-widget-friend-list-updates-comment.ga-click,
@@ -1049,18 +1563,31 @@
 
     select option:checked,
     .dark-mode .characters-search-form-search .inputButton,
+    .characters-search-form-search .inputButton,
     .dark-mode .navi-seasonal .horiznav_nav ul li a.horiznav_active,
+    .navi-seasonal .horiznav_nav ul li a.horiznav_active,
     .dark-mode .navi-seasonal .horiznav_nav ul li a.on,
+    .navi-seasonal .horiznav_nav ul li a.on,
     .dark-mode .navi-seasonal .horiznav_nav ul li a:hover,
+    .navi-seasonal .horiznav_nav ul li a:hover,
     .dark-mode .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell.on,
+    .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell.on,
     .dark-mode .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell:hover,
+    .page-advertising .ad-spec-sample-button-block .ad-spec-sample-button-cell:hover,
     .dark-mode .watch .video-menu-category .btn-category.on,
+    .watch .video-menu-category .btn-category.on,
     .dark-mode a.mal-btn.secondary.outline.noborder.pressed,
+    a.mal-btn.secondary.outline.noborder.pressed,
     .dark-mode a.mal-btn.secondary.outline.noborder:active,
+    a.mal-btn.secondary.outline.noborder:active,
     .dark-mode a.mal-btn.secondary.outline.noborder:hover,
+    a.mal-btn.secondary.outline.noborder:hover,
     .dark-mode button.mal-btn.secondary.outline.noborder.pressed,
+    button.mal-btn.secondary.outline.noborder.pressed,
     .dark-mode button.mal-btn.secondary.outline.noborder:active,
+    button.mal-btn.secondary.outline.noborder:active,
     .dark-mode button.mal-btn.secondary.outline.noborder:hover,
+    button.mal-btn.secondary.outline.noborder:hover,
     .page-common #horiznav_nav ul li > a:hover,
     .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a:hover,
     .page-common .header-notification-dropdown-inner h3 .mark-all.disabled {
@@ -1072,50 +1599,86 @@
     .text-ribbon.ga-click.ga-impression > div > a,
     .js-profile-user-comment.inputButton.btn-form-submit.fs12.pt4.pb4.pl8.pr8,
     .dark-mode .page-forum .forum-topic-message .message-wrapper .icon-team-title,
+    .page-forum .forum-topic-message .message-wrapper .icon-team-title,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
+    .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:focus,
+    .mal-dropdown-outer .mal-dropdown-menu a.item:focus,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:hover,
+    .mal-dropdown-outer .mal-dropdown-menu button.item:hover,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu button.item:focus,
+    .mal-dropdown-outer .mal-dropdown-menu button.item:focus,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu,
+    .mal-dropdown-outer .mal-dropdown-menu,
     .dark-mode .view-style2 a.on,
+    .view-style2 a.on,
     .dark-mode .page-common .hoverinfo,
+    .page-common .hoverinfo,
     .dark-mode .page-common .hovertitle,
+    .page-common .hovertitle,
     .stacks .search-side .quick-search a,
     .stacks .stacks-detail .any_status .btn_login a {
         color: var(--color-text-hover)!important;
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .stacks .btn-report .fa-ellipsis-h:hover,
+    .review-element .thumbbody .body .reaction-box .btn-showall:hover,
+    .page-common .incrementalSearchResultList .list .off .info.anime .name,
+    .page-common .incrementalSearchResultList .list .off .info.manga .name,
+    .page-common .incrementalSearchResultList .list .off .info.news .name,
+    .page-common .incrementalSearchResultList .list .off .info.featured .name,
+    .page-common .incrementalSearchResultList .list .off .info.forum .name,
     .dark-mode .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read .header-notification-item-header .category,
+    .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-item > .inner.is-read .header-notification-item-header .category,
     .dark-mode .page-common .incrementalSearchResultList .list .on .info .name,
+    .page-common .incrementalSearchResultList .list .on .info .name,
     .dark-mode .page-common .incrementalSearchResultList .list .off .info.character .name,
+    .page-common .incrementalSearchResultList .list .off .info.character .name,
     .dark-mode .page-common .incrementalSearchResultList .list .off .info.person .name,
+    .page-common .incrementalSearchResultList .list .off .info.person .name,
     .dark-mode .page-common .incrementalSearchResultList .list .off .info.club .name,
+    .page-common .incrementalSearchResultList .list .off .info.club .name,
     .dark-mode .page-common .incrementalSearchResultList .list .off .info.user .name,
+    .page-common .incrementalSearchResultList .list .off .info.user .name,
     .h3_character_name,
     .dark-mode .page-common a,
-    .dark-mode .page-common a:visited {
+    .page-common a,
+    .dark-mode .page-common a:visited,
+    .page-common a:visited {
         color: var(--color-link)!important
     }
 
-    .dark-mode .page-forum .forum_postusername a {
+    .dark-mode .page-forum .forum_postusername,
+    a .page-forum .forum_postusername a {
         color: var( --color-link2)!important
     }
 
+    .stacks .btn-report.on .fa-ellipsis-h,
+    .ownlist_style .new-theme-list .new-theme-unit.selected .title,
+    .page-common a:hover,
     .breadcrumb .di-ib:last-child a > span:last-child,
     .page-common #horiznav_nav ul li > a.horiznav_active,
     .dark-mode #dialog .inputButton.submit:hover,
+    #dialog .inputButton.submit:hover,
     .dark-mode .icon-about-recommendations,
+    .icon-about-recommendations,
     .breadcrumb,
     .header-menu-unit.header-list.js-header-menu-unit.on > div > ul > li > a:hover,
     .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > a:hover,
     .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > form > a:hover,
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon:hover,
+    .page-common #top-search-bar.color-pc-constant #topSearchButon:hover,
     .dark-mode .page-common .header-list-button .icon:hover,
+    .page-common .header-list-button .icon:hover,
     .dark-mode .page-common .header-message-button:hover .icon,
+    .page-common .header-message-button:hover .icon,
     .dark-mode .page-common .header-notification-button:hover .icon,
+    .page-common .header-notification-button:hover .icon,
     .dark-mode .stacks .btn-show-spoilers.on i.fas,
+    .stacks .btn-show-spoilers.on i.fas,
     .dark-mode .page-common a:hover,
+    .page-common #nav a:hover,
     .header-list .header-list-dropdown ul li a:hover,
     .header-profile-dropdown.color-pc-constant ul li a:hover,
     .page-common #nav.color-pc-constant li a:hover {
@@ -1128,34 +1691,58 @@
     .shared-table,
     .shared-table td,
     .dark-mode .page-common a.button_add.button_add,
+    .page-common a.button_add.button_add,
     .dark-mode .page-common a.button_add.button_edit,
+    .page-common a.button_add.button_edit,
     .dark-mode .page-common a.button_edit.button_add,
+    .page-common a.button_edit.button_add,
     .dark-mode .page-common a.button_edit.button_edit,
+    .page-common a.button_edit.button_edit,
     .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option,
-    .dark-mode .user-profile .user-status.border-top span {
+    .page-forum .topic-poll .topic-poll-result .topic-poll-option,
+    .dark-mode .user-profile .user-status.border-top span,
+    .user-profile .user-status.border-top span {
         padding: 5px!important
     }
 
+    #dialog form > a.inputButton,
     .dark-mode .page-forum .forum.thread .message-container,
+    .page-forum .forum.thread .message-container,
     .dark-mode .stacks .column-1,
+    .stacks .column-1,
     .dark-mode .stacks .search-list .column-item,
+    .stacks .search-list .column-item,
     .addtolist-block.js-anime-addtolist-block,
     .addtolist-block.js-manga-addtolist-block,
     .dark-mode .search_all .content-result .list,
+    .search_all .content-result .list,
     .dark-mode .history_content_wrapper .history-updates .item,
+    .history_content_wrapper .history-updates .item,
     .anime_detail_related_anime,
     .dark-mode .fav-slide-block,
+    .fav-slide-block,
     .dark-mode .forum .forum-side-block .forum-side-list .forum-post .information-block,
+    .forum .forum-side-block .forum-side-list .forum-post .information-block,
     .dark-mode .mymessages .message.unread,
+    .mymessages .message.unread,
     .dark-mode .news-list .comment-list,
+    .news-list .comment-list,
     .dark-mode .news-list .news-unit .news-unit-right,
+    .news-list .news-unit .news-unit-right,
     .dark-mode .page-common .content-container .container-right h5,
+    .page-common .content-container .container-right h5,
     .dark-mode .profile .user-statistics .user-statistics-stats .stats,
+    .profile .user-statistics .user-statistics-stats .stats,
     .dark-mode .profile .user-statistics .user-statistics-stats .updates,
+    .profile .user-statistics .user-statistics-stats .updates,
     .dark-mode .review-element,
+    .review-element,
     .dark-mode body:not(.ownlist) input,
+    body:not(.ownlist) input,
     .dark-mode body:not(.ownlist) select,
+    body:not(.ownlist) select,
     .dark-mode body:not(.ownlist) textarea,
+    body:not(.ownlist) textarea,
     .external_links,
     .pb16.broadcasts,
     .js-widget-friend-list-updates .work,
@@ -1198,6 +1785,7 @@
 
     .anime-search-form-block.po-r > #advancedSearchResultList,
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
+    .anime-manga-search .genre-link .genre-list .genre-name-link,
     #content > table > tbody > tr > td.borderClass > div > div:first-child img,
     #delete,
     #dialog,
@@ -1205,23 +1793,36 @@
     #unread,
     #fancybox-outer,
     #fancybox-inner,
+    #dialog form > a.inputButton,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
+    .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime a.link,
     #blogForm #animeRelations div > a,
     .dark-mode .page-forum .forum.thread .message-container,
+    .page-forum .forum.thread .message-container,
     .dark-mode .stacks .search-list .column-item,
+    .stacks .search-list .column-item,
     .dark-mode .stacks .column-1,
+    .stacks .column-1,
     .stacks .column-3 .column-item,
     .dark-mode .auto-recommendations .item,
+    .auto-recommendations .item,
     .breadcrumb .di-ib,
     .addtolist-block.js-anime-addtolist-block,
     .dark-mode .tile-anime-list .seasonal-anime,
+    .tile-anime-list .seasonal-anime,
     .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime,
+    .stacks .stacks-detail .list-anime-list .seasonal-anime,
     .dark-mode .page-common .hoverinfo,
+    .page-common .hoverinfo,
     .dark-mode .search_all .content-result .list,
+    .search_all .content-result .list,
     .search_all .result-header,
     .dark-mode .video-block .video-list .title,
+    .video-block .video-list .title,
     .dark-mode .video-block .btn-video-edit-block,
+    .video-block .btn-video-edit-block,
     .dark-mode .history_content_wrapper .history-updates .item,
+    .history_content_wrapper .history-updates .item,
     .header-profile-button,
     .anime-detail-header-stats .stats-block,
     .anime-detail-header-stats .user-status-block,
@@ -1230,50 +1831,95 @@
     .badresult.al,
     .btn-anime,
     .dark-mode #dialog .inputButton.submit,
+    #dialog .inputButton.submit,
     .dark-mode .anime-detail-header-video .video-episode .video-unit,
+    .anime-detail-header-video .video-episode .video-unit,
     .dark-mode .anime-detail-header-video .video-promotion,
+    .anime-detail-header-video .video-promotion,
     .dark-mode .anime-detail-header-video .video-promotion .video-unit,
+    .anime-detail-header-video .video-promotion .video-unit,
     .dark-mode .detail-stack-block .column-item,
+    .detail-stack-block .column-item,
     .dark-mode .fav-slide-block,
+    .fav-slide-block,
     .dark-mode .forum .forum-side-block .forum-side-list .forum-post .information-block,
+    .forum .forum-side-block .forum-side-list .forum-post .information-block,
     .dark-mode .head-config,
+    .head-config,
     .dark-mode .msg-frame,
+    .msg-frame,
     .dark-mode .mymessages .message.unread,
+    .mymessages .message.unread,
     .dark-mode .navi-seasonal,
+    .navi-seasonal,
     .dark-mode .news-list .comment-list,
+    .news-list .comment-list,
     .dark-mode .news-list .news-unit .news-unit-right,
+    .news-list .news-unit .news-unit-right,
     .dark-mode .ownlist_style #new-style .info,
+    .ownlist_style #new-style .info,
     .dark-mode .ownlist_style .new-theme-list .new-theme-unit,
+    .ownlist_style .new-theme-list .new-theme-unit,
     .dark-mode .page-advertising #ad_menu.fixed,
+    .page-advertising #ad_menu.fixed,
     .dark-mode .page-advertising section.ad_section:nth-of-type(2n) div.ad_section,
+    .page-advertising section.ad_section:nth-of-type(2n) div.ad_section,
     .dark-mode .page-common #profileRows a:hover,
+    .page-common #profileRows a:hover,
     .dark-mode .page-common .bgbdrContainer,
+    .page-common .bgbdrContainer,
     .dark-mode .page-common .border_solid,
+    .page-common .border_solid,
     .dark-mode .page-common .btn-form-submit,
+    .page-common .btn-form-submit,
     .dark-mode .page-common .codetext,
+    .page-common .codetext,
     .dark-mode .page-common .goodresult,
+    .page-common .goodresult,
     .dark-mode .page-common .quotetext,
+    .page-common .quotetext,
     .dark-mode .page-common .successQuery,
+    .page-common .successQuery,
     .dark-mode .page-common a.button_add.button_add,
+    .page-common a.button_add.button_add,
     .dark-mode .page-common a.button_add.button_edit,
+    .page-common a.button_add.button_edit,
     .dark-mode .page-common a.button_edit.button_add,
+    .page-common a.button_edit.button_add,
     .dark-mode .page-common a.button_edit.button_edit,
+    .page-common a.button_edit.button_edit,
     .dark-mode .page-forum .topic-poll .topic-poll-result .topic-poll-option,
+    .page-forum .topic-poll .topic-poll-result .topic-poll-option,
     .dark-mode .page-forum .topic-reply-box,
+    .page-forum .topic-reply-box,
     .dark-mode .people-manga,
+    .people-manga,
     .dark-mode .people-character,
+    .people-character,
     .dark-mode .people-staff,
+    .people-staff,
     .dark-mode .profile .boxlist-container .boxlist,
+    .profile .boxlist-container .boxlist,
     .dark-mode .profile .user-comments .comment,
+    .profile .user-comments .comment,
     .dark-mode .profile .user-statistics .user-statistics-stats .stats,
+    .profile .user-statistics .user-statistics-stats .stats,
     .dark-mode .profile .user-statistics .user-statistics-stats .updates,
+    .profile .user-statistics .user-statistics-stats .updates,
     .dark-mode .review-element,
+    .review-element,
     .dark-mode .seasonal-anime-list .seasonal-anime,
+    .seasonal-anime-list .seasonal-anime,
     .dark-mode .stacks .recent-list .column-item,
+    .stacks .recent-list .column-item,
     .dark-mode .user-profile .user-friends .icon-friend,
+    .user-profile .user-friends .icon-friend,
     .dark-mode body:not(.ownlist) input,
+    body:not(.ownlist) input,
     .dark-mode body:not(.ownlist) select,
+    body:not(.ownlist) select,
     .dark-mode body:not(.ownlist) textarea,
+    body:not(.ownlist) textarea,
     .detail-stack-block img,
     .has-multi-episodes-info,
     .header-menu-login .btn-login,
@@ -1339,8 +1985,11 @@
     }
 
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
+    .forum .forum-search-side .forum-search-input-submit,
     .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
+    .news.featured .featured-search-side .featured-search-input-submit,
     .dark-mode .stacks .search-side form button,
+    .stacks .search-side form button,
     .js-anime-character-table tbody td:nth-child(3),
     .mymessages .message.read > .mym:nth-child(5),
     .page-forum tbody tr td:last-child,
@@ -1350,7 +1999,9 @@
     }
 
     .dark-mode .forum .forum-board-list > div:first-child,
+    .forum .forum-board-list > div:first-child,
     .dark-mode .user-profile .user-status li:first-of-type,
+    .user-profile .user-status li:first-of-type,
     .forum-mods-list.pb16 > div:first-child,
     .forum-topic-sort,
     .page-forum .forum-topic-message .message-header,
@@ -1360,7 +2011,9 @@
     }
 
     .dark-mode .forum .forum-board-list > div:first-child,
+    .forum .forum-board-list > div:first-child,
     .dark-mode .top-ranking-table .table-header td.rank,
+    .top-ranking-table .table-header td.rank,
     .js-people-manga.js-anime-watch-status-people-manga-inmylist td:first-child,
     .js-table-people-staff .js-people-staff:first-child td:first-child,
     .js-table-people-character .js-people-character:first-child td:first-child {
@@ -1368,6 +2021,7 @@
     }
 
     .dark-mode .top-ranking-table .table-header td.status,
+    .top-ranking-table .table-header td.status,
     .js-people-manga.js-anime-watch-status-people-manga-inmylist td:last-child,
     .js-table-people-staff .js-people-staff:first-child td:last-child,
     .js-table-people-character .js-people-character:first-child td:last-child {
@@ -1376,18 +2030,27 @@
 
     .auto-recommendations .item .title,
     .dark-mode .anime-detail-header-video .video-episode .video-unit .info-container,
+    .anime-detail-header-video .video-episode .video-unit .info-container,
     .dark-mode .anime-detail-header-video .video-episode .video-unit .title,
+    .anime-detail-header-video .video-episode .video-unit .title,
     .dark-mode .anime-detail-header-video .video-promotion .video-unit .info-container,
+    .anime-detail-header-video .video-promotion .video-unit .info-container,
     .dark-mode .anime-detail-header-video .video-promotion .video-unit .title,
+    .anime-detail-header-video .video-promotion .video-unit .title,
     .dark-mode .forum .forum-board-list > div > div:last-child,
+    .forum .forum-board-list > div > div:last-child,
     .dark-mode .forum .forum-mods-container,
+    .forum .forum-mods-container,
     .dark-mode .top-ranking-table tr:last-of-type td.status.ac,
-    .dark-mode .user-profile .user-status li:last-of-type {
+    .top-ranking-table tr:last-of-type td.status.ac,
+    .dark-mode .user-profile .user-status li:last-of-type,
+    .user-profile .user-status li:last-of-type {
         border-bottom-right-radius: var(--br)!important;
         border-bottom-left-radius: var(--br)!important
     }
 
     .dark-mode .top-ranking-table tr:last-of-type,
+    .top-ranking-table tr:last-of-type,
     .forum-table-header,
     .page-forum .forum-topic-message .message-wrapper .profile,
     .stacks .stacks-detail .info-block {
@@ -1399,11 +2062,13 @@
         border-bottom-right-radius: var(--br)!important
     }
 
+    #dialog,
+    .dark-mode #dialog,
     #content .shared-table td.borderClass {
         border: 1px solid !important
     }
 
-    .dark-mode .page-common .forum-topic-sort {
+    .dark-mode .page-common .forum-topic-sort .page-common .forum-topic-sort {
         top: 8px;
         position: relative
     }
@@ -1412,38 +2077,71 @@
     #read,
     #unread,
     .left-column,
+    .anime-manga-search .genre-link .genre-list,
+    .page-common #searchBar.searchBar #topSearchButon,
+    .page-common #searchBar.searchBar #topSearchButon.notActive,
     .dark-mode .page-episode-add table.episode-edit,
+    .page-episode-add table.episode-edit,
     .dark-mode .forum .forum-side-block .forum-side-list .forum-post,
+    .forum .forum-side-block .forum-side-list .forum-post,
     .dark-mode .mymessages .total_messages,
+    .mymessages .total_messages,
     .dark-mode body.news .content-left,
+    body.news .content-left,
     body.news .tag-side-block .header,
     .dark-mode .page-forum .forum.thread .message-container .content,
+    .page-forum .forum.thread .message-container .content,
     .dark-mode body.news .news-content-block .news-related-database tr td,
+    body.news .news-content-block .news-related-database tr td,
     .dark-mode body.news .news-side-block .header,
+    body.news .news-side-block .header,
     .dark-mode body.news .featured-side-block .header,
+    body.news .featured-side-block .header,
     .dark-mode .search_all .content-result .list,
+    .search_all .content-result .list,
     .dark-mode .history_content_wrapper .history-updates .item:not(:last-child) .body,
+    .history_content_wrapper .history-updates .item:not(:last-child) .body,
     .history_content_wrapper .normal_header,
     .dark-mode .page-common .content-container .container-right h5,
+    .page-common .content-container .container-right h5,
     .dark-mode .user-profile h4,
+    .user-profile h4,
     .dark-mode .page-common .content-container .container-left,
+    .page-common .content-container .container-left,
     .dark-mode .forum .content-container .container-left,
+    .forum .content-container .container-left,
     .dark-mode .characters-favorites-ranking-table .table-header td,
+    .characters-favorites-ranking-table .table-header td,
     .dark-mode .characters-favorites-ranking-table .table-header tr,
+    .characters-favorites-ranking-table .table-header tr,
     .dark-mode .characters-search-form-search .inputButton,
+    .characters-search-form-search .inputButton,
     .dark-mode .characters-search-form-search .inputtext,
+    .characters-search-form-search .inputtext,
     .dark-mode .forum .forum-side-block .header,
+    .forum .forum-side-block .header,
     .dark-mode .page-common #profileRows a:first-of-type,
+    .page-common #profileRows a:first-of-type,
     .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon,
+    .page-common #top-search-bar.color-pc-constant #topSearchButon,
     .dark-mode .people-search-form-search .inputButton,
+    .people-search-form-search .inputButton,
     .dark-mode .quickadd-content .quickadd-form-search .inputButton,
+    .quickadd-content .quickadd-form-search .inputButton,
     .dark-mode .quickadd-content .quickadd-form-search .inputtext,
+    .quickadd-content .quickadd-form-search .inputtext,
     .dark-mode .top-ranking-table td,
+    .top-ranking-table td,
     .dark-mode .top-ranking-table tr,
+    .top-ranking-table tr,
     .dark-mode .user-profile .user-status.border-top,
+    .user-profile .user-status.border-top,
     .dark-mode body.index .widget-container .widget.clubs .item,
+    body.index .widget-container .widget.clubs .item,
     .dark-mode body.index .widget-container .widget.my_list_updates .item,
+    body.index .widget-container .widget.my_list_updates .item,
     .dark-mode body.index .widget-container .widget.reviews .item,
+    body.index .widget-container .widget.reviews .item,
     .detail-characters-list > div > table > tbody > tr > td,
     .news .menu-category .btn-category,
     .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a,
@@ -1454,32 +2152,53 @@
     }
 
     *,
+    #dialog,
+    .dark-mode #dialog,
     #myinfo_status,
     .dark-mode .episode_list .episode-list-header td,
+    .episode_list .episode-list-header td,
     .dark-mode .episode_list td,
+    .episode_list td,
     .dark-mode .page-common .goodresult,
+    .page-common .goodresult,
     .dark-mode .anime-detail-header-stats .stats-block:before,
+    .anime-detail-header-stats .stats-block:before,
     .dark-mode .page-common #header-menu > .border:before,
+    .page-common #header-menu > .border:before,
     .dark-mode .mymessages .message > .mym,
+    .mymessages .message > .mym,
     .dark-mode .mymessages .message:first-of-type > .mym,
+    .mymessages .message:first-of-type > .mym,
     #content .shared-table td.borderClass,
     .dark-mode .seasonal-anime-list .seasonal-anime,
+    .seasonal-anime-list .seasonal-anime,
     .dark-mode .user-function .icon-user-function.icon-comment,
+    .user-function .icon-user-function.icon-comment,
     .dark-mode .user-function .icon-user-function.icon-message,
+    .user-function .icon-user-function.icon-message,
     .dark-mode .user-function .icon-user-function.icon-request,
+    .user-function .icon-user-function.icon-request,
     .dark-mode .user-function .icon-user-function.icon-remove,
-    .dark-mode .user-function .icon-user-function.icon-gift {
+    .user-function .icon-user-function.icon-remove,
+    .dark-mode .user-function .icon-user-function.icon-gift,
+    .user-function .icon-user-function.icon-gift {
         border-color: #a0b1c514!important
     }
 
+    .page-common .header-profile-button {
+        box-shadow: 0 0 0 1px var(--color-foreground4)!important
+    }
+
     .dark-mode .profile .stacks-list .column-item .foot .stack-balloon .balloon:after,
+    .profile .stacks-list .column-item .foot .stack-balloon .balloon:after,
     .dark-mode .profile .stacks-list .column-item .foot .stack-balloon .balloon:before,
+    .profile .stacks-list .column-item .foot .stack-balloon .balloon:before,
     .stacks .stack-balloon .balloon:after,
     .stacks .stack-balloon .balloon:before {
         border-right-color: var(--color-foreground2)!important
     }
 
-    .dark-mode #dialog {
+    .dark-mode #dialog #dialog {
         border-color: transparent!important;
         margin-bottom: 20px
     }
@@ -1489,15 +2208,13 @@
         padding-right: 5px
     }
 
-    .dark-mode .profile .user-statistics .user-statistics-stats {
+    .dark-mode .profile .user-statistics .user-statistics-stats .profile .user-statistics .user-statistics-stats {
         display: flex;
         width: 100%
     }
 
-    .dark-mode .detail-stack-block .column-item,
-    .dark-mode .profile .user-statistics .user-statistics-stats .stats,
-    .dark-mode .profile .user-statistics .user-statistics-stats .updates {
-        margin-right: 5px
+    .profile .user-statistics .user-statistics-stats {
+        border-spacing: 5px 0px;
     }
 
     .page-common #horiznav_nav ul li {
@@ -1507,8 +2224,11 @@
     }
 
     .dark-mode .mymessages .message.unread,
+    .mymessages .message.unread,
     .dark-mode .news-list .comment-list,
+    .news-list .comment-list,
     .dark-mode .page-forum .topic-reply-box,
+    .page-forum .topic-reply-box,
     .news-side-block > ul.news-list > .news.clearfix,
     .widget.anime_discussions.left .widget-content,
     .widget.announcements.left > .widget-content,
@@ -1523,14 +2243,17 @@
     }
 
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
+    .anime-manga-search .genre-link .genre-list .genre-name-link,
     .dark-mode .news-list .comment-list,
+    .news-list .comment-list,
     .dark-mode .review-element,
+    .review-element,
     .profile .user-comments .comment,
     .spaceit.borderClass {
         margin-bottom: 10px!important
     }
 
-    .dark-mode .page-advertising section.ad_section:nth-of-type(2n) div.ad_section {
+    .dark-mode .page-advertising section.ad_section:nth-of-type(2n) div.ad_section .page-advertising section.ad_section:nth-of-type(2n) div.ad_section {
         margin-bottom: 50px
     }
 
@@ -1554,10 +2277,12 @@
     }
 
     .dark-mode .search_all .content-result .list,
+    .search_all .content-result .list,
     .forum.timeline > div > div.topic-reply-box.fixed > div.sceditor-container.sourceMode.ltr > textarea {
         width: 97.5%!important
     }
 
+    #dialog div.sceditor-outer > div.mal-tab-item.active.edit > div > textarea,
     .message-wrapper > div.content > div.topic-reply-box.in-timeline > div.sceditor-outer > div.mal-tab-item.active.edit > div > textarea {
         width: 96%!important
     }
@@ -1568,47 +2293,67 @@
         margin-top: 5px
     }
 
-    .dark-mode .user-profile .user-badges .user-badge {
+    .dark-mode .user-profile .user-badges .user-badge,
+    .user-profile .user-badges .user-badge {
         width: 45px;
         height: 45px;
         margin-top: 5px
     }
 
     .dark-mode .anime-search-form-block .anime-search-form-search .inputtext,
+    .anime-search-form-block .anime-search-form-search .inputtext,
     .dark-mode .characters-search-form-search .inputtext,
+    .characters-search-form-search .inputtext,
     .dark-mode .people-search-form-search .inputtext,
+    .people-search-form-search .inputtext,
     .dark-mode .quickadd-content .quickadd-form-search .inputtext,
-    .dark-mode .stacks .search-area .inputtext {
+    .quickadd-content .quickadd-form-search .inputtext,
+    .dark-mode .stacks .search-area .inputtext,
+    .stacks .search-area .inputtext {
         width: 695px;
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important
     }
 
     .dark-mode .club-search-form-search .inputtext,
-    .dark-mode .news.featured .featured-search-side .featured-search-input-text {
+    .club-search-form-search .inputtext,
+    .dark-mode .news.featured .featured-search-side .featured-search-input-text,
+    .news.featured .featured-search-side .featured-search-input-text {
         width: 255px;
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important
     }
 
+    .dark-mode .forum .forum-search-side .forum-search-input-text[name="q"],
     .dark-mode .club-search-form-search .select,
+    .club-search-form-search .select,
     .dark-mode .forum .forum-search-side .forum-search-select,
-    .dark-mode .stacks .search-side form input {
+    .forum .forum-search-side .forum-search-select,
+    .dark-mode .stacks .search-side form input,
+    .stacks .search-side form input {
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important
     }
 
+    .dark-mode .forum .forum-search-side .forum-search-input-text[name="q"],
     .dark-mode .club-search-form-search .inputtext,
-    .dark-mode .forum .forum-search-side .forum-search-input-text {
+    .club-search-form-search .inputtext,
+    .dark-mode .forum .forum-search-side .forum-search-input-text,
+    .forum .forum-search-side .forum-search-input-text {
         border-top-left-radius: 0!important;
         border-bottom-left-radius: 0!important
     }
 
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
+    .anime-search-form-block .anime-search-form-search .inputButton,
     .dark-mode .club-search-form-search .form-select-outer,
+    .club-search-form-search .form-select-outer,
     .dark-mode .club-search-form-search .inputButton,
+    .club-search-form-search .inputButton,
     .dark-mode .club-search-form-search .select,
-    .dark-mode .people-search-form-search .inputButton {
+    .club-search-form-search .select,
+    .dark-mode .people-search-form-search .inputButton,
+    .people-search-form-search .inputButton {
         height: 69px
     }
 
@@ -1617,17 +2362,25 @@
         margin-top: 50px
     }
 
-    .dark-mode .stacks .search-area .inputButton {
+    .dark-mode .stacks .search-area .inputButton,
+    .stacks .search-area .inputButton {
         height: 59.5px
     }
 
-    .dark-mode .stacks .search-area .inputtext,
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
-    .dark-mode .forum .forum-search-side .forum-search-select {
+    .forum .forum-search-side .forum-search-input-submit {
+        height: 37px
+    }
+
+    .dark-mode .stacks .search-area .inputtext,
+    .stacks .search-area .inputtext,
+    .dark-mode .forum .forum-search-side .forum-search-select,
+    .forum .forum-search-side .forum-search-select {
         height: 38px
     }
 
-    .dark-mode .forum .forum-search-side .forum-search-input-text {
+    .dark-mode .forum .forum-search-side .forum-search-input-text,
+    .forum .forum-search-side .forum-search-input-text {
         width: 165px;
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important;
@@ -1635,12 +2388,16 @@
     }
 
     .dark-mode .stacks .search-side form button,
-    .dark-mode .news.featured .featured-search-side .featured-search-input-submit {
+    .stacks .search-side form button,
+    .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
+    .news.featured .featured-search-side .featured-search-input-submit {
         height: 39px
     }
 
     .dark-mode .characters-search-form-search .inputButton,
-    .dark-mode .quickadd-content .quickadd-form-search .inputButton {
+    .characters-search-form-search .inputButton,
+    .dark-mode .quickadd-content .quickadd-form-search .inputButton,
+    .quickadd-content .quickadd-form-search .inputButton {
         height: 68px
     }
 
@@ -1649,6 +2406,12 @@
         display: inline-block;
         margin: 5px;
         background: var(--color-foreground3)
+    }
+
+    .dark-mode .forum .forum-search-side .forum-search-select,
+    .forum .forum-search-side .forum-search-select {
+        padding: 2px!important;
+        height: 37px!important
     }
 
     .widget.recommendations.left .recommendations_h3 {
@@ -1732,7 +2495,8 @@
         border: 0!important
     }
 
-    .dark-mode .ranking-digest .ranking-unit .rank {
+    .dark-mode .ranking-digest .ranking-unit .rank,
+    .ranking-digest .ranking-unit .rank {
         position: absolute;
         z-index: 2;
         font-size: 0.7rem;
@@ -1741,11 +2505,13 @@
         text-indent: -5px;
     }
 
-    .dark-mode .ranking-digest .ranking-unit:nth-child(10) .rank {
+    .dark-mode .ranking-digest .ranking-unit:nth-child(10) .rank,
+    .ranking-digest .ranking-unit:nth-child(10) .rank {
         text-indent: -8.5px
     }
 
-    .dark-mode .ranking-digest .ranking-unit .rank:before {
+    .dark-mode .ranking-digest .ranking-unit .rank:before,
+    .ranking-digest .ranking-unit .rank:before {
         background: var(--color-foreground2);
         content: "";
         height: 25px;
@@ -1757,6 +2523,7 @@
         border-radius: 50%
     }
 
+    .anime-detail-header-stats .stats-block:before,
     .ranking-digest .ranking-unit .image {
         box-shadow: none!important
     }
@@ -1773,7 +2540,9 @@
         background-color: var(--color-foreground3)
     }
 
-    .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon.notActive {
+    .dark-mode .page-common #top-search-bar.color-pc-constant #topSearchButon.notActive,
+    .page-common #top-search-bar.color-pc-constant #topSearchButon.notActive,
+    .page-common #searchBar.searchBar #topSearchButon.notActive {
         border: 0!important;
         cursor: pointer;
     }
@@ -1841,6 +2610,7 @@
     }
 
     .dark-mode .page-advertising #ad_menu.fixed,
+    .page-advertising #ad_menu.fixed,
     .page-common #myanimelist #contentWrapper {
         top: 50px
     }
@@ -1856,7 +2626,9 @@
     }
 
     .dark-mode .page-common .hoverinfo,
-    .dark-mode .page-common .hoverinfo:after {
+    .page-common .hoverinfo,
+    .dark-mode .page-common .hoverinfo:after,
+    .page-common .hoverinfo:after {
         background-image: none!important;
         filter: invert(0);
         height: auto
@@ -1875,7 +2647,8 @@
         padding-right: 0!important
     }
 
-    .dark-mode .page-common .incrementalSearchResultList {
+    .dark-mode .page-common .incrementalSearchResultList,
+    .page-common .incrementalSearchResultList {
         top: 30px!important;
         left: 0!important;
         width: 200px!important;
@@ -1883,30 +2656,38 @@
     }
 
     .dark-mode .page-common table.forum-topics tr td.replies,
+    .page-common table.forum-topics tr td.replies,
     .dark-mode .page-forum .forum_boardrow2,
+    .page-forum .forum_boardrow2,
     .page-common table.forum-topics tr td.watch-state {
         display: flex;
         align-items: center;
         justify-content: space-around
     }
 
+    .video-block.episode-video .outside-region .outside-region-block,
     .dark-mode .js-truncate-outer .btn-truncate,
-    .dark-mode .c-aboutme-accordion-btn {
+    .js-truncate-outer .btn-truncate,
+    .dark-mode .c-aboutme-accordion-btn .c-aboutme-accordion-btn {
         background-image: url(/images/icon-pulldown2.png?v=1634263200), linear-gradient(180deg, rgba(18, 18, 18, 0) 0, rgba(18, 18, 18, .5) 20%, var(--color-background) 50%);
         background-repeat: no-repeat, repeat-x;
         background-position: 50% 100%
     }
 
     .dark-mode .js-truncate-outer .btn-truncate.open,
-    .dark-mode .c-aboutme-accordion-btn.is-open {
+    .js-truncate-outer .btn-truncate.open,
+    .dark-mode .c-aboutme-accordion-btn.is-open,
+    .c-aboutme-accordion-btn.is-open {
         background-position: 50% -50%
     }
 
-    .dark-mode .anime-detail-header-video .video-promotion {
+    .dark-mode .anime-detail-header-video .video-promotion,
+    .anime-detail-header-video .video-promotion {
         border: 2px solid #a0b1c514
     }
 
-    .dark-mode .fav-slide-block .fav-slide .btn-fav .link .title {
+    .dark-mode .fav-slide-block .fav-slide .btn-fav .link .title,
+    .fav-slide-block .fav-slide .btn-fav .link .title {
         overflow: hidden
     }
 
@@ -1915,6 +2696,7 @@
         padding-bottom: 0!important
     }
 
+    a,
     body.news .news-container .information a {
         text-decoration: none!important
     }
@@ -1939,7 +2721,8 @@
         background: var(--color-background)!important;
     }
 
-    .dark-mode .stacks .column-3 .column-item {
+    .dark-mode .stacks .column-3 .column-item,
+    .stacks .column-3 .column-item {
         margin: 5px;
         padding: 10px;
         display: inline-block;
@@ -1948,32 +2731,86 @@
     }
 
     .stacks .breadcrumbs_area .di-ib:nth-child(3),
-    .dark-mode .stacks .breadcrumbs_area .di-ib:nth-child(3) {
+    .dark-mode .stacks .breadcrumbs_area .di-ib:nth-child(3),
+    .stacks .breadcrumbs_area .di-ib:nth-child(3) {
         margin-bottom: -9px;
         width: auto
     }
 
-    .dark-mode .navi-seasonal.fixed:after {
+    .dark-mode .navi-seasonal.fixed:after,
+    .navi-seasonal.fixed:after {
         background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(18, 18, 18, 0)), color-stop(20%, rgba(18, 18, 18, .1)), color-stop(50%, var(--color-background)));
         background-image: linear-gradient(0deg, rgba(18, 18, 18, 0) 0, rgba(18, 18, 18, .1) 20%, var(--color-background) 50%);
     }
 
-    .dark-mode .user-status-block .form-user-episode input[type=text] {
+    .dark-mode .user-status-block .form-user-episode input[type=text],
+    .user-status-block .form-user-episode input[type=text] {
         padding: 8px!important;
         box-shadow: none!important
     }
 
-    .dark-mode .user-status-block .form-user-episode input[type=text]:focus {
+    .dark-mode .user-status-block .form-user-episode input[type=text]:focus,
+    .user-status-block .form-user-episode input[type=text]:focus {
         background: var(--color-foreground4)!important
     }
 
-    .dark-mode .user-status-block .btn-user-status-add-list {
+    .dark-mode .user-status-block .btn-user-status-add-list,
+    .user-status-block .btn-user-status-add-list {
         padding: 11px 25px;
         width: 40px
     }
 
-    .dark-mode .user-status-block .btn-user-status-add-list:after {
+    .dark-mode .user-status-block .btn-user-status-add-list:after,
+    .user-status-block .btn-user-status-add-list:after {
         top: 17px
+    }
+
+    .oped-preview-button {
+
+        -webkit-filter: invert(100%) hue-rotate(180deg);
+        filter: invert(100%) hue-rotate(180deg);
+    }
+
+    .review-element .thumbbody .body .tags .tag.recommended {
+        color: #829bd3
+    }
+
+    .review-element .thumbbody .body .tags .tag.mixed-feelings {
+        color: #a3a3a3
+    }
+
+    .review-element .thumbbody .body .tags .tag.not-recommended {
+        color: #cd6063
+    }
+
+    .profile .user-statistics .stats-graph .graph.watching,
+    .profile .user-statistics .stats-graph .graph.reading,
+    .profile .user-statistics .stats-status .circle.watching:after,
+    .profile .user-statistics .stats-status .circle.reading:after {
+        background-color: #338543
+    }
+
+    .profile .user-statistics .stats-graph .graph.completed,
+    .profile .user-statistics .stats-status .circle.completed:after,
+    .profile .statistics-updates .data .graph .graph-inner.completed {
+        background-color: #2d4276;
+    }
+
+    .profile .user-statistics .stats-graph .graph.on_hold,
+    .profile .user-statistics .stats-status .circle.on_hold:after {
+        background-color: #c9a31f;
+    }
+
+    .profile .user-statistics .stats-status .circle.dropped:after,
+    .profile .user-statistics .stats-graph .graph.dropped {
+        background-color: #832f30;
+    }
+
+    .profile .user-statistics .stats-status .circle.plan_to_watch:after,
+    .profile .user-statistics .stats-status .circle.plan_to_read:after,
+    .profile .user-statistics .stats-graph .graph.plan_to_watch,
+    .profile .user-statistics .stats-graph .graph.plan_to_read {
+        background-color: #747474;
     }
 }
 
@@ -2030,18 +2867,24 @@ url-prefix("https://myanimelist.net/manga") {
 
     .normal_header.pt24.mb0,
     .dark-mode .anime-manga-search .normal_header,
+    .anime-manga-search .normal_header,
     .dark-mode .anime-manga-search .genre-link .genre-list,
+    .anime-manga-search .genre-link .genre-list,
     .page-forum .border_solid,
     .pb24 h2,
     .leftside #content > table > tbody > tr > td.borderClass > div > h2,
     .page-common h2,
     .dark-mode .review-element .thumbbody,
-    .dark-mode .page-common .borderClass {
+    .review-element .thumbbody,
+    .dark-mode .page-common .borderClass,
+    .page-common .borderClass {
         border: 0!important
     }
 
     .dark-mode .anime-manga-search .normal_header,
-    .dark-mode div.anime-info-review__header.mal-navbar {
+    .anime-manga-search .normal_header,
+    .dark-mode div.anime-info-review__header.mal-navbar,
+    div.anime-info-review__header.mal-navbar {
         margin-bottom: 5px;
         padding-bottom: 15px;
     }
@@ -2127,7 +2970,8 @@ url-prefix("https://myanimelist.net/manga") {
         margin-bottom: 0
     }
 
-    .dark-mode .page-common .h1.edit-info {
+    .dark-mode .page-common .h1.edit-info,
+    .page-common .h1.edit-info {
         padding: 10px!important;
         background: var(--color-foreground)!important;
         border-radius: var(--border-radius);
@@ -2141,6 +2985,12 @@ url-prefix("https://myanimelist.net/manga") {
 
     #content > table {
         padding-top: 10px
+    }
+
+    #advancedSearchResultList {
+
+        max-height: initial!important;
+        position: absolute;
     }
 }
 
@@ -2201,6 +3051,34 @@ url-prefix("https://myanimelist.net/clubs.php") {
     div.page-forum table tbody tr {
         grid-template-columns: 50px 430px 100px auto
     }
+
+    .page-common .quotetext,
+    .quotetext > div {
+        background-color: var(--color-foreground)!important;
+    }
+
+    #content > div > div:nth-child(3) > a {
+        background: var(--color-foreground3);
+        border-radius: var(--br) !important;
+        padding: 5px;
+        display: inline-table;
+        margin: 2px;
+    }
+
+    #content > div > div:nth-child(3) {
+        color: rgba(0, 0, 0, 0);
+        display: inline-grid;
+        grid-template-columns: repeat(6, auto);
+        height: 130px;
+        overflow: scroll;
+    }
+
+    #content > div > div:nth-child(3)::before {
+        color: var(--color-main-text-normal)!important;
+        content: "Anime Relations: ";
+        position: absolute;
+        margin-top: 5px
+    }
 }
 
 @-moz-document regexp("https://myanimelist.net/profile/.*/recommendations") {
@@ -2236,8 +3114,11 @@ url-prefix("https://myanimelist.net/clubs.php") {
     }
 
     .dark-mode .detail-page-featured-article .news-list .news-unit,
+    .detail-page-featured-article .news-list .news-unit,
     .dark-mode .page-common #profileRows a:first-of-type,
-    .dark-mode .page-common .borderClass {
+    .page-common #profileRows a:first-of-type,
+    .dark-mode .page-common .borderClass,
+    .page-common .borderClass {
         border-color: #a0b1c514!important
     }
 
@@ -2252,7 +3133,8 @@ url-prefix("https://myanimelist.net/clubs.php") {
 
     #content > table > tbody > tr > td > table > tbody > tr > td,
     #content > table > tbody > tr > td.borderClass > table > tbody > tr > td,
-    .dark-mode .detail-page-featured-article .news-list .news-unit {
+    .dark-mode .detail-page-featured-article .news-list .news-unit,
+    .detail-page-featured-article .news-list .news-unit {
         padding: 10px;
         background: var(--color-foreground);
         border: 0
@@ -2260,7 +3142,8 @@ url-prefix("https://myanimelist.net/clubs.php") {
 
     #content > table > tbody > tr > td > table > tbody > tr > td:first-child,
     #content > table > tbody > tr > td.borderClass > table > tbody > tr > td:first-child,
-    .dark-mode .detail-page-featured-article .news-list .news-unit {
+    .dark-mode .detail-page-featured-article .news-list .news-unit,
+    .detail-page-featured-article .news-list .news-unit {
         border-top-left-radius: var(--border-radius);
         border-bottom-left-radius: var(--border-radius);
         padding-right: 0
@@ -2268,7 +3151,8 @@ url-prefix("https://myanimelist.net/clubs.php") {
 
     #content > table > tbody > tr > td > table > tbody > tr > td:nth-child(2),
     #content > table > tbody > tr > td.borderClass > table > tbody > tr > td:nth-child(2),
-    .dark-mode .detail-page-featured-article .news-list .news-unit {
+    .dark-mode .detail-page-featured-article .news-list .news-unit,
+    detail-page-featured-article .news-list .news-unit {
         border-top-right-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
         width: 100%
@@ -2286,7 +3170,8 @@ regexp("https://myanimelist.net/forum/search\?.*") {
         border-bottom-right-radius: var(--border-radius)
     }
 
-    .dark-mode .page-common .bgColor1 {
+    .dark-mode .page-common .bgColor1,
+    .page-common .bgColor1 {
         background: 0!important
     }
 
@@ -2312,7 +3197,9 @@ regexp("https://myanimelist.net/forum/search\?.*") {
 
 @-moz-document url-prefix("https://myanimelist.net/panel") {
     .dark-mode .page-common #myanimelist,
-    .dark-mode body:not(.ownlist) {
+    .page-common #myanimelist,
+    .dark-mode body:not(.ownlist),
+    body:not(.ownlist) {
         top: -16px!important
     }
 
@@ -2351,18 +3238,21 @@ url-prefix("https://myanimelist.net/ownlist/style") {
             border-radius: var(--border-radius);
         }
 
-        .dark-mode .page-common #horiznav_nav ul li a {
+        .dark-mode .page-common #horiznav_nav ul li a,
+        .page-common #horiznav_nav ul li a {
             background: var(--color-foreground2)!important;
         }
 
-        .dark-mode .sceditor-container textarea {
+        .dark-mode .sceditor-container textarea,
+        .sceditor-container textarea {
             width: calc(100% - 35px)!important;
         }
     }
 }
 
 @-moz-document url-prefix("https://myanimelist.net/users.php") {
-    .dark-mode .page-common .borderClass {
+    .dark-mode .page-common .borderClass,
+    .page-common .borderClass {
         background: var(--color-foreground)!important;
         border-radius: var(--border-radius);
         display: inline-block;
@@ -2372,7 +3262,8 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         border: none
     }
 
-    .dark-mode .page-common .borderClass div.picSurround img {
+    .dark-mode .page-common .borderClass div.picSurround img,
+    .page-common .borderClass div.picSurround img {
         height: 64px
     }
 
@@ -2385,7 +3276,8 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         margin-top: 10px
     }
 
-    .dark-mode .page-common .normal_header {
+    .dark-mode .page-common .normal_header,
+    .page-common .normal_header {
         border: none
     }
 }
@@ -2400,6 +3292,7 @@ url-prefix("https://myanimelist.net/ownlist/style") {
 
 @-moz-document url-prefix("https://myanimelist.net/featured") {
     .dark-mode body.news .content-left .mr8,
+    body.news .content-left .mr8,
     .js-scrollfix-bottom {
         background: var(--color-foreground)!important;
         border-radius: var(--border-radius);
@@ -2407,12 +3300,14 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         margin-top: 10px;
     }
 
-    .dark-mode .featured-pickup {
+    .dark-mode .featured-pickup,
+    .featured-pickup {
         display: flex;
         justify-content: space-around;
     }
 
-    .dark-mode .featured-pickup .featured-pickup-unit {
+    .dark-mode .featured-pickup .featured-pickup-unit,
+    .featured-pickup .featured-pickup-unit {
         background: var(--color-foreground)!important;
         border-radius: var(--border-radius);
         padding: 10px;
@@ -2421,16 +3316,20 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     }
 
     .dark-mode .featured-pickup .featured-pickup-unit .title,
-    .dark-mode .featured-pickup .featured-pickup-unit .text {
+    .dark-mode .featured-pickup .featured-pickup-unit .text,
+    .featured-pickup .featured-pickup-unit .title,
+    .featured-pickup .featured-pickup-unit .text {
         width: auto;
     }
 
-    .dark-mode .featured-pickup .featured-pickup-unit .image {
+    .dark-mode .featured-pickup .featured-pickup-unit .image,
+    .featured-pickup .featured-pickup-unit .image {
         width: 300px!important
     }
 
     #content > div.content-left > div > div:nth-child(2) > div > div.news-info-block.clearfix > div.sns-unit.fl-r.mr8,
-    .dark-mode body.news .news-container .information {
+    .dark-mode body.news .news-container .information,
+    body.news .news-container .information {
         background: var(--color-foreground2)!important;
         padding: 10px;
         border-radius: var(--border-radius);
@@ -2442,7 +3341,9 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     }
 
     .dark-mode .featured-content-block-outer,
-    .dark-mode body.news .content-left h2.pt16 {
+    .featured-content-block-outer,
+    .dark-mode body.news .content-left h2.pt16,
+    body.news .content-left h2.pt16 {
         margin-top: 0!important;
         padding-top: 0!important;
         border: 0
@@ -2450,7 +3351,9 @@ url-prefix("https://myanimelist.net/ownlist/style") {
 
     #content > div.content-left > div > div:nth-child(4) > h2,
     .dark-mode body.news .news-breadcrumbs,
-    .dark-mode body.news .content-left .mr8 .borderClass {
+    body.news .news-breadcrumbs,
+    .dark-mode body.news .content-left .mr8 .borderClass,
+    body.news .content-left .mr8 .borderClass {
         border: 0
     }
 
@@ -2461,8 +3364,10 @@ url-prefix("https://myanimelist.net/ownlist/style") {
 
 @-moz-document url-prefix("https://myanimelist.net/news") {
     .dark-mode body.news .content-left .mr8:not(h2),
+    body.news .content-left .mr8:not(h2),
     .columnist-side-block.mb16,
-    .dark-mode body.news .tag-side-block .tag-cloud {
+    .dark-mode body.news .tag-side-block .tag-cloud,
+    body.news .tag-side-block .tag-cloud {
         background: var(--color-foreground)!important;
         border-radius: var(--border-radius);
         padding: 10px;
@@ -2470,13 +3375,19 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     }
 
     .dark-mode .news-list .comment-list,
+    .news-list .comment-list,
     .dark-mode body.news .menu-category,
+    body.news .menu-category,
     .dark-mode body.news .content-left .mr8,
+    body.news .content-left .mr8,
     .columnist-side-block.mb16 .header,
     .dark-mode body.news .news-side-block .news-list .news,
+    body.news .news-side-block .news-list .news,
     #content > div.content-left > div > div:nth-child(4) > h2,
     .dark-mode body.news .news-breadcrumbs,
-    .dark-mode body.news .content-left .mr8 .borderClass {
+    body.news .news-breadcrumbs,
+    .dark-mode body.news .content-left .mr8 .borderClass,
+    body.news .content-left .mr8 .borderClass {
         border: 0!important
     }
 
@@ -2487,26 +3398,33 @@ url-prefix("https://myanimelist.net/ownlist/style") {
 
     .dark-mode body.news .menu-category .btn-edit-tags,
     .dark-mode body.news .menu-category .btn-category.selected,
+    body.news .menu-category .btn-category.selected,
     .dark-mode body.news .menu-category .btn-category,
+    body.news .menu-category .btn-category,
     #content > div.content-left > div > div:nth-child(2) > div > div.news-info-block.clearfix > div.sns-unit.fl-r.mr8,
-    .dark-mode body.news .news-container .information {
+    .dark-mode body.news .news-container .information,
+    body.news .news-container .information {
         background: var(--color-foreground2)!important;
         padding: 10px;
         border-radius: var(--border-radius);
     }
 
     .dark-mode body.news .menu-category .btn-edit-tags,
-    .dark-mode body.news .menu-category .btn-category {
+    body.news .menu-category .btn-edit-tags,
+    .dark-mode body.news .menu-category .btn-category,
+    body.news .menu-category .btn-category {
         background: var(--color-foreground)!important;
     }
 
-    .dark-mode body.news .menu-category .btn-edit-tags {
+    .dark-mode body.news .menu-category .btn-edit-tags,
+    body.news .menu-category .btn-edit-tags {
         position: relative;
         top: 10px!important
     }
 
     #content > div.content-left > div > div > table.mb24.news-related-database,
-    .dark-mode body.news .content-left h2.pt16 {
+    .dark-mode body.news .content-left h2.pt16,
+    body.news .content-left h2.pt16 {
         margin-top: 0!important;
         margin-bottom: 0!important;
         padding-top: 0!important;
@@ -2528,5 +3446,22 @@ url-prefix("https://myanimelist.net/ownlist/style") {
 @-moz-document url-prefix("https://myanimelist.net/forum/?animeid") {
     #forumTopics tbody tr {
         grid-template-columns: 50px 740px 100px auto;
+    }
+}
+
+@-moz-document url-prefix("https://myanimelist.net/mymessages") {
+    #advancedSearchResultList {
+        top: initial!important;
+        left: initial!important
+    }
+
+    .pmessage-message-history {
+        background: var(--color-foreground3)!important;
+        padding: 10px;
+        border-radius: var(--border-radius);
+    }
+
+    .pmessage-message-history td {
+        border: 0!important
     }
 }
