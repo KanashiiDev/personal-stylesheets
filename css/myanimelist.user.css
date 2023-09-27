@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.51
+@version      1.0.52
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -450,6 +450,8 @@
         display: none!important
     }
 
+    body.news .news-container .tags,
+    .featured-pickup .featured-pickup-unit .information .tags .tag.tag-color-feature-spoiler:hover,
     .stacks .stacks-detail h2.title,
     .stacks .stacks-detail .tag,
     .membership .membership-manager .status-table.bg-color,
@@ -528,6 +530,8 @@
         background: var(--color-background);
     }
 
+    tr.js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all,
+    .anime-filter2 .navi-seasonal .sort-order-block,
     a.mal-btn.secondary.outline,
     button.mal-btn.secondary.outline,
     .dark-mode .anime-filter .search-filter-sort-order-block,
@@ -1241,6 +1245,16 @@
     input p,
     div.text,
     u,
+    .featured-pickup .featured-pickup-unit .text,
+    .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li.js-btn-anime-type.on,
+    .anime-filter2 .navi-seasonal .sort-order-block .sort-order-list .btn-sort-order,
+
+    .people-character .btn-show-sort.on,
+    .people-character .people-character-sort-order-block .sort-order-list .btn-sort-order.selected,
+    .anime-filter2 .navi-seasonal .btn-show-sort.on,
+    .anime-filter2 .navi-seasonal .sort-order-block .sort-order-list .btn-sort-order.circle.selected,
+    body.news .columnist-side-block .header,
+    .news.featured .featured-search-side .featured-search-input-submit.notActive,
     .season .seasonal-sort-order-block .sort-order-list .btn-sort-order,
     .seasonal-anime-list .seasonal-anime .prodsrc .info .item,
     .season .seasonal-sort-order-block .sort-order-list span,
@@ -1282,7 +1296,6 @@
     .dark-mode .news-list .comment-list .information .pv,
     .news-list .comment-list .information .pv,
     .dark-mode .news-list .news-unit .information .pv,
-    .news-list .news-unit .information .pv,
     .dark-mode .anime-slide-block .anime-slide .btn-anime .link .title,
     .anime-slide-block .anime-slide .btn-anime .link .title,
     .dark-mode .profile .statistics-updates .data .text.completed,
@@ -1356,6 +1369,21 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .people-character .btn-show-sort,
+    .anime-filter2 .navi-seasonal .btn-show-sort,
+    .people-character .people-character-sort-order-block .sort-order-list .btn-sort-order.circle:not(.selected),
+    .people-favorites-ranking-table tr.ranking-list .birthday,
+    .people-favorites-ranking-table tr.ranking-list .favorites,
+    .characters-favorites-ranking-table tr.ranking-list .favorites,
+    .ranking-company .company-favorites-ranking-table tr.ranking-list .numofanime,
+    .ranking-company .company-favorites-ranking-table tr.ranking-list .favorites,
+    .anime-filter2 .navi-seasonal .horiznav-nav-seasonal .btn-type li.js-btn-anime-type,
+    .featured-pickup .featured-pickup-unit .information .pv,
+    .featured-pickup .featured-pickup-unit .information .info,
+    .news-list .news-unit .information .pv,
+    ,
+    .news-list .comment-list .information .info,
+    .news-list .news-unit .information .info,
     .mal-alert.danger,
     .review-element .thumbbody .body .notice,
     .btn-detail-recommendations-view-all .text,
@@ -1792,6 +1820,7 @@
         padding-top: 15px
     }
 
+    iframe.movie.youtube,
     .btn-detail-recommendations-view-all.fl-r,
     .anime-search-form-block.po-r > #advancedSearchResultList,
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
@@ -2716,7 +2745,7 @@
         text-decoration: none!important
     }
 
-    .seasonal-anime.js-seasonal-anime {
+    .seasonal-anime.js-seasonal-anime:not(.js-anime-category-studio) {
         display: inline-block
     }
 
@@ -2786,6 +2815,8 @@
         filter: invert(100%) hue-rotate(180deg);
     }
 
+    .news-list .comment-list .information .tags .tag.tag-color-feature-advertorial,
+    .news-list .news-unit .information .tags .tag.tag-color-feature-advertorial,
     .review-element .thumbbody .body .tags .tag.recommended {
         color: #829bd3
     }
@@ -2794,6 +2825,9 @@
         color: #a3a3a3
     }
 
+    .featured-pickup .featured-pickup-unit .information .tags .tag.tag-color-feature-spoiler,
+    .news-list .comment-list .information .tags .tag.tag-color-feature-spoiler,
+    .news-list .news-unit .information .tags .tag.tag-color-feature-spoiler,
     .review-element .thumbbody .body .tags .tag.not-recommended {
         color: #cd6063
     }
@@ -2844,6 +2878,17 @@
         height: 235px;
         object-fit: scale-down;
         border-radius: 0!important
+    }
+
+    .content-right > .js-categories-seasonal.ml8.mt8.list tr.js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all {
+        display: grid;
+        grid-template-columns: 50px 1fr 1fr;
+        margin-bottom: 10px;
+        border-radius: var(--border-radius)
+    }
+
+    .content-right > .js-categories-seasonal.ml8.mt8.list tr.js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all .spaceit_pad {
+        padding: 3px!important
     }
 }
 
@@ -3360,6 +3405,7 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         width: 300px!important
     }
 
+    body.news .news-content-block.news-tags .news-tags-table .tag-list:hover,
     #content > div.content-left > div > div:nth-child(2) > div > div.news-info-block.clearfix > div.sns-unit.fl-r.mr8,
     .dark-mode body.news .news-container .information,
     body.news .news-container .information {
@@ -3373,6 +3419,7 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         margin-top: 60px;
     }
 
+    body.news .news-content-block.news-tags h2.news-tags-header,
     .dark-mode .featured-content-block-outer,
     .featured-content-block-outer,
     .dark-mode body.news .content-left h2.pt16,
@@ -3388,6 +3435,10 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     .dark-mode body.news .content-left .mr8 .borderClass,
     body.news .content-left .mr8 .borderClass {
         border: 0
+    }
+
+    .pagination.ac .link {
+        border-radius: var(--border-radius);
     }
 
     #contentWrapper {
@@ -3473,6 +3524,14 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         padding-top: 0!important;
         margin-left: 8px;
         margin-top: 4px
+    }
+
+    body.news .menu-category .btn-category {
+        color: var(--color-text)!important
+    }
+
+    .pagination.ac .link {
+        border-radius: var(--border-radius);
     }
 }
 
