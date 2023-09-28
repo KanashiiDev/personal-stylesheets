@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.54
+@version      1.0.55
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -414,7 +414,7 @@
         cursor: pointer!important
     }
 
-    div:has( > a[rel*="noopener"]):not(.content.clearfix) {
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div) {
         display: none !important
     }
 
@@ -536,6 +536,9 @@
         background: var(--color-background);
     }
 
+    .page-forum .topic-reply-box div.sceditor-outer ul.mal-tabs a.item.active,
+    .page-common .bbcode-explanation code,
+    .page-common .bbcode-explanation pre.code,
     body.notification .notification-pagination a,
     body.notification .notificaiton-category-nav a.active,
     .anime-slide.js-anime-slide li.btn-anime span.title.pb8,
@@ -872,6 +875,8 @@
     body.notification .notificaiton-category-nav a:hover,
     body.notification .notification-item:hover,
     a.left-info-block-manga-store-button,
+    .page-forum .topic-reply-box,
+    .page-forum .topic-reply-box .mal-navbar,
     .manga-store .content-detail a.purchase-button,
     .manga-store .comics-list-tab-item.is-active,
     .mal-alert,
@@ -1101,6 +1106,8 @@
         background-color: var(--color-foreground3)!important
     }
 
+    .page-forum .forum .message .replied .replied-container .replied-body input.button.show_button,
+    .page-forum .forum .message .replied .replied-container .replied-body input.button.hide_button,
     body.notification .notification-item-layout .actions .result,
     .user-status-block .btn-forum-episode,
     .manga-store .comics-list-tab-area:before,
@@ -1378,7 +1385,7 @@
     .dark-mode body.news .news-container *:not(a),
     body.news .news-container *:not(a),
     span:not(.enabled):not(.disabled):not(.mr4):not(span),
-    i:not(.fa-solid):not(.far):not(.fas):not(.fa-regular):not(.fa-brands),
+    i:not(.fa-solid):not(.far):not(.fas):not(.fa-regular):not(.fa-brands):not(.fa-brands),
     .score-label.score-na,
     .dark-mode .user-profile .user-status li .user-status-data.online,
     .user-profile .user-status li .user-status-data.online,
@@ -1442,6 +1449,10 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .news-list .comment-list .quotetext,
+    .page-forum .forum .message .replied.show .replied-container .js-replyto-view,
+    .page-forum .forum .message .replied .replied-container .js-replyto-view,
+    .page-forum .forum .message .replied .replied-container .replied-body,
     body.notification .notification-item-layout .actions .result,
     .video-providers.ar.pt2,
     .anime-detail-header-stats .stats-block .information:last-of-type,
@@ -1777,6 +1788,8 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime.play .link .episode-number,
+    .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime .icon-play,
     .stacks .btn-report .fa-ellipsis-h:hover,
     .review-element .thumbbody .body .reaction-box .btn-showall:hover,
     .page-common .incrementalSearchResultList .list .off .info.anime .name,
@@ -1804,6 +1817,7 @@
         color: var(--color-link)!important
     }
 
+    .page-forum .forum .message .replied .replied-container .js-replyto-target,
     .dark-mode .page-forum .forum_postusername,
     a .page-forum .forum_postusername a {
         color: var( --color-link2)!important
@@ -1940,6 +1954,7 @@
         padding-top: 15px
     }
 
+    .anime-filter .content-left .logo img,
     .manga-store-preview.ga-impression,
     iframe.movie.youtube,
     .btn-detail-recommendations-view-all.fl-r,
@@ -2427,6 +2442,7 @@
         margin-bottom: 50px
     }
 
+    #content > div.content-left > div.logo > img,
     .forum-topics td.replies,
     .forum-topics tr td.watch-state,
     .page-forum .forum_boardrow2 {
@@ -2703,6 +2719,8 @@
         border-radius: 50%
     }
 
+    .page-forum .forum-topic-message .message-wrapper .sig-container img,
+    .page-forum .topic-reply-box div.mal-navbar,
     .anime-detail-header-stats .stats-block:before,
     .ranking-digest .ranking-unit .image {
         box-shadow: none!important
@@ -2968,6 +2986,8 @@
         color: #5ab763
     }
 
+    .page-common .bbcode-explanation code,
+    .page-common .bbcode-explanation pre.code,
     .featured-pickup .featured-pickup-unit .information .tags .tag.tag-color-feature-spoiler,
     .news-list .comment-list .information .tags .tag.tag-color-feature-spoiler,
     .news-list .news-unit .information .tags .tag.tag-color-feature-spoiler,
@@ -3045,6 +3065,10 @@
 
     .content-right > .js-categories-seasonal.ml8.mt8.list tr.js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all .spaceit_pad {
         padding: 3px!important
+    }
+
+    .page-forum .topic-reply-box.in-timeline {
+        margin: 0
     }
 }
 
@@ -3480,6 +3504,15 @@ regexp("https://myanimelist.net/forum/search\?.*") {
     }
 }
 
+@-moz-document url-prefix("https://myanimelist.net/panel.php?go=news") {
+    .dark-mode .page-common #myanimelist,
+    .page-common #myanimelist,
+    .dark-mode body:not(.ownlist),
+    body:not(.ownlist) {
+        top: 0px!important
+    }
+}
+
 @-moz-document url-prefix("https://myanimelist.net/editprofile"),
 url-prefix("https://myanimelist.net/notification/setting"),
 url-prefix("https://myanimelist.net/ownlist/style") {
@@ -3496,7 +3529,9 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         }
 
         .dark-mode .sceditor-container textarea,
-        .sceditor-container textarea {
+        .sceditor-container textarea,
+        .page-common .textarea {
+            background: var(--color-foreground2)!important;
             width: calc(100% - 35px)!important;
         }
     }
