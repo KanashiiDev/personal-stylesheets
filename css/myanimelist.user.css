@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.53
+@version      1.0.54
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -450,6 +450,9 @@
         display: none!important
     }
 
+    .staff_wrap .staff:nth-child(odd),
+    .page-advertising #ad_menu,
+    .about-content.content-bg-grey,
     #profile-stats-anime-genre-table table .list-table-header .header-title,
     #profile-stats-manga-genre-table table .list-table-header .header-title,
     body.news .news-container .tags,
@@ -464,6 +467,7 @@
     #nav > li,
     #nav > li > a,
     .dark-mode .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime,
+    .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime,
     .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime .head,
     .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime .info,
     .dark-mode .stacks .stacks-detail .tag,
@@ -532,6 +536,12 @@
         background: var(--color-background);
     }
 
+    body.notification .notification-pagination a,
+    body.notification .notificaiton-category-nav a.active,
+    .anime-slide.js-anime-slide li.btn-anime span.title.pb8,
+    .manga-store-preview,
+    .manga-store .manga-store-search-genres .genre,
+    a.manga-store-genre-list-toggle:after,
     #profile-stats-anime-genre-table table tr,
     #profile-stats-manga-genre-table table tr,
     .profile.statistics .chart-container-rf .right .filter,
@@ -858,7 +868,17 @@
     #profile-stats-manga-genre-table table .list-table-header .header-title,
     #profile-stats-anime-genre-table .filter,
     #profile-stats-manga-genre-table .filter,
+    body.notification .notificaiton-category-nav a .counter,
+    body.notification .notificaiton-category-nav a:hover,
+    body.notification .notification-item:hover,
+    a.left-info-block-manga-store-button,
+    .manga-store .content-detail a.purchase-button,
+    .manga-store .comics-list-tab-item.is-active,
     .mal-alert,
+    .manga-store .manga-store-search-form-search .inputButton.notActive,
+    .manga-store .manga-store-search-form-search .inputButton,
+    .manga-store-preview-info a.button.button.related-button-sample.is-border,
+    a.manga-store-genre-list-toggle.js-manga-store-genre-list-toggle,
     .seasonal-anime-list .pin-cta .btn,
     .page-common #horiznav_nav ul li > a.horiznav_active,
     .breadcrumb .di-ib:last-child,
@@ -1045,6 +1065,11 @@
         background-color: var(--color-foreground2)!important
     }
 
+    .manga-store-information-carousel-container .swiper-button-prev,
+    .manga-store-information-carousel-container .swiper-button-next,
+    .manga-store-information-carousel .content-book-data .content-book-button-link,
+    .manga-store .detail-card .detail-infoList-item .tag,
+    .manga-store .detail-card a.preview-button,
     #profile-stats-anime-genre-table table .list-item .data.ratio > div .mal-progress,
     #profile-stats-manga-genre-table table .list-item .data.ratio > div .mal-progress,
     #statistics-anime-score-diff-desc .container .view_all > a,
@@ -1076,6 +1101,11 @@
         background-color: var(--color-foreground3)!important
     }
 
+    body.notification .notification-item-layout .actions .result,
+    .user-status-block .btn-forum-episode,
+    .manga-store .comics-list-tab-area:before,
+    .manga-store a.button.button.is-border,
+    .manga-store .btn-link-detail,
     .profile.statistics .filter button.mal-btn.outline.primary.active,
     .write_a_review .btn.btn-primary,
     .review-votes-modal .modal_contents .modal_btn_close,
@@ -1267,6 +1297,10 @@
     input p,
     div.text,
     u,
+    body.notification .notification-header .right-menu .item,
+    .manga-store .comics-list-tab-item.is-active,
+    .page-advertising .ad-contents .ad-text-head3,
+    .page-advertising .ad_form_content label,
     .profile.statistics .footnote,
     .quickadd-content .quickAdd-anime-result-unit .quickAdd-result-info,
     .quickadd-content .quickAdd-manga-result-unit .quickAdd-result-info,
@@ -1408,6 +1442,16 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    body.notification .notification-item-layout .actions .result,
+    .video-providers.ar.pt2,
+    .anime-detail-header-stats .stats-block .information:last-of-type,
+    .manga-store .comic-detail-info-price .tax,
+    .manga-store-preview-info .manga-store-preview-info-header,
+    .page-support #myanimelist #content p,
+    .page-support #myanimelist #content li,
+    .page-support #myanimelist #content h3,
+    .page-support #myanimelist #content h4,
+    .page-support #myanimelist #content .js-btn-support-form-outer .btn-form-submit,
     .profile.statistics .chart-container-rf .right p,
     p#profile-stats-anime-score-dist-info-score,
     #statistics-anime-score-diff-desc .container .score .mal_score,
@@ -1451,7 +1495,6 @@
     .featured-pickup .featured-pickup-unit .information .pv,
     .featured-pickup .featured-pickup-unit .information .info,
     .news-list .news-unit .information .pv,
-    ,
     .news-list .comment-list .information .info,
     .news-list .news-unit .information .info,
     .mal-alert.danger,
@@ -1818,6 +1861,7 @@
         padding: 5px!important
     }
 
+    .manga-store-preview.ga-impression,
     #dialog form > a.inputButton,
     .dark-mode .page-forum .forum.thread .message-container,
     .page-forum .forum.thread .message-container,
@@ -1896,6 +1940,7 @@
         padding-top: 15px
     }
 
+    .manga-store-preview.ga-impression,
     iframe.movie.youtube,
     .btn-detail-recommendations-view-all.fl-r,
     .anime-search-form-block.po-r > #advancedSearchResultList,
@@ -2194,6 +2239,7 @@
     #read,
     #unread,
     .left-column,
+    .di-t .di-tc.va-t.borderDark.pb4,
     .anime-manga-search .genre-link .genre-list,
     .page-common #searchBar.searchBar #topSearchButon,
     .page-common #searchBar.searchBar #topSearchButon.notActive,
@@ -2272,6 +2318,7 @@
     #dialog,
     .dark-mode #dialog,
     #myinfo_status,
+    .manga-store .section-title,
     .dark-mode .episode_list .episode-list-header td,
     .episode_list .episode-list-header td,
     .dark-mode .episode_list td,
@@ -2424,6 +2471,7 @@
         margin-top: 5px
     }
 
+    .manga-store .manga-store-search-form-search .inputtext,
     .dark-mode .anime-search-form-block .anime-search-form-search .inputtext,
     .anime-search-form-block .anime-search-form-search .inputtext,
     .dark-mode .characters-search-form-search .inputtext,
@@ -2448,6 +2496,12 @@
         border-bottom-right-radius: 0!important
     }
 
+    .manga-store .manga-store-search-form-search.side .inputtext {
+        width: 205px;
+        border-top-right-radius: 0!important;
+        border-bottom-right-radius: 0!important
+    }
+
     .dark-mode .forum .forum-search-side .forum-search-input-text[name="q"],
     .dark-mode .club-search-form-search .select,
     .club-search-form-search .select,
@@ -2468,6 +2522,8 @@
         border-bottom-left-radius: 0!important
     }
 
+    .manga-store .manga-store-search-form-search .inputButton,
+    .manga-store .manga-store-search-form-search .inputButton.notActive,
     .dark-mode .anime-search-form-block .anime-search-form-search .inputButton,
     .anime-search-form-block .anime-search-form-search .inputButton,
     .dark-mode .club-search-form-search .form-select-outer,
@@ -3043,6 +3099,7 @@ url-prefix("https://myanimelist.net/manga") {
         padding-top: 10px
     }
 
+    .rightside.js-scrollfix-bottom-rel .detail-page-featured-article .news-list .news-unit,
     .normal_header.pt24.mb0,
     .dark-mode .anime-manga-search .normal_header,
     .anime-manga-search .normal_header,
@@ -3169,6 +3226,23 @@ url-prefix("https://myanimelist.net/manga") {
 
         max-height: initial!important;
         position: absolute;
+    }
+
+    .anime-slide.js-anime-slide li.btn-anime a.link {
+        background-size: 100% 80%;
+        background-position: 100% 0%
+    }
+
+    .anime-slide.js-anime-slide li.btn-anime span.title.pb8 {
+        width: 188px!important;
+        height: 5px;
+        text-align: center;
+        line-height: 0px
+    }
+
+    .anime-slide.js-anime-slide li.btn-anime span.title.pb8 .icon-pay {
+        position: absolute;
+        margin-top: -5px
     }
 }
 
