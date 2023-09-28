@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.56
+@version      1.0.57
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -3596,23 +3596,30 @@ url-prefix("https://myanimelist.net/clubs.php") {
 
 @-moz-document regexp("https://myanimelist.net/profile/.*") {
     if(vertical_fav) {
+        .dark-mode .fav-slide-block,
+        .fav-slide-block {
+            background: none!important;
+            box-shadow: none!important;
+            padding: 5px!important;
+        }
+
         #content > div > div.container-right > h5:nth-child(6) {
             margin-top: -40px;
-            margin-left: 195px
+            margin-left: 200px
         }
 
         #content > div > div.container-right > h5:nth-child(8) {
             margin-top: -40px;
-            margin-left: 395px
+            margin-left: 400px
         }
 
         #content > div > div.container-right > div.favmore > h5:nth-child(1) {
             margin-top: -40px;
-            margin-left: 595px
+            margin-left: 600px
         }
 
         #content > div > div.container-right > div.favmore > h5:nth-child(3) {
-            text-indent: 5px;
+            text-indent: 10px
         }
 
         .fav-slide-block .fav-slide {
@@ -3621,12 +3628,12 @@ url-prefix("https://myanimelist.net/clubs.php") {
         }
 
         .fav-slide-block .fav-slide .btn-fav {
-            padding-bottom: 10px !important;
+            padding-bottom: 10px !important
         }
 
         .fav-slide-block .fav-slide-outer {
-            height: auto;
-            width: 200px !important;
+            height: auto!important;
+            width: 200px !important
         }
 
         .fav-slide-block .fav-slide .btn-fav .link img {
@@ -3643,11 +3650,12 @@ url-prefix("https://myanimelist.net/clubs.php") {
         #manga_favorites {
             height: auto !important;
             max-height: 693px;
-            width: 170px;
+            width: 190px;
             position: relative !important;
             float: left;
             top: 0px!important;
-            margin-right: 11.5px
+            margin-right: 6px;
+            padding-right: 0!important
         }
 
         #company_favorites,
@@ -3656,14 +3664,20 @@ url-prefix("https://myanimelist.net/clubs.php") {
             max-height: 315px;
         }
 
+        .dark-mode .fav-slide-block .fav-slide .btn-fav,
         .fav-slide-block .fav-slide .btn-fav {
-            width: 170px;
-            height: 70px;
+            background: var(--color-foreground);
+            width: 190px;
+            margin-bottom: 6px;
+            padding: 8px!important;
+            border-radius: var(--br) !important;
+            box-shadow: 0 0 var(--shadow-strength) var(--shadow-color)!important;
+            height: 76px
         }
 
         #person_favorites .fav-slide .btn-fav,
         #company_favorites .fav-slide .btn-fav {
-            width: 170px;
+            width: 190px;
             height: 65px;
         }
 
@@ -3708,7 +3722,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
             width: 140px;
             opacity: 1;
             position: relative;
-            margin-left: 45px
+            margin-left: 47px
         }
 
         .dark-mode .fav-slide-block .fav-slide .btn-fav .link .users,
@@ -3717,12 +3731,12 @@ url-prefix("https://myanimelist.net/clubs.php") {
             opacity: 1;
             font-size: 11px;
             line-height: 15px;
-            width: 126px;
+            width: 130px;
             height: 30px;
             position: relative;
             background: transparent;
             -webkit-box-orient: vertical;
-            margin-left: 40px;
+            margin-left: 42px;
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 2
@@ -3743,11 +3757,6 @@ url-prefix("https://myanimelist.net/clubs.php") {
         #character_favorites > div.fav-slide-outer > ul > li > a > span.title.fs10 {
             max-height: 28px;
             -webkit-line-clamp: 2
-        }
-
-        #person_favorites .link .title,
-        .fav-slide-block .fav-slide .btn-fav {
-            padding-top: 4px !important
         }
 
         #company_favorites .fav-slide-outer .link {
