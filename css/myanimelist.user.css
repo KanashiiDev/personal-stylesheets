@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.57
+@version      1.0.58
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -429,6 +429,8 @@
         display: none !important
     }
 
+    .club-on-app.pb12,
+    .page-common #footer-block .footer-app,
     .seasonal-anime-list .seasonal-anime .information.completed .information-item.buttons .bubble:before,
     .seasonal-anime-list .seasonal-anime .information.completed .information-item.buttons .bubble:after,
     .seasonal-anime-list .seasonal-anime .properties .property,
@@ -549,6 +551,13 @@
         background: var(--color-background);
     }
 
+    .stacks .stack-list .item .bar,
+    .stacks .stack-list .item.stop .bar,
+    .stacks .stack-list .item .panel,
+    .stacks .stacks-modal .modal_content,
+    a.js-ignore-board-button.btn-forum,
+    label.btn-plan.js-btn-select-plan.mr24,
+    .membership .membership-payment .text-payment-notice,
     .page-forum .topic-reply-box div.sceditor-outer ul.mal-tabs a.item.active,
     .page-common .bbcode-explanation code,
     .page-common .bbcode-explanation pre.code,
@@ -884,6 +893,18 @@
     #profile-stats-manga-genre-table table .list-table-header .header-title,
     #profile-stats-anime-genre-table .filter,
     #profile-stats-manga-genre-table .filter,
+    .stacks .btn.btn-trash,
+    .stacks .stack-list .item .panel .detail .description,
+    .stacks .stacks-detail .list-anime-list .seasonal-anime .head,
+    .stacks .stacks-detail .list-anime-list .seasonal-anime .info,
+    button.mal-btn.primary.large.ga-click,
+    .head-config .btn-new-stack-wrapper .btn-new-stack.on,
+    .stacks .btn.btn-primary,
+    .stacks .stacks-modal .modal_content .modal-list .item,
+    .stacks .stacks-modal .modal_content .head .search-box,
+    .stacks .stacks-modal .modal_content .head .search-box input,
+    a.js-ignore-board-button.btn-forum:hover,
+    .membership .membership-payment:not(.modal-payment-method) > section > .form-table.select-plan input[type=radio]:checked + label,
     body.notification .notificaiton-category-nav a .counter,
     body.notification .notificaiton-category-nav a:hover,
     body.notification .notification-item:hover,
@@ -1138,6 +1159,7 @@
     .profile.statistics .filter button.mal-btn.outline.primary.active,
     .write_a_review .btn.btn-primary,
     .review-votes-modal .modal_contents .modal_btn_close,
+    .stacks .stacks-modal .modal_content .modal_btn_close,
     .js-categories-seasonal .ga-impression.text-banner-tag a,
     .sceditor-button.sceditor-button:hover,
     .dark-mode body.news .news-container .tags .tag:hover,
@@ -1326,6 +1348,27 @@
     input p,
     div.text,
     u,
+    .profile .stacks-list .column-item .foot .stat .text .mean_score,
+    .stacks .tag .tag-anime,
+    .stacks .tag .tag-spoiler,
+    .stacks .stacks-detail .list-anime-list .seasonal-anime .intro,
+    .stacks .stack-list .item .bar .title,
+    .stacks .stacks-modal .modal_content .modal-list .item .title span,
+    span.fl-r.btn-show-spoilers.js-show-spoilers.on,
+    .profile .navi .tabs .btn-tab.on,
+    .profile .navi .sort-order-block .sort-order-list .btn-sort-order.circle,
+    .profile .navi .btn-show-sort.on,
+    .page-common .forum-topic-sort,
+    .forum .forum-header,
+    .forum .forum-side-block .header,
+    .app_lp .lp_home_Content_right p,
+    .club-search-form-search .select option,
+    .page-common .pagination .link-blue-box,
+    label.btn-plan.js-btn-select-plan.mr24 span,
+    .membership .membership-payment:not(.modal-payment-method) > section > .form-table .title,
+    .membership .membership-payment .payment-subscribe-form .form-table .title,
+    label.btn-plan.js-btn-select-plan.mr24 span,
+    .membership .membership-payment:not(.modal-payment-method) > section > .form-table span,
     .dark-mode .page-common .addtolist-block tr td,
     .page-common .addtolist-block tr td,
     body.notification .notification-header .right-menu .item,
@@ -1473,6 +1516,19 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .profile .stacks-list .column-item .foot .stack-balloon .balloon p,
+    .profile .stacks-list .column-item .tag .update,
+    .stacks .stacks-detail .info-block,
+    .stacks .notice,
+    .stacks .stacks-detail .introduction,
+    .stacks .stacks-detail .list-anime-list .seasonal-anime .info,
+    .stack-list.js-stack-list.ui-sortable > div > div.panel > div.detail > div.notice.mb8,
+    .stacks .stacks-modal .modal_content .modal-list .item .stat .season,
+    .profile .navi .btn-show-sort,
+    .profile .btn-show-spoilers,
+    .profile .navi .tabs .btn-tab,
+    .page-common .fn-grey5,
+    .forum .forum-board,
     .seasonal-anime-list .seasonal-anime .information.completed .information-item.buttons .bubble,
     .anime-filter .btn-show-sort,
     p.pt8.pr8.pb8.pl8.bg-color-base5.genre-description,
@@ -1661,6 +1717,7 @@
     }
 
     .review-votes-modal .modal_contents .head h3,
+    .stacks .stacks-modal .modal_content .modal_btn_close .fas.fa-times-circle,
     .review-votes-modal .modal_contents .modal_btn_close .fas.fa-times-circle,
     .page-common .header-notification-dropdown-inner h3 .mark-all.disabled,
     .sceditor-button.sceditor-button div:before,
@@ -1815,6 +1872,18 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .profile .stacks-list .column-item .foot .btn-report .fa-ellipsis-h:hover,
+    .stacks .stack-balloon .fa-layer-plus:hover,
+    .stacks .stack-balloon.on p,
+    .stacks .stack-balloon .fa-layer-minus,
+    .profile .stacks-list .column-item .foot .stack-balloon .fa-layer-minus,
+    .profile .stacks-list .column-item .foot .stack-balloon.on p,
+    .stacks.my-stacks .tab-area .btn-new-stack-wrapper .btn-new-stack,
+    .stacks .header-right .btn-new-stack,
+    .stacks .stacks-modal .modal_content .modal-list .item .modal-btn .fa-plus,
+    .stacks .stacks-modal .modal_content .modal-list .item .modal-btn .fa-minus,
+    .profile .btn-show-spoilers.on i.fas,
+    .head-config .btn-new-stack-wrapper .btn-new-stack,
     .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime.play .link .episode-number,
     .contents-video-embed .video-anime-slide-block.hori .video-anime-slide .btn-anime .icon-play,
     .stacks .btn-report .fa-ellipsis-h:hover,
@@ -1844,6 +1913,8 @@
         color: var(--color-link)!important
     }
 
+    .forum .btn-rect-grey1,
+    .forum .forum-side-block .forum-side-list .forum-post .information .comment,
     .page-forum .forum .message .replied .replied-container .js-replyto-target,
     .dark-mode .page-forum .forum_postusername,
     a .page-forum .forum_postusername a {
@@ -1882,6 +1953,7 @@
         color: var(--color-link-hover)!important
     }
 
+    .stacks .sticky-toolbar,
     #blogForm #animeRelations div,
     #blogForm #animeRelations div > a,
     .breadcrumb .di-ib,
@@ -1902,6 +1974,7 @@
         padding: 5px!important
     }
 
+    .stacks .stacks-modal .modal_content .modal-list,
     .manga-store-preview.ga-impression,
     #dialog form > a.inputButton,
     .dark-mode .page-forum .forum.thread .message-container,
@@ -1981,6 +2054,11 @@
         padding-top: 15px
     }
 
+    .stacks .sticky-toolbar,
+    .stacks .stacks-modal .modal_content .modal-list .item,
+    .forum .btn-rect-grey1,
+    a.js-ignore-board-button.btn-forum,
+    .forum .forum-mods .link-forum-mods .thumb,
     .anime-filter .content-left .logo img,
     .manga-store-preview.ga-impression,
     iframe.movie.youtube,
@@ -2391,6 +2469,7 @@
         border-color: #a0b1c514!important
     }
 
+    .forum .btn-rect-grey1:active,
     .user-profile .user-friends .icon-friend,
     .page-common .header-profile-button {
         box-shadow: 0 0 0 1px var(--color-foreground4)!important
@@ -2454,6 +2533,7 @@
         margin-top: 30px
     }
 
+    .stacks .stacks-modal .modal_content .modal-list .item,
     .dark-mode .anime-manga-search .genre-link .genre-list .genre-name-link,
     .anime-manga-search .genre-link .genre-list .genre-name-link,
     .dark-mode .news-list .comment-list,
@@ -3023,6 +3103,10 @@
         color: #cd6063
     }
 
+    .club-list .table-data td .new {
+        color: #e22c31
+    }
+
     .anime-info-review__header.mal-navbar .review-ratio__bar .recommended__bar,
     {
         background-color: #829bd3!important
@@ -3062,6 +3146,7 @@
         background-color: #c9a31f;
     }
 
+    .stacks .tag .tag-spoiler,
     .profile .statistics-updates .data .graph .graph-inner.dropped,
     .profile .user-statistics .stats-status .circle.dropped:after,
     .profile .user-statistics .stats-graph .graph.dropped {
@@ -3091,6 +3176,7 @@
         border-radius: var(--border-radius)
     }
 
+    .stacks .stacks-modal .modal_content .head .search-box input,
     .content-right > .js-categories-seasonal.ml8.mt8.list tr.js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all .spaceit_pad {
         padding: 3px!important
     }
@@ -3101,6 +3187,7 @@
 
     if(remove_score) {
         div[itemprop="aggregateRating"],
+        #content > table > tbody > tr > td.borderClass > div > .spaceit_pad.po-r.js-statistics-info.di-ib,
         .scormem-item.score.score-label.score,
         .anime-detail-header-stats .stats-block:before,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel .stats-block.po-r.clearfix > div.fl-l.score,
@@ -3335,6 +3422,22 @@ url-prefix("https://myanimelist.net/manga") {
         margin-top: -5px
     }
 
+    .anime-slide-block .anime-slide .btn-anime.auto {
+        border: 0.1px solid #a0b1c514 !important
+    }
+
+    .anime-slide-block .anime-slide .btn-anime.auto .image.lazyloaded {
+        margin-top: 10px
+    }
+
+    .anime-slide-block .anime-slide .btn-anime.auto .link .users {
+        padding: 2px 0px;
+        width: 100%;
+        text-align: center;
+        background: var(--color-foreground4)!important;
+        color: var(--color-main-text-normal)!important
+    }
+
     if(scroll_synop) {
         [itemprop="description"] {
             max-height: 49px;
@@ -3382,6 +3485,7 @@ url-prefix("https://myanimelist.net/manga") {
     if(remove_edit) {
         .js-anime-edit-info-button,
         .js-manga-edit-info-button,
+        #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(1) > td > h2:nth-child(2) > .floatRightHeader > a,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div.di-t > div:nth-child(1) > div:nth-child(1) > a.floatRightHeader,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(1) > td > h2:nth-child(4) > .floatRightHeader,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > h2:nth-child(2) > .floatRightHeader,
@@ -3458,17 +3562,30 @@ url-prefix("https://myanimelist.net/manga.php") {
 
 @-moz-document url-prefix("https://myanimelist.net/anime/genre/"),
 url-prefix("https://myanimelist.net/manga/genre/"),
-url-prefix("https://myanimelist.net/anime/season") {
-    .dark-mode .seasonal-anime-list .seasonal-anime .preline {
+url-prefix("https://myanimelist.net/anime/season"),
+url-prefix("https://myanimelist.net/stacks/") {
+    .dark-mode .seasonal-anime-list .seasonal-anime .preline,
+    .seasonal-anime-list .seasonal-anime .preline {
         max-height: 168px;
     }
 
     .seasonal-anime-list .seasonal-anime .properties .property {
         display: block!important;
+        background: transparent!important
     }
 
     .seasonal-anime-list .seasonal-anime .properties {
-        padding-bottom: 10px;
+        padding-bottom: 10px
+    }
+
+    .tile-anime-list .seasonal-anime .category,
+    .tile-anime-list .seasonal-anime .title {
+        margin-bottom: 2px;
+        width: 160px;
+        padding: 0px 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     if(remove_synop) {
@@ -3487,9 +3604,14 @@ url-prefix("https://myanimelist.net/anime/season") {
     }
 
     if(remove_score) {
+        .tile-anime-list .seasonal-anime .widget .stars,
         .scormem-item.score,
         #content > div.ml8.mr8.mt8.mb16.js-block-list.list > table > tbody > tr > td:nth-child(5) {
             display: none!important
+        }
+
+        .tile-anime-list .seasonal-anime .widget {
+            top: 200px;
         }
     }
 }
