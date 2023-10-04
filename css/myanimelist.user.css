@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.59
+@version      1.0.60
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -425,10 +425,11 @@
         cursor: pointer!important
     }
 
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext) {
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.user-profile-about.js-truncate-outer > div > table > tbody > tr > td > div > div) {
         display: none !important
     }
 
+    .mal-badge.new-statistics,
     .club-on-app.pb12,
     .page-common #footer-block .footer-app,
     .seasonal-anime-list .seasonal-anime .information.completed .information-item.buttons .bubble:before,
@@ -551,6 +552,7 @@
         background: var(--color-background);
     }
 
+    .widget.mxj .widget-content .content .text,
     .page-common div.picSurround img,
     .stacks .stack-list .item .bar,
     .stacks .stack-list .item.stop .bar,
@@ -894,6 +896,10 @@
     #profile-stats-manga-genre-table table .list-table-header .header-title,
     #profile-stats-anime-genre-table .filter,
     #profile-stats-manga-genre-table .filter,
+    .toast-container .toast.primary,
+    a.mal-btn.primary,
+    button.mal-btn.primary,
+    .mal-modal-body .content textarea,
     .stacks .btn.btn-trash,
     .stacks .stack-list .item .panel .detail .description,
     .stacks .stacks-detail .list-anime-list .seasonal-anime .head,
@@ -1105,6 +1111,7 @@
         background-color: var(--color-foreground2)!important
     }
 
+    .contents-video-embed .video-embed .btn-embedded-denied span,
     .editprofile .also-available-at-comment,
     .editprofile .also-available-at-help,
     .manga-store-information-carousel-container .swiper-button-prev,
@@ -1352,6 +1359,7 @@
     input p,
     div.text,
     u,
+    .toast-container .toast.primary,
     .seasonal-anime-list .anime-header,
     .stacks .navi .sort-order-block .sort-order-list .btn-sort-order,
     .stacks .navi .btn-show-sort.on,
@@ -1523,6 +1531,8 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .dark-mode .page-common .fn-grey1,
+    .page-common .watch-state-icon:not(.watched),
     .stacks .navi .btn-show-sort,
     .stacks .btn-show-spoilers,
     .profile .stacks-list .column-item .foot .stack-balloon .balloon p,
@@ -2067,6 +2077,16 @@
         padding-top: 15px
     }
 
+    #content > .left-column > article.widget-container.left #widget-seasonal-video .widget-slide-outer,
+    #content > .left-column > article.widget-container.left #v-auto-recommendation-personalized_anime,
+    #content > .left-column > article.widget-container.left #v-auto-recommendation-personalized_manga,
+    #content > .left-column > article.widget-container.left #widget-episode-video > div.widget-slide-outer,
+    #content > .left-column > article.widget-container.left #widget-promotional-video > div.widget-slide-outer,
+    #content .rightside.js-scrollfix-bottom-rel #anime_recommendation > div.anime-slide-outer,
+    #content .rightside.js-scrollfix-bottom-rel #manga_recommendation > div.anime-slide-outer,
+    #content > div.left-column > article.widget-container.left > .widget.recommendations.left .widget-content,
+    .l-aboutme-bg-frame.bg-pt,
+    .watch-video .video-list,
     .report-block.js-report-block,
     .editprofile .also-available-at-comment,
     .editprofile .also-available-at-help,
@@ -2327,6 +2347,7 @@
         border-top-right-radius: var(--br)
     }
 
+    #content > .left-column > article.widget-container.left > .widget.mxj .widget-content .content .text,
     .auto-recommendations .item .title,
     .dark-mode .anime-detail-header-video .video-episode .video-unit .info-container,
     .anime-detail-header-video .video-episode .video-unit .info-container,
@@ -2445,7 +2466,7 @@
     .detail-characters-list > div > table > tbody > tr > td,
     .news .menu-category .btn-category,
     .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a,
-    .widget.announcements.left > .widget-content > .borderClass,
+    .widget.announcements.left > .widget-content > .borderClass:last-child,
     .widget.news .news-list.widget .news-unit,
     .widget.recommendations div div {
         border: 0!important
@@ -2844,6 +2865,10 @@
         border-radius: 50%
     }
 
+    .ranking-digest .ranking-unit a.Lightbox_AddEdit.button_edit.ga-click.ranking-digest.fl-r.plantowatch {
+        margin-left: 5px
+    }
+
     .page-forum .forum-topic-message .message-wrapper .content table.body img.userimg.img-a-l,
     .page-forum .forum-topic-message .message-wrapper .content table.body img.userimg.img-a-r,
     .page-forum .forum-topic-message .message-wrapper .sig-container img,
@@ -3099,6 +3124,7 @@
         filter: invert(100%) hue-rotate(180deg) brightness(92%)
     }
 
+    .page-common .watch-state-icon.watched,
     .news-list .comment-list .information .tags .tag.tag-color-feature-advertorial,
     .news-list .news-unit .information .tags .tag.tag-color-feature-advertorial,
     .review-element .thumbbody .body .tags .tag.recommended {
@@ -3244,6 +3270,31 @@
             overflow: hidden
         }
     }
+
+    #content > .left-column > article.widget-container.left > .widget.mxj .widget-content .content .text {
+        width: 210px;
+        margin-left: -10px;
+        padding: 10px;
+        margin-top: 0px;
+        max-height: 32px !important;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3
+    }
+
+    #content > .left-column > article.widget-container.left #widget-promotional-video > div.widget-slide-outer > ul > li:nth-child(1) > span > h3,
+    #content > .left-column > article.widget-container.left #widget-episode-video > div.widget-slide-outer > .widget-slide .external-link .latest_updated_h3 {
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        width: 100px;
+        display: block;
+        overflow: hidden
+    }
+
+    #content > .left-column > article.widget-container.left #widget-promotional-video > div.widget-slide-outer > ul > li:nth-child(1) > span > h3 {
+        width: 212px
+    }
 }
 
 @-moz-document url-prefix("https://myanimelist.net/anime"),
@@ -3316,10 +3367,11 @@ url-prefix("https://myanimelist.net/manga") {
 
     .dark-mode .anime-manga-search .normal_header,
     .anime-manga-search .normal_header,
+    .manga-info-review__header.mal-navbar,
     .dark-mode div.anime-info-review__header.mal-navbar,
     div.anime-info-review__header.mal-navbar {
-        margin-bottom: 5px;
-        padding-bottom: 15px;
+        margin-bottom: 5px!important;
+        padding-bottom: 15px!important
     }
 
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr > td:nth-child(2) > div.spaceit_pad,
@@ -3435,7 +3487,7 @@ url-prefix("https://myanimelist.net/manga") {
         width: 188px!important;
         height: 5px;
         text-align: center;
-        line-height: 0px
+        line-height: 0px!important
     }
 
     .anime-slide.js-anime-slide li.btn-anime span.title.pb8 .icon-pay {
@@ -3467,7 +3519,9 @@ url-prefix("https://myanimelist.net/manga") {
 
     if(scroll_synop) {
         [itemprop="description"] {
-            max-height: 57px;
+            max-height: 64px;
+            padding-top: 4px!important;
+            line-height: 1.1rem!important;
             overflow: scroll
         }
 
@@ -3488,6 +3542,7 @@ url-prefix("https://myanimelist.net/manga") {
     }
 
     if(remove_ep) {
+        #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(1) > td > div:nth-child(4) > h2,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(1) > td > div.border_top,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(1) > td > div:nth-child(5),
         div#episode_video {
@@ -3568,6 +3623,19 @@ url-prefix("https://myanimelist.net/manga") {
             top: 10px;
             left: 15px
         }
+    }
+
+    .contents-video-embed .video-embed .btn-embedded-denied .inner-text {
+        height: 100%;
+        top: 50px;
+        position: absolute;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        -webkit-backdrop-filter: blur(6px) brightness(70%);
+        backdrop-filter: blur(6px) brightness(70%)
     }
 }
 
@@ -3751,11 +3819,13 @@ url-prefix("https://myanimelist.net/clubs.php") {
             padding: 5px!important;
         }
 
+        #content > div > div.container-right > h5:nth-child(5),
         #content > div > div.container-right > h5:nth-child(6) {
             margin-top: -40px;
             margin-left: 200px
         }
 
+        #content > div > div.container-right > h5:nth-child(7),
         #content > div > div.container-right > h5:nth-child(8) {
             margin-top: -40px;
             margin-left: 400px
@@ -3767,7 +3837,10 @@ url-prefix("https://myanimelist.net/clubs.php") {
         }
 
         #content > div > div.container-right > div.favmore > h5:nth-child(3) {
-            text-indent: 10px
+            text-align: right;
+            margin-right: 105px!important;
+            padding-right: 0!important;
+            width: 85%
         }
 
         .fav-slide-block .fav-slide {
@@ -3796,8 +3869,9 @@ url-prefix("https://myanimelist.net/clubs.php") {
         #person_favorites,
         #anime_favorites,
         #manga_favorites {
+            transition: 1.5s;
             height: auto !important;
-            max-height: 693px;
+            max-height: 810px;
             width: 190px;
             position: relative !important;
             float: left;
@@ -3806,10 +3880,27 @@ url-prefix("https://myanimelist.net/clubs.php") {
             padding-right: 0!important
         }
 
-        #company_favorites,
         #company_favorites .fav-slide-outer,
+        #company_favorites,
         #person_favorites {
-            max-height: 315px;
+            max-height: 380px
+        }
+
+        #character_favorites:hover,
+        #person_favorites:hover,
+        #anime_favorites:hover,
+        #manga_favorites:hover {
+            max-height: 1700px
+        }
+
+        #company_favorites:hover,
+        #company_favorites .fav-slide-outer,
+        #person_favorites:hover {
+            max-height: 1540px
+        }
+
+        div#company_favorites {
+            float: right
         }
 
         .dark-mode .fav-slide-block .fav-slide .btn-fav,
@@ -3826,7 +3917,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         #person_favorites .fav-slide .btn-fav,
         #company_favorites .fav-slide .btn-fav {
             width: 190px;
-            height: 65px;
+            height: 71.4px
         }
 
         .favmore {
@@ -3848,7 +3939,8 @@ url-prefix("https://myanimelist.net/clubs.php") {
         #person_favorites .fav-slide .btn-fav .link .image {
             width: 36px;
             height: 50px;
-            object-fit: cover
+            object-fit: cover;
+            margin-top: 2px
         }
 
         #company_favorites .fav-slide-outer .link .title,
