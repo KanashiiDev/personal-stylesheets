@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.60
+@version      1.0.61
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -136,6 +136,7 @@
     li,
     button,
     #topSearchResultList > div > div,
+    .index .widget-container .widget.friend_list_updates .footer .btn-settings,
     .dark-mode .page-common .incrementalSearchResultList .list .image,
     .page-common .incrementalSearchResultList .list .image,
     .dark-mode .page-common .incrementalSearchResultList .list .info,
@@ -385,6 +386,12 @@
         }
     }
 
+    if(remove_ranking) {
+        body.index .widget-container .widget.my_list_updates .item .info p:last-child {
+            display: none
+        }
+    }
+
     .page-common #menu,
     .page-common #myanimelist {
         margin: 0 auto
@@ -552,6 +559,7 @@
         background: var(--color-background);
     }
 
+    body.index .widget-container .widget.friend_list_updates .navi-btn,
     .widget.mxj .widget-content .content .text,
     .page-common div.picSurround img,
     .stacks .stack-list .item .bar,
@@ -896,6 +904,7 @@
     #profile-stats-manga-genre-table table .list-table-header .header-title,
     #profile-stats-anime-genre-table .filter,
     #profile-stats-manga-genre-table .filter,
+    .page-common .incrementalSearchResultList .list.list-bottom-message.loading,
     .toast-container .toast.primary,
     a.mal-btn.primary,
     button.mal-btn.primary,
@@ -1150,6 +1159,11 @@
         background-color: var(--color-foreground3)!important
     }
 
+    a.btn-club-join.ga-click,
+    .mal-tipmenu,
+    .page-common .mal-tipmenu,
+    .mal-tipmenu a,
+    .page-common .mal-tipmenu a,
     .page-common a.button_edit.button_edit.plantowatch,
     .dark-mode .contents-video-embed .btn-rect.on,
     .dark-mode .contents-video-embed .btn-rect:hover,
@@ -1359,6 +1373,9 @@
     input p,
     div.text,
     u,
+    .mymessages .pmessage-message-history .date,
+    .mymessages .pmessage-message-history .name,
+    .mymessages .pmessage-message-history .subject,
     .toast-container .toast.primary,
     .seasonal-anime-list .anime-header,
     .stacks .navi .sort-order-block .sort-order-list .btn-sort-order,
@@ -1531,6 +1548,7 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .forum .mal-navbar .caption,
     .dark-mode .page-common .fn-grey1,
     .page-common .watch-state-icon:not(.watched),
     .stacks .navi .btn-show-sort,
@@ -1737,6 +1755,7 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important
     }
 
+    body.index .widget-container .widget.friend_list_updates .updated-time,
     .review-votes-modal .modal_contents .head h3,
     .stacks .stacks-modal .modal_content .modal_btn_close .fas.fa-times-circle,
     .review-votes-modal .modal_contents .modal_btn_close .fas.fa-times-circle,
@@ -1893,6 +1912,10 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important
     }
 
+    .page-common .incrementalSearchResultList .list.list-bottom-message.loading,
+    .mymessages .pmessage-select > a,
+    .index .widget-container .widget.friend_list_updates .footer .btn-settings,
+    .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox]:checked + label:before,
     .profile .stacks-list .column-item .foot .btn-report .fa-ellipsis-h:hover,
     .stacks .stack-balloon .fa-layer-plus:hover,
     .stacks .stack-balloon.on p,
@@ -1934,6 +1957,7 @@
         color: var(--color-link)!important;
     }
 
+    .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox] + label:before,
     .forum .btn-rect-grey1,
     .forum .forum-side-block .forum-side-list .forum-post .information .comment,
     .page-forum .forum .message .replied .replied-container .js-replyto-target,
@@ -1942,6 +1966,7 @@
         color: var( --color-link2)!important
     }
 
+    .index .widget-container .widget.friend_list_updates .footer .btn-settings:hover,
     .history_content_wrapper .history-updates .navi-btn:hover,
     .stacks .btn-report.on .fa-ellipsis-h,
     .ownlist_style .new-theme-list .new-theme-unit.selected .title,
@@ -1974,6 +1999,7 @@
         color: var(--color-link-hover)!important
     }
 
+    body.index .widget-container .widget.friend_list_updates .navi-btn,
     .editprofile .also-available-at-comment,
     .editprofile .also-available-at-help,
     .stacks .sticky-toolbar,
@@ -2077,6 +2103,8 @@
         padding-top: 15px
     }
 
+    body.index .widget-container .widget.friend_list_updates .navi-btn,
+    .forum .forum-board .topics .user_thumb,
     #content > .left-column > article.widget-container.left #widget-seasonal-video .widget-slide-outer,
     #content > .left-column > article.widget-container.left #v-auto-recommendation-personalized_anime,
     #content > .left-column > article.widget-container.left #v-auto-recommendation-personalized_manga,
@@ -2467,6 +2495,7 @@
     .news .menu-category .btn-category,
     .page-common .header-notification-dropdown .header-notification-dropdown-inner .header-notification-view-all a,
     .widget.announcements.left > .widget-content > .borderClass:last-child,
+    .widget.anime_discussions.left > .widget-content > .borderClass:last-child,
     .widget.news .news-list.widget .news-unit,
     .widget.recommendations div div {
         border: 0!important
@@ -2506,6 +2535,11 @@
     .dark-mode .user-function .icon-user-function.icon-gift,
     .user-function .icon-user-function.icon-gift {
         border-color: #a0b1c514!important
+    }
+
+    .mal-tipmenu:before,
+    .page-common .mal-tipmenu:before {
+        border-bottom-color: #a0b1c514!important
     }
 
     .forum .btn-rect-grey1:active,
@@ -2595,10 +2629,16 @@
         width: auto!important
     }
 
+    .club-search-form-search {
+        width: 77%
+    }
+
     .spaceit_pad.po-r.js-statistics-info.di-ib {
         width: 91%
     }
 
+    .profile .comment-form.mt12.mb24,
+    .profile .user-comments.mt24.pt24,
     #content > div.left-column > article > div > div,
     #widget-episode-video,
     .js-widget-friend-list-updates .work,
@@ -2649,8 +2689,6 @@
         border-bottom-right-radius: 0!important
     }
 
-    .dark-mode .club-search-form-search .inputtext,
-    .club-search-form-search .inputtext,
     .dark-mode .news.featured .featured-search-side .featured-search-input-text,
     .news.featured .featured-search-side .featured-search-input-text {
         width: 255px;
@@ -2664,6 +2702,7 @@
         border-bottom-right-radius: 0!important
     }
 
+    .club-search-form-search input.inputtext.js-advancedSearchText,
     .dark-mode .forum .forum-search-side .forum-search-input-text[name="q"],
     .dark-mode .club-search-form-search .select,
     .club-search-form-search .select,
@@ -2726,7 +2765,7 @@
         width: 165px;
         border-top-right-radius: 0!important;
         border-bottom-right-radius: 0!important;
-        height: 16.5px
+        height: 16px
     }
 
     .dark-mode .stacks .search-side form button,
@@ -3153,6 +3192,7 @@
         color: #e22c31
     }
 
+    .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox] + label:after,
     .anime-info-review__header.mal-navbar .review-ratio__bar .recommended__bar,
     {
         background-color: #829bd3!important
@@ -3781,17 +3821,34 @@ url-prefix("https://myanimelist.net/clubs.php") {
         grid-template-columns: 50px 430px 100px auto
     }
 
+    #content > div.blog_detail_content_wrapper,
+    #content > div:nth-child(2) > table > tbody > tr > td,
     .page-common .quotetext,
     .quotetext > div {
-        background-color: var(--color-foreground)!important;
+        background-color: var(--color-foreground)!important
     }
 
+    #content > div.blog_detail_content_wrapper {
+        padding: 10px;
+        border-radius: var(--br) !important
+    }
+
+    table.blog_detail_comment_table,
+    #content > div:nth-child(2) > table > tbody > tr > td,
     #content > div > div:nth-child(3) > a {
         background: var(--color-foreground3);
         border-radius: var(--br) !important;
         padding: 5px;
         display: inline-table;
-        margin: 2px;
+        margin: 2px
+    }
+
+    #content > div:nth-child(2) > table > tbody > tr > td {
+        padding: 10px;
+        padding-right: 0!important;
+        margin: 5px;
+        width: 48%;
+        height: 75px!important
     }
 
     #content > div > div:nth-child(3) {
@@ -3799,7 +3856,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         display: inline-grid;
         grid-template-columns: repeat(6, auto);
         height: 130px;
-        overflow: scroll;
+        overflow: scroll
     }
 
     #content > div > div:nth-child(3)::before {
@@ -3807,6 +3864,11 @@ url-prefix("https://myanimelist.net/clubs.php") {
         content: "Anime Relations: ";
         position: absolute;
         margin-top: 5px
+    }
+
+    .blog_detail_comment_wrapper,
+    table.blog_detail_comment_table {
+        width: 100%!important
     }
 }
 
@@ -4472,16 +4534,24 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     }
 }
 
-@-moz-document url-prefix("https://myanimelist.net/mymessages") {
+@-moz-document url-prefix("https://myanimelist.net/mymessages"),
+url-prefix("https://myanimelist.net/clubs.php"),
+url-prefix("https://myanimelist.net/users.php") {
     #advancedSearchResultList {
         top: initial!important;
-        left: initial!important
+        left: initial!important;
+        position: absolute
+    }
+
+    .incrementalSearchResultList.clubs-advanced {
+        width: 590px!important;
+        margin-left: 150px
     }
 
     .pmessage-message-history {
         background: var(--color-foreground3)!important;
         padding: 10px;
-        border-radius: var(--border-radius);
+        border-radius: var(--border-radius)
     }
 
     .pmessage-message-history td {
