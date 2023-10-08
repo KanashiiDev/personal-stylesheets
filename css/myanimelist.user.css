@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.61
+@version      1.0.63
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -4626,7 +4626,7 @@ url-prefix("https://myanimelist.net/users.php") {
         border-radius: 0
     }
 
-    .min-h-screen.bg-gray-100 > main .bg-white:first-child {
+    .min-h-screen.bg-gray-100 > main > .py-0.min-h-screen > div > .bg-white {
         z-index: 2;
         position: relative;
         border-radius: 0;
@@ -4657,7 +4657,7 @@ url-prefix("https://myanimelist.net/users.php") {
             background: transparent!important
         }
 
-        .min-h-screen.bg-gray-100 > main .bg-white:first-child {
+        .min-h-screen.bg-gray-100 > main > .py-0.min-h-screen > div > .bg-white {
             background: var(--color-backgroundo)!important
         }
 
@@ -4682,6 +4682,7 @@ url-prefix("https://myanimelist.net/users.php") {
         }
     }
 
+    .createBoxWrap .flex.justify-between,
     .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center,
     .shadow-md.mt-5.mx-3.py-8.px-10,
     .p-4.bg-white.createBox,
@@ -4706,6 +4707,7 @@ url-prefix("https://myanimelist.net/users.php") {
         background: var(--color-foreground4)!important
     }
 
+    .container.p-6.bg-white-smoke.mt-8 .my-3.text-center .bg-persian-blue.text-white.font-black.text-xl.w-36.p-2,
     .grid.grid-cols-1.gap-4.p-3.mb-1 .justify-center,
     .p-4.bg-white.createBox button,
     button.bg-white.text-persian-blue.border.border-gray-300.font-black.rounded.mx-auto.w-full.py-1,
@@ -4765,14 +4767,14 @@ url-prefix("https://myanimelist.net/users.php") {
         margin-bottom: 5px
     }
 
-    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center .text-persian-blue {
+    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center .text-persian-blue:not(button) {
         margin: 5px;
         display: flex;
         align-items: center;
         justify-content: center
     }
 
-    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center .text-persian-blue a {
+    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center .text-persian-blue:not(button) a {
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2
