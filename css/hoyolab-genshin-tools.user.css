@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         HoYoLab Genshin Impact Tools - Dark Theme
 @namespace    Dark-Themes
-@version      1.1.71
+@version      1.1.72
 @description  HoYoLab Genshin Impact Tools (Check-in, Battle Chronicle, Teyvat Interactive Map and Enchancement Progression Calculator) Dark Theme
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -64,12 +64,11 @@ background:rgba(238, 165, 62, .16);
 .calculate__main,
 .calculate__right .item__avatar,
 .map-loading-mask,
-.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-lang-selector,
-.pc-root-layout .header-layout,
-.top{
+.mhy-hoyolab-header-dark .mhy-hoyolab-header__wrapper .mhy-hoyolab-lang-selector{
   background-color: #121212!important
 }
 .web-nav-bar,
+.pc-root-layout .header-layout,
 .layout,
 .mhy-ys-set-layout,
 .pc-ys-layout-wrapper{
@@ -169,7 +168,6 @@ html {
 }
 .calculate__main,
 body > div.app > div > div.top,
-.pc-root-layout .header-layout,
 .mhy-summer-v2-story .layout-container{
   background-color:rgba(18, 18, 18, opacity)!important
 }
@@ -552,10 +550,12 @@ div.me-share-popover.me-share-popover--posbottom.me-share-popover--arrowright > 
 .item--syw {
   border-color: #404040!important
 }
+body[data-game-id="6"] .pc-root-layout .layout,
+.exploration-card .area-name,
 .custom-correct-modal__header,
 div.syw__list > div.item.main-item.item--syw.syw__item--active:before {
-  border: none;
-  background: none
+  border: none!important;
+  background: none!important
 }
 .tcg-container,
 .calculate .drawer__item-item,
@@ -777,8 +777,11 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
 }
 .components-common-remind-__index_---remind-btn---1IIL1i,
 .components-common-task-__index_---task---1vShWW .components-common-task-__index_---item-btn---2PvqOD {
-  background: #b19462;
+  background: #bfa16c;
   color: #2b2b2b
+}
+.components-common-remind-__index_---remind-btn---1IIL1i:hover{
+  background: #d0ad71
 }
 .top-main .module__item--partner:before,
 .top-main .module__item--syw:before,
@@ -798,6 +801,8 @@ div.van-tabs__content.van-tabs__content--animated div.line .line__title {
 .map-locations__dropdown{
   z-index: 1
 }
+.components-home-assets-__sign-extra-test_---extra---qpL7-5 .components-home-assets-__sign-extra-test_---desc-wrapper---1pLUft,
+.components-home-assets-__sign-extra-test_---extra---qpL7-5 .components-home-assets-__sign-extra-test_---content-left---2fxjDa.components-home-assets-__sign-extra-test_---month---1djJIr,
 .components-home-assets-__sign-extra-test_---extra---qpL7-5,
 .components-home-assets-__sign-content-test_---sign---3dbEui,
 .components-home-assets-__sign-extra-test_---extra---qpL7-5 .components-home-assets-__sign-extra-test_---item-icon---2MZ9CQ,
@@ -953,6 +958,7 @@ body > div.activity-popup.van-popup.van-popup--center > div > div.popup-body > d
         filter: invert(1) contrast(1.2) brightness(.6) grayscale(1);
         -webkit-filter: invert(1) contrast(1.2) brightness(.6) grayscale(1)
 }
+
 .task-count {
 color:#b76338
 }
@@ -1106,9 +1112,5 @@ border-radius: 7px;
 .filter-panel__footer-reset {
   background-color:#bbb!important;
   color:#222
-}
-.mhy-ys-set-layout{
-    -webkit-backdrop-filter: blur(30px);
-    backdrop-filter: blur(30px);
 }
 }
