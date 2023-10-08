@@ -46,7 +46,7 @@
     .reply,
     .embed,
     .markdown .youtube,
-    .markdown video{
+    .markdown video {
         border-radius: 10px!important
     }
     .user-wrap .dropdown {
@@ -119,15 +119,16 @@
     .home .activity-entry .actions {
         bottom: 10px!important
     }
-   .medialist.table .entry:hover{
+    .medialist.table .entry:hover {
         border-radius: 6px
     }
-    .stats-wrap > div.overview  .option.active,
-    .activity-feed-wrap  .actions > div.button.save,
-    #app > div.page-content > div > div.content.container > div > div:nth-child(2) > div.stats-wrap.full-width > div > div.footer > div.progress > div{
-         background: #28384d;
+    .stats-wrap > div.overview .option.active,
+    .activity-feed-wrap .actions > div.button.save,
+    #app > div.page-content > div > div.content.container > div > div:nth-child(2) > div.stats-wrap.full-width > div > div.footer > div.progress > div {
+        background: #28384d;
     }
-    .favourites.preview .favourites-wrap.studios, .favourites.preview .favourites-wrap{
+    .favourites.preview .favourites-wrap.studios,
+    .favourites.preview .favourites-wrap {
         background: rgba(var(--color-foreground))!important;
     }
     #app > div.page-content > div > div.content.container > div.social > div.activity-feed.hohReplaceFeed > div.hohSocialFeed > div:nth-child(3) > div > div.wrap,
@@ -137,18 +138,18 @@
     div.content.container > div.social > div.activity-feed > div.activity-entry.activity-anime_list > div.wrap,
     div.content.container > div.social > div.activity-feed > div.activity-entry > div.reply-wrap > div > div.activity-edit > div.markdown-editor,
     #app > div.page-content > div > div.content.container > div.social > div.activity-feed > div.activity-entry > div.reply-wrap > div > div.activity-edit > div.input.el-textarea > textarea,
-      .medialist.table .entry:hover,
-    .activity-feed .hohScore:not(.hohSmiley){
+    .medialist.table .entry:hover,
+    .activity-feed .hohScore:not(.hohSmiley) {
         background: rgba(var(--color-background));
         color: inherit;
     }
     .activity-edit > div.input.el-textarea > textarea {
-        width:100%
+        width: 100%
     }
-    #nav > div.quick-search.visible > div.results > div > div:nth-child(2){
-       margin-top: 15px
+    #nav > div.quick-search.visible > div.results > div > div:nth-child(2) {
+        margin-top: 15px
     }
-     .reply-wrap > div > div.activity-edit > h2,
+    .reply-wrap > div > div.activity-edit > h2,
     .content.container .favourites .favourites .section-header,
     .medialist.cards .section-name,
     .medialist.table .section-name,
@@ -159,7 +160,7 @@
     .page-content .list-previews .section-header {
         background: rgba(var(--color-foreground));
         height: 40px;
-        width:100%;
+        width: 100%;
         margin-bottom: auto;
         -webkit-box-pack: center;
         justify-content: center;
@@ -196,7 +197,7 @@
     div.home > div:last-child > div.list-previews > div.list-preview-wrap > div.list-preview > div.media-preview-card.small > a.cover {
         border-radius: 10px
     }
-    #nav > div.quick-search.visible > div.results > div  > div:hover,
+    #nav > div.quick-search.visible > div.results > div > div:hover,
     .home .review-card,
     .home .thread-card {
         background: rgba(15, 25, 40, .57);
@@ -629,53 +630,53 @@
     }
     /*Social*/
     div.content.container > div.social > div.activity-feed > div.hohSocialFeed > div:first-child,
-div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div.following > #statusList {
-  top: 14px!important;
-  padding-right: 10px;
-  font-size: 1.2rem
-}
-    .hohSocialFeed .details{
+    div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div.following > #statusList {
+        top: 14px!important;
+        padding-right: 10px;
+        font-size: 1.2rem
+    }
+    .hohSocialFeed .details {
         min-width: 325px
     }
-div.content.container > div.social > div.activity-feed > h2,
-div.content.container > div.social > div.activity-feed.hohReplaceFeed > div.hohSocialFeed > h2,
-div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > h2 {
-  background: rgba(var(--color-foreground));
-  width: 100%;
-  height: 40px;
-  margin: auto;
-  overflow: hidden;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-  padding: 12px;
-  font-size: 1.4rem;
-  font-weight: 500;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom: 1px solid #4b4b4b1f
-}
-div.content.container > div.social > div:nth-child(2) > div:first-child > h2,
-div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > #activityTimeline h2,
-div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div {
-  border-bottom: 1px solid #4b4b4b1f;
-  padding-bottom: 5px
-}
-div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > #activityTimeline > div.hohTimelineGap {
-  background: none;
-  padding: 10px;
-  padding-bottom: 0
-}
-div.content.container > div.social > div.activity-feed > .activity-entry,
-div.content.container > div.social > div.activity-feed.hohReplaceFeed > div.hohSocialFeed > div:nth-child(3),
-div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div.following,
-div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) {
-  padding: 10px;
-  margin-top: 0;
-  margin-bottom: 0;
-  background: rgba(var(--color-foreground))
-}
- 
+    div.content.container > div.social > div.activity-feed > h2,
+    div.content.container > div.social > div.activity-feed.hohReplaceFeed > div.hohSocialFeed > h2,
+    div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > h2 {
+        background: rgba(var(--color-foreground));
+        width: 100%;
+        height: 40px;
+        margin: auto;
+        overflow: hidden;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+        padding: 12px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom: 1px solid #4b4b4b1f
+    }
+    div.content.container > div.social > div:nth-child(2) > div:first-child > h2,
+    div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > #activityTimeline h2,
+    div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div {
+        border-bottom: 1px solid #4b4b4b1f;
+        padding-bottom: 5px
+    }
+    div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > #activityTimeline > div.hohTimelineGap {
+        background: none;
+        padding: 10px;
+        padding-bottom: 0
+    }
+    div.content.container > div.social > div.activity-feed > .activity-entry,
+    div.content.container > div.social > div.activity-feed.hohReplaceFeed > div.hohSocialFeed > div:nth-child(3),
+    div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div.following,
+    div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) {
+        padding: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+        background: rgba(var(--color-foreground))
+    }
+
     .user-social.listView .user-follow .follow-card .name {
         height: 50px;
         top: 15px!important;
@@ -800,9 +801,9 @@ div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:n
         display: block
     }
     .markdown hr {
-    border: solid 1px rgba(40,56,77,.6);
-    border-radius: 5px;
-}
+        border: solid 1px rgba(40, 56, 77, .6);
+        border-radius: 5px;
+    }
     /*Mobile*/
     @media (min-width: 1540px) {
         div.activity-feed-wrap > div.activity-feed > div > div.wrap > div.text > div.header > a.avatar:hover:after {
@@ -822,9 +823,6 @@ div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:n
     }
 
     @media (max-width: 1040px) {
-        .home .activity-entry .actions {
-            width: calc(100% - 0px)!important;
-        }
         .list-preview-wrap {
             height: 35px;
             overflow: hidden;
@@ -833,6 +831,10 @@ div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:n
             margin-bottom: 5px;
             &:hover {
                 height: 200px
+            }
+            .home .activity-entry > .wrap > .actions,
+            .user .activity-entry > .wrap > .actions {
+                width: calc(100% - 150px)!important;
             }
         }
 
@@ -891,6 +893,104 @@ div.content.container > div.social > div:nth-child(2) > div:nth-child(2) > div:n
             height: 179px
         }
     }
+    @media (max-width:760px) {
+  .hohComments {
+    right: 0;
+    top: -65px
+  }
+  .hohNotification {
+    overflow: hidden;
+    margin-right: 0;
+    height: 70px
+  }
+  .hohNotification:hover {
+    overflow: hidden;
+    margin-right: 0;
+    height: auto
+  }
+  a.hohMessageText {
+    pointer-events: none
+  }
+  #hohNotifications > div > a.hohMessageText > span:nth-child(3) {
+    pointer-events: auto!important
+  }
+  .hohUserImage {
+    width: 73px!important;
+    z-index: 1
+  }
+  .hohCommentsArea {
+    padding-bottom: 70px;
+    top: 0
+  }
+  .hohQuickCom {
+    top: -15px;
+    border-radius: 5px;
+    padding: 8px;
+    background: #1c304485
+  }
+  .hohMessageText {
+    left: 80px;
+    display: table;
+    position: relative;
+    max-width: 75%!important;
+    margin: 0;
+    margin-top: 25px!important;
+    line-height: 1.5
+  }
+  .hohMediaImageContainer {
+    display: table;
+    position: relative;
+    padding: 30px 5px 0;
+    text-align: left;
+    width: auto;
+    left: 0;
+    margin: 0
+  }
+  .hohMediaImageContainer > a {
+    display: inline;
+    background: 0
+  }
+  .hohMediaImageContainer > a > img {
+    border-radius: 5px;
+    background-color: #1a2535!important;
+    margin: 5px 0
+  }
+  .hohMediaImage {
+    height: 90px;
+    width: 70px;
+    padding: 2px;
+    background-color: #fff0!important
+  }
+  .banner-content > .avatar {
+    min-width: 0;
+    max-height: 219px;
+    max-width: 150px
+  }
+  div.list-head.row > div.format,
+  div.list-head.row > div.score {
+    display: none
+  }
+  div.lists:last-child > div.actions:first-child > div.theme-switch {
+    position: relative;
+    top: -50px;
+    left: -10px;
+    width: 90px;
+    background: rgba(78,109,157,.13)
+  }
+  .medialist.cards div.lists:last-child > div.actions:first-child > div.theme-switch {
+    position: relative;
+    top: -70px
+  }
+  .medialist.cards .list-section {
+    margin-bottom: 20px
+  }
+  #hohDraw3x3 {
+    padding: 0 10px
+  }
+  .medialist > div.filters-wrap:first-child {
+    margin-bottom: 40px
+  }
+}
     @media (max-width: 760px) {
         .banner .follower-badge {
             top: 60%;
