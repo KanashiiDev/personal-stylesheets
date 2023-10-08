@@ -40,7 +40,8 @@
 @var checkbox removebc        'Hide Breadcrumb Navigation' 0
 @preprocessor stylus
 ==/UserStyle== */
-@-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*") {
+@-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*"),
+regexp("https://fal.myanimelist.net/.*") {
     :root {
         --fg: fg_color + (fg_slider);
         --fg2: fg_color + 10 + (fg_slider);
@@ -286,6 +287,10 @@
             position: absolute
         }
 
+        thead.sticky.top-0.text-white.bg-red-burgundy tr th,
+        body > div.min-h-screen.bg-gray-100 > main > div > div.bg-white,
+        nav.bg-persian-blue,
+        body > div.min-h-screen.bg-gray-100,
         .dark-mode .page-common .footer-ranking,
         .page-common .footer-ranking,
         .dark-mode .page-common #headerSmall:before,
@@ -432,10 +437,14 @@
         cursor: pointer!important
     }
 
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.user-profile-about.js-truncate-outer > div > table > tbody > tr > td > div > div) {
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.user-profile-about.js-truncate-outer > div > table > tbody > tr > td > div > div):not(.people-informantion-more.js-people-informantion-more) {
         display: none !important
     }
 
+    .seasonal-anime-list .seasonal-anime .information .information-item.buttons .bubble:after,
+    .seasonal-anime-list .seasonal-anime .information.watching .information-item.buttons .bubble:before,
+    .seasonal-anime-list .seasonal-anime .information.reading .information-item.buttons .bubble:before,
+    .page-forum .mal-badge.new,
     .mal-badge.new-statistics,
     .club-on-app.pb12,
     .page-common #footer-block .footer-app,
@@ -1159,6 +1168,8 @@
         background-color: var(--color-foreground3)!important
     }
 
+    .forum div.content > div.user > div.item.custom-title.mal-badge,
+    .page-common .header-notification-button.has-unread:after,
     a.btn-club-join.ga-click,
     .mal-tipmenu,
     .page-common .mal-tipmenu,
@@ -1373,6 +1384,15 @@
     input p,
     div.text,
     u,
+    .page-common a.button_add.button_add.on-hold,
+    .page-common a.button_add.button_edit.on-hold,
+    .page-common a.button_edit.button_add.on-hold,
+    .page-common a.button_edit.button_edit.on-hold,
+    .seasonal-anime-list .seasonal-anime .information.watching .information-item.buttons .bubble,
+    .seasonal-anime-list .seasonal-anime .information.reading .information-item.buttons .bubble,
+    .user-profile .user-compatability-graph .bar-outer .bar-outer-positive span.bar-inner,
+    .leftside #notify-msg-frame,
+    .forum div.content > div.user > div.item.custom-title.mal-badge,
     .mymessages .pmessage-message-history .date,
     .mymessages .pmessage-message-history .name,
     .mymessages .pmessage-message-history .subject,
@@ -1548,6 +1568,7 @@
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .user-profile .user-compatability-graph .bar-outer .bar-outer-negative span.ff-avenir,
     .forum .mal-navbar .caption,
     .dark-mode .page-common .fn-grey1,
     .page-common .watch-state-icon:not(.watched),
@@ -1644,6 +1665,7 @@
     .season .btn-show-r18,
     .season .btn-show-broadcast,
     .navi-seasonal .horiznav-nav-seasonal .btn-seasonal .btn-type,
+    .membership .about-membership .about-extras .about-extras-content .text,
     .membership .about-membership .about-no-ads .text .description,
     .membership .membership-manager .status-table .data,
     .faq-container .faq-lists .answer,
@@ -1915,6 +1937,7 @@
     .page-common .incrementalSearchResultList .list.list-bottom-message.loading,
     .mymessages .pmessage-select > a,
     .index .widget-container .widget.friend_list_updates .footer .btn-settings,
+    .notification_settings .notification-setting-content .settings-notification .setting td.button input[type=checkbox]:checked + label:before,
     .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox]:checked + label:before,
     .profile .stacks-list .column-item .foot .btn-report .fa-ellipsis-h:hover,
     .stacks .stack-balloon .fa-layer-plus:hover,
@@ -1957,6 +1980,10 @@
         color: var(--color-link)!important;
     }
 
+    .seasonal-anime-list .seasonal-anime .information.watching .information-item.buttons .js-user-status-block .js-btn-add-episode,
+    .seasonal-anime-list .seasonal-anime .information.watching .information-item.buttons .js-user-status-block .js-btn-add-chapter,
+    .seasonal-anime-list .seasonal-anime .information.reading .information-item.buttons .js-user-status-block .js-btn-add-episode,
+    .seasonal-anime-list .seasonal-anime .information.reading .information-item.buttons .js-user-status-block .js-btn-add-chapter,
     .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox] + label:before,
     .forum .btn-rect-grey1,
     .forum .forum-side-block .forum-side-list .forum-post .information .comment,
@@ -1966,6 +1993,8 @@
         color: var( --color-link2)!important
     }
 
+    .page-common .header-notification-dropdown-inner h3 .mark-all,
+    .page-common .header-notification-item-header .category,
     .index .widget-container .widget.friend_list_updates .footer .btn-settings:hover,
     .history_content_wrapper .history-updates .navi-btn:hover,
     .stacks .btn-report.on .fa-ellipsis-h,
@@ -3163,6 +3192,7 @@
         filter: invert(100%) hue-rotate(180deg) brightness(92%)
     }
 
+    .shared-table .borderClass .shared-core-lower,
     .page-common .watch-state-icon.watched,
     .news-list .comment-list .information .tags .tag.tag-color-feature-advertorial,
     .news-list .news-unit .information .tags .tag.tag-color-feature-advertorial,
@@ -3175,10 +3205,12 @@
         color: #a3a3a3
     }
 
+    .shared-table .borderClass .shared-core-higher,
     .review-element .thumbbody .body .tags .tag.preliminary {
         color: #5ab763
     }
 
+    .text-ace-threshold,
     .page-common .bbcode-explanation code,
     .page-common .bbcode-explanation pre.code,
     .featured-pickup .featured-pickup-unit .information .tags .tag.tag-color-feature-spoiler,
@@ -3192,6 +3224,7 @@
         color: #e22c31
     }
 
+    .notification_settings .notification-setting-content .settings-notification .setting td.button input[type=checkbox] + label:after,
     .mal-modal.modal-friends-update-settings .mal-modal-dialog .mal-modal-content .mal-modal-body .switch input[type=checkbox] + label:after,
     .anime-info-review__header.mal-navbar .review-ratio__bar .recommended__bar,
     {
@@ -3226,6 +3259,10 @@
         background-color: #2d4276;
     }
 
+    .page-common a.button_add.button_add.on-hold,
+    .page-common a.button_add.button_edit.on-hold,
+    .page-common a.button_edit.button_add.on-hold,
+    .page-common a.button_edit.button_edit.on-hold,
     .profile .statistics-updates .data .graph .graph-inner.on_hold,
     .profile .user-statistics .stats-graph .graph.on_hold,
     .profile .user-statistics .stats-status .circle.on_hold:after {
@@ -3480,7 +3517,8 @@ url-prefix("https://myanimelist.net/manga") {
     }
 
     .js-anime-character-va > tbody {
-        height: 105px;
+        max-height: 105px;
+        transition: 1.5s;
         display: grid;
         overflow: hidden!important;
         flex-direction: column;
@@ -3489,7 +3527,7 @@ url-prefix("https://myanimelist.net/manga") {
     }
 
     .js-anime-character-va > tbody:hover {
-        height: 100%
+        max-height: 1200px
     }
 
     .review-element .thumbbody {
@@ -4147,6 +4185,12 @@ url-prefix("https://myanimelist.net/clubs.php") {
         border-bottom-right-radius: var(--border-radius);
         width: 100%
     }
+
+    #content > table > tbody > tr > td:nth-child(2) > table > tbody > tr > td > .picSurround img.lazyloaded.kal {
+        width: 60px !important;
+        height: 80px;
+        object-fit: cover
+    }
 }
 
 @-moz-document regexp("https://myanimelist.net/forum/\\?board=.*"),
@@ -4518,13 +4562,19 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     }
 }
 
-@-moz-document regexp("https://myanimelist.net/news/\\d.*") {
+@-moz-document regexp("https://myanimelist.net/news/\\d.*"),
+url-prefix("https://myanimelist.net/people") {
     .js-scrollfix-bottom {
         margin-top: 0
     }
 
     #content > div.content-left > div > div:nth-child(2) > div > div.news-info-block.clearfix > div.sns-unit.fl-r.mr8 {
         background: transparent!important
+    }
+
+    #content > table > tbody > tr > td.borderClass > span.dark_text {
+        padding: 10px 0px 10px 10px;
+        display: inline-block
     }
 }
 
@@ -4556,5 +4606,193 @@ url-prefix("https://myanimelist.net/users.php") {
 
     .pmessage-message-history td {
         border: 0!important
+    }
+}
+
+@-moz-document regexp("https://fal.myanimelist.net/.*") {
+    .bg-gray-100,
+    .bg-white {
+        background: var(--color-background)!important;
+    }
+
+    .bg-white {
+        background: var(--color-foreground)!important
+    }
+
+    nav.bg-persian-blue {
+        position: fixed!important;
+        width: 100%;
+        z-index: 5;
+        border-radius: 0
+    }
+
+    .min-h-screen.bg-gray-100 > main .bg-white:first-child {
+        z-index: 2;
+        position: relative;
+        border-radius: 0;
+        top: 45px
+    }
+
+    h3.text-persian-blue.text-center.font-extrabold.text-lg.pt-4.bg-indigo-50.mt-4,
+    .flex.justify-center.px-4.py-4.bg-indigo-50 {
+        border-radius: 0!important
+    }
+
+    h3.bg-red-burgundy.p-2.text-center.font-extrabold.text-xl.text-white.rounded-t-lg {
+        border-radius: var(--border-radius) var(--border-radius) 0px 0px!important
+    }
+
+    .bg-rank-gradient,
+    .grid.grid-cols-1.gap-4.p-3.mb-1 .justify-center div {
+        background: transparent!important
+    }
+
+    if(custom-bg) {
+        body {
+            overflow-x: hidden;
+        }
+
+        .bg-white:not(.rounded-lg),
+        .bg-gray-100 {
+            background: transparent!important
+        }
+
+        .min-h-screen.bg-gray-100 > main .bg-white:first-child {
+            background: var(--color-backgroundo)!important
+        }
+
+        body:before {
+            background: url(bg_image)!important;
+            background-size: cover!important;
+            background-attachment: fixed!important;
+            background-color: var(--color-background)!important;
+            width: 100%;
+            position: fixed;
+            content: "";
+            height: 100%;
+            -webkit-filter: brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate);
+            filter: brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)
+        }
+
+        if( bg_blur > 0) {
+            body:before {
+                -webkit-filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important;
+                filter: blur(bg_blur)brightness(bg_brightness)contrast(bg_contrast)saturate(bg_saturate)!important
+            }
+        }
+    }
+
+    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center,
+    .shadow-md.mt-5.mx-3.py-8.px-10,
+    .p-4.bg-white.createBox,
+    .container.mx-auto.p-2.bg-gray,
+    p.rounded-full.w-auto.text-white.px-3.text-xs.font-bold,
+    .px-4.border.p-2.mt-5,
+    hr.w-64.bg-black.hidden,
+    .bg-indigo-600,
+    .p-4.my-3.bg-gray-100.flex.flex-col.justify-center.h-44,
+    .bg-light-yellow,
+    .bg-white-smoke,
+    .bg-rank-gradient,
+    .bg-red-burgundy,
+    .bg-lighter,
+    .bg-indigo-50,
+    .bg-persian-blue {
+        background-color: var(--color-foreground2)!important;
+        border-radius: var(--border-radius)
+    }
+
+    .tick-flip-card span {
+        background: var(--color-foreground4)!important
+    }
+
+    .grid.grid-cols-1.gap-4.p-3.mb-1 .justify-center,
+    .p-4.bg-white.createBox button,
+    button.bg-white.text-persian-blue.border.border-gray-300.font-black.rounded.mx-auto.w-full.py-1,
+    button.my-3.text-white.font-black.text-xl.w-36.p-2.bg-gray-200,
+    .container.mx-auto.p-2.bg-gray .grid.justify-items-center.grid-cols-4.gap-1 .mt-4.text-xs.text-center,
+    .border-2.border-white.text-white.text-xs.font-extrabold.rounded.py-1.px-4,
+    button.my-3.text-persian-blue.font-black.text-xl.w-36.p-2,
+    a.flex.items-center.justify-center.border.border-b-4.border-indigo-900,
+    a.bg-gray-100.border.border-b-4.border-blue-800,
+    .bg-tangerine,
+    .bg-papaya {
+        background: var(--color-foreground4)!important;
+        border-radius: var(--border-radius);
+        z-index: 2
+    }
+
+    .text-gray-500,
+    span.tick-label.tick-text,
+    .text-white {
+        color: var(--color-main-text-normal)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important
+    }
+
+    .text-black,
+    .text-persian-blue,
+    .text-gray-400 {
+        color: var(--color-main-text-light)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important
+    }
+
+    .flex-1.text-center.border-b-4.border-persian-blue.text-lg .font-extrabold,
+    .mb-6 .row a.text-persian-blue.font-extrabold,
+    a.p-0,
+    a.bg-gray-100.border.border-b-4.border-blue-800,
+    a.flex.items-center.justify-center.border.border-b-4.border-indigo-900,
+    .text-blue,
+    .text-red-burgundy {
+        color: var(--color-link)!important;
+        text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important
+    }
+
+    body > div.min-h-screen.bg-gray-100 > main > div > div > div > div > div > div:nth-child(1) > a > img.h-6 {
+        -webkit-filter: invert(100%) hue-rotate(180deg) brightness(92%);
+        filter: invert(100%) hue-rotate(180deg) brightness(92%)
+    }
+
+    body > div.min-h-screen.bg-gray-100 > main > div > div > div > div > div > div > div > div > img.w-auto.object-contain,
+    body > div.min-h-screen.bg-gray-100 > main > div > div > div > div > div > div:nth-child(1) > a > img.h-6,
+    img.block.w-auto {
+        box-shadow: 0 0 0!important
+    }
+
+    body > div.min-h-screen.bg-gray-100 > main > div > div > div > div > div > div > div > div > img.w-auto.object-contain {
+        border-radius: var(--border-radius)!important;
+        height: 232px;
+        object-fit: cover;
+        margin-bottom: 5px
+    }
+
+    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center .text-persian-blue {
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+
+    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center .text-persian-blue a {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2
+    }
+
+    .bg-white > div > .w-full,
+    .grid.grid-cols-1.gap-4.p-3.mb-1 .text-white,
+    .grid.grid-cols-1.gap-4 .py-5 .text-white {
+        color: var(--color-main-text-op)!important;
+        opacity: 0.92
+    }
+
+    .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center .relative img {
+        object-fit: cover;
+        height: 275px
+    }
+
+    .grid.grid-cols-1.gap-4.p-3.mb-1,
+    .grid.grid-cols-1.gap-4 .py-5 {
+        filter: saturate(0.6) contrast(1.35) opacity(0.82);
+        border-radius: var(--border-radius)
     }
 }
