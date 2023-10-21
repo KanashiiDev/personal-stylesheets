@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.63
+@version      1.0.64
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -38,6 +38,7 @@
 @var checkbox remove_edit     'Hide Edit Buttons' 0
 @var checkbox removefooter    'Hide Footer' 0
 @var checkbox removebc        'Hide Breadcrumb Navigation' 0
+@var checkbox remove_listnot  'Hide Public List Warning' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*"),
@@ -482,6 +483,8 @@ regexp("https://fal.myanimelist.net/.*") {
         display: none!important
     }
 
+    .page-common #menu #menu_right,
+    .page-common #menu #menu_left,
     .staff_wrap .staff:nth-child(odd),
     .page-advertising #ad_menu,
     .about-content.content-bg-grey,
@@ -1168,6 +1171,7 @@ regexp("https://fal.myanimelist.net/.*") {
         background-color: var(--color-foreground3)!important
     }
 
+    #myanimelist > .wrapper.js-color-pc-constant > .text-ribbon.ga-click.ga-impression > .ac.fs12.pt8.pr8.pb8.pl8,
     .forum div.content > div.user > div.item.custom-title.mal-badge,
     .page-common .header-notification-button.has-unread:after,
     a.btn-club-join.ga-click,
@@ -1568,6 +1572,7 @@ regexp("https://fal.myanimelist.net/.*") {
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .anime-detail-header-stats .stats-block .information,
     .user-profile .user-compatability-graph .bar-outer .bar-outer-negative span.ff-avenir,
     .forum .mal-navbar .caption,
     .dark-mode .page-common .fn-grey1,
@@ -3348,6 +3353,12 @@ regexp("https://fal.myanimelist.net/.*") {
         }
     }
 
+    if(remove_listnot) {
+        .page-common .notice_open_public {
+            display: none
+        }
+    }
+
     #content > .left-column > article.widget-container.left > .widget.mxj .widget-content .content .text {
         width: 210px;
         margin-left: -10px;
@@ -3714,6 +3725,10 @@ url-prefix("https://myanimelist.net/manga") {
         flex-direction: column;
         -webkit-backdrop-filter: blur(6px) brightness(70%);
         backdrop-filter: blur(6px) brightness(70%)
+    }
+
+    #content > table > tbody > tr > td.borderClass > div.leftside {
+        padding-right: 2px
     }
 }
 
@@ -4186,10 +4201,16 @@ url-prefix("https://myanimelist.net/clubs.php") {
         width: 100%
     }
 
-    #content > table > tbody > tr > td:nth-child(2) > table > tbody > tr > td > .picSurround img.lazyloaded.kal {
+    #content > table > tbody > tr > td > table > tbody > tr > td > .picSurround img.lazyloaded {
         width: 60px !important;
         height: 80px;
         object-fit: cover
+    }
+
+    if(remove_edit) {
+        #contentWrapper > div:nth-child(1) > div > div.header-right {
+            display: none
+        }
     }
 }
 
@@ -4575,6 +4596,10 @@ url-prefix("https://myanimelist.net/people") {
     #content > table > tbody > tr > td.borderClass > span.dark_text {
         padding: 10px 0px 10px 10px;
         display: inline-block
+    }
+
+    .news-list > .comment-list {
+        width: 96%
     }
 }
 
