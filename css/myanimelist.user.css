@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.64
+@version      1.0.65
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -438,7 +438,7 @@ regexp("https://fal.myanimelist.net/.*") {
         cursor: pointer!important
     }
 
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.user-profile-about.js-truncate-outer > div > table > tbody > tr > td > div > div):not(.people-informantion-more.js-people-informantion-more) {
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.container-right > div.user-profile-about.js-truncate-outer *) {
         display: none !important
     }
 
@@ -1171,6 +1171,7 @@ regexp("https://fal.myanimelist.net/.*") {
         background-color: var(--color-foreground3)!important
     }
 
+    .forum .message-wrapper > div.profile .icon-team-title,
     #myanimelist > .wrapper.js-color-pc-constant > .text-ribbon.ga-click.ga-impression > .ac.fs12.pt8.pr8.pb8.pl8,
     .forum div.content > div.user > div.item.custom-title.mal-badge,
     .page-common .header-notification-button.has-unread:after,
@@ -1879,6 +1880,7 @@ regexp("https://fal.myanimelist.net/.*") {
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important
     }
 
+    .icon-team-title,
     select option:checked,
     .dark-mode .characters-search-form-search .inputButton,
     .characters-search-form-search .inputButton,
@@ -3815,7 +3817,6 @@ url-prefix("https://myanimelist.net/topmanga") {
 }
 
 @-moz-document url-prefix("https://myanimelist.net/recommendations") {
-
     #content > div > div {
         background: var(--color-foreground3)!important;
         border-radius: var(--br)!important;
@@ -3987,7 +3988,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
             transition: 1.5s;
             height: auto !important;
             max-height: 810px;
-            width: 190px;
+            width: 189px;
             position: relative !important;
             float: left;
             top: 0px!important;
