@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.74
+@version      1.0.75
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -211,6 +211,7 @@ regexp("https://fal.myanimelist.net/.*") {
     #topSearchResultList > div > div,
     #advancedSearchResultList > div.list,
     .js-replyto-target,
+    .actions .action-button,
     .index .widget-container .widget.friend_list_updates .footer .btn-settings,
     .dark-mode .page-common .incrementalSearchResultList .list .image,
     .page-common .incrementalSearchResultList .list .image,
@@ -335,7 +336,6 @@ regexp("https://fal.myanimelist.net/.*") {
         a.link-blue-box.next,
         .tips.mb8,
         .notice-box,
-        .profile .user-profile-about,
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(3) > td > div:nth-child(n + 20):nth-child(-n + 40).clearfix,
         .widget.my_list_updates.left .info,
         .js-widget-friend-list-updates .work,
@@ -632,7 +632,7 @@ regexp("https://fal.myanimelist.net/.*") {
         cursor: pointer!important
     }
 
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]) {
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div) {
         display: none !important
     }
 
@@ -1131,6 +1131,10 @@ regexp("https://fal.myanimelist.net/.*") {
     #characterForm table#episodeList tr,
     #staffForm #episodeStaffList > ul > li:hover,
     #staffForm table#episodeRoll tr,
+    .header-notification-item-content .actions .action-button.accept:hover,
+    .header-notification-item-content .actions .action-button.deny,
+    .dark-mode .page-common .codetext button.copycode,
+    .page-common .codetext button.copycode,
     .text-ribbon .ac.fs12.pt8.pr8.pb8.pl8,
     .page-forum .forum .message > .message-wrapper > .content > .replied.show > div > .replied-body > .quotetext > .quotetext > div > span > .quotetext > .quotetext,
     .forum-topic-message .message-wrapper .content table.body .quotetext > .quotetext input.button.expand_quote,
@@ -1407,6 +1411,12 @@ regexp("https://fal.myanimelist.net/.*") {
         background-color: var(--color-foreground3)!important
     }
 
+    .page-common .header-notification-item-content .actions .result,
+    .header-notification-item-content .actions .action-button.accept,
+    .header-notification-item-content .actions .action-button.deny:hover,
+    .dark-mode .page-common .codetext button.copycode:hover,
+    .page-common .codetext button.copycode:hover,
+    .codetext button.copycode,
     .dark-mode .btn-choose-your-own:hover,
     .btn-choose-your-own:hover,
     .page-forum .forum .replied-body .quotetext > .quotetext span .quotetext,
@@ -1643,6 +1653,7 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-text)!important
     }
 
+    .header-notification-item-content .actions .action-button,
     form[name="colorform"],
     .people-staff .people-staff-sort-order-block .sort-order-list .btn-sort-order.selected,
     .people-favorites-ranking-table .table-header td,
@@ -2291,6 +2302,7 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-link)!important;
     }
 
+    .header-notification-dropdown .header-notification-dropdown-inner .is-read .fa-circle-check,
     .seasonal-anime-list .seasonal-anime .information.watching .information-item.buttons .js-user-status-block .js-btn-add-episode,
     .seasonal-anime-list .seasonal-anime .information.watching .information-item.buttons .js-user-status-block .js-btn-add-chapter,
     .seasonal-anime-list .seasonal-anime .information.reading .information-item.buttons .js-user-status-block .js-btn-add-episode,
@@ -2439,6 +2451,8 @@ regexp("https://fal.myanimelist.net/.*") {
         padding-top: 15px
     }
 
+    div#modern-about-me-inner,
+    .forum .replied,
     .page-common table.forum-topics tbody tr,
     .fl-r.ar.mal-btn-group.mal-dropdown-outer,
     .forum .information-block,
@@ -3547,6 +3561,7 @@ regexp("https://fal.myanimelist.net/.*") {
         border: 2px solid #a0b1c514
     }
 
+    div#modern-about-me-inner,
     .top-ranking-table,
     .people-favorites-ranking-table,
     .characters-favorites-ranking-table,
@@ -3946,13 +3961,17 @@ regexp("https://fal.myanimelist.net/.*") {
     }
 
     .header-menu-dropdown.header-profile-dropdown.arrow_box {
-        margin-right: -25px
+        margin-right: -33px
     }
 
     .forum .forum-board-list.pb16,
     .forum .forum-mods-list.pb16 {
         padding-bottom: 0!important;
         margin-bottom: 16px
+    }
+
+    .forum div.message-wrapper > div.content > div.sig-container {
+        max-height: 100%
     }
 
     .page-common table.forum-topics tbody tr,
@@ -3967,12 +3986,16 @@ regexp("https://fal.myanimelist.net/.*") {
     }
 
     if(coloredstatus) {
+        .work-title a.Lightbox_AddEdit.button_edit.ga-click,
+        .widget-container.left .info a.Lightbox_AddEdit.button_edit.ga-click,
         a.Lightbox_AddEdit.button_edit.ga-click.ranking-digest.fl-r > .ga-click.ga-impression,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status,
         a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status {
             color: var(--color-main-text-normal)!important
         }
 
+        .work-title a.Lightbox_AddEdit.button_edit.ga-click.watching,
+        .widget-container.left .info a.Lightbox_AddEdit.button_edit.ga-click.watching,
         a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.button.watching,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status.js-anime-watch-status.completed.ga-impression,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status.js-anime-watch-status.watching.ga-impression,
@@ -3980,12 +4003,16 @@ regexp("https://fal.myanimelist.net/.*") {
             background: rgba(46, 102, 71, .6)!important
         }
 
+        .work-title a.Lightbox_AddEdit.button_edit.ga-click.dropped,
+        .widget-container.left .info a.Lightbox_AddEdit.button_edit.ga-click.dropped,
         a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.button.dropped,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status.js-anime-watch-status.dropped.ga-impression,
         a.Lightbox_AddEdit.button_edit.ga-click.ranking-digest.fl-r.dropped {
             background: rgba(104, 33, 33, .6)!important
         }
 
+        .work-title a.Lightbox_AddEdit.button_edit.ga-click.plantowatch,
+        .widget-container.left .info a.Lightbox_AddEdit.button_edit.ga-click.plantowatch,
         a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.button.plantowatch,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status.js-anime-watch-status.plantoread.ga-impression,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status.js-anime-watch-status.plantowatch.ga-impression,
@@ -3993,6 +4020,9 @@ regexp("https://fal.myanimelist.net/.*") {
             background: rgba(102, 90, 46, .6)!important
         }
 
+        .work-title a.Lightbox_AddEdit.button_edit.ga-click.completed,
+        .widget-container.left .info a.Lightbox_AddEdit.button_edit.ga-click.completed,
+        .spaceit > a.Lightbox_AddEdit.button_edit.ga-click.completed,
         a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.button.completed,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status.js-anime-watch-status.completed.ga-impression,
         a.js-form-user-status.js-form-user-status-btn.Lightbox_AddEdit.btn-addEdit-large.btn-anime-watch-status.js-anime-watch-status.completed.ga-impression,
@@ -4984,6 +5014,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         display: block
     }
 
+    #content > table > tbody > tr > td:nth-child(2) > h2,
     .dark-mode .page-common .normal_header {
         border: 0
     }
@@ -5418,6 +5449,10 @@ url-prefix("https://myanimelist.net/ownlist/style") {
 
     #content > div.content-left > div > div:nth-child(2) > div > div.news-info-block.clearfix > div.sns-unit.fl-r.mr8 {
         background: transparent!important
+    }
+
+    .content-right .js-scrollfix-bottom iframe {
+        display: none
     }
 }
 
