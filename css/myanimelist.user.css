@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.78
+@version      1.0.79
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -636,10 +636,14 @@ regexp("https://fal.myanimelist.net/.*") {
         cursor: pointer!important
     }
 
+    .profile.statistics .content-container .container-right .chart-wrapper .filter.disabled > div:nth-child(2),
+    body > div#_cm-css-reset,
     div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div) {
         display: none !important
     }
 
+    .profile.statistics .content-container .container-right #profile-stats-anime-genre-sets .filter.disabled,
+    .profile.statistics .content-container .container-right #profile-stats-manga-genre-sets .filter.disabled,
     .header-notification-dropdown .mark-all.disabled,
     .seasonal-anime-list .seasonal-anime .information .information-item.buttons .bubble:after,
     .seasonal-anime-list .seasonal-anime .information.watching .information-item.buttons .bubble:before,
@@ -740,6 +744,7 @@ regexp("https://fal.myanimelist.net/.*") {
         background: 0 0
     }
 
+    .page-forum .topic-reply-box div.mal-navbar,
     #menu #menu_left #nav ul li,
     #menu #menu_left #nav ul li:hover,
     #contentWrapper > div > .header-right.divider,
@@ -771,13 +776,24 @@ regexp("https://fal.myanimelist.net/.*") {
         background: var(--color-background);
     }
 
+    .page-forum .topic-reply-box .preview-content,
+    .profile.statistics .daterangepicker .calendar-table,
+    .profile.statistics .daterangepicker td.off,
+    .profile .user-compatability-graph.pl4.pr4.pb12,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab::before,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab::before,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab,
+    .profile .navi .tabs .btn-tab,
+    .profile.statistics .content-container .container-right .chart-wrapper > .filter,
+    .profile.statistics .chart-container-rf .left,
+    #contentWrapper table#dialog .social-login-block:after,
     .dark-mode .auto-recommendations .item,
     .dark-mode .season .anime-seasonal-byseason td,
     .dark-mode .page-common #menu #menu_left #nav ul li:hover,
     .profile.statistics .content-container .container-right .chart-wrapper .item,
     .global-header,
     .global-footer,
-    #content > div > div > section.sec-client > .client-block,
     #advancedSearchResultList > div,
     #characterForm input.data-episode.js-data-episode,
     #staffForm input.data-episode.js-data-episode,
@@ -821,8 +837,6 @@ regexp("https://fal.myanimelist.net/.*") {
     #myanimelist > div.wrapper.color-pc-constant > div.text-ribbon.ga-click.ga-impression > div.ac.fs12.pt8.pr8.pb8.pl8,
     #dialog,
     select option,
-    .dark-mode div.sceditor-outer div.mal-tab-item.preview,
-    div.sceditor-outer div.mal-tab-item.preview,
     .dark-mode .contents-video-embed .episode-information,
     .contents-video-embed .episode-information,
     .dark-mode .contents-video-embed .btn-video-anime-slide.hori[data-dir=prev],
@@ -904,6 +918,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .anime-detail-header-stats .stats-block,
     .dark-mode .btn-detail-recommendations-view-all,
     .btn-detail-recommendations-view-all,
+    .profile.statistics .content-container .container-right .container .view_all > a,
     .dark-mode .btn-rect-grey1,
     .btn-rect-grey1,
     .dark-mode .btn-sns-setting,
@@ -1134,6 +1149,19 @@ regexp("https://fal.myanimelist.net/.*") {
     #characterForm table#episodeList tr,
     #staffForm #episodeStaffList > ul > li:hover,
     #staffForm table#episodeRoll tr,
+    .forum .bbcode-table th,
+    .page-forum .topic-reply-box div.sceditor-outer ul.mal-tabs a.item.active,
+    .page-forum .topic-reply-box .preview.active,
+    .profile.statistics .content-container .container-right .filter mal-score-selector .container div,
+    .profile.statistics .daterangepicker .ranges li:hover,
+    .profile.statistics .daterangepicker .mal-btn.applyBtn,
+    .profile.statistics .daterangepicker td.in-range,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .btn-tab.on,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .btn-tab.on,
+    body > .layout-container > .layout-container__inner .sec-client .client-block__image,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-vote-reply,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-vote-score li a,
+    .editprofile ul.ignored-user-list li:nth-child(2n),
     .review-votes-modal .modal_contents .list .item .username .tag,
     .forum-topic-message .message-wrapper .quotetext > .quotetext > .spoiler > .button.show_button,
     .header-notification-item-content .actions .action-button.accept:hover,
@@ -1209,6 +1237,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .stacks .stacks-detail .any_status .score,
     .dark-mode .tile-anime-list .seasonal-anime,
     .tile-anime-list .seasonal-anime,
+    .content-left.stacks-detail .tile-anime-list .seasonal-anime .widget,
     .dark-mode .mal-tabs a.item.active,
     .mal-tabs a.item.active,
     .dark-mode #editdiv .inputtext,
@@ -1374,6 +1403,10 @@ regexp("https://fal.myanimelist.net/.*") {
         background-color: var(--color-foreground2)!important
     }
 
+    .page-forum .forum .message .topic-reply-box.in-timeline,
+    .profile.statistics .daterangepicker .mal-btn.cancelBtn,
+    body > .layout-container > .layout-container__inner .sec-client .client-block,
+    body > .layout-container > .layout-container__inner,
     body.news .news-side-block .news-list img.thumbs,
     body.news .news-side-block .featured-list img.thumbs,
     body.news .featured-side-block .news-list img.thumbs,
@@ -1418,14 +1451,21 @@ regexp("https://fal.myanimelist.net/.*") {
     .user-profile .user-compatability-graph .bar-outer,
     .dark-mode .history_content_wrapper .history-updates .work-graph,
     .history_content_wrapper .history-updates .work-graph,
-    .dark-mode .profile .navi .tabs .btn-tab,
-    .profile .navi .tabs .btn-tab,
     .dark-mode .seasonal-anime-list .seasonal-anime .genres,
     .seasonal-anime-list .seasonal-anime .genres,
     .page-common .header-notification-item:hover {
         background-color: var(--color-foreground3)!important
     }
 
+    .profile.statistics .daterangepicker .calendar-table .next.available:hover,
+    .profile.statistics .daterangepicker .calendar-table .prev.available:hover,
+    .profile.statistics .daterangepicker td.active,
+    .profile.statistics .daterangepicker td.available:hover,
+    .profile.statistics .daterangepicker,
+    .profile.statistics .chart-container-rf .ampopup-curtain,
+    .profile.statistics .chart-container-rf .ampopup-content,
+    .profile.statistics .content-container .container-right .chart-wrapper .filter button.mal-btn.outline.primary.pressed.noborder.active,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-vote-reply #postReplyVoteButton,
     .spoiler .button.show_button:hover,
     .spoiler .button.hide_button:hover,
     .page-common .header-notification-item-content .actions .result,
@@ -1652,6 +1692,11 @@ regexp("https://fal.myanimelist.net/.*") {
         border: 0
     }
 
+    .profile.statistics .daterangepicker .ranges li,
+    .profile.statistics .daterangepicker span.drp-selected,
+    .daterangepicker td,
+    .daterangepicker th,
+    .profile.statistics .chart-container-rf .ampopup-content,
     .stacks .tab-area ul li,
     .dark-mode .stacks .btn-show-spoilers i.fas,
     .stacks .btn-show-spoilers i.fas,
@@ -1670,6 +1715,8 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-text)!important
     }
 
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab,
     .page-common .codetext button.copycode:before,
     .page-common .header-notification-item-content .actions .result,
     .ranking-company .company-favorites-ranking-table tr td,
@@ -1882,6 +1929,7 @@ regexp("https://fal.myanimelist.net/.*") {
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .rightside.js-scrollfix-bottom-rel .h1.edit-info span.h1-title .title-english,
     .people-staff .btn-show-sort,
     .people-staff .people-staff-sort-order-block .sort-order-list .btn-sort-order,
     .page-common .fn-grey3,
@@ -2088,6 +2136,8 @@ regexp("https://fal.myanimelist.net/.*") {
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important;
     }
 
+    .amcharts-Container.amcharts-Label tspan,
+    .amcharts-Container.amcharts-Tooltip tspan,
     .profile.statistics .chart-container-rf .left .amcharts-AxisLabel {
         fill: var(--color-main-text-light)!important
     }
@@ -2278,6 +2328,7 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-nav-text-hover)!important
     }
 
+    body > .layout-container > .layout-container__inner .sec-client .client-block a,
     .review-element .thumbbody .body .bottom-navi .icon-reaction .num:hover,
     .text-ribbon .ac.fs12.pt8.pr8.pb8.pl8,
     #content .content-left .content.clearfix > a i,
@@ -2373,6 +2424,9 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-link-hover)!important
     }
 
+    .page-forum .topic-reply-box .preview-content,
+    .profile.statistics .chart-container-rf .left,
+    body > .layout-container > .layout-container__inner .sec-client .client-block__image,
     body.index .widget-container .widget.friend_list_updates .navi-btn,
     .editprofile .also-available-at-comment,
     .editprofile .also-available-at-help,
@@ -2478,6 +2532,22 @@ regexp("https://fal.myanimelist.net/.*") {
         padding-top: 15px
     }
 
+    .page-forum .forum-topic-message .topic-reply-box.in-timeline {
+        margin: 5px!important
+    }
+
+    .page-forum .topic-reply-box .preview-content,
+    .profile #profile-stats-anime-genre-table table,
+    .profile #profile-stats-manga-genre-table table,
+    .profile .user-compatability-graph.pl4.pr4.pb12,
+    .mal-alert.mt24.btn-toggle-detail.js-pc-btn-toggle-detail.open,
+    .mal-alert.secondary.mt0,
+    .profile.statistics .chart-container-rf .left,
+    .profile.statistics .content-container .container-right .chart-wrapper .filter,
+    .profile.statistics .content-container .container-right .container .view_all > a,
+    body > .layout-container > .layout-container__inner,
+    body > .layout-container > .layout-container__inner .sec-client .client-block,
+    body > .layout-container > .layout-container__inner .sec-client .client-block__image,
     .review-votes-modal .modal_contents .list .item .username .tag,
     .widget.seasonal.right .widget-slide-outer,
     div#modern-about-me-inner,
@@ -2739,6 +2809,7 @@ regexp("https://fal.myanimelist.net/.*") {
         border-bottom-left-radius: var(--br)!important
     }
 
+    .content-left.stacks-detail .tile-anime-list .seasonal-anime .widget,
     .dark-mode .forum .forum-search-side .forum-search-input-submit,
     .forum .forum-search-side .forum-search-input-submit,
     .dark-mode .news.featured .featured-search-side .featured-search-input-submit,
@@ -2755,6 +2826,8 @@ regexp("https://fal.myanimelist.net/.*") {
         border-bottom-right-radius: var(--br)
     }
 
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab,
     .seasonal-anime-list .anime-header,
     .stacks .stacks-detail .list-anime-list .seasonal-anime .head,
     .dark-mode .forum .forum-board-list > div:first-child,
@@ -2780,7 +2853,8 @@ regexp("https://fal.myanimelist.net/.*") {
         border-top-left-radius: var(--br)
     }
 
-
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab::before,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab::before,
     .js-people-manga.js-anime-watch-status-people-manga-inmylist td:last-child,
     .js-table-people-staff .js-people-staff:first-child td:last-child,
     .js-table-people-character .js-people-character:first-child td:last-child {
@@ -2827,7 +2901,8 @@ regexp("https://fal.myanimelist.net/.*") {
 
     #dialog,
     .dark-mode #dialog,
-    #content .shared-table td.borderClass {
+    #content .shared-table td.borderClass,
+    body > .layout-container > .layout-container__inner {
         border: 1px solid !important
     }
 
@@ -2926,6 +3001,9 @@ regexp("https://fal.myanimelist.net/.*") {
     #characterForm table.episode-character-edit .table-header td,
     #staffForm li,
     #staffForm table td,
+    body > .layout-container > .layout-container__inner,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-vote-score li a,
+    .mal-modal .mal-modal-dialog .mal-modal-content .mal-modal-body .modal-vote-reply,
     .dark-mode .stacks .stacks-detail .list-anime-list .seasonal-anime .head .add-edit-button .button,
     .dark-mode .top-ranking-table .status .btn-addEdit-large.btn-anime-watch-status,
     .top-ranking-table .status .btn-addEdit-large.btn-anime-watch-status,
@@ -2935,6 +3013,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .episode-edit-character-per-character .edit-roll-list-block.edit-character-list-block,
     .episode-edit-staff-per-episode .edit-roll-list-block.edit-character-list-block,
     body.news .news-content-block.news-tags h2.news-tags-header,
+    .dark-mode body.news .news-content-block.news-tags h2.news-tags-header,
     .manga-store .section-title,
     .dark-mode .episode_list .episode-list-header td,
     .episode_list .episode-list-header td,
@@ -3023,6 +3102,7 @@ regexp("https://fal.myanimelist.net/.*") {
         display: inline-block!important
     }
 
+    .page-forum .forum.thread .replies.in-thread .topic-reply-box.in-thread,
     .dark-mode .mymessages .message.unread,
     .mymessages .message.unread,
     .dark-mode .news-list .comment-list,
@@ -3259,6 +3339,11 @@ regexp("https://fal.myanimelist.net/.*") {
         text-overflow: ellipsis
     }
 
+    .rightside.js-scrollfix-bottom-rel .edit-info .h1-title [itemprop="name"] .title-english {
+        font-size: 0.8rem;
+        opacity: 0.8
+    }
+
     .profile.statistics .content-container .container-right .chart-wrapper .item .score,
     #delete,
     #read,
@@ -3393,6 +3478,7 @@ regexp("https://fal.myanimelist.net/.*") {
         margin-left: 5px
     }
 
+    body > .layout-container > .layout-container__inner,
     .message-wrapper .content .userimg,
     .widget.recommendations.left .spaceit.borderClass,
     .error404 > a > img,
@@ -3613,6 +3699,8 @@ regexp("https://fal.myanimelist.net/.*") {
         border: 2px solid #a0b1c514
     }
 
+    .profile #profile-stats-anime-genre-table table,
+    .profile #profile-stats-manga-genre-table table,
     div#modern-about-me-inner,
     .top-ranking-table,
     .people-favorites-ranking-table,
@@ -4063,6 +4151,7 @@ regexp("https://fal.myanimelist.net/.*") {
         background: #682121!important
     }
 
+    .profile.statistics .content-container .container-right .amcharts-Sprite-group.amcharts-Rectangle-group,
     .amcharts-Sprite-group.amcharts-PointedShape-group.amcharts-PointedRectangle-group {
         fill: var(--color-foreground2)!important;
     }
@@ -4651,6 +4740,34 @@ url-prefix("https://myanimelist.net/manga") {
     .episode-edit #video_reason {
         width: 95%;
     }
+
+    table.anime_detail_related_anime a {
+        margin-bottom: 1px;
+        display: inline-block
+    }
+
+    .rightside.js-scrollfix-bottom-rel #horiznav_nav ul li a {
+        padding: 5px!important
+    }
+
+    .rightside.js-scrollfix-bottom-rel #horiznav_nav ul li a[href$="/userrecs"],
+    .rightside.js-scrollfix-bottom-rel #horiznav_nav ul li a[href$="/stacks"] {
+        font-size: 0px!important;
+        height: 14.5px!important;
+        position: relative;
+        display: block;
+        top: 1px
+    }
+
+    #horiznav_nav ul li a[href$="/userrecs"]:before {
+        content: "Recs";
+        font-size: 12px;
+    }
+
+    #horiznav_nav ul li a[href$="/stacks"]:before {
+        content: "Stacks";
+        font-size: 12px
+    }
 }
 
 @-moz-document url-prefix("https://myanimelist.net/anime.php"),
@@ -4825,7 +4942,7 @@ url-prefix("https://myanimelist.net/topmanga") {
         background-color: var(--color-foreground3)!important;
         -webkit-border-radius: var(--br)!important;
         border-radius: var(--br)!important;
-        width: 48.5%;
+        width: 48.2%;
         display: inline-block;
         margin: 5px;
         padding: 2px
@@ -5150,6 +5267,39 @@ url-prefix("https://myanimelist.net/clubs.php") {
         #company_favorites .link .title {
             top: -10px
         }
+    }
+
+    .profile.statistics .content-container .container-right .chart-wrapper .filter.disabled {
+        width: max-content
+    }
+
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab {
+        padding-left: 7px!important
+    }
+
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab::before,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab::before {
+        content: "";
+        display: block;
+        width: 136px;
+        position: absolute;
+        height: 22px;
+        margin-top: -4px;
+        margin-left: 32px
+    }
+
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .btn-tab,
+    .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .btn-tab {
+        position: relative
+    }
+
+    .profile .user-compatability-graph.pl4.pr4.pb12 {
+        padding: 0px 12px 12px!important
+    }
+
+    .profile .user-compatability-graph.pl4.pr4.pb12 .bar-outer {
+        width: 100%
     }
 }
 
@@ -5871,6 +6021,10 @@ url-prefix("https://myanimelist.net/people") {
         border: 0
     }
 
+    .js-scrollfix-bottom-rel .news-container .news-info-block .information {
+        margin-left: 0!important
+    }
+
     .people-character.navi-people-character.js-navi-people-character {
         margin-bottom: -5px
     }
@@ -5926,7 +6080,8 @@ url-prefix("https://myanimelist.net/people") {
     }
 }
 
-@-moz-document regexp("https://myanimelist.net/anime.*/producer.*") {
+@-moz-document regexp("https://myanimelist.net/anime.*/producer.*"),
+regexp("https://myanimelist.net/stacks/\\d.*") {
     .content-left > div.mb16 {
         overflow: hidden;
         -webkit-border-radius: var(--border-radius);
@@ -5962,6 +6117,7 @@ url-prefix("https://myanimelist.net/people") {
         border-radius: var(--border-radius)!important
     }
 
+    .stacks .stacks-detail .tile-anime-list .seasonal-anime.js-seasonal-anime,
     .js-anime-category-producer.seasonal-anime.js-seasonal-anime.js-anime-type-all,
     .js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all {
         & .title {
@@ -6010,6 +6166,15 @@ url-prefix("https://myanimelist.net/people") {
         & > .edit > a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.dropped {
             background: rgb(104, 33, 33)!important;
         }
+    }
+
+    .stacks .stacks-detail .tile-anime-list .seasonal-anime.js-seasonal-anime .title {
+        padding: 0
+    }
+
+    .stacks .stacks-detail .any_status .score .graph.plan_to_watch,
+    .stacks .stacks-detail .any_status .score .graph.plan_to_read {
+        background: rgb(102, 90, 46)!important
     }
 
     table.js-seasonal-anime-append {
