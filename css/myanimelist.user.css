@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.81
+@version      1.0.82
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -56,13 +56,13 @@ regexp("https://fal.myanimelist.net/.*") {
     if(c_font !=" url " && c_font_name !="fontFamily") {
         @import url('' + c_font);
         body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        input,
-        span,
+        h1:not(#modern-about-me-inner > div *),
+        h2:not(#modern-about-me-inner > div *),
+        h3:not(#modern-about-me-inner > div *),
+        h4:not(#modern-about-me-inner > div *),
+        h5:not(#modern-about-me-inner > div *),
+        input:not(#modern-about-me-inner > div *),
+        span:not(#modern-about-me-inner > div *),
         textarea,
         input[type=checkbox] + label:before,
         footer div,
@@ -73,11 +73,11 @@ regexp("https://fal.myanimelist.net/.*") {
         a.button_edit,
         a.button_add,
         .btn-category,
-        .h1,
-        .h2,
-        .h3,
-        .h4,
-        .h5,
+        .h1:not(#modern-about-me-inner > div *),
+        .h2:not(#modern-about-me-inner > div *),
+        .h3:not(#modern-about-me-inner > div *),
+        .h4:not(#modern-about-me-inner > div *),
+        .h5:not(#modern-about-me-inner > div *),
         .inputtext,
         .information .info,
         .news-unit,
@@ -1123,7 +1123,6 @@ regexp("https://fal.myanimelist.net/.*") {
     .user-friends.pt4.pb12,
     .user-profile-sns,
     .widget-container .widget.reviews .item .info,
-    .widget-slide-block .widget-slide .btn-anime .external-link,
     .widget.anime_discussions.left .widget-content,
     .widget.anime_suggestions.left > div > div,
     .widget.announcements.left > .widget-content,
@@ -1424,6 +1423,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .page-forum .forum-topic-message .message-wrapper .profile,
     .quickadd-content .quickAdd-result-header,
     .tag.preliminary,
+    .widget-slide-block .widget-slide .btn-anime .external-link,
     .widget.latest_episode_video.left .external-link,
     .widget.popular_promotion_video.left .external-link {
         background-color: var(--color-foreground2)!important
@@ -2622,7 +2622,6 @@ regexp("https://fal.myanimelist.net/.*") {
     #content .rightside.js-scrollfix-bottom-rel #anime_recommendation > div.anime-slide-outer,
     #content .rightside.js-scrollfix-bottom-rel #manga_recommendation > div.anime-slide-outer,
     #content > div.left-column > article.widget-container.left > .widget.recommendations.left .widget-content,
-    .l-aboutme-bg-frame.bg-pt,
     .watch-video .video-list,
     .report-block.js-report-block,
     .editprofile .also-available-at-comment,
@@ -2794,7 +2793,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .oped-popup-inner,
     .page-common #horiznav_nav ul li a,
     .page-common .header-menu-login .btn-signup,
-    .page-common img,
+    .page-common img:not(.l-mainvisual img),
     .page-forum,
     .page-forum .forum-topic-message .message-wrapper,
     .page-forum .forum-topic-message:not(:last-child),
@@ -3350,7 +3349,7 @@ regexp("https://fal.myanimelist.net/.*") {
     }
 
     .widget.recommendations div td {
-        width: 48.5%;
+        width: 48%;
         display: inline-block;
         margin: 5px;
         background: var(--color-foreground3)
@@ -5040,6 +5039,22 @@ url-prefix("https://myanimelist.net/clubs.php") {
     table > tbody > tr > td {
         background-color: var(--color-foreground)!important;
         padding: 10px!important
+    }
+
+    div[style="margin: 0 5px;"] .normal_header.mt16.clearfix {
+        border: 0
+    }
+
+    #contentWrapper > div:nth-child(1) > h1.h1.edit-info,
+    #contentWrapper > div:nth-child(1) > h1.h1 {
+        background-color: var(--color-foreground)!important;
+        padding: 10px!important;
+        -webkit-border-radius: var(--br) !important;
+        border-radius: var(--br) !important;
+        top: 10px;
+        margin-bottom: 15px;
+        position: relative;
+        width: 100%
     }
 
     .club-search-form-search.clearfix.pb16 form.di-ib.js-advancedsearch {
