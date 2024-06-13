@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.85
+@version      1.0.86
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -49,12 +49,18 @@
 @var checkbox remove_malxj    'Hide MalxJapan' 0
 @var checkbox remove_reviews  'Hide Reviews' 0
 @var checkbox remove_edit     'Hide Edit Buttons' 0
-@var checkbox remove_footer    'Hide Footer' 0
+@var checkbox remove_footer   'Hide Footer' 0
 @var checkbox remove_listnot  'Hide Public List Warning' 0
 @var checkbox removestatlink  'Hide My Statistics Links' 0
 @var checkbox mystatsmin      'Change My Statistics Style' 0
 @var checkbox mystatsmin2     'Change My Statistics Style 2' 0
-@var checkbox rightpanelstyle 'Change Right Widgets Style' 0
+@var checkbox rightpanelstyle 'Change The Right Widgets Style' 0
+@var checkbox editIcons       'Add icons to the Edit Entry' 1
+@var checkbox replaceAdd      'Replace Add button with an icon' 0
+@var checkbox replaceEdit     'Replace Edit button with an icon' 0
+@var checkbox replaceCW       'Replace CW button with an icon' 0
+@var checkbox replacePTW      'Replace PTW button with an icon' 0
+@var checkbox replaceCMPL     'Replace CMPL button with an icon' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*"),
@@ -328,6 +334,9 @@ regexp("https://fal.myanimelist.net/.*") {
         select[name="uloc"],
         iframe.movie.youtube,
         button.inputButton,
+        form[name="add_anime"] #increment_episode,
+        form[name="add_manga"] #increment_volume,
+        form[name="add_manga"] #increment_chapter,
         #content > table > tbody > tr > td:nth-child(2) tr > td table.mt8.episode_list.js-watch-episode-list,
         #content > table > tbody > tr > td:nth-child(2) tr > td .related-entries,
         .page-common .breadcrumb .di-ib,
@@ -582,7 +591,7 @@ regexp("https://fal.myanimelist.net/.*") {
             border-radius: var(--border-radius);
             -webkit-box-shadow: 0 0 4px var(--shadow-color)!important;
             box-shadow: 0 0 4px var(--shadow-color)!important;
-             border: var(--border) solid var(--border-color) !important;
+            border: var(--border) solid var(--border-color) !important
         }
     }
 
@@ -668,7 +677,7 @@ regexp("https://fal.myanimelist.net/.*") {
     #footer-block > .footer-link-icon-block:nth-child(3),
     .profile.statistics .content-container .container-right .chart-wrapper .filter.disabled > div:nth-child(2),
     body > div#_cm-css-reset,
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text) {
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text):not(.news-list .comment-list .text) {
         display: none !important
     }
 
@@ -1447,6 +1456,9 @@ regexp("https://fal.myanimelist.net/.*") {
         background-color: var(--color-foreground2)!important
     }
 
+    form[name="add_anime"] #increment_episode,
+    form[name="add_manga"] #increment_volume,
+    form[name="add_manga"] #increment_chapter,
     .page-forum .forum .message .topic-reply-box.in-timeline,
     .profile.statistics .daterangepicker .mal-btn.cancelBtn,
     body > .layout-container > .layout-container__inner .sec-client .client-block,
@@ -2585,6 +2597,9 @@ regexp("https://fal.myanimelist.net/.*") {
         margin: 5px!important
     }
 
+    form[name="add_anime"] #increment_episode,
+    form[name="add_manga"] #increment_volume,
+    form[name="add_manga"] #increment_chapter,
     .profile ul.user-status.border-top.pb8.mb4,
     .profile ul.user-status.border-top.mt12.mb12,
     .video-block .video-list,
@@ -2961,6 +2976,8 @@ regexp("https://fal.myanimelist.net/.*") {
         border-bottom-right-radius: var(--br)!important
     }
 
+    form[name="add_anime"] #increment_episode,
+    form[name="add_manga"] #increment_episode,
     .profile .user-statistics-stats.mt16 .stats.anime,
     .profile .user-statistics-stats.mt16 .stats.manga,
     .profile .user-statistics-stats.mt16 .updates.anime,
@@ -2969,7 +2986,6 @@ regexp("https://fal.myanimelist.net/.*") {
     .profile .user-profile-sns,
     .profile .user-badges.di-b.clearfix,
     .profile ul.user-status.border-top.pb8.mb4,
-    .profile ul.user-status.border-top.mt12.mb12,
     .people-informantion-more.js-people-informantion-more,
     article.widget-container.left .widget div#widget-seasonal-video,
     article.widget-container.left .widget div#widget-episode-video,
@@ -4431,6 +4447,164 @@ regexp("https://fal.myanimelist.net/.*") {
             opacity: 1
         }
     }
+
+    if(editIcons) {
+        table#dialog form a[title="Chapter Details"]:before,
+        table#dialog form a[title="Episode Details"]:before {
+            content: "\f1da";
+            font-size: 12px
+        }
+
+        form #chapdetails #chaplayer a > small:before,
+        form #epdetails #eplayer a > small:before {
+            content: "\f1f8";
+            font-size: 12px;
+            color: var(--color-link)
+        }
+
+        table#dialog form #start_date_insert_today:before,
+        table#dialog form #end_date_insert_today:before {
+            content: "\f133";
+            font-size: 14px
+        }
+
+        table#dialog form #unknown_start,
+        table#dialog form #unknown_end {
+            display: none !important;
+        }
+
+        form[name="add_anime"] #increment_episode,
+        form[name="add_manga"] #increment_volume,
+        form[name="add_manga"] #increment_chapter {
+            margin-right: 3px;
+            font-size: 14px;
+            position: relative;
+            top: 1px;
+            padding: 8.5px!important
+        }
+
+        form #epdetails #eplayer a > small,
+        form #chapdetails #chaplayer a > small,
+        form[name="add_anime"] select + small + label,
+        form[name="add_manga"] select + small > label,
+        table#dialog form #start_date_insert_today,
+        table#dialog form #end_date_insert_today,
+        table#dialog form a[title="Chapter Details"],
+        table#dialog form a[title="Episode Details"] {
+            font-size: 0px!important;
+            font-family: fontAwesome;
+            margin-left: 5px;
+        }
+
+        form[name="add_anime"] select + small + label:before,
+        form[name="add_manga"] select + small > label:before {
+            content: "\f273";
+            cursor: pointer;
+            font-size: 14px
+        }
+
+        form[name="add_anime"] input[type="checkbox"],
+        form[name="add_manga"] input[type="checkbox"] {
+            cursor: pointer;
+            vertical-align: middle;
+            -webkit-appearance: inherit;
+            position: relative;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        form[name="add_anime"] input[type="checkbox"]:checked:after,
+        form[name="add_manga"] input[type="checkbox"]:checked:after {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto!important;
+            height: 12px;
+            width: 12px;
+            font-family: fontAwesome;
+            content: "\f00c";
+            color: var(--color-link)!important
+        }
+
+        form[name="add_anime"] i.fa-solid.fa-circle-question,
+        form[name="add_manga"] i.fa-solid.fa-circle-question {
+            margin-left: 3px
+        }
+    }
+
+    if(replaceEdit) {
+        .spaceita.Lightbox_AddEdit.button_edit.ga-click:not(.seasonal-anime):not(.addtolist):not(.watching):not(.plantowatch):not(.completed) span,
+        a.Lightbox_AddEdit.button_edit.ga-click:not(.seasonal-anime):not(.addtolist):not(.watching):not(.plantowatch):not(.completed) span {
+            font-size: 0px!important
+        }
+
+        .spaceit a.Lightbox_AddEdit.button_edit.ga-click:not(.seasonal-anime):not(.addtolist):not(.watching):not(.plantowatch):not(.completed) span:before,
+        a.Lightbox_AddEdit.button_edit.ga-click:not(.seasonal-anime):not(.addtolist):not(.watching):not(.plantowatch):not(.completed) span:before {
+            content: "\f304";
+            height: 15px;
+            font-size: 10px!important
+        }
+    }
+
+    if(replaceAdd) {
+        .spaceit a.Lightbox_AddEdit.button_add.ga-click span,
+        .spaceit_pad > a.Lightbox_AddEdit.button_add.ga-click span,
+        a.Lightbox_AddEdit.button_add.ga-click.addtolist:not(.seasonal-anime) span {
+            font-size: 0px!important
+        }
+
+        .spaceit_pad > a.Lightbox_AddEdit.button_add.ga-click span:before,
+        .spaceit a.Lightbox_AddEdit.button_add.ga-click span:before,
+        a.Lightbox_AddEdit.button_add.ga-click.addtolist:not(.seasonal-anime) span:before {
+            content: "\2b";
+            height: 15px;
+            font-size: 10px!important
+        }
+    }
+
+    if(replaceCW) {
+        .spaceit a.Lightbox_AddEdit.button_edit.ga-click.watching span,
+        a.Lightbox_AddEdit.button_edit.ga-click.watching:not(.seasonal-anime) span {
+            font-size: 0px!important
+        }
+
+        .spaceit a.Lightbox_AddEdit.button_edit.ga-click.watching span:before,
+        a.Lightbox_AddEdit.button_edit.ga-click.watching:not(.seasonal-anime) span:before {
+            content: "\f26c";
+            height: 15px;
+            font-size: 10px!important
+        }
+    }
+
+    if(replacePTW) {
+        .spaceit a.Lightbox_AddEdit.button_edit.ga-click.plantowatch span,
+        a.Lightbox_AddEdit.button_edit.ga-click.plantowatch:not(.seasonal-anime) span {
+            font-size: 0px!important
+        }
+
+        .spaceit a.Lightbox_AddEdit.button_edit.ga-click.plantowatch span:before,
+        a.Lightbox_AddEdit.button_edit.ga-click.plantowatch:not(.seasonal-anime) span:before {
+            content: "\f017";
+            height: 15px;
+            font-size: 10px!important
+        }
+    }
+
+    if(replaceCMPL) {
+        .spaceit a.Lightbox_AddEdit.button_edit.ga-click.completed span,
+        a.Lightbox_AddEdit.button_edit.ga-click.completed:not(.seasonal-anime) span {
+            font-size: 0px!important
+        }
+
+        .spaceit a.Lightbox_AddEdit.button_edit.ga-click.completed span:before,
+        a.Lightbox_AddEdit.button_edit.ga-click.completed:not(.seasonal-anime) span:before {
+            content: "\f00c";
+            height: 15px;
+            font-size: 10px!important
+        }
+    }
 }
 
 @-moz-document url-prefix("https://myanimelist.net/anime"),
@@ -4519,6 +4693,18 @@ url-prefix("https://myanimelist.net/manga") {
     .stacks .recent-list .column-item,
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr > td:nth-child(2) {
         padding-top: 10px
+    }
+
+    .di-tc.va-t[style="width:392px;"] {
+        width: 49.5%!important
+    }
+
+    #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr > td > div.di-t {
+        width: 100%
+    }
+
+    div.di-t > div > div.theme-songs.js-theme-songs > table > tbody > tr > td[width="84%"] {
+        width: 92%
     }
 
     .rightside.js-scrollfix-bottom-rel .detail-page-featured-article .news-list .news-unit,
@@ -5782,9 +5968,14 @@ url-prefix("https://myanimelist.net/clubs.php") {
         border: 0
     }
 
-    #content > table > tbody > tr > td > table > tbody > tr {
+    #content > table > tbody > tr > td > table > tbody > tr:has(td[width="225"]) {
+        border-spacing: 25px 10px
+    }
+
+    #content > table > tbody > tr > td > table > tbody > tr td[width="225"] {
         border: var(--border) solid var(--border-color) !important;
-        border-radius: var(--border-radius)
+        border-radius: var(--border-radius);
+        padding: 10px!important;
     }
 
     #content > table > tbody > tr > td > table > tbody > tr > td:first-child,
@@ -6063,7 +6254,7 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     }
 
     input[type="checkbox"]:checked:after {
-        font-family: "Font Awesome 6 Pro";
+        font-family: fontAwesome;
         content: "\f00c";
         margin-left: -6px;
         color: var(--color-link)!important;
