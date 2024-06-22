@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.86
+@version      1.0.87
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -39,6 +39,7 @@
 @var checkbox vertical_fav    'Vertical Favorites' 0
 @var checkbox scroll_synop    'Scrollable Synopsis' 0
 @var checkbox remove_en_title 'Hide English Title' 0
+@var checkbox remove_jp_title 'Hide Japanese Title' 0
 @var checkbox remove_edits    'Hide Left Side Edit Status' 0
 @var checkbox remove_edits2   'Hide Right Side Edit Status' 0
 @var checkbox remove_synop    'Hide Synopsis' 0
@@ -61,6 +62,10 @@
 @var checkbox replaceCW       'Replace CW button with an icon' 0
 @var checkbox replacePTW      'Replace PTW button with an icon' 0
 @var checkbox replaceCMPL     'Replace CMPL button with an icon' 0
+@var checkbox studioRedesign  'Companies Page Redesign' 0
+@var checkbox seasonCardHover 'Companies Page Show Anime Details on Hover' 0
+@var checkbox seasonCardDot   'Companies Page Add Dot Status Before The Title' 0
+@var checkbox forumProfileC   'Center Forum Profiles' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*"),
@@ -573,12 +578,13 @@ regexp("https://fal.myanimelist.net/.*") {
             }
         }
 
-        .dark-mode body:not(.ownlist),
-        body:not(.ownlist) {
+        .dark-mode body:not(.ownlist):not(.ownlist_anime_update):not(.ownlist_manga_update),
+        body:not(.ownlist):not(.ownlist_anime_update):not(.ownlist_manga_update) {
             background: url(bg_image)!important;
             background-size: cover!important;
             background-attachment: fixed!important;
             background-color: var(--color-background)!important;
+            background-repeat: no-repeat!important;
         }
 
         .page-common #myanimelist #contentWrapper {
@@ -1559,7 +1565,6 @@ regexp("https://fal.myanimelist.net/.*") {
     #characterForm .data-actor.js-data-actor.pt4.pb4:hover,
     #characterForm .edit-character-list-block.js-edit-character-list-block,
     #characterForm .data-actor.js-data-actor.pt4.pb4.on,
-    .forum .message-wrapper > div.profile .icon-team-title,
     #myanimelist > .wrapper.js-color-pc-constant > .text-ribbon.ga-click.ga-impression > .ac.fs12.pt8.pr8.pb8.pl8,
     .forum div.content > div.user > div.item.custom-title.mal-badge,
     .page-common .header-notification-button.has-unread:after,
@@ -1923,8 +1928,8 @@ regexp("https://fal.myanimelist.net/.*") {
     .profile .statistics-updates .data .text.completed,
     .dark-mode .page-common .content-container .container-right h5,
     .page-common .content-container .container-right h5,
-    .dark-mode body.news .news-container *:not(a),
-    body.news .news-container *:not(a),
+    .dark-mode body.news .news-container *:not(a):not(b):not(.tag-color-feature-spoiler),
+    body.news .news-container *:not(a):not(b):not(.tag-color-feature-spoiler),
     span:not(.enabled):not(.disabled):not(.mr4):not(span),
     i:not(.fa-solid):not(.far):not(.fas):not(.fa-regular):not(.fa-brands):not(.fa-brands):not(.forum .content span[style^="color"] i),
     .score-label.score-na,
@@ -2292,7 +2297,6 @@ regexp("https://fal.myanimelist.net/.*") {
         text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color)!important
     }
 
-    .icon-team-title,
     select option:checked,
     .dark-mode .characters-search-form-search .inputButton,
     .characters-search-form-search .inputButton,
@@ -2331,8 +2335,6 @@ regexp("https://fal.myanimelist.net/.*") {
 
     .text-ribbon.ga-click.ga-impression > div > a,
     .js-profile-user-comment.inputButton.btn-form-submit.fs12.pt4.pb4.pl8.pr8,
-    .dark-mode .page-forum .forum-topic-message .message-wrapper .icon-team-title,
-    .page-forum .forum-topic-message .message-wrapper .icon-team-title,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
     .mal-dropdown-outer .mal-dropdown-menu a.item:hover,
     .dark-mode .mal-dropdown-outer .mal-dropdown-menu a.item:focus,
@@ -2430,8 +2432,8 @@ regexp("https://fal.myanimelist.net/.*") {
     .dark-mode .page-common .incrementalSearchResultList .list .off .info.user .name,
     .page-common .incrementalSearchResultList .list .off .info.user .name,
     .h3_character_name,
-    .dark-mode .page-common a,
-    .page-common a,
+    .dark-mode .page-common a:not(.icon-team-title):not(.header-profile-link),
+    .page-common a:not(.icon-team-title):not(.header-profile-link),
     .dark-mode .page-common a:visited,
     .page-common a:visited {
         color: var(--color-link)!important;
@@ -2835,7 +2837,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .oped-popup-inner,
     .page-common #horiznav_nav ul li a,
     .page-common .header-menu-login .btn-signup,
-    .page-common img:not(.l-mainvisual img),
+    .page-common img:not(.l-mainvisual img):not(.seasonal-anime.js-seasonal-anime img),
     .page-forum,
     .page-forum .forum-topic-message .message-wrapper,
     .page-forum .forum-topic-message:not(:last-child),
@@ -4435,6 +4437,10 @@ regexp("https://fal.myanimelist.net/.*") {
         padding-left: 15px!important
     }
 
+    .icon-team-title.forum {
+        opacity: .82
+    }
+
     if(seasonalhover) {
         .widget.anime_suggestions.left #widget-currently-watching > div.widget-slide-outer ul > li > a span,
         .widget.seasonal.left #widget-seasonal-video > div.widget-slide-outer > ul > li > a span {
@@ -4603,6 +4609,30 @@ regexp("https://fal.myanimelist.net/.*") {
             content: "\f00c";
             height: 15px;
             font-size: 10px!important
+        }
+    }
+
+    if(forumProfileC) {
+        .custom-forum-title {
+            width: 100%!important
+        }
+
+        .page-forum .forum-topic-message .message-wrapper .profile {
+            text-align: center
+        }
+
+        .page-forum .forum-topic-message .message-wrapper .profile a.forum-icon.ga-click,
+        .page-forum .forum-topic-message .message-wrapper .profile:has(:not(.custom-forum-title)) .username,
+        .page-forum .forum-topic-message .message-wrapper .profile .custom-forum-title {
+            padding-bottom: 4px!important
+        }
+
+        .page-forum .forum-topic-message .message-wrapper .profile:has(.custom-forum-title) .username {
+            padding-bottom: 1px!important
+        }
+
+        .page-forum .forum-topic-message .message-wrapper .profile a.icon-team-title {
+            display: inline-block!important
         }
     }
 }
@@ -4992,16 +5022,46 @@ url-prefix("https://myanimelist.net/manga") {
         margin-bottom: -5px
     }
 
-    if(remove_en_title) {
+    if(!remove_jp_title && remove_en_title) {
+        #content > table > tbody > tr > td:nth-child(2) > div > h1 > span.h1-title span[itemprop="name"] span.title-english,
         #contentWrapper > div:nth-child(1) .h1.edit-info > div.h1-title > div > p.title-english {
             display: none
+        }
+    }
+
+    if(!remove_en_title && remove_jp_title) {
+
+        #contentWrapper > div:nth-child(1) .h1.edit-info > div.h1-title > div:has(p.title-english) > h1.title-name.h1_bold_none,
+        #contentWrapper > div:nth-child(1) .h1.edit-info > div.h1-title > div:has(p.title-english) > br {
+            display: none
+        }
+
+        #contentWrapper > div:nth-child(1) .h1.edit-info > div.h1-title > div > p.title-english {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-main-text-op) !important;
+            opacity: .8;
+            text-shadow: 0 0 var(--t-shadow-strength) var(--t-shadow-color) !important
+        }
+
+        #content > table > tbody > tr > td:nth-child(2) > div > h1.edit-info > span.h1-title:has(span.title-english) {
+            text-indent: -99999px;
+            margin-top: -15px;
+            display: block;
+            width: 100%
+        }
+
+        #content > table > tbody > tr > td:nth-child(2) > div > h1.edit-info > span.h1-title span[itemprop="name"] span.title-english {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--color-main-text-op) !important
         }
     }
 
     if(wide_mal) {
         body,
         html {
-            min-width: 1300px;
+            min-width: 1300px
         }
 
         .page-common #myanimelist #contentWrapper {
@@ -5038,7 +5098,7 @@ url-prefix("https://myanimelist.net/manga") {
 
         .dark-mode .page-common #myanimelist {
             min-width: 700px;
-            width: wide_mal_w!important;
+            width: wide_mal_w!important
         }
 
         .rightside.js-scrollfix-bottom-rel #forumTopics table {
@@ -5087,7 +5147,7 @@ url-prefix("https://myanimelist.net/manga") {
 
         .rightside.js-scrollfix-bottom-rel .detail-stack-block .column-item {
             display: grid;
-            grid-template-columns: 105px 1fr;
+            grid-template-columns: 105px 1fr
         }
 
         .rightside.js-scrollfix-bottom-rel .detail-stack-block .column-item .detail {
@@ -5116,7 +5176,7 @@ url-prefix("https://myanimelist.net/manga") {
 
         #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel .news-list .news-unit.clearfix a img {
             max-width: 50px;
-            max-height: 78px;
+            max-height: 78px
         }
     }
 
@@ -6677,6 +6737,286 @@ url-prefix("https://myanimelist.net/people") {
     }
 }
 
+@-moz-document regexp("https://myanimelist.net/anime.*/producer.*") {
+    .seasonal-anime.js-seasonal-anime .image img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: contain;
+        object-fit: contain
+    }
+
+    .pagination.ac .link {
+        -webkit-border-radius: var(--border-radius);
+        border-radius: var(--border-radius)
+    }
+
+    .news-unit.clearfix.rect {
+        border: 0
+    }
+
+    .normal_header.ml8.clearfix.js-search-filter-block span.di-ib.mt8 {
+        margin-top: 5px!important
+    }
+
+    .navi-seasonal.js-navi-company .horiznav-nav-seasonal.po-r {
+        padding: 5px 0px!important
+    }
+
+    .navi-seasonal.js-navi-company .horiznav-nav-seasonal.po-r span.fl-r.btn-show-sort.js-btn-show-sort.mr12 {
+        margin: 2px
+    }
+
+    .js-categories-seasonal.tile-anime-list .seasonal-anime.js-seasonal-anime img,
+    .js-categories-seasonal.tile-anime-list .seasonal-anime.js-seasonal-anime .image {
+        border-radius: 0!important;
+        -webkit-border-radius: 0 !important
+    }
+
+    if(add_border) {
+        .news-unit-right,
+        .navi-seasonal.js-navi-company,
+        .normal_header.ml8.clearfix.js-search-filter-block,
+        .user-profile-sns.mb16,
+        .js-categories-seasonal.tile-anime-list .seasonal-anime.js-seasonal-anime,
+        #content > div.content-left > div.logo img {
+            border: 1px solid var(--border-color)!important;
+            -webkit-border-radius: var(--border-radius);
+            border-radius: var(--border-radius)
+        }
+    }
+
+    if(add_border && studioRedesign) {
+        .content-left .mb16 .spaceit_pad:has(.dark_text) {
+            border-top: 1px solid
+        }
+
+        .content-left .mb16 .spaceit_pad:has(.dark_text):first-child {
+            border-left: 1px solid !important;
+            -webkit-border-top-left-radius: var(--border-radius);
+            border-top-left-radius: var(--border-radius)
+        }
+
+        .content-left .mb16 .spaceit_pad:has(.dark_text):nth-last-child(2) {
+            border-right: 1px solid !important;
+            -webkit-border-top-right-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius)
+        }
+
+        .content-left .mb16 .spaceit_pad:has(:not(.dark_text)):last-child {
+            border: 1px solid!important;
+            -webkit-border-bottom-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
+            -webkit-border-bottom-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius)
+        }
+    }
+
+    if(studioRedesign) {
+        #contentWrapper > div:nth-child(1) {
+            padding-top: 0
+        }
+
+        .content-left {
+            width: 100%!important;
+            display: -ms-inline-grid!important;
+            display: inline-grid!important
+        }
+
+        #content > div.content-left > div.logo {
+            width: 90px!important;
+            height: 90px
+        }
+
+        .anime-filter .content-left .logo img {
+            height: 90px!important;
+            width: 90px!important
+        }
+
+        .content-left .mb16:nth-child(4) {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            width: 1040px
+        }
+
+        .content-left .mb16 .spaceit_pad {
+            text-align: center;
+            width: auto!important;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1
+        }
+
+        .content-left .mb16 .spaceit_pad:has(:not(.dark_text)):last-child {
+            text-align: start;
+            border-top: 1px solid;
+            -webkit-flex-basis: 100%;
+            -ms-flex-preferred-size: 100%;
+            flex-basis: 100%
+        }
+
+        #contentWrapper > div:nth-child(1) > div.h1.edit-info {
+            position: relative;
+            top: 55px;
+            left: 90px;
+            width: 915px
+        }
+
+        #content > div.content-left > div.user-profile-sns.mb16 {
+            top: 80px;
+            width: 1020px
+        }
+
+        #content > div.content-left > div.user-profile-sns.mb16 span {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            gap: 3px;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center
+        }
+
+        #content > div.content-left > h2:nth-child(5) {
+            top: 55px
+        }
+
+        .content-left .mb16:nth-child(3),
+        #content > div.content-left > h2:nth-child(7),
+        #content > div.content-left > div.pb16 {
+            display: none
+        }
+
+        div#horiznav_nav {
+            top: 60px;
+            left: 102px;
+            position: absolute
+        }
+
+        .breadcrumb.ml12.mt4 {
+            top: -35px;
+            left: 0px;
+            position: absolute
+        }
+
+        #profileRows {
+            position: relative;
+            top: -27px;
+            left: 100px
+        }
+
+        .normal_header.ml8 {
+            margin-top: -15px!important;
+            border: 0!important
+        }
+
+        .content-right .navi-seasonal.js-navi-company {
+            width: 1040px !important;
+        }
+
+        .content-right {
+            width: 100%!important
+        }
+
+        .tile-anime-list .seasonal-anime {
+            width: 195px!important;
+            height: 310px!important
+        }
+
+        .tile-anime-list .seasonal-anime .image {
+            width: 100%!important;
+            height: 275px!important
+        }
+
+        .seasonal-anime.js-seasonal-anime .widget,
+        .seasonal-anime.js-seasonal-anime .edit {
+            top: 220px!important
+        }
+
+        .seasonal-anime.js-seasonal-anime .edit {
+            left: 155px!important
+        }
+
+        .js-categories-seasonal.tile.mt8.ml16 {
+            margin: 0!important
+        }
+
+        .seasonal-anime-list.clearfix.js-seasonal-anime-append {
+            padding: 5px 0px!important;
+            margin-left: 10px
+        }
+    }
+
+    if(seasonCardDot) {
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.watching) .title,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.on-hold) .title,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.completed) .title,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.plantowatch) .title,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.dropped) .title {
+            margin-left: 12px;
+            width: 92%!important
+        }
+
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.watching) .title:after,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.on-hold) .title:after,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.completed) .title:after,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.plantowatch) .title:after,
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.dropped) .title:after {
+            content: "";
+            height: 10px;
+            width: 10px;
+            background-color: #2e4666;
+            border-radius: 50%;
+            position: relative;
+            top: -12px;
+            left: -8px;
+            display: inline-block;
+        }
+
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.watching) .title:after {
+            background-color: #338543;
+        }
+
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.plantowatch) .title:after {
+            background-color: #665a2e;
+        }
+
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.on-hold) .title:after {
+            background-color: #c9a31f
+        }
+
+        .tile-anime-list .seasonal-anime.js-seasonal-anime:has(.js-anime-watch-status.dropped) .title:after {
+            background-color: #832f30
+        }
+    }
+
+    if(seasonCardHover) {
+        .seasonal-anime.js-seasonal-anime .widget,
+        .seasonal-anime.js-seasonal-anime .edit {
+            opacity: 0;
+            -webkit-transition: transitions;
+            -o-transition: transitions;
+            transition: transitions
+        }
+
+        .seasonal-anime.js-seasonal-anime:hover .widget,
+        .seasonal-anime.js-seasonal-anime:hover .edit {
+            opacity: 1
+        }
+    }
+}
+
 @-moz-document regexp("https://myanimelist.net/anime.*/producer.*"),
 regexp("https://myanimelist.net/stacks/\\d.*") {
     if(shadow) {
@@ -6692,6 +7032,7 @@ regexp("https://myanimelist.net/stacks/\\d.*") {
         margin-left: 20px
     }
 
+    .content-left.stacks-detail .tag span.tag-anime.mr4,
     .content-left > div.mb16 {
         overflow: hidden;
         -webkit-border-radius: var(--border-radius);
@@ -6699,7 +7040,6 @@ regexp("https://myanimelist.net/stacks/\\d.*") {
     }
 
     .anime-filter .content-left,
-    .content-right > div.normal_header.ml8.clearfix.js-search-filter-block,
     .anime-filter2 .navi-seasonal .horiznav-nav-seasonal {
         padding: 5px;
         border: 0!important
@@ -6771,6 +7111,10 @@ regexp("https://myanimelist.net/stacks/\\d.*") {
 
         & > .edit > a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.plantowatch {
             background: rgb(102, 90, 46)!important
+        }
+
+        & > .edit > a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.on-hold {
+            background: #6e5a17!important
         }
 
         & > .edit > a.Lightbox_AddEdit.button_edit.ga-click.btn-anime-watch-status.js-anime-watch-status.dropped {
