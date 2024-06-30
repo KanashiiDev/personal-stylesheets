@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.88
+@version      1.0.89
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -132,6 +132,7 @@ regexp("https://fal.myanimelist.net/.*") {
 
     :root {
         --fg: fg_color + (fg_slider);
+        --fgOP: fg_color + (fg_slider);
         --fg2: fg_color + 10 + (fg_slider);
         --fg4: fg_color + 20 + (fg_slider);
         --fgo: rgba((fg_color + 12).4) + (fg_slider);
@@ -155,9 +156,17 @@ regexp("https://fal.myanimelist.net/.*") {
         --border-color: add_border_c;
         if(blur_slider > 1) {
             --fg: rgba(fg_color + (fg_slider) (opacity) - .15);
+            --fgOP: rgba(fg_color + (fg_slider));
+            --fgOP2: rgba(fg_color + 13 + (fg_slider));
             --fgo: rgba((fg_color + 5) (opacity) - .1) +(fg_slider);
             --fg2: rgba(fg_color + 13 + (fg_slider) (opacity) - .2);
             --fg4: rgba(fg_color + 20 + (fg_slider) (opacity))
+        }
+
+        else {
+            --fgOP: fg_color + (fg_slider);
+            --fgOP2: fg_color + 10 + (fg_slider);
+            --fgo: rgba(fg_color + 5) +(fg_slider);
         }
 
         if(n_color==rgba(182, 182, 182, 1)) {
@@ -221,6 +230,8 @@ regexp("https://fal.myanimelist.net/.*") {
         --color-background: var(--bg)!important;
         --color-backgroundo: var(--bgo)!important;
         --color-foreground: var(--fg)!important;
+        --color-foregroundOP: var(--fgOP)!important;
+        --color-foregroundOP2: var(--fgOP2)!important;
         --color-foreground2: var(--fg2)!important;
         --color-foreground3: var(--fgo)!important;
         --color-foreground4: var(--fg4)!important;
@@ -269,7 +280,11 @@ regexp("https://fal.myanimelist.net/.*") {
     }
 
     .incrementalSearchResultList .separator {
-        margin-top: 5px
+        padding-top: 5px
+    }
+
+    .dark-mode .page-common #searchBar.searchBar #topSearchText {
+        border-left: 0!important
     }
 
     #advancedSearchResultList > .list.separator {
@@ -279,7 +294,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .incrementalSearchResultList .list.separator {
         height: 10px!important;
         cursor: auto!important;
-        margin-top: 15px!important;
+        padding-top: 15px!important;
     }
 
     if(removestatlink || mystatsmin || mystatsmin2) {
@@ -508,6 +523,9 @@ regexp("https://fal.myanimelist.net/.*") {
             position: absolute
         }
 
+        div#advancedSearchResultList,
+        .search-filter-mylist-block.sort.js-search-filter-mylist-block.js-sort,
+        .search-filter-sort-order-block.sort.js-search-filter-sort-order-block.js-sort,
         thead.sticky.top-0.text-white.bg-red-burgundy tr th,
         body > div.min-h-screen.bg-gray-100 > main > div > div.bg-white,
         nav.bg-persian-blue,
@@ -528,8 +546,21 @@ regexp("https://fal.myanimelist.net/.*") {
         .page-common .hoverinfo,
         footer,
         .dark-mode .ranking-digest .ranking-unit .rank:before,
-        .ranking-digest .ranking-unit .rank:before,
-        .page-common #myanimelist #contentWrapper {
+        .ranking-digest .ranking-unit .rank:before {
+            -webkit-backdrop-filter: blur(blur_slider)!important;
+            backdrop-filter: blur(blur_slider)!important;
+        }
+
+        .page-common > #myanimelist #contentWrapper:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
             -webkit-backdrop-filter: blur(blur_slider)!important;
             backdrop-filter: blur(blur_slider)!important
         }
@@ -579,8 +610,8 @@ regexp("https://fal.myanimelist.net/.*") {
             }
         }
 
-        .dark-mode body:not(.ownlist):not(.ownlist_anime_update):not(.ownlist_manga_update),
-        body:not(.ownlist):not(.ownlist_anime_update):not(.ownlist_manga_update) {
+        .dark-mode body:not(.ownlist):not(.ownlist_anime_update):not(.ownlist_manga_update):not(.editprofile),
+        body:not(.ownlist):not(.ownlist_anime_update):not(.ownlist_manga_update):not(.editprofile) {
             background: url(bg_image)!important;
             background-size: cover!important;
             background-attachment: fixed!important;
@@ -599,6 +630,13 @@ regexp("https://fal.myanimelist.net/.*") {
             -webkit-box-shadow: 0 0 4px var(--shadow-color)!important;
             box-shadow: 0 0 4px var(--shadow-color)!important;
             border: var(--border) solid var(--border-color) !important
+        }
+
+        if(opacity < .01 && bg_blur < 1) {
+            .page-common #myanimelist #contentWrapper {
+                border: 0!important;
+                box-shadow: none!important
+            }
         }
     }
 
@@ -638,6 +676,12 @@ regexp("https://fal.myanimelist.net/.*") {
     .page-common #menu,
     .page-common #myanimelist {
         margin: 0 auto
+    }
+
+    a.header-right.mt4.mr0,
+    #contentWrapper > div:nth-child(1) {
+        z-index: 1;
+        position: relative
     }
 
     .page-common #menu_left {
@@ -730,6 +774,7 @@ regexp("https://fal.myanimelist.net/.*") {
         display: none!important
     }
 
+    .page-common #horiznav_nav ul li,
     .text-ribbon.ga-click.ga-impression > div > a,
     .page-common #menu #menu_right,
     .page-common #menu #menu_left,
@@ -824,6 +869,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .page-common #profileRows a:hover,
     .di-ib.form-user-episode.ml8.disabled {
         background: var(--color-background);
+        background-image: none!important
     }
 
     #content > table > tbody > tr > td:nth-child(2) tr > td .related-entries .entry,
@@ -1127,8 +1173,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .news .news-container .news-info-block.clearfix,
     .news-side-block > ul.news-list > .news.clearfix,
     .oped-popup-inner,
-    .page-common #horiznav_nav ul li,
-    .page-common #horiznav_nav ul li > a,
+    .page-common #horiznav_nav ul li a,
     .page-common .bgColor1,
     .page-common .bgColor2,
     .page-common .forum-topic-sort,
@@ -1469,6 +1514,8 @@ regexp("https://fal.myanimelist.net/.*") {
     form[name="add_anime"] #increment_episode,
     form[name="add_manga"] #increment_volume,
     form[name="add_manga"] #increment_chapter,
+    .normal_header.clearfix.pt16 .fl-r.di-ib.fs11.fw-n span,
+    .js-categories-seasonal.js-block-list.list .ac.mt8 > .spaceit > span.bgColor1,
     .review-votes-modal .modal_bg,
     .page-forum .forum .message .topic-reply-box.in-timeline,
     .profile.statistics .daterangepicker .mal-btn.cancelBtn,
@@ -1782,6 +1829,8 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-text)!important
     }
 
+    .dark-mode .icon-team-title:not(.page-forum .icon-team-title),
+    .icon-team-title:not(.page-forum .icon-team-title),
     .profile .container-right.ga-impression[data-ga-impression-type="profile-stats-own"] .navi .tabs .sec-label-tab,
     .profile .container-right.ga-impression[data-ga-impression-type="profile-stats"] .navi .tabs .sec-label-tab,
     .page-common .codetext button.copycode:before,
@@ -2437,8 +2486,8 @@ regexp("https://fal.myanimelist.net/.*") {
     .h3_character_name,
     .dark-mode .page-common a:not(.icon-team-title):not(.header-profile-link),
     .page-common a:not(.icon-team-title):not(.header-profile-link),
-    .dark-mode .page-common a:visited,
-    .page-common a:visited {
+    .dark-mode .page-common a:visited:not(.icon-team-title),
+    .page-common a:visited:not(.icon-team-title) {
         color: var(--color-link)!important;
     }
 
@@ -2486,6 +2535,8 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-link-hover)!important
     }
 
+    .normal_header.clearfix.pt16 .fl-r.di-ib.fs11.fw-n span,
+    .js-categories-seasonal.js-block-list.list .ac.mt8 > .spaceit > span.bgColor1,
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table.score-stats tr td,
     .related-entries a.toggle-related-entries.js-toggle-related-entries,
     #content > table > tbody > tr > td:nth-child(2) tr > td .clearfix:has(p.spaceit > a[href*="/news"]),
@@ -2603,6 +2654,12 @@ regexp("https://fal.myanimelist.net/.*") {
         margin: 5px!important
     }
 
+    #horiznav_nav > div > span.bgColor1,
+    div#content > div > div.spaceit > span.bgColor1[style="padding: 2px;"],
+    .normal_header.clearfix.pt16 .fl-r.di-ib.fs11.fw-n,
+    .js-categories-seasonal.js-block-list.list .ac.mt8 > .spaceit > span.bgColor1,
+    .js-categories-seasonal.js-block-list.list table,
+    .ml8.mr8.mt8.mb16.js-block-list.list table,
     form[name="add_anime"] #increment_episode,
     form[name="add_manga"] #increment_volume,
     form[name="add_manga"] #increment_chapter,
@@ -3708,11 +3765,13 @@ regexp("https://fal.myanimelist.net/.*") {
             background-color: var(--color-foreground3)!important;
         }
 
+        #top-search-bar #searchBar:focus-within #topSearchText,
+        div#topSearchResultList,
         #searchBar::before {
             background-color: var(--color-foreground3)!important;
             opacity: 1;
-            -webkit-backdrop-filter: blur(8px) brightness(50%);
-            backdrop-filter: blur(8px) brightness(50%)!important;
+            -webkit-backdrop-filter: blur(8px) brightness(80%);
+            backdrop-filter: blur(8px) brightness(80%)!important
         }
     }
 
@@ -3836,6 +3895,10 @@ regexp("https://fal.myanimelist.net/.*") {
         border: 2px solid #a0b1c514
     }
 
+    .normal_header.clearfix.pt16 .fl-r.di-ib.fs11.fw-n,
+    .js-categories-seasonal.js-block-list.list .ac.mt8 > .spaceit > span.bgColor1,
+    .js-categories-seasonal.js-block-list.list table,
+    .ml8.mr8.mt8.mb16.js-block-list.list table,
     .profile #profile-stats-anime-genre-table table,
     .profile #profile-stats-manga-genre-table table,
     div#modern-about-me-inner,
@@ -5457,6 +5520,18 @@ url-prefix("https://myanimelist.net/manga") {
 
 @-moz-document url-prefix("https://myanimelist.net/anime.php"),
 url-prefix("https://myanimelist.net/manga.php") {
+    .js-categories-seasonal.js-block-list.list tr td {
+        background: none!important
+    }
+
+    .js-categories-seasonal.js-block-list.list tr td:first-child {
+        padding: 5px
+    }
+
+    .js-categories-seasonal.js-block-list.list tr {
+        background: var(--color-foreground3)!important;
+    }
+
     .anime-search-form-block.po-r > #advancedSearchResultList {
         margin-top: 45px
     }
@@ -5490,9 +5565,26 @@ url-prefix("https://myanimelist.net/manga/magazine/") {
         }
     }
 
+    .ml8.mr8.mt8.mb16.js-block-list.list tr td {
+        background: none!important
+    }
+
+    .ml8.mr8.mt8.mb16.js-block-list.list tr td:first-child {
+        padding: 5px
+    }
+
+    .ml8.mr8.mt8.mb16.js-block-list.list tr {
+        background: var(--color-foreground3)!important;
+    }
+
     .dark-mode .seasonal-anime-list .seasonal-anime .preline,
     .seasonal-anime-list .seasonal-anime .preline {
         max-height: 168px
+    }
+
+    .dark-mode .seasonal-anime-list .seasonal-anime .synopsis,
+    .seasonal-anime-list .seasonal-anime .synopsis {
+        height: 228px
     }
 
     .seasonal-anime-list .seasonal-anime .properties .property {
@@ -5606,11 +5698,18 @@ url-prefix("https://myanimelist.net/topmanga") {
         padding: 10px
     }
 
+    #horiznav_nav > div > span.bgColor1,
+    div#content > div > div.spaceit > span.bgColor1[style="padding: 2px;"],
+    #horiznav_nav > ul > li a {
+        padding: 5px!important
+    }
+
     #content > div > div table > tbody > tr > td[valign="top"] .picSurround {
         margin-top: 7px;
         padding-left: 5px;
     }
 
+    .page-common #horiznav_nav > ul > li,
     #content > div.borderDark.pt8.pb8.pl4.pr4.mb8 > div > div,
     #content > div.borderDark.pt8.pb8.pl4.pr4.mb8 > table > tbody > tr > td > div.spaceit_pad,
     #content > div > div table > tbody > tr > td > div.spaceit_pad {
@@ -5659,7 +5758,8 @@ url-prefix("https://myanimelist.net/clubs.php") {
         top: 10px;
         margin-bottom: 15px;
         position: relative;
-        width: 100%
+        width: 100%;
+        box-sizing: border-box
     }
 
     .club-search-form-search.clearfix.pb16 form.di-ib.js-advancedsearch {
