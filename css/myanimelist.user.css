@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.90
+@version      1.0.91
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -367,6 +367,7 @@ regexp("https://fal.myanimelist.net/.*") {
         form[name="add_anime"] #increment_episode,
         form[name="add_manga"] #increment_volume,
         form[name="add_manga"] #increment_chapter,
+        .header-right #editdiv,
         #content > table > tbody > tr > td:nth-child(2) tr > td table.mt8.episode_list.js-watch-episode-list,
         #content > table > tbody > tr > td:nth-child(2) tr > td .related-entries,
         .page-common .breadcrumb .di-ib,
@@ -533,6 +534,11 @@ regexp("https://fal.myanimelist.net/.*") {
         }
 
         div#advancedSearchResultList,
+        .header-right div#editdiv,
+        .review-filter-block.js-review-filter-block.show,
+        .review-sort-order-block.js-review-sort-order-block.show,
+        .menu .menu-block.js-menu-block,
+        .relationEntry .relationTitle,
         .edit-character-list-block.js-edit-character-list-block,
         .search-filter-mylist-block.sort.js-search-filter-mylist-block.js-sort,
         .search-filter-sort-order-block.sort.js-search-filter-sort-order-block.js-sort,
@@ -2675,6 +2681,7 @@ regexp("https://fal.myanimelist.net/.*") {
         margin: 5px!important
     }
 
+    .header-right div#editdiv,
     #horiznav_nav > div > span.bgColor1,
     div#content > div > div.spaceit > span.bgColor1[style="padding: 2px;"],
     .normal_header.clearfix.pt16 .fl-r.di-ib.fs11.fw-n,
@@ -3361,8 +3368,10 @@ regexp("https://fal.myanimelist.net/.*") {
         width: 77%
     }
 
+    .spaceit_pad.po-r.js-statistics-info.di-i,
     .spaceit_pad.po-r.js-statistics-info.di-ib {
-        width: 205px
+        width: 205px;
+        display: inline-block !important
     }
 
     .notification_settings .notification-setting-content .settings-notification,
@@ -4390,6 +4399,7 @@ regexp("https://fal.myanimelist.net/.*") {
         width: fit-content
     }
 
+    .navi-seasonal.js-navi-seasonal .horiznav_nav,
     #menu #menu_left #nav li ul,
     .dark-mode .page-common .header-notification-dropdown,
     .page-common .header-notification-dropdown,
@@ -5584,6 +5594,15 @@ url-prefix("https://myanimelist.net/manga/magazine/") {
             -webkit-box-shadow: 0 0 var(--shadow-strength) var(--shadow-color)!important;
             box-shadow: 0 0 var(--shadow-strength) var(--shadow-color)!important
         }
+    }
+
+    .navi-seasonal.js-navi-seasonal .horiznav_nav span.di-ib.mr4 {
+        display: none!important
+    }
+
+    .navi-seasonal.js-navi-seasonal .horiznav_nav {
+        box-shadow: none !important;
+        background: none !important
     }
 
     .ml8.mr8.mt8.mb16.js-block-list.list tr td {
@@ -6864,7 +6883,7 @@ url-prefix("https://myanimelist.net/people") {
     .js-scrollfix-bottom {
         margin-top: 0
     }
-
+.news-info-block.clearfix.mt16.mb20 .information.ml8.fs11.ff-avenir,
     table.js-table-people-staff td.borderClass .spaceit_pad,
     tr.js-people-character td.borderClass .spaceit_pad,
     .people-character.navi-people-character.js-navi-people-character,
