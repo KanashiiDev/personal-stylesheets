@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.97
+@version      1.0.98
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -32,7 +32,7 @@
 @var range    blur_slider     'Background Color Blur' [0, 0, 50, 1,'px']
 @var range    transitions     'Transitions' [0.3, 0, 1.0, 0.1,'s']
 @var range    wide_mal_w      'Anime/Manga Width' [60, 60, 100.0, 1,'%']
-@var range    wide_mal_f_w    'Forum Width' [40, 40, 100.0, 1,'%']
+@var range    wide_mal_f_w    'Forum Width' [60, 60, 100.0, 1,'%']
 @var range    wide_mal_r_w    'Reviews Width' [65, 65, 100.0, 1,'%']
 @var range    wide_mal_n_w    'News Width' [65, 65, 100.0, 1,'%']
 @var checkbox coloredstatus   'Colored Watch/Read Status' 0
@@ -138,7 +138,7 @@ regexp("https://fal.myanimelist.net/.*") {
     :root {
         --fg: fg_color + (fg_slider);
         --fgOP: fg_color + (fg_slider);
-        --fg2: fg_color + 10 + (fg_slider);
+        --fg2: fg_color + 12 + (fg_slider);
         --fg4: fg_color + 20 + (fg_slider);
         --fgo: rgba((fg_color + 12).4) + (fg_slider);
         --bg: fg_color - 10 + (fg_slider);
@@ -163,15 +163,20 @@ regexp("https://fal.myanimelist.net/.*") {
             --fg: rgba(fg_color + (fg_slider) (opacity) - .15);
             --fgOP: rgba(fg_color + (fg_slider));
             --fgOP2: rgba(fg_color + 13 + (fg_slider));
-            --fgo: rgba((fg_color + 5) (opacity) - .1) +(fg_slider);
+            --fgo: rgba((fg_color) (opacity) - .1) +(fg_slider);
             --fg2: rgba(fg_color + 13 + (fg_slider) (opacity) - .2);
             --fg4: rgba(fg_color + 20 + (fg_slider) (opacity))
+        }
+
+        else if (opacity < 1) {
+            --fgOP: fg_color + (fg_slider);
+            --fgOP2: fg_color + 10 + (fg_slider);
+            --fgo: rgba(fg_color) +(fg_slider);
         }
 
         else {
             --fgOP: fg_color + (fg_slider);
             --fgOP2: fg_color + 10 + (fg_slider);
-            --fgo: rgba(fg_color + 5) +(fg_slider);
         }
 
         if(n_color==rgba(182, 182, 182, 1)) {
@@ -910,7 +915,6 @@ regexp("https://fal.myanimelist.net/.*") {
 
     .navi-seasonal.js-navi-seasonal .horiznav_nav,
     .page-forum .topic-reply-box div.mal-navbar,
-    #menu #menu_left #nav ul li,
     #menu #menu_left #nav ul li:hover,
     #contentWrapper > div > .header-right.divider,
     #content,
@@ -967,6 +971,7 @@ regexp("https://fal.myanimelist.net/.*") {
     #contentWrapper table#dialog .social-login-block:after,
     .dark-mode .auto-recommendations .item,
     .dark-mode .season .anime-seasonal-byseason td,
+    #menu #menu_left #nav ul li,
     .dark-mode .page-common #menu #menu_left #nav ul li:hover,
     .profile.statistics .content-container .container-right .chart-wrapper .item,
     .global-header,
@@ -4532,12 +4537,6 @@ regexp("https://fal.myanimelist.net/.*") {
         max-height: 100%
     }
 
-    .page-common table.forum-topics tbody tr,
-    #forumTopics tr:not(.forum-table-header) {
-        padding: 0!important;
-        margin: 10px 8px
-    }
-
     .seasonal-anime.js-seasonal-anime .information-item.buttons a.Lightbox_AddEdit.ga-click.btn-anime-watch-status {
         height: 12px!important;
         line-height: 12px!important
@@ -5328,6 +5327,33 @@ url-prefix("https://myanimelist.net/manga") {
         top: 48px
     }
 
+    table#forumTopics tbody tr:not(.forum-table-header) {
+        border-top: 1px solid;
+        padding: 0;
+        margin: 10px 0px
+    }
+
+    #forumTopics tbody tr:not(.forum-table-header) td:last-child a:first-child {
+        width: auto;
+        max-width: 100px;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        display: inline-block;
+        margin-bottom: -5px
+    }
+
+    #forumTopics tbody tr {
+        -webkit-box-pack: normal;
+        -webkit-justify-content: normal;
+        -ms-flex-pack: normal;
+        justify-content: normal
+    }
+
+    #forumTopics:has(.forum-table-header) tbody tr:not(.forum-table-header) td:last-child a:first-child {
+        max-width: 100px;
+    }
+
     if(wide_mal_w > 60) {
         body,
         html {
@@ -5338,6 +5364,24 @@ url-prefix("https://myanimelist.net/manga") {
             width: 100%;
             -webkit-box-sizing: border-box;
             box-sizing: border-box
+        }
+
+        #forumTopics tbody tr:not(.forum-table-header) td:last-child {
+            text-align: end;
+            width: auto
+        }
+
+        #forumTopics tbody tr:not(.forum-table-header) td:last-child a:first-child {
+            max-width: 90px
+        }
+
+        #forumTopics:has(.forum-table-header) {
+            width: 99%
+        }
+
+        #forumTopics:has(.forum-table-header) tbody tr:not(.forum-table-header) td:last-child {
+            text-align: end;
+            width: 99%
         }
 
         #content > .navi-seasonal.js-navi-seasonal.fixed {
@@ -5746,7 +5790,7 @@ url-prefix("https://myanimelist.net/manga") {
 
     .review-filter-block.js-review-filter-block.show {
         left: auto!important;
-        margin-left: -90px
+        margin-left: -100px
     }
 
     .thumbbody.mt8 {
@@ -6499,13 +6543,13 @@ url-prefix("https://myanimelist.net/clubs.php") {
 
 @-moz-document regexp("https://myanimelist.net/forum/\\?(animeid=.*|mangaid=.*|clubid=.*|board=.*|subboard?.*)"),
 regexp("https://myanimelist.net/forum/\\.*search?.*") {
-    if(wide_mal_f_w==40) {
+    if(wide_mal_f_w==60) {
         #forumTopics tbody tr,
         div.page-forum table tbody tr {
             display: -ms-grid;
             display: grid;
-            -ms-grid-columns: 50px 730px 100px auto;
-            grid-template-columns: 50px 730px 100px auto;
+            -ms-grid-columns: 50px 730px 117px auto;
+            grid-template-columns: 50px 730px 117px auto;
             -webkit-box-pack: center;
             -webkit-justify-content: center;
             -ms-flex-pack: center;
@@ -6516,8 +6560,8 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
         }
 
         .forum-table-header {
-            -ms-grid-columns: 200px 700px auto!important;
-            grid-template-columns: 200px 700px auto!important
+            -ms-grid-columns: 200px 685px auto!important;
+            grid-template-columns: 200px 685px auto!important
         }
 
         #forumTopics tbody tr,
@@ -6527,7 +6571,7 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
     }
 
     if(custom-bg) {
-        if(wide_mal_f_w==40) {
+        if(wide_mal_f_w==60) {
             #forumTopics tbody tr:not(.forum-table-header),
             div.page-forum table tbody tr:not(.forum-table-header) {
                 margin: 10px 0px!important;
@@ -6537,14 +6581,14 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
 
             .forum-table-header {
                 padding: 5px 0px!important;
-                -ms-grid-columns: 220px 700px auto!important;
-                grid-template-columns: 220px 700px auto!important
+                -ms-grid-columns: 220px 685px auto!important;
+                grid-template-columns: 220px 685px auto!important
             }
         }
     }
 
     .forum-table-header .normal_header:nth-child(2) {
-        left: 600px;
+        left: 590px;
         position: relative!important
     }
 
@@ -6570,7 +6614,7 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
 }
 
 @-moz-document url-prefix("https://myanimelist.net/forum/?action=") {
-    if(wide_mal_f_w==40) {
+    if(wide_mal_f_w==60) {
         #forumTopics tbody tr {
             -ms-grid-columns: 50px 650px 100px 87.5px 150px!important;
             grid-template-columns: 50px 650px 100px 87.5px 150px!important
@@ -6585,22 +6629,71 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
             text-indent: 340px!important;
             width: 330px
         }
+    }
 
-        #forumTopics tbody tr,
-        div.page-forum table tbody tr {
-            border-top: 1px solid
+    #forumTopics tbody tr,
+    div.page-forum table tbody tr {
+        border-top: 1px solid;
+        padding: 0;
+        margin: 10px 0px
+    }
+
+    #forumTopics tbody tr td:last-child {
+        display: table-column;
+        overflow: ellipsis!important
+    }
+
+    if(wide_mal_f_w > 60) {
+        #forumTopics > tbody > tr.forum-table-header > td:nth-child(4) {
+            margin-left: -10px
         }
 
-        #forumTopics tbody tr td:last-child {
-            display: table-column;
-            overflow: ellipsis!important
+        #forumTopics tbody tr {
+            -ms-grid-columns: 50px auto 100px 88px 150px!important;
+            grid-template-columns: 50px auto 100px 88px 150px!important
         }
     }
 }
 
 @-moz-document regexp("https://myanimelist.net/forum.*") {
+    table.forum-topics tbody tr:not(.forum-table-header) {
+        border-top: 1px solid;
+        margin-bottom: 10px
+    }
 
-    if(wide_mal_f_w > 40) {
+    #forumTopics tbody tr:not(.forum-table-header) td:last-child {
+        text-align: end
+    }
+
+    #forumTopics tbody tr:not(.forum-table-header) td:last-child a:first-child {
+        width: auto;
+        max-width: 100px;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        display: inline-block;
+        margin-bottom: -5px
+    }
+
+    table#forumTopics tbody tr:not(.forum-table-header) {
+        border-top: 1px solid;
+        padding: 0;
+        margin: 10px 0px
+    }
+
+    .page-forum .topic-poll .topic-poll-result .mal-progress-bar.primary {
+        background: var(--color-link2);
+        opacity: .7
+    }
+
+    .forum-topics tr {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 50px auto 100px 130px;
+        grid-template-columns: 50px auto 100px 130px
+    }
+
+    if(wide_mal_f_w > 60) {
         body,
         html {
             min-width: 1300px
@@ -6618,7 +6711,6 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
             min-width: 1090px
         }
 
-
         form.forum-search-side {
             -ms-grid-columns: 90px auto 20px!important;
             grid-template-columns: 90px auto 20px!important;
@@ -6634,7 +6726,7 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
         .forum-mods-list.pb16,
         .forum-board-list.pb16,
         .forum-board-list.pb16 .forum-board {
-            width: 100%
+            width: 100%!important
         }
 
         div#contentWrapper > #content > table#dialog,
@@ -6655,19 +6747,19 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
 
         input.forum-search-input-text.min2chars.fl-l,
         {
-            height: 100%;
+            height: 100%!important;
             box-sizing: border-box
         }
 
         .forum-board-list.pb16 .forum-board {
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         .forum-topics tr,
         #forumTopics tbody tr,
         div.page-forum table tbody tr {
-            -ms-grid-columns: 50px auto 100px 130px;
-            grid-template-columns: 50px auto 100px 130px;
+            -ms-grid-columns: 50px auto 100px 140px;
+            grid-template-columns: 50px auto 100px 140px;
             -webkit-box-pack: normal!important;
             -webkit-justify-content: normal!important;
             -ms-flex-pack: normal!important;
@@ -6686,13 +6778,24 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
             -ms-flex-pack: normal!important;
             justify-content: normal!important
         }
-    }
 
-    .forum-topics tr {
-        display: -ms-grid;
-        display: grid;
-        -ms-grid-columns: 50px auto 100px 130px;
-        grid-template-columns: 50px auto 100px 130px
+        .page-forum .topic-poll .topic-poll-result .topic-poll-option {
+            display: flex!important
+        }
+
+        .page-forum .topic-poll .topic-poll-result .topic-poll-option .topic-poll-button,
+        .page-forum .topic-poll .topic-poll-result .vote {
+            width: 100%!important
+        }
+
+        .page-forum .topic-poll .topic-poll-result .topic-poll-option .ratio,
+        .page-forum .topic-poll .topic-poll-result .topic-poll-option .number {
+            width: 200px!important
+        }
+
+        .page-forum .topic-poll .topic-poll-result .scale {
+            display: none
+        }
     }
 }
 
