@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.0.98
+@version      1.0.99
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -952,6 +952,7 @@ regexp("https://fal.myanimelist.net/.*") {
     #content > table > tbody > tr > td:nth-child(2) tr > td .related-entries .entry,
     #content > table > tbody > tr > td:nth-child(2) tr > td .clearfix:has(p.spaceit > a[href*="/news"]),
     #content > table > tbody > tr > td:nth-child(2) .rightside.js-scrollfix-bottom-rel tr > td .related-entries,
+    .user-status-block .disabled-btn-user-status-add-list,
     .dark-mode .page-common .badresult,
     .page-common .badresult,
     .dark-mode .user-image .btn-detail-add-picture,
@@ -3016,7 +3017,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .oped-popup-inner,
     .page-common #horiznav_nav ul li a,
     .page-common .header-menu-login .btn-signup,
-    .page-common img:not(.l-mainvisual img):not(.seasonal-anime.js-seasonal-anime img),
+    .page-common img:not(.l-mainvisual img):not(.seasonal-anime.js-seasonal-anime img):not(.relationImg),
     .page-forum,
     .page-forum .forum-topic-message .message-wrapper,
     .page-forum .forum-topic-message:not(:last-child),
@@ -3506,8 +3507,8 @@ regexp("https://fal.myanimelist.net/.*") {
 
     .dark-mode .user-profile .user-badges .user-badge,
     .user-profile .user-badges .user-badge {
-        width: 45px;
-        height: 45px;
+        width: 44px;
+        height: 44px;
         margin-top: 5px
     }
 
@@ -5057,9 +5058,16 @@ url-prefix("https://myanimelist.net/manga") {
         width: 100%
     }
 
+    #content > table > tbody > tr > td:nth-child(2) tr > td .related-entries .entries-tile:has(.entry) {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr
+    }
+
     #content > table > tbody > tr > td:nth-child(2) tr > td .related-entries .entry {
         margin: 5px!important;
-        width: 47.3%!important
+        width: auto!important
     }
 
     .detail-characters-list .left-column.fl-l.divider,
@@ -5190,7 +5198,7 @@ url-prefix("https://myanimelist.net/manga") {
     }
 
     #contentWrapper > div:nth-child(1) {
-        padding-top: 15px
+        padding-top: 15px!important
     }
 
     #content > table {
@@ -5259,6 +5267,11 @@ url-prefix("https://myanimelist.net/manga") {
         text-align: center;
         background: var(--color-foreground4)!important;
         color: var(--color-main-text-normal)!important
+    }
+
+    .anime-detail-header-stats.di-tc.va-t .stats-block.po-r.clearfix .di-ib.ml12.pl20.pt8 {
+        width: 0;
+        overflow: visible
     }
 
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table > tbody > tr:nth-child(4) > td {
@@ -5435,7 +5448,7 @@ url-prefix("https://myanimelist.net/manga") {
 
         .dark-mode .page-common #myanimelist {
             min-width: 700px;
-            width: wide_mal_w!important
+            width: 100%!important
         }
 
         .rightside.js-scrollfix-bottom-rel #forumTopics table {
@@ -6074,6 +6087,11 @@ url-prefix("https://myanimelist.net/clubs.php") {
     div.page-forum table tbody tr {
         -ms-grid-columns: 50px 430px 100px auto;
         grid-template-columns: 50px 430px 100px auto
+    }
+
+    table div.bgColor1 tr td,
+    .spaceit_pad:has(.dark_text) {
+        background: 0!important
     }
 }
 
@@ -6938,10 +6956,7 @@ url-prefix("https://myanimelist.net/ownlist/style") {
         background: var(--color-foreground2)!important
     }
 
-    div[style="padding: 0 15px"],
     div.ml16.mr16 {
-        border-radius: 10px;
-        border: 1px solid;
         & form tbody > tr td[style="width: 14em"] {
             width: 200px!important
         }
@@ -6995,9 +7010,6 @@ url-prefix("https://myanimelist.net/ownlist/style") {
     }
 
     if(shadow) {
-        div[style="padding: 0 15px"],
-        div.ml16.mr16,
-        .page-common > #myanimelist #contentWrapper > #content,
         #content input.inputButton,
         tr.setting-row select,
         input {
@@ -7576,6 +7588,56 @@ url-prefix("https://myanimelist.net/people") {
 }
 
 @-moz-document regexp("https://myanimelist.net/anime.*/producer.*") {
+    .user-profile-sns.mb16,
+    .news-list.ml8.mt12,
+    .normal_header.ml8,
+    .content-left .pb16:has(span a),
+    .content-left,
+    .content-right {
+        box-sizing: border-box;
+        overflow: hidden
+    }
+
+    if(wide_mal_w > 60) {
+        .navi-seasonal.js-navi-company {
+            box-sizing: border-box
+        }
+
+        .js-categories-seasonal.tile-anime-list.js-seasonal-anime-append {
+            display: -ms-grid!important;
+            display: grid!important;
+            grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+            padding-right: 10px
+        }
+
+        .user-profile-sns.mb16,
+        #content > div.content-left > div:nth-child(4) {
+            width: 100%!important
+        }
+
+        .h1.edit-info {
+            width: calc(100% - 80px)!important
+        }
+    }
+
+    .content-left .pb16:has(span a) {
+        background: var(--color-foreground);
+        padding: 10px;
+        margin-bottom: 15px
+    }
+
+    .content-left .pb16:has(span a) span {
+        width: 105%!important;
+        -ms-grid-columns: 1fr 0px;
+        grid-template-columns: 1fr 0px;
+        display: -ms-grid;
+        display: grid;
+        overflow: hidden
+    }
+
+    .content-left .pb16:has(span a) span a {
+        width: max-content
+    }
 
     tr.js-anime-category-studio.seasonal-anime.js-seasonal-anime td .spaceit_pad {
         background: 0!important
@@ -7616,6 +7678,7 @@ url-prefix("https://myanimelist.net/people") {
     }
 
     if(add_border) {
+        .content-left .pb16:has(span a),
         .news-unit-right,
         .navi-seasonal.js-navi-company,
         .normal_header.ml8.clearfix.js-search-filter-block,
@@ -7639,7 +7702,8 @@ url-prefix("https://myanimelist.net/people") {
             border-top-left-radius: var(--border-radius)
         }
 
-        .content-left .mb16 .spaceit_pad:has(.dark_text):nth-last-child(2) {
+        .content-left .mb16:has(:not(.spaceit_pad:nth-child(4))) .spaceit_pad:has(.dark_text):nth-last-child(1),
+        .content-left .mb16:has(.spaceit_pad:nth-child(4)) .spaceit_pad:has(.dark_text):nth-last-child(2) {
             border-right: 1px solid !important;
             -webkit-border-top-right-radius: var(--border-radius);
             border-top-right-radius: var(--border-radius)
@@ -7655,6 +7719,16 @@ url-prefix("https://myanimelist.net/people") {
     }
 
     if(studioRedesign) {
+        .h1.edit-info {
+            width: calc(100% - 140px)!important
+        }
+
+        .content-right {
+            display: inline-block!important;
+            padding-right: 10px!important;
+            overflow: hidden
+        }
+
         #contentWrapper > div:nth-child(1) {
             padding-top: 0
         }
@@ -7715,8 +7789,7 @@ url-prefix("https://myanimelist.net/people") {
         }
 
         #content > div.content-left > div.user-profile-sns.mb16 {
-            top: 80px;
-            width: 1020px
+            top: 80px
         }
 
         #content > div.content-left > div.user-profile-sns.mb16 span {
@@ -7735,9 +7808,7 @@ url-prefix("https://myanimelist.net/people") {
             top: 55px
         }
 
-        .content-left .mb16:nth-child(3),
-        #content > div.content-left > h2:nth-child(7),
-        #content > div.content-left > div.pb16 {
+        .content-left .mb16:nth-child(3) {
             display: none
         }
 
@@ -7772,23 +7843,27 @@ url-prefix("https://myanimelist.net/people") {
             width: 100%!important
         }
 
+        .js-categories-seasonal.tile-anime-list.js-seasonal-anime-append {
+            grid-template-columns: repeat(auto-fill, minmax(195px, 1fr))!important
+        }
+
         .tile-anime-list .seasonal-anime {
-            width: 195px!important;
-            height: 310px!important
+            width: 185px!important;
+            height: 300px!important
         }
 
         .tile-anime-list .seasonal-anime .image {
             width: 100%!important;
-            height: 275px!important
+            height: 263px!important
         }
 
         .seasonal-anime.js-seasonal-anime .widget,
         .seasonal-anime.js-seasonal-anime .edit {
-            top: 220px!important
+            top: 215px!important
         }
 
         .seasonal-anime.js-seasonal-anime .edit {
-            left: 155px!important
+            left: 145px!important
         }
 
         .js-categories-seasonal.tile.mt8.ml16 {
@@ -7914,6 +7989,7 @@ regexp("https://myanimelist.net/stacks/\\d.*") {
         border-radius: var(--border-radius)!important
     }
 
+    .js-anime-category-licensor.seasonal-anime.js-seasonal-anime.js-anime-type-all,
     .stacks .stacks-detail .tile-anime-list .seasonal-anime.js-seasonal-anime,
     .js-anime-category-producer.seasonal-anime.js-seasonal-anime.js-anime-type-all,
     .js-anime-category-studio.seasonal-anime.js-seasonal-anime.js-anime-type-all {
