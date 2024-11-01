@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.1.02
+@version      1.1.03
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -36,46 +36,47 @@
 @var range    wide_mal_f_w    'Forum Width' [60, 60, 100.0, 1,'%']
 @var range    wide_mal_r_w    'Reviews Width' [65, 65, 100.0, 1,'%']
 @var range    wide_mal_n_w    'News Width' [65, 65, 100.0, 1,'%']
-@var checkbox coloredstatus   'Colored Watch/Read Status' 0
-@var checkbox cScoreStats     'Colored Score Stats' 0
-@var checkbox seasonalhover   'Show Seasonal Anime Title on Hover' 0
-@var checkbox recommendshover 'Show Recommended Anime Title on Hover' 0
-@var checkbox removebc        'Hide Breadcrumb Navigation' 0
-@var checkbox vertical_fav    'Vertical Favorites' 0
-@var checkbox scroll_synop    'Scrollable Synopsis' 0
-@var checkbox remove_en_title 'Hide English Title' 0
-@var checkbox remove_jp_title 'Hide Japanese Title' 0
-@var checkbox remove_edits    'Hide Left Side Edit Status' 0
-@var checkbox remove_edits2   'Hide Right Side Edit Status' 0
-@var checkbox remove_synop    'Hide Synopsis' 0
-@var checkbox remove_score    'Hide Score' 0
-@var checkbox remove_ranking  'Hide Rank Stats' 0
-@var checkbox remove_pv       'Hide Promotional Video' 0
-@var checkbox remove_ep       'Hide Episode Videos' 0
-@var checkbox remove_malxj    'Hide MalxJapan' 0
-@var checkbox remove_reviews  'Hide Reviews' 0
-@var checkbox remove_edit     'Hide Edit Buttons' 0
-@var checkbox remove_footer   'Hide Footer' 0
-@var checkbox remove_listnot  'Hide Public List Warning' 0
-@var checkbox removestatlink  'Hide My Statistics Links' 0
-@var checkbox removesns       'Hide Social Share Buttons' 0
-@var checkbox mystatsmin      'Change My Statistics Style' 0
-@var checkbox mystatsmin2     'Change My Statistics Style 2' 0
-@var checkbox rightpanelstyle 'Change The Right Widgets Style' 0
-@var checkbox editIcons       'Add icons to the Edit List' 1
-@var checkbox replaceAdd      'Replace Add button with an icon' 0
-@var checkbox replaceEdit     'Replace Edit button with an icon' 0
-@var checkbox replaceCW       'Replace CW button with an icon' 0
-@var checkbox replacePTW      'Replace PTW button with an icon' 0
-@var checkbox replaceCMPL     'Replace CMPL button with an icon' 0
-@var checkbox funnytoClown    'Reviews - Replace Funny with Clown Emoji' 0
-@var checkbox conftoDislike   'Reviews - Replace Confusing with Dislike Emoji' 0
-@var checkbox studioRedesign  'Companies Page Redesign' 0
-@var checkbox seasonCardHover 'Companies Page Show Anime Details on Hover' 0
-@var checkbox seasonCardDot   'Companies Page Add Dot Status Before The Title' 0
-@var checkbox forumProfileC   'Center Forum Profiles' 0
-@var checkbox forumNavBar     'Change Forum Bottom Navbar' 0
-@var checkbox forumNavBarHide 'Dont Hide Forum Bottom Navbar' 0
+@var checkbox coloredstatus   '[All] Colored Watch/Read Status' 0
+@var checkbox removebc        '[All] Hide Breadcrumb Navigation' 0
+@var checkbox removesns       '[All] Hide Social Share Buttons' 0
+@var checkbox remove_synop    '[All] Hide Synopsis' 0
+@var checkbox remove_score    '[All] Hide Score' 0
+@var checkbox remove_footer   '[All] Hide Footer' 0
+@var checkbox replaceAdd      '[All] Replace Add button with an icon' 0
+@var checkbox replaceEdit     '[All] Replace Edit button with an icon' 0
+@var checkbox replaceCW       '[All] Replace CW button with an icon' 0
+@var checkbox replacePTW      '[All] Replace PTW button with an icon' 0
+@var checkbox replaceCMPL     '[All] Replace CMPL button with an icon' 0
+@var checkbox removestatlink  '[Panel] Hide My Statistics Links' 0
+@var checkbox mystatsmin      '[Panel] Change My Statistics Style' 0
+@var checkbox mystatsmin2     '[Panel] Change My Statistics Style 2' 0
+@var checkbox rightpanelstyle '[Panel] Change The Right Widgets Style' 1
+@var checkbox seasonalhover   '[Panel] Show Seasonal Anime Title on Hover' 0
+@var checkbox vertical_fav    '[Profile] Vertical Favorites' 0
+@var checkbox vertical_fav_ex '[Profile] Expand Vertical Favorites' 0
+@var checkbox recommendshover '[Anime-Manga] Show Recommended Anime Title on Hover' 0
+@var checkbox scroll_synop    '[Anime-Manga] Scrollable Synopsis' 0
+@var checkbox remove_en_title '[Anime-Manga] Hide English Title' 0
+@var checkbox remove_jp_title '[Anime-Manga] Hide Japanese Title' 0
+@var checkbox remove_edits    '[Anime-Manga] Hide Left Side Edit Status' 0
+@var checkbox remove_edits2   '[Anime-Manga] Hide Right Side Edit Status' 0
+@var checkbox remove_ranking  '[Anime-Manga] Hide Rank Stats' 0
+@var checkbox remove_pv       '[Anime-Manga] Hide Promotional Video' 0
+@var checkbox remove_ep       '[Anime-Manga] Hide Episode Videos' 0
+@var checkbox remove_malxj    '[Anime-Manga] Hide MalxJapan' 0
+@var checkbox remove_reviews  '[Anime-Manga] Hide Reviews' 0
+@var checkbox remove_edit     '[Anime-Manga] Hide Edit Buttons' 0
+@var checkbox remove_listnot  '[Anime-Manga] Hide Public List Warning' 0
+@var checkbox cScoreStats     '[Anime-Manga Stats] Colored Score Stats' 0
+@var checkbox funnytoClown    '[Anime-Manga Reviews] Replace Funny with Clown Emoji' 0
+@var checkbox conftoDislike   '[Anime-Manga Reviews] Replace Confusing with Dislike Emoji' 0
+@var checkbox editIcons       '[Edit] Add icons to the Edit List' 1
+@var checkbox studioRedesign  '[Companies] Redesign' 0
+@var checkbox seasonCardHover '[Companies] Show Anime Details on Hover' 0
+@var checkbox seasonCardDot   '[Companies] Add Dot Status Before The Title' 0
+@var checkbox forumProfileC   '[Forum] Center Forum Profiles' 0
+@var checkbox forumNavBar     '[Forum] Change Bottom Navbar' 0
+@var checkbox forumNavBarHide '[Forum] Always Show Bottom Navbar' 0
 @preprocessor stylus
 ==/UserStyle== */
 @-moz-document regexp("https://myanimelist.net/(?!(animelist|mangalist|ownlist/style/theme)).*"),
@@ -809,6 +810,8 @@ regexp("https://fal.myanimelist.net/.*") {
         display: none !important
     }
 
+    .widget.watched_topics.left .forum-topics td.watch-state,
+    .widget.watched_topics.right .forum-topics td.watch-state,
     .profile.statistics .content-container .container-right #profile-stats-anime-genre-sets .filter.disabled,
     .profile.statistics .content-container .container-right #profile-stats-manga-genre-sets .filter.disabled,
     .header-notification-dropdown .mark-all.disabled,
@@ -2664,6 +2667,8 @@ regexp("https://fal.myanimelist.net/.*") {
         color: var(--color-link-hover)!important
     }
 
+    .widget.watched_topics.left .widget-content table.forum-topics td,
+    .widget.watched_topics.right .widget-content table.forum-topics td,
     .normal_header.clearfix.pt16 .fl-r.di-ib.fs11.fw-n span,
     .js-categories-seasonal.js-block-list.list .ac.mt8 > .spaceit > span.bgColor1,
     #content > table > tbody > tr > td:nth-child(2) > div.rightside.js-scrollfix-bottom-rel > table.score-stats tr td,
@@ -3069,6 +3074,8 @@ regexp("https://fal.myanimelist.net/.*") {
     .widget.recommendations div div,
     .widget.recommendations div td,
     .widget.seasonal.left > div > div,
+    .widget.watched_topics.right table.forum-topics,
+    .widget.watched_topics.left table.forum-topics,
     [itemprop=description] {
         -webkit-border-radius: var(--br)!important;
         border-radius: var(--br)!important
@@ -3175,6 +3182,9 @@ regexp("https://fal.myanimelist.net/.*") {
         border-bottom-right-radius: var(--br)!important
     }
 
+    .news-list.widget.right .news-unit-right,
+    .widget.recommendations.right .spaceit.borderClass,
+    .widget.reviews.right .info,
     .profile ul.user-status.border-top,
     .breadcrumb .di-ib,
     .forum .forum-board-list .forum-header,
@@ -3442,6 +3452,7 @@ regexp("https://fal.myanimelist.net/.*") {
         display: inline-block!important
     }
 
+    .widget.anime_discussions.right .widget-content,
     .page-forum .forum.thread .replies.in-thread .topic-reply-box.in-thread,
     .dark-mode .mymessages .message.unread,
     .mymessages .message.unread,
@@ -4048,6 +4059,8 @@ regexp("https://fal.myanimelist.net/.*") {
         border: 2px solid #a0b1c514
     }
 
+    .widget.watched_topics.left table.forum-topics,
+    .widget.watched_topics.right table.forum-topics,
     .normal_header.clearfix.pt16 .fl-r.di-ib.fs11.fw-n,
     .js-categories-seasonal.js-block-list.list .ac.mt8 > .spaceit > span.bgColor1,
     .js-categories-seasonal.js-block-list.list table,
@@ -4656,15 +4669,28 @@ regexp("https://fal.myanimelist.net/.*") {
             padding-top: 0!important
         }
 
+        .widget.news.right,
+        .widget.reviews.right,
+        .widget.recommendations.right,
         .widget.friend_list_updates.right,
+        .widget.watched_topics.right,
         .widget > div:first-child {
             background: none!important;
             box-shadow: none!important;
             padding: 0
         }
 
+        .widget.recommendations.right .widget-header,
         .js-widget-friend-list-updates {
             width: 295px!important
+        }
+
+        .widget.recommendations.right .widget-content .spaceit.borderClass td {
+            width: 285px!important
+        }
+
+        .news-list.widget.right .news-unit-right {
+            width: 208px!important
         }
 
         .js-widget-friend-list-updates > div > div.navi > .navi-btn.js-widget-friend-list-updates-comment.ga-click {
@@ -6549,28 +6575,44 @@ url-prefix("https://myanimelist.net/clubs.php") {
             padding: 5px!important;
         }
 
-        #content > div > div.container-right > h5:nth-child(5),
-        #content > div > div.container-right > h5:nth-child(6) {
-            margin-top: -40px;
-            margin-left: 200px
+        #myanimelist .fav-slide-block li.btn-fav .title.fs10 {
+            color: var(--color-link)!important
         }
 
-        #content > div > div.container-right > h5:nth-child(7),
-        #content > div > div.container-right > h5:nth-child(8) {
-            margin-top: -40px;
-            margin-left: 400px
+        #content > div > div.container-right > div.favmore > h5:nth-child(-n + 3),
+        #content > div > div.container-right > h5:nth-child(n + 3):nth-child(-n + 9) {
+            display: none!important
         }
 
-        #content > div > div.container-right > div.favmore > h5:nth-child(1) {
-            margin-top: -40px;
-            margin-left: 600px
+        #character_favorites:before,
+        #person_favorites:before,
+        #anime_favorites:before,
+        #manga_favorites:before,
+        #company_favorites:before {
+            font-size: 14px;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 10px
         }
 
-        #content > div > div.container-right > div.favmore > h5:nth-child(3) {
-            text-align: right;
-            margin-right: 105px!important;
-            padding-right: 0!important;
-            width: 86%
+        #anime_favorites:before {
+            content: "Anime"
+        }
+
+        #manga_favorites:before {
+            content: "Manga"
+        }
+
+        #character_favorites:before {
+            content: "Character"
+        }
+
+        #person_favorites:before {
+            content: "Person"
+        }
+
+        #company_favorites:before {
+            content: "Company"
         }
 
         .fav-slide-block .fav-slide {
@@ -6580,7 +6622,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
 
         if(add_boder) {
             .fav-slide-block .fav-slide .btn-fav {
-                border: 1px solid!important;
+                border: 1px solid!important
             }
         }
 
@@ -6601,7 +6643,6 @@ url-prefix("https://myanimelist.net/clubs.php") {
         }
 
         #company_favorites,
-        #company_favorites .fav-slide-outer,
         #character_favorites,
         #person_favorites,
         #anime_favorites,
@@ -6610,7 +6651,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
             -o-transition: 1.5s;
             transition: 1.5s;
             height: auto !important;
-            max-height: 810px;
+            max-height: 840px;
             width: 191px;
             position: relative !important;
             float: left;
@@ -6619,24 +6660,31 @@ url-prefix("https://myanimelist.net/clubs.php") {
             padding-right: 0!important
         }
 
-        #company_favorites .fav-slide-outer,
         #company_favorites,
         #person_favorites {
             margin-right: 0!important;
-            max-height: 380px
+            max-height: 408px
         }
 
         #character_favorites:hover,
         #person_favorites:hover,
         #anime_favorites:hover,
-        #manga_favorites:hover {
+        #manga_favorites:hover,
+        #company_favorites:hover,
+        #person_favorites:hover {
             max-height: 1700px
         }
 
-        #company_favorites:hover,
-        #company_favorites .fav-slide-outer,
-        #person_favorites:hover {
-            max-height: 1540px
+        if(vertical_fav_ex) {
+            #company_favorites,
+            #character_favorites,
+            #person_favorites,
+            #anime_favorites,
+            #manga_favorites,
+            #company_favorites,
+            #person_favorites {
+                max-height: 1700px
+            }
         }
 
         .dark-mode .fav-slide-block .fav-slide .btn-fav,
@@ -6656,7 +6704,7 @@ url-prefix("https://myanimelist.net/clubs.php") {
         #company_favorites .fav-slide .btn-fav {
             margin-right: 0 !important;
             width: 188px;
-            height: 71.4px
+            height: 72px
         }
 
         .favmore {
