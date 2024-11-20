@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.1.04
+@version      1.1.05
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
@@ -11,6 +11,7 @@
 @var range    lightTextSlider 'Second Text Darkness' [32, 0, 175, 1]
 @var color    n_color         'Header Text Color' rgba(182, 182, 182)
 @var color    link_color      'Link Color' rgba(171,196, 237)
+@var range    scrollbar_width 'Scrollbar Width' [8, 0, 50, 1,'px']
 @var checkbox shadow          'Shadow' 1
 @var color    shadow_color    'Shadow Color' rgb(0,0, 0,.3)
 @var range    shadow_s        'Shadow Strength' [3, 0, 10, 1,'px']
@@ -194,7 +195,7 @@ regexp("https://fal.myanimelist.net/.*") {
         }
 
         ::-webkit-scrollbar {
-            width: 8px;
+            width: scrollbar_width;
             height: 8px;
             background: 0 0
         }
@@ -808,7 +809,7 @@ regexp("https://fal.myanimelist.net/.*") {
     #footer-block > .footer-link-icon-block:nth-child(3),
     .profile.statistics .content-container .container-right .chart-wrapper .filter.disabled > div:nth-child(2),
     body > div#_cm-css-reset,
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text):not(.news-list .comment-list .text):not(.replied-container .replied-body):not(.feed-message-content) {
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text):not(.news-list .comment-list .text):not(.replied-container .replied-body):not(.feed-message-content):not(table tr td.borderClass div) {
         display: none !important
     }
 
@@ -2624,10 +2625,10 @@ regexp("https://fal.myanimelist.net/.*") {
     .dark-mode .page-common .incrementalSearchResultList .list .off .info.user .name,
     .page-common .incrementalSearchResultList .list .off .info.user .name,
     .h3_character_name,
-    .dark-mode .page-common a:not(.icon-team-title):not(.header-profile-link),
-    .page-common a:not(.icon-team-title):not(.header-profile-link),
-    .dark-mode .page-common a:visited:not(.icon-team-title),
-    .page-common a:visited:not(.icon-team-title) {
+    .dark-mode .page-common a:not(:hover):not(.icon-team-title):not(.header-profile-link):not(.review-ratio__box a),
+    .page-common a:not(:hover):not(.icon-team-title):not(.header-profile-link):not(.review-ratio__box a),
+    .dark-mode .page-common a:visited:not(:hover):not(.icon-team-title):not(.review-ratio__box a),
+    .page-common a:visited:not(:hover):not(.icon-team-title):not(.review-ratio__box a) {
         color: var(--color-link)!important;
     }
 
@@ -2641,7 +2642,7 @@ regexp("https://fal.myanimelist.net/.*") {
     .forum .forum-side-block .forum-side-list .forum-post .information .comment,
     .page-forum .forum .message .replied .replied-container .js-replyto-target,
     .dark-mode .page-forum .forum_postusername,
-    a .page-forum .forum_postusername a {
+    .page-forum .forum_postusername a {
         color: var( --color-link2)!important
     }
 
@@ -2654,7 +2655,6 @@ regexp("https://fal.myanimelist.net/.*") {
     .history_content_wrapper .history-updates .navi-btn:hover,
     .stacks .btn-report.on .fa-ellipsis-h,
     .ownlist_style .new-theme-list .new-theme-unit.selected .title,
-    .page-common a:hover,
     .breadcrumb .di-ib:last-child a > span:last-child,
     .page-common #horiznav_nav ul li > a.horiznav_active,
     .dark-mode #dialog .inputButton.submit:hover,
@@ -2667,7 +2667,8 @@ regexp("https://fal.myanimelist.net/.*") {
     .header-menu-unit.header-profile.js-header-menu-unit.link-bg.pl8.pr8.on > div > ul > li > form > a:hover,
     .dark-mode .stacks .btn-show-spoilers.on i.fas,
     .stacks .btn-show-spoilers.on i.fas,
-    .dark-mode .page-common a:hover,
+    .dark-mode .page-common a:hover:not(.review-ratio__box a),
+    .page-common a:hover:not(.review-ratio__box a),
     .page-common #nav a:hover,
     .header-list .header-list-dropdown ul li a:hover,
     .header-profile-dropdown.color-pc-constant ul li a:hover,
