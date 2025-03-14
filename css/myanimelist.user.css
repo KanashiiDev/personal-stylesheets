@@ -1,9 +1,10 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.1.11
+@version      1.1.12
 @description  Myanimelist - Clean
 @author       Dark-Themes
+@license      MIT
 @supportURL   https://github.com/KanashiiDev/personal-stylesheets/issues
 @var color    fg_color        'Foreground Color' rgba(21, 31, 46)
 @var range    fg_slider       'Foreground Color Brightness' [1, 1, 50, 1,'']
@@ -554,7 +555,7 @@ regexp("https://fal.myanimelist.net/.*") {
     }
 
     if(shadow_img) {
-        img:not(.video-providers img):not(.quotetext img):not(div[id^=comtext] img) {
+        img:not(.video-providers img):not(.quotetext img):not(div[id^=comtext] img):not(span.flex.justify-center img):not(a > .h-6) {
             -webkit-box-shadow: 0 0 var(--shadow-strength) var(--shadow-color)!important;
             box-shadow: 0 0 var(--shadow-strength) var(--shadow-color)!important
         }
@@ -836,6 +837,9 @@ regexp("https://fal.myanimelist.net/.*") {
         cursor: pointer!important
     }
 
+    .detail .bookstore-information.ga-impression,
+    .di-t.w100.mt12 .manga-store-preview.bookstore-detail-right,
+    .leftside .bookstore-left-preview .mal-btn-group .mal-btn.bookstore-preview-button,
     .js-categories-seasonal .js-middle_ad.seasonal-middle,
     div[style="height: auto; width: auto;"]:has(script[id*="sas_script"]),
     .navi-seasonal.js-navi-seasonal.fixed:after,
@@ -847,7 +851,7 @@ regexp("https://fal.myanimelist.net/.*") {
     #footer-block > .footer-link-icon-block:nth-child(3),
     .profile.statistics .content-container .container-right .chart-wrapper .filter.disabled > div:nth-child(2),
     body > div#_cm-css-reset,
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text):not(.profile .user-comments .comment .text .comment-text div):not(.news-list .comment-list .text):not(.replied-container .replied-body):not(.feed-message-content):not(table tr td.borderClass div):not(.header-menu-unit):not(.favThemes > div):not(#customProfileEls div):not(.contents-video-embed .po-r.clearfix):not(.forum .message .content div):not(.sceditor-outer .preview-content):not(div[id^=comBox] *),
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(.blog_detail_content_wrapper div):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text):not(.profile .user-comments .comment .text .comment-text div):not(.news-list .comment-list .text):not(.replied-container .replied-body):not(.feed-message-content):not(table tr td.borderClass div):not(.header-menu-unit):not(.favThemes > div):not(#customProfileEls div):not(.contents-video-embed .po-r.clearfix):not(.forum .message .content div):not(.sceditor-outer .preview-content):not(div[id^=comBox] *),
     .js-categories-seasonal .seasonal-anime-list .seasonal-middle,
     .widget.watched_topics.left .forum-topics td.watch-state,
     .widget.watched_topics.right .forum-topics td.watch-state,
@@ -4302,6 +4306,8 @@ regexp("https://fal.myanimelist.net/.*") {
     .malicon-movie-episode {
         color: var(--color-foreground4)!important;
         background: var(--color-link);
+        -webkit-border-radius: var(--border-radius);
+        border-radius: var(--border-radius);
         height: 12px;
         top: 5px;
         position: relative;
@@ -7021,19 +7027,6 @@ url-prefix("https://myanimelist.net/clubs.php") {
     }
 
     if(vertical_fav) {
-        .favContainer {
-            display: -ms-grid;
-            display: grid;
-            grid-auto-flow: column;
-            -ms-grid-rows: (40px 1fr)[1];
-            grid-template-rows: repeat(1, 40px 1fr);
-            width: 100%;
-        }
-
-        .favContainer h5 {
-            width: 120px!important
-        }
-
         .dark-mode .fav-slide-block,
         .fav-slide-block {
             background: none!important;
@@ -9224,6 +9217,7 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
 }
 
 @-moz-document regexp("https://fal.myanimelist.net/.*") {
+
     .relative.flex.justify-center.flex-col.text-center.rounded p.bg-white.py-6.px-4.mt-2.text-sm.rounded-lg,
     .bg-rank-gradient {
         background: transparent!important
@@ -9234,6 +9228,11 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
         background: var(--color-background)!important;
     }
 
+    .bg-overlay-gray {
+        background: rgba((fg_color - 10).0 + .9) + (fg_slider);
+    }
+
+    .bg-tangerine,
     .container.py-6.bg-white-smoke.mt-2 button.my-3.text-persian-blue.font-black.text-xl.w-48.p-2,
     .container.py-6.bg-white-smoke.mt-2 button.my-3.bg-persian-blue.text-white.font-black.text-xl.p-2,
     .container.py-6.bg-white-smoke.mt-2 button.my-3.text-white.font-black.text-xl.w-36.p-2.bg-persian-blue,
@@ -9288,7 +9287,7 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
             background: transparent!important
         }
 
-        .bg-white:not(.rounded-lg),
+        .bg-white:not(.rounded-lg):not(.row.mt-8.bg-white):not(.createBoxWrap .bg-white),
         .min-h-screen.bg-gray-100 > main > .py-0.min-h-screen > div > .bg-white {
             background: var(--color-backgroundo)!important
         }
@@ -9325,6 +9324,13 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
         }
     }
 
+    if(blur_slider > 1) {
+        .createBoxWrap .p-4.bg-white.createBox {
+            -webkit-backdrop-filter: blur(blur_slider)!important;
+            backdrop-filter: blur(blur_slider)!important
+        }
+    }
+
     body > div.min-h-screen.bg-gray-100 > main > div > .container {
         z-index: 2;
         position: relative
@@ -9343,17 +9349,15 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
         padding-top: 80px
     }
 
+    .row.mt-8.bg-white,
     .container.py-6.bg-white-smoke.mt-2 button,
     .relative .container.z-0.mx-auto.px-2.py-2 .mx-auto,
     .container.mx-auto.p-2.bg-gray .mt-4.text-xs.text-center button.bg-tangerine.text-white.font-black.rounded.mx-auto.w-full.py-1,
-    .container.mx-auto .grid.grid-cols-4.gap-2 .mt-4,
     .bg-gray.mt-8,
     .flex.justify-end.pt-4 .bg-gray-200.p-1.rounded,
     div[style="background-color: #dcfefd"],
-    .createBoxWrap .flex.justify-between,
     .grid.grid-cols-4.gap-1 .mt-4.text-xs.text-center,
     .shadow-md.mt-5.mx-3.py-8.px-10,
-    .p-4.bg-white.createBox,
     .container.mx-auto.p-2.bg-gray,
     p.rounded-full.w-auto.text-white.px-3.text-xs.font-bold,
     .px-4.border.p-2.mt-5,
@@ -9379,6 +9383,7 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
         background: var(--color-foreground4)!important
     }
 
+    .container.mx-auto .grid.grid-cols-4.gap-2 .mt-4,
     .grid.grid-cols-4.gap-1 > .mt-4.text-xs.text-center > div > button.bg-tangerine.text-white.font-black.rounded.mx-auto.w-full.py-1,
     .container.z-0.mx-auto.px-2.py-2 .flex.p-2.items-center .flex-1.bg-white.text-center,
     .absolute.z-50.top-0.w-12.h-12.flex.items-center.justify-center,
@@ -9392,7 +9397,6 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
     button.my-3.text-persian-blue.font-black.text-xl.w-36.p-2,
     a.flex.items-center.justify-center.border.border-b-4.border-indigo-900,
     a.bg-gray-100.border.border-b-4.border-blue-800,
-    .bg-tangerine,
     .bg-papaya {
         background: var(--color-foreground4)!important;
         -webkit-border-radius: var(--border-radius);
@@ -9478,7 +9482,6 @@ regexp("https://myanimelist.net/(anime|manga)/genre/info") {
         -webkit-line-clamp: 2
     }
 
-    .bg-white > div > .w-full,
     .grid.grid-cols-1.gap-4.p-3.mb-1 .text-white,
     .grid.grid-cols-1.gap-4 .py-5 .text-white {
         color: var(--color-main-text-op)!important;
