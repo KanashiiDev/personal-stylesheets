@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         Myanimelist - Clean
 @namespace    Dark-Themes
-@version      1.1.12
+@version      1.1.13
 @description  Myanimelist - Clean
 @author       Dark-Themes
 @license      MIT
@@ -837,6 +837,10 @@ regexp("https://fal.myanimelist.net/.*") {
         cursor: pointer!important
     }
 
+
+    div[id*="april_fools"],
+    .js-categories-seasonal.js-block-list.list .bookstore-search-result.ga-impression,
+    .entries-tile .bookstore-related-entries,
     .detail .bookstore-information.ga-impression,
     .di-t.w100.mt12 .manga-store-preview.bookstore-detail-right,
     .leftside .bookstore-left-preview .mal-btn-group .mal-btn.bookstore-preview-button,
@@ -851,7 +855,9 @@ regexp("https://fal.myanimelist.net/.*") {
     #footer-block > .footer-link-icon-block:nth-child(3),
     .profile.statistics .content-container .container-right .chart-wrapper .filter.disabled > div:nth-child(2),
     body > div#_cm-css-reset,
-    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(.blog_detail_content_wrapper div):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text):not(.profile .user-comments .comment .text .comment-text div):not(.news-list .comment-list .text):not(.replied-container .replied-body):not(.feed-message-content):not(table tr td.borderClass div):not(.header-menu-unit):not(.favThemes > div):not(#customProfileEls div):not(.contents-video-embed .po-r.clearfix):not(.forum .message .content div):not(.sceditor-outer .preview-content):not(div[id^=comBox] *),
+    .profile div#contentWrapper > .mauto.clearfix.pt24,
+    div:has( > div[plid] .MAL_InfeedNative_Forum),
+    div:has( > a[rel*="noopener"]):not(.content.clearfix):not(.quotetext div):not(.quotetext):not(.people-informantion-more.js-people-informantion-more):not(.user-profile-about.js-truncate-outer *):not(.user-profile-about.js-truncate-outer div):not(.blog_detail_content_wrapper):not(.blog_detail_content_wrapper div):not(div[style="padding: 0 0 13px 13px;"]):not(.sig-container div):not(.profile .user-comments .comment .text .comment-text):not(.profile .user-comments .comment .text .comment-text div):not(.news-list .comment-list .text):not(.replied-container .replied-body):not(.feed-message-content):not(table tr td.borderClass div):not(.header-menu-unit):not(.favThemes > div):not(#customProfileEls div):not(.contents-video-embed .po-r.clearfix):not(.forum .message .content div):not(.sceditor-outer .preview-content):not(div[id^=comBox] *):not(.mainListBtnsDiv *),
     .js-categories-seasonal .seasonal-anime-list .seasonal-middle,
     .widget.watched_topics.left .forum-topics td.watch-state,
     .widget.watched_topics.right .forum-topics td.watch-state,
@@ -3755,6 +3761,12 @@ regexp("https://fal.myanimelist.net/.*") {
         height: 69px
     }
 
+    form.di-ib.js-advancedsearch[name="searchVA"] #advancedSearchResultList,
+    form.di-ib.js-advancedsearch[name="searchCharacters"] #advancedSearchResultList {
+        width: 100%!important;
+        margin-top: 48px
+    }
+
     .anime-search-form-block.po-r > #advancedSearchResultList {
         width: inherit !important
     }
@@ -3805,6 +3817,7 @@ regexp("https://fal.myanimelist.net/.*") {
 
     .widget.recommendations div td {
         width: 48%;
+        max-width: 340px;
         display: inline-block;
         margin: 5px;
         background: var(--color-foreground3)
@@ -7103,6 +7116,10 @@ url-prefix("https://myanimelist.net/clubs.php") {
             top: 0px
         }
 
+        .boxlist.col-4 > .di-tc > a > img.image {
+            object-fit: cover!important
+        }
+
         #company_favorites,
         #character_favorites,
         #person_favorites,
@@ -7574,11 +7591,17 @@ regexp("https://myanimelist.net/forum/\\.*search?.*") {
         margin-bottom: 10px
     }
 
-    #forumTopics tbody tr:not(.forum-table-header) td:last-child {
+    table#forumTopics td[colspan="5"] {
+        background: var(--color-foreground);
+        padding: 10px;
+        grid-column: 1/-1;
+    }
+
+    #forumTopics tbody tr:not(.forum-table-header) td:not(td[colspan="5"]):last-child {
         text-align: end
     }
 
-    #forumTopics tbody tr:not(.forum-table-header) td:last-child a:first-child {
+    #forumTopics tbody tr:not(.forum-table-header) td:not(td[colspan="5"]):last-child a:first-child {
         width: auto;
         max-width: 100px;
         overflow: hidden;
@@ -8671,7 +8694,7 @@ url-prefix("https://myanimelist.net/people") {
 
         #contentWrapper > div:nth-child(1) {
             padding-top: 0!important;
-            z-index: 3!important
+            z-index: 2!important
         }
 
         .content-left {
